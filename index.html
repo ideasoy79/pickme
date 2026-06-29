@@ -287,9 +287,57 @@ footer strong{font-family:'Playfair Display',serif;color:var(--coral);}
   .api-row{flex-direction:column;}
   .api-in,.btn-sv{border-radius:10px;}
 }
+
+/* ── 플로팅 CTA ── */
+.float-cta{
+  position:fixed; bottom:24px; right:24px; z-index:300;
+  background:var(--rose); color:#fff;
+  border:none; border-radius:100px;
+  padding:13px 22px; font-family:inherit;
+  font-size:14px; font-weight:700;
+  cursor:pointer; box-shadow:0 6px 24px rgba(192,48,96,.35);
+  display:flex; align-items:center; gap:7px;
+  transform:translateY(80px); opacity:0;
+  transition:all .35s cubic-bezier(.34,1.56,.64,1);
+  pointer-events:none;
+}
+.float-cta.show{transform:translateY(0);opacity:1;pointer-events:all;}
+.float-cta:hover{background:var(--rose-h,#A82050);transform:translateY(-2px) scale(1.02);}
+.float-cta i{width:15px;height:15px;}
+@media(max-width:480px){
+  .float-cta{bottom:16px;right:16px;padding:11px 18px;font-size:13px;}
+}
+
+
+/* ── AI 사용 제한 배너 ── */
+.ai-limit-bar{
+  display:flex; align-items:center; justify-content:space-between;
+  background:var(--rose-light,#FDF0F4);
+  border:1px solid var(--rose-pale,#F2D5DF);
+  border-radius:12px; padding:11px 16px;
+  margin-bottom:14px; gap:12px; flex-wrap:wrap;
+}
+.ai-limit-bar .limit-info{display:flex;align-items:center;gap:8px;}
+.ai-limit-bar i{width:15px;height:15px;color:var(--rose);flex-shrink:0;}
+.ai-limit-bar span{font-size:13px;color:var(--ink-mid,#4A3848);}
+.ai-limit-bar strong{color:var(--rose);}
+.limit-dots{display:flex;gap:5px;}
+.ldot{width:10px;height:10px;border-radius:50%;background:var(--rose-pale,#F2D5DF);}
+.ldot.used{background:var(--rose);}
+/* ── 텍스트 정렬 수정 ── */
+.sec .lbl,.sec .h2,.sec-full .inner .lbl,.sec-full .inner .h2{text-align:left;}
+.res-intro,.res-intro h2,.res-intro p{text-align:center;}
+.how-step h4,.how-step p,.feat-card h4,.feat-card p{text-align:left;}
+.pb-card p{text-align:left;}
+/* ── 카테고리 섹션 타이틀 중앙 ── */
+.cat-bg .lbl,.cat-bg .h2{text-align:center;}
+/* ── Final CTA 중앙 ── */
+.fin-bg .lbl,.fin-bg .h2,.fin-bg p{text-align:center;}
+
 </style>
 </head>
 <body>
+<button class="float-cta" id="floatCta" onclick="scrollToSearch()"><i data-lucide="search"></i>상품 찾기</button>
 <!-- ══════ LANDING ══════ -->
 <div id="landing" class="screen active">
 <nav>
@@ -310,7 +358,7 @@ footer strong{font-family:'Playfair Display',serif;color:var(--coral);}
       <button class="btn-p" onclick="go('heroIn')"><i data-lucide="arrow-right"></i>찾아줘</button>
     </div>
     <div class="pills">
-      <span class="pill" onclick="setQ('마스카라 추천해줘')"><i data-lucide="eye"></i>마스카라</span>
+      <span class="pill" onclick="catGo('mascara')"><i data-lucide="eye"></i>마스카라</span>
       <span class="pill" onclick="setQ('선크림 찾아줘')"><i data-lucide="sun"></i>선크림</span>
       <span class="pill" onclick="setQ('민감성 파운데이션')"><i data-lucide="droplets"></i>파운데이션</span>
       <span class="pill" onclick="setQ('향수 선물 10만원')"><i data-lucide="gift"></i>향수 선물</span>
@@ -344,12 +392,12 @@ footer strong{font-family:'Playfair Display',serif;color:var(--coral);}
   <div class="lbl">지금 찾을 수 있어요</div>
   <h2 class="h2 dp">PickMe.가 도와드리는<br>뷰티 카테고리</h2>
   <div class="cat-grid">
-    <div class="cat-card" onclick="setQ('마스카라 추천해줘')"><div class="cat-ico"><i data-lucide="eye"></i></div><h4>마스카라</h4><p>롱래시·볼륨·뭉침없음<br>속눈썹 타입 맞춤</p><span class="cat-badge">인기</span></div>
-    <div class="cat-card" onclick="setQ('선크림 추천해줘')"><div class="cat-ico"><i data-lucide="sun"></i></div><h4>선크림</h4><p>백탁없이 피부타입별<br>맞춤 추천</p><span class="cat-badge">여름 필수</span></div>
-    <div class="cat-card" onclick="setQ('파운데이션 추천해줘')"><div class="cat-ico"><i data-lucide="droplets"></i></div><h4>파운데이션</h4><p>커버력·지속력·밀착력<br>피부톤 맞춤</p></div>
-    <div class="cat-card" onclick="setQ('아이라이너 추천해줘')"><div class="cat-ico"><i data-lucide="pen-line"></i></div><h4>아이라이너</h4><p>번짐없는 라인<br>눈매 타입별</p></div>
-    <div class="cat-card" onclick="setQ('립스틱 추천해줘')"><div class="cat-ico"><i data-lucide="smile"></i></div><h4>립스틱·립틴트</h4><p>발색·지속력·보습<br>피부톤 맞춤</p></div>
-    <div class="cat-card" onclick="setQ('스킨케어 세럼 추천해줘')"><div class="cat-ico"><i data-lucide="sparkles"></i></div><h4>스킨케어 세럼</h4><p>피부 고민별<br>성분 맞춤</p></div>
+    <div class="cat-card" onclick="catGo('mascara')"><div class="cat-ico"><i data-lucide="eye"></i></div><h4>마스카라</h4><p>롱래시·볼륨·뭉침없음<br>속눈썹 타입 맞춤</p><span class="cat-badge">인기</span></div>
+    <div class="cat-card" onclick="catGo('sunscreen')"><div class="cat-ico"><i data-lucide="sun"></i></div><h4>선크림</h4><p>백탁없이 피부타입별<br>맞춤 추천</p><span class="cat-badge">여름 필수</span></div>
+    <div class="cat-card" onclick="catGo('foundation')"><div class="cat-ico"><i data-lucide="droplets"></i></div><h4>파운데이션</h4><p>커버력·지속력·밀착력<br>피부톤 맞춤</p></div>
+    <div class="cat-card" onclick="catGo('eyeliner')"><div class="cat-ico"><i data-lucide="pen-line"></i></div><h4>아이라이너</h4><p>번짐없는 라인<br>눈매 타입별</p></div>
+    <div class="cat-card" onclick="catGo('lipstick')"><div class="cat-ico"><i data-lucide="smile"></i></div><h4>립스틱·립틴트</h4><p>발색·지속력·보습<br>피부톤 맞춤</p></div>
+    <div class="cat-card" onclick="catGo('serum')"><div class="cat-ico"><i data-lucide="sparkles"></i></div><h4>스킨케어 세럼</h4><p>피부 고민별<br>성분 맞춤</p></div>
   </div>
 </div>
 </div>
@@ -456,13 +504,27 @@ footer strong{font-family:'Playfair Display',serif;color:var(--coral);}
       <h2 class="dp" id="resT">당신에게 딱 맞는<br>제품을 찾았어요!</h2>
       <p id="resS">답변을 분석해 수백 개 상품 중 TOP 3를 선별했어요.</p>
     </div>
+    <div class="ai-limit-bar" id="aiLimitBar">
+      <div class="limit-info">
+        <i data-lucide="sparkles"></i>
+        <span>오늘 AI 분석 <strong id="aiUsedTxt">0 / 3</strong>회 사용</span>
+      </div>
+      <div class="limit-dots">
+        <div class="ldot" id="ld1"></div>
+        <div class="ldot" id="ld2"></div>
+        <div class="ldot" id="ld3"></div>
+      </div>
+    </div>
     <div class="api-box" id="apiBox">
-      <h4>🔑 Claude AI 연동 (선택)</h4>
-      <p>API 키를 입력하면 실제 AI가 맞춤 분석을 해드려요. 이 기기에만 저장됩니다.</p>
+      <h4 style="display:flex;align-items:center;gap:6px"><i data-lucide="key" style="width:14px;height:14px;color:var(--rose)"></i> Claude AI 연동</h4>
+      <p>API 키를 입력하면 내 답변 기반 실제 AI 맞춤 분석을 받을 수 있어요.<br>키는 이 기기 로컬에만 저장되며 외부로 전송되지 않아요.</p>
       <div class="api-row">
         <input type="password" class="api-in" id="apiIn" placeholder="sk-ant-api03-...">
         <button class="btn-sv" onclick="saveKey()">저장</button>
       </div>
+      <p style="font-size:11px;color:var(--ink-light,#7A6878);margin-top:8px;">
+        💡 API 키 없이도 DB 기반 추천은 언제나 이용 가능해요.
+      </p>
     </div>
     <div class="ai-box" id="aiBox"></div>
     <div class="p-cards" id="pCards"></div>
@@ -470,6 +532,11 @@ footer strong{font-family:'Playfair Display',serif;color:var(--coral);}
       <h3 class="dp">더 좁혀볼까요?</h3>
       <p>추가 조건으로 더 정확한 제품을 찾아드려요.</p>
       <div class="d-btns" id="dBtns"></div>
+    </div>
+    <div class="ai-policy-box" id="aiPolicyNote" style="background:var(--slate,#F4EEF2);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:20px;font-size:12px;color:var(--ink-mid,#4A3848);line-height:1.7;">
+      <strong style="color:var(--rose);display:block;margin-bottom:4px">💡 AI 분석 이용 안내</strong>
+      DB 기반 추천은 <strong>무제한 무료</strong>로 이용할 수 있어요.<br>
+      AI 맞춤 분석(심화)은 하루 <strong>3회</strong> 제공돼요. 매일 자정에 초기화됩니다.
     </div>
     <div class="rst-row"><button class="btn-rst" onclick="restart()"><i data-lucide="search"></i>다른 상품 찾기</button></div>
   </div>
@@ -989,10 +1056,30 @@ function buildQs(catKey){
 let S={kw:'',cat:'mascara',mode:'',qs:[],ans:{},qi:-1,hist:[],apiKey:localStorage.getItem('pm_k')||''};
 
 // ══ NAV ══
-function showSc(n){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(n).classList.add('active');window.scrollTo(0,0);lucide.createIcons();}
+function showSc(n){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(n).classList.add('active');
+  window.scrollTo(0,0);
+  lucide.createIcons();
+  // 플로팅 버튼: 랜딩 화면일 때만 활성
+  const fc=document.getElementById('floatCta');
+  if(fc){
+    if(n==='landing'){
+      // 스크롤 이벤트가 처리하므로 그냥 유지
+    } else {
+      fc.classList.remove('show');
+    }
+  }
+}
 function goHome(){document.getElementById('heroIn').value='';showSc('landing');}
 function focusSearch(){document.getElementById('heroIn').focus();}
 function setQ(t){document.getElementById('heroIn').value=t;go('heroIn');}
+// 카테고리 카드 직접 진입 (키워드 없이 카테고리 키로 바로)
+function catGo(catKey){
+  S.cat=catKey; S.kw=DB[catKey].name;
+  S.qs=buildQs(catKey);S.ans={};S.mode='';S.qi=-1;S.hist=[];
+  renderMode();showSc('interview');
+}
 function go(id){const v=document.getElementById(id).value.trim();if(!v)return;S.kw=v;launch();}
 function launch(){S.cat=detectCat(S.kw);S.qs=buildQs(S.cat);S.ans={};S.mode='';S.qi=-1;S.hist=[];renderMode();showSc('interview');}
 function restart(){showSc('landing');}
@@ -1096,29 +1183,85 @@ function buildRes(){
   const cat=DB[S.cat];
   document.getElementById('resT').innerHTML=`당신에게 딱 맞는<br>${cat.name}를 찾았어요!`;
   document.getElementById('resS').textContent=`${S.mode==='quick'?'2가지':'5가지'} 답변을 분석해 TOP 3를 선별했어요.`;
-  if(S.apiKey){document.getElementById('apiBox').style.display='none';callAI();}
+  // AI 제한 UI 갱신
+  updateAILimitUI();
+  lucide.createIcons();
+  if(S.apiKey){
+    if(canUseAI()){
+      document.getElementById('apiBox').style.display='none';
+      callAI();
+    } else {
+      document.getElementById('apiBox').style.display='none';
+      const b=document.getElementById('aiBox');
+      b.classList.add('on');
+      b.innerHTML='<strong style="color:var(--rose)">⚠️ 오늘 AI 분석 3회를 모두 사용했어요.</strong><br>내일 다시 이용하거나 아래 추천 카드를 확인해주세요.';
+    }
+  }
   renderCards();renderDeep();
+}
+
+function scoreProduct(p, answers){
+  // 답변 기반 제품 적합도 점수 (0~10)
+  let score = p.sr; // 기본 별점
+  const pain=answers.pain||'';
+  const priority=answers.priority||'';
+  const type=answers.type||'';
+  const situation=answers.situation||'';
+  // 불편 경험 회피 점수 (불편 키워드가 장점에 있으면 +2)
+  const painKeyMap={clump:'뭉침없음',droop:'지속',water:'워터프루프',powder:'가루날림 없음',smear:'번짐없음',hard:'사용 편함',fade:'지속',wing:'날개',whitecast:'백탁없음',greasy:'산뜻',protection:'차단력',lasting:'지속',heavy:'가벼운',collapse:'지속',color:'발색',dry:'보습',transfer:'묻어남없음',aging:'탄력',dull:'밝은',trouble:'진정'};
+  if(painKeyMap[pain] && p.g.some(g=>g.includes(painKeyMap[pain])))score+=2;
+  // 우선순위 매칭
+  const prioKeyMap={long:'롱래시',volume:'볼륨',lasting:'지속',natural:'자연',nowhite:'백탁',moisture:'보습',toneup:'톤업',cover:'커버',light:'가벼운',waterproof:'워터프루프',dark:'발색',smoky:'스모키',color:'발색',ingredient:'성분',value:'가성비',rich:'보습'};
+  if(prioKeyMap[priority] && p.g.some(g=>g.includes(prioKeyMap[priority])))score+=2;
+  // 상황 매칭 (active → 워터프루프 우선)
+  if(situation==='active' && p.g.some(g=>g.includes('워터프루프')||g.includes('지속')))score+=1;
+  if(situation==='special' && p.sr>=5)score+=0.5;
+  return score;
 }
 
 function renderCards(){
   const cat=DB[S.cat];const b=S.ans.budget||'mid';
-  let pool=[...(cat.prod[b]||cat.prod['mid']||[])];
-  if(pool.length<3){const f=(cat.prod['mid']||[]).filter(p=>!pool.find(s=>s.n===p.n));pool=[...pool,...f];}
-  if(pool.length<3){const f=(cat.prod['high']||[]).filter(p=>!pool.find(s=>s.n===p.n));pool=[...pool,...f];}
+  // 예산 우선 + 인접 예산 보충
+  const order=['low','mid','high','luxury'];
+  const bIdx=order.indexOf(b);
+  let pool=[];
+  // 선택 예산 먼저
+  pool=[...(cat.prod[b]||[])];
+  // 부족하면 상위/하위 예산에서 보충
+  for(let d=1;d<=3&&pool.length<4;d++){
+    const lo=order[bIdx-d],hi=order[bIdx+d];
+    if(hi&&cat.prod[hi])pool=[...pool,...cat.prod[hi].filter(p=>!pool.find(s=>s.n===p.n))];
+    if(lo&&cat.prod[lo])pool=[...pool,...cat.prod[lo].filter(p=>!pool.find(s=>s.n===p.n))];
+  }
+  // 스코어링 정렬
+  pool=pool.map(p=>({...p,_score:scoreProduct(p,S.ans)})).sort((a,b)=>b._score-a._score);
   const ps=pool.slice(0,3);
-  const rk=['r1','r2','r3'];const rl=['🥇 1위 추천','🥈 2위','🥉 3위'];
+  if(!ps.length){document.getElementById('pCards').innerHTML='<p style="text-align:center;color:var(--ink-light);padding:32px">추천 결과를 불러오는 중이에요...</p>';return;}
+  const rk=['r1','r2','r3'];const rl=['🥇 1위 추천','🥈 2위 추천','🥉 3위 추천'];
+  // 답변 기반 맞춤 이유 생성
+  const budgetTxt={low:'5천원 이하 예산',mid:'1~2만원대',high:'3~5만원대',luxury:'프리미엄'};
+  const bLabel=budgetTxt[b]||b;
   document.getElementById('pCards').innerHTML=ps.map((p,i)=>`
     <div class="p-card ${rk[i]} fu" style="animation-delay:${i*.12}s">
       <div class="rank-pill">${rl[i]}</div>
       <div class="p-top">
-        <div><div class="p-name">${p.n}</div><div class="p-meta"><span class="store">${p.st}</span><span class="stars">${'★'.repeat(p.sr)}${'☆'.repeat(5-p.sr)}</span></div></div>
+        <div>
+          <div class="p-name">${p.n}</div>
+          <div class="p-meta"><span class="store">${p.st}</span><span class="stars">${'★'.repeat(p.sr)}${'☆'.repeat(5-p.sr)}</span></div>
+        </div>
         <div class="price">${p.pr}</div>
       </div>
-      <div class="rsn-box"><div class="rsn-lbl">💡 추천 이유</div><div class="rsn-txt">${p.rsn}</div></div>
-      <div class="tags">${p.g.map(g=>`<span class="tag tg">✅ ${g}</span>`).join('')}${p.w.map(w=>`<span class="tag tw">⚠️ ${w}</span>`).join('')}</div>
+      <div class="rsn-box">
+        <div class="rsn-lbl">💡 ${bLabel} 맞춤 추천 이유</div>
+        <div class="rsn-txt">${p.rsn}</div>
+      </div>
+      <div class="tags">
+        ${p.g.map(g=>`<span class="tag tg">✅ ${g}</span>`).join('')}
+        ${p.w.map(w=>`<span class="tag tw">⚠️ ${w}</span>`).join('')}
+      </div>
       <div class="p-acts">
-        <button class="btn-buy"><i data-lucide="external-link"></i>구매하러 가기</button>
-        <button class="btn-more"><i data-lucide="message-circle"></i>리뷰 더보기</button>
+        <button class="btn-buy" onclick="alert('구매 링크는 GitHub Pages 배포 후 연동됩니다!')"><i data-lucide="external-link"></i>구매하러 가기</button>
+        <button class="btn-more" onclick="askDeep('${p.n} 상세 정보 알려줘')"><i data-lucide="message-circle"></i>AI에게 더 물어보기</button>
       </div>
     </div>`).join('');
   lucide.createIcons();
@@ -1132,27 +1275,93 @@ function renderDeep(){
 
 function askDeep(q){
   const b=document.getElementById('aiBox');b.classList.add('on');
-  b.innerHTML=`<span style="color:var(--gray)">"${q}" 분석 중...</span>`;
-  if(S.apiKey)callAIQ(q);
-  else setTimeout(()=>{b.innerHTML=`<strong>💡 "${q}"</strong><br><br>API 키를 설정하면 실제 AI가 맞춤 답변을 드려요!`;},900);
+  b.scrollIntoView({behavior:'smooth',block:'center'});
+  if(S.apiKey){
+    b.innerHTML=`<span style="color:var(--gray)">"${q}" 분석 중...</span>`;
+    callAIQ(q);
+  } else {
+    b.innerHTML=`<strong>💡 "${q}"</strong><br><br>
+    <span style="font-size:13px;color:var(--ink-mid,#4A3848)">
+    API 키를 설정하면 실제 AI가 이 질문에 맞춤 답변을 드려요.<br>
+    아래 'Claude AI 연동' 박스에 키를 입력해주세요.
+    </span>`;
+    // API 박스 표시
+    const apiBox=document.getElementById('apiBox');
+    if(apiBox)apiBox.style.display='block';
+  }
 }
 
 // ══ API ══
-function saveKey(){const k=document.getElementById('apiIn').value.trim();if(!k)return;S.apiKey=k;localStorage.setItem('pm_k',k);document.getElementById('apiBox').style.display='none';callAI();}
+function saveKey(){
+  const k=document.getElementById('apiIn').value.trim();if(!k)return;
+  S.apiKey=k;localStorage.setItem('pm_k',k);
+  document.getElementById('apiBox').style.display='none';
+  updateAILimitUI();
+  if(canUseAI()){callAI();}
+  else{
+    const b=document.getElementById('aiBox');b.classList.add('on');
+    b.innerHTML='<strong style="color:var(--rose)">⚠️ 오늘 AI 분석 3회를 모두 사용했어요.</strong><br>내일 다시 이용하거나 아래 추천 카드를 확인해주세요.';
+  }
+}
 
 async function callAI(){
-  const b=document.getElementById('aiBox');b.classList.add('on');b.innerHTML='<span style="color:var(--gray)">🤖 AI가 맞춤 분석 중이에요...</span>';
+  const b=document.getElementById('aiBox');
+  // 횟수 체크
+  if(!canUseAI()){
+    b.classList.add('on');
+    b.innerHTML=`<strong style="color:var(--rose)">⚠️ 오늘 AI 분석 3회를 모두 사용했어요.</strong><br><br>내일 다시 이용하거나, DB 기반 추천 결과를 활용해 주세요! 아래 상품 카드는 계속 확인하실 수 있어요.`;
+    return;
+  }
+  b.classList.add('on');
+  b.innerHTML='<span style="color:var(--gray)">🤖 AI가 맞춤 분석 중이에요...</span>';
   const a=S.ans;const cat=DB[S.cat];
-  const prompt=`당신은 뷰티 전문 쇼핑 큐레이터 PickMe.입니다. 친근하고 세련된 큐레이터 톤으로 답해주세요.\n\n찾는 상품: ${cat.name}(${S.kw})\n예산: ${a.budget==='low'?'5천원 이하':a.budget==='mid'?'1~2만원':a.budget==='high'?'3~5만원':'5만원 이상'}\n상황: ${a.situation||'미입력'}\n불편했던 점: ${a.pain||'미입력'}\n중요 기준: ${a.priority||'미입력'}\n\n이 사용자에게 맞는 ${cat.name} 선택 팁을 3~4문장으로 친근하게 조언해주세요.`;
-  try{const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:600,messages:[{role:'user',content:prompt}]})});const d=await r.json();b.innerHTML=`<strong>🤖 AI 맞춤 분석</strong><br><br>${(d.content?.[0]?.text||'').replace(/\n/g,'<br>')}`;
-  }catch(e){b.innerHTML='<span style="color:var(--gray)">AI 분석 중 오류가 발생했어요.</span>';}
+  // 답변 상세화
+  const budgetTxt={low:'5천원 이하',mid:'1~2만원',high:'3~5만원',luxury:'5만원 이상'};
+  const painMap={clump:'뭉침·번짐',droop:'금방 처짐',water:'워터프루프 약함',powder:'가루날림',smear:'번짐·묻어남',hard:'시술 어려움',fade:'금방 지워짐',wing:'날개 표현 어려움',whitecast:'백탁',greasy:'번들거림',protection:'차단력 부족',lasting:'지속력 약함',heavy:'떡지고 무거움',collapse:'오후에 무너짐',color:'색상 안 맞음',dry:'건조하고 당김',transfer:'묻어남',aging:'탄력저하',dull:'칙칙함',trouble:'트러블'};
+  const priorityMap={long:'롱래시',volume:'볼륨',lasting:'지속력',natural:'자연스러움',nowhite:'백탁없음',moisture:'보습',toneup:'톤업',cover:'커버력',light:'가벼운 텍스처',waterproof:'워터프루프',dark:'선명한 발색',smoky:'스모키',lasting2:'지속력',color:'발색',ingredient:'성분',value:'가성비',rich:'고보습',nopain:'자극없음'};
+  const prompt=`당신은 뷰티 전문 쇼핑 큐레이터 PickMe.입니다. 친근하고 세련된 전문가 큐레이터 톤으로 답해주세요.
+
+찾는 상품: ${cat.name} ("${S.kw}")
+예산대: ${budgetTxt[a.budget]||a.budget}
+사용 상황: ${a.situation||'미입력'}
+이전에 불편했던 점: ${painMap[a.pain]||a.pain||'미입력'}
+카테고리 맞춤 타입: ${a.type||'미입력'}
+가장 중요한 기준: ${priorityMap[a.priority]||a.priority||'미입력'}
+
+위 정보를 바탕으로 이 사용자에게 딱 맞는 ${cat.name} 선택 핵심 팁을 3~4문장으로 친근하게 조언해주세요. 
+구체적인 성분, 브랜드 특성, 피해야 할 점을 포함해서 실질적으로 도움이 되게 해주세요.`;
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:600,messages:[{role:'user',content:prompt}]})});
+    const d=await r.json();
+    const cnt=incAICount();
+    b.innerHTML=`<strong>🤖 AI 맞춤 분석</strong> <span style="font-size:11px;color:var(--ink-light,#7A6878);">(오늘 ${cnt}/3회)</span><br><br>${(d.content?.[0]?.text||'').replace(/\n/g,'<br>')}`;
+  }catch(e){
+    b.innerHTML='<span style="color:var(--gray)">AI 분석 중 오류가 발생했어요. API 키를 확인해주세요.</span>';
+  }
 }
 
 async function callAIQ(q){
   const b=document.getElementById('aiBox');
-  const prompt=`뷰티 큐레이터 PickMe.입니다. 친근하고 간결하게 답해주세요.\n사용자: ${DB[S.cat].name} 찾는 중 / 예산 ${S.ans.budget} / 기준 ${S.ans.priority}\n추가 질문: "${q}"\n3~4문장으로 핵심만 답해주세요.`;
-  try{const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:400,messages:[{role:'user',content:prompt}]})});const d=await r.json();b.innerHTML=`<strong>💡 "${q}"</strong><br><br>${(d.content?.[0]?.text||'').replace(/\n/g,'<br>')}`;
-  }catch(e){b.innerHTML='<span style="color:var(--gray)">오류가 발생했어요.</span>';}
+  if(!canUseAI()){
+    b.classList.add('on');
+    b.innerHTML=`<strong style="color:var(--rose)">⚠️ 오늘 AI 분석 3회를 모두 사용했어요.</strong><br>내일 다시 이용해주세요!`;
+    return;
+  }
+  b.classList.add('on');
+  b.innerHTML=`<span style="color:var(--gray)">"${q}" 분석 중...</span>`;
+  const cat=DB[S.cat];
+  const prompt=`뷰티 큐레이터 PickMe.입니다. 친근하고 간결하게 답해주세요.
+사용자 정보: ${cat.name} 탐색 중 / 예산 ${S.ans.budget} / 우선순위 ${S.ans.priority} / 카테고리 타입 ${S.ans.type}
+추가 질문: "${q}"
+위 맥락을 고려해 3~4문장으로 핵심만 실질적으로 답해주세요.`;
+  try{
+    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:400,messages:[{role:'user',content:prompt}]})});
+    const d=await r.json();
+    const cnt=incAICount();
+    b.innerHTML=`<strong>💡 "${q}"</strong> <span style="font-size:11px;color:var(--ink-light,#7A6878)">(오늘 ${cnt}/3회)</span><br><br>${(d.content?.[0]?.text||'').replace(/\n/g,'<br>')}`;
+  }catch(e){
+    b.innerHTML='<span style="color:var(--gray)">오류가 발생했어요.</span>';
+  }
 }
 
 // ══ FEEDBACK ══
@@ -1169,7 +1378,52 @@ document.addEventListener('DOMContentLoaded',()=>{
   lucide.createIcons();
   const k=localStorage.getItem('pm_k');
   if(k){S.apiKey=k;const el=document.getElementById('apiIn');if(el)el.value=k;}
+  // 플로팅 CTA
+  window.addEventListener('scroll',()=>{
+    const fc=document.getElementById('floatCta');
+    if(!fc)return;
+    const landing=document.getElementById('landing');
+    if(landing && landing.classList.contains('active')){
+      fc.classList.toggle('show', window.scrollY>280);
+    } else {
+      fc.classList.remove('show');
+    }
+  });
 });
+
+// 플로팅 → 검색창 포커스
+function scrollToSearch(){
+  const el=document.getElementById('heroIn');
+  if(el){window.scrollTo({top:0,behavior:'smooth'});setTimeout(()=>el.focus(),400);}
+}
+
+// ══ AI 하루 3회 제한 ══
+function getTodayKey(){return 'pm_ai_'+new Date().toISOString().slice(0,10);}
+function getAICount(){return parseInt(localStorage.getItem(getTodayKey())||'0',10);}
+function incAICount(){
+  const k=getTodayKey(),c=getAICount()+1;
+  localStorage.setItem(k,c);
+  updateAILimitUI(c);
+  return c;
+}
+function canUseAI(){return getAICount()<3;}
+
+function updateAILimitUI(count){
+  const c=count||getAICount();
+  const bar=document.getElementById('aiLimitBar');
+  const txt=document.getElementById('aiUsedTxt');
+  if(txt)txt.textContent=`${c} / 3`;
+  ['ld1','ld2','ld3'].forEach((id,i)=>{
+    const el=document.getElementById(id);
+    if(el)el.classList.toggle('used',i<c);
+  });
+  if(bar){
+    if(c>=3){
+      bar.style.background='#FFF0F0';
+      bar.style.borderColor='#FFCDD2';
+    }
+  }
+}
 </script>
 </body>
 </html>
