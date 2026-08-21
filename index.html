@@ -1,1429 +1,1426 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>PickMe. — 나보다 나를 더 잘 아는 쇼핑</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.383.0/umd/lucide.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFFDFB">
+<meta name="description" content="PickMe. 나도 모르는 나의 구매 기준을 찾아주는 쇼핑 큐레이터">
+<title>PickMe.</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
-:root {
-  /* ── Deep Rose 시스템 (20-40대 여성 뷰티 트렌드 2025-26) ── */
-  --rose:#C03060;        /* 메인 포인트: 딥 로즈 */
-  --rose-h:#A82050;      /* hover */
-  --rose-s:#E04080;      /* 소프트 로즈 */
-  --rose-pale:#F2D5DF;   /* 연한 핑크 배경 */
-  --rose-light:#FDF0F4;  /* 아주 연한 로즈 */
-  --cream:#FDFAF8;       /* 메인 배경: 따뜻한 크림 */
-  --ink:#1C1620;         /* 진한 텍스트 */
-  --ink-mid:#4A3848;     /* 중간 텍스트 */
-  --ink-light:#7A6878;   /* 연한 텍스트 */
-  --mauve:#A08090;       /* 뮤트 포인트 */
-  --mauve-gold:#B09070;  /* 골드 포인트 */
-  --slate:#F4EEF2;       /* 연한 슬레이트 배경 */
-  --line:#E8DDE4;        /* 라인/보더 */
-  --white:#FFFFFF;
-  /* legacy aliases (JS 호환용) */
-  --coral:var(--rose); --coral-h:var(--rose-h);
-  --peach:var(--rose-pale); --peach-l:var(--rose-light);
-  --warm:var(--cream); --mocha:var(--ink); --mocha-m:var(--ink-mid);
-  --mocha-l:var(--ink-light); --gold:var(--mauve-gold);
-  --gray:var(--mauve); --gray-l:var(--slate);
+:root{
+  --bg:#FFFDFB; --card:#FFFFFF; --line:#EFE7E0; --line2:#E4D8CE;
+  --ink:#2B2320; --ink2:#6B5D55; --ink3:#9C8E86;
+  --accent:#D9694A; --accent-soft:#FBEDE8; --accent-line:#F0C9BC;
+  --shadow:0 1px 2px rgba(43,35,32,.04), 0 8px 24px rgba(43,35,32,.06);
+  --nav:56px;
 }
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'Noto Sans KR',sans-serif;background:var(--warm);color:var(--mocha);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
-.screen{display:none;min-height:100vh;}.screen.active{display:block;}
-.dp{font-family:'Playfair Display',Georgia,serif;letter-spacing:-.03em;}
-
-/* NAV */
-nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,5vw,52px);height:60px;background:rgba(253,250,248,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);}
-.logo{font-family:'Playfair Display',serif;font-size:clamp(17px,3vw,21px);font-weight:700;color:var(--mocha);cursor:pointer;letter-spacing:-.04em;}
-.logo em{color:var(--coral);font-style:normal;}
-.nav-r{display:flex;align-items:center;gap:10px;}
-.btn-g{background:none;border:1.5px solid var(--gray-l);color:var(--mocha-l);font-size:13px;font-weight:500;padding:7px 16px;border-radius:100px;cursor:pointer;font-family:inherit;transition:all .2s;}
-.btn-g:hover{border-color:var(--rose);color:var(--rose);}
-.btn-p{background:var(--coral);color:#fff;border:none;font-size:13px;font-weight:700;padding:8px 20px;border-radius:100px;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;align-items:center;gap:5px;}
-.btn-p:hover{background:var(--coral-h);transform:translateY(-1px);}
-.btn-p i,.btn-g i{width:13px;height:13px;}
-
-/* HERO */
-#hero{min-height:calc(100vh - 60px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:clamp(36px,8vh,90px) clamp(16px,5vw,48px);text-align:center;position:relative;overflow:hidden;}
-.h-blob{position:absolute;inset:0;z-index:0;background:radial-gradient(ellipse 70% 55% at 50% 40%,rgba(242,213,223,.55) 0%,transparent 70%),radial-gradient(ellipse 35% 35% at 20% 80%,rgba(192,48,96,.06) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at 80% 15%,rgba(176,144,128,.08) 0%,transparent 60%);pointer-events:none;}
-.h-inner{position:relative;z-index:1;max-width:660px;}
-.h-chip{display:inline-flex;align-items:center;gap:5px;background:var(--white);border:1px solid var(--peach);color:var(--coral);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 13px;border-radius:100px;margin-bottom:clamp(18px,4vh,32px);box-shadow:0 2px 12px rgba(232,103,74,.1);}
-.h-chip i{width:11px;height:11px;}
-.h-title{font-size:clamp(60px,14vw,112px);font-weight:700;color:var(--mocha);margin-bottom:clamp(6px,1.5vh,14px);}
-.h-title em{color:var(--coral);font-style:normal;}
-.h-sub{font-size:clamp(14px,3vw,21px);font-weight:300;color:var(--mocha-l);margin-bottom:clamp(28px,6vh,52px);letter-spacing:-.01em;}
-.s-box{display:flex;align-items:center;background:var(--white);border:2px solid var(--line);border-radius:100px;padding:5px 5px 5px 20px;max-width:500px;width:100%;margin:0 auto clamp(14px,3vh,22px);box-shadow:0 4px 20px rgba(192,48,96,.08);transition:border-color .2s,box-shadow .2s;}
-.s-box:focus-within{border-color:var(--rose);box-shadow:0 4px 28px rgba(192,48,96,.18);}
-.s-box input{flex:1;border:none;outline:none;background:transparent;font-family:inherit;font-size:clamp(13px,2.5vw,15px);color:var(--mocha);min-width:0;}
-.s-box input::placeholder{color:var(--gray);}
-.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:7px;margin-bottom:clamp(24px,5vh,40px);}
-.pill{display:inline-flex;align-items:center;gap:4px;background:var(--gray-l);color:var(--mocha-l);font-size:clamp(11px,2vw,12px);font-weight:500;padding:5px 12px;border-radius:100px;cursor:pointer;border:1px solid transparent;transition:all .18s;white-space:nowrap;}
-.pill:hover{background:var(--rose-pale,#F2D5DF);color:var(--rose);border-color:var(--rose);}
-.pill i{width:11px;height:11px;}
-.h-slogan{font-family:'Playfair Display',serif;font-size:clamp(10px,2vw,12px);color:var(--mauve-gold,#B09070);letter-spacing:.2em;text-transform:uppercase;}
-
-/* SECTIONS */
-.sec{padding:clamp(56px,10vh,110px) clamp(16px,5vw,52px);max-width:1140px;margin:0 auto;}
-.sec-full{padding:clamp(56px,10vh,110px) clamp(16px,5vw,52px);}
-.sec-full .inner{max-width:1140px;margin:0 auto;}
-.lbl{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);margin-bottom:12px;}
-.h2{font-size:clamp(26px,5vw,50px);font-weight:700;line-height:1.1;letter-spacing:-.03em;margin-bottom:clamp(28px,6vh,56px);color:var(--ink,#1C1620);}
-
-/* PROBLEM */
-.pb-bg{background:var(--white);}
-.pb-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:clamp(10px,2vw,18px);margin-bottom:clamp(24px,5vh,44px);}
-.pb-card{border:1px solid var(--gray-l);border-radius:20px;padding:clamp(18px,3vw,28px);transition:all .25s;}
-.pb-card:hover{border-color:var(--rose);box-shadow:0 8px 28px rgba(192,48,96,.08);transform:translateY(-3px);}
-.pb-icon{width:38px;height:38px;background:var(--rose-light,#FDF0F4);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--coral);margin-bottom:12px;}
-.pb-icon i{width:17px;height:17px;color:var(--rose);}
-.pb-card p{font-size:clamp(12px,2.5vw,14px);color:var(--ink-mid,#4A3848);line-height:1.7;font-weight:400;}
-.resolve{background:linear-gradient(135deg,var(--rose) 0%,#861840 100%);border-radius:24px;padding:clamp(28px,6vw,52px);text-align:center;color:#fff;}
-.resolve h3{font-size:clamp(18px,4vw,28px);font-weight:700;margin-bottom:8px;font-family:'Playfair Display',serif;}
-.resolve p{font-size:clamp(12px,2.5vw,15px);opacity:.85;line-height:1.7;}
-
-/* CATEGORIES */
-.cat-bg{background:linear-gradient(160deg,var(--rose-light,#FDF0F4) 0%,var(--slate,#F4EEF2) 100%);}
-.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:clamp(8px,2vw,14px);}
-.cat-card{background:var(--white);border:1.5px solid var(--line);border-radius:20px;padding:clamp(18px,3vw,26px) clamp(14px,2.5vw,18px);text-align:center;cursor:pointer;transition:all .22s;}
-.cat-card:hover{border-color:var(--rose);box-shadow:0 8px 26px rgba(192,48,96,.1);transform:translateY(-3px);}
-.cat-ico{width:48px;height:48px;background:var(--rose-light,#FDF0F4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;color:var(--coral);}
-.cat-ico i{width:20px;height:20px;color:var(--rose);}
-.cat-card h4{font-size:clamp(12px,2.5vw,14px);font-weight:700;color:var(--mocha);margin-bottom:3px;}
-.cat-card p{font-size:clamp(10px,2vw,11px);color:var(--ink-mid,#4A3848);line-height:1.5;}
-.cat-badge{display:inline-block;margin-top:7px;background:var(--rose-pale,#F2D5DF);color:var(--rose);font-size:9px;font-weight:700;letter-spacing:.08em;padding:3px 9px;border-radius:100px;}
-
-/* HOW */
-.how-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:clamp(20px,4vw,36px);}
-.snum{width:42px;height:42px;background:linear-gradient(135deg,var(--rose) 0%,#861840 100%);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:16px;}
-.how-step h4{font-size:clamp(13px,2.5vw,15px);font-weight:700;color:var(--mocha);margin-bottom:7px;}
-.how-step p{font-size:clamp(11px,2vw,13px);color:var(--ink-mid,#4A3848);line-height:1.7;}
-
-/* FEATURES */
-.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(10px,2vw,18px);}
-.feat-card{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:clamp(22px,4vw,32px);}
-.feat-ico{width:42px;height:42px;background:var(--rose-pale,#F2D5DF);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--coral);margin-bottom:14px;}
-.feat-ico i{width:18px;height:18px;color:var(--rose);}
-.feat-card h4{font-size:clamp(13px,2.5vw,15px);font-weight:700;color:var(--mocha);margin-bottom:7px;}
-.feat-card p{font-size:clamp(11px,2vw,13px);color:var(--ink-mid,#4A3848);line-height:1.7;}
-
-/* REVIEWS */
-.rv-bg{background:var(--white);}
-.rv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:clamp(10px,2vw,18px);}
-.rv-card{background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:clamp(18px,3vw,28px);}
-.rv-q{font-family:'Playfair Display',serif;font-size:36px;color:var(--rose-pale);line-height:1;margin-bottom:6px;}
-.rv-stars{color:var(--rose);font-size:12px;letter-spacing:2px;margin-bottom:8px;}
-.rv-txt{font-size:clamp(12px,2.5vw,14px);color:var(--ink,#1C1620);line-height:1.8;margin-bottom:14px;font-weight:400;}
-.rv-auth{font-size:11px;color:var(--ink-light,#7A6878);font-weight:600;letter-spacing:.02em;}
-
-/* FINAL CTA */
-.fin-bg{background:linear-gradient(160deg,#1C1620 0%,#2E1830 100%);}
-.fin-bg .lbl{color:rgba(242,213,223,.7);}
-.fin-bg .h2{color:#fff;}
-.fin-bg .inner>p{font-size:clamp(13px,2.5vw,16px);color:rgba(255,255,255,.6);margin-bottom:clamp(24px,5vh,44px);}
-.fin-s{display:flex;align-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:5px 5px 5px 20px;max-width:460px;width:100%;margin:0 auto clamp(12px,3vh,18px);}
-.fin-s input{flex:1;background:transparent;border:none;outline:none;color:#fff;font-family:inherit;font-size:clamp(12px,2.5vw,14px);min-width:0;}
-.fin-s input::placeholder{color:rgba(255,255,255,.3);}
-.fin-slogan{font-family:'Playfair Display',serif;font-size:clamp(9px,2vw,11px);color:rgba(242,213,223,.6);letter-spacing:.2em;text-transform:uppercase;text-align:center;margin-top:clamp(14px,3vh,22px);}
-footer{background:#110C09;color:rgba(255,255,255,.28);text-align:center;padding:clamp(18px,4vh,28px) 20px;font-size:11px;line-height:2.2;}
-footer strong{font-family:'Playfair Display',serif;color:var(--coral);}
-
-/* INTERVIEW */
-#interview{background:var(--warm);display:flex;flex-direction:column;}
-.iv-hd{display:flex;align-items:center;justify-content:space-between;padding:0 clamp(14px,4vw,44px);height:60px;background:var(--white);border-bottom:1px solid var(--line);gap:12px;}
-.iv-prog{flex:1;max-width:240px;}
-.iv-pl{font-size:10px;color:var(--ink-light,#7A6878);margin-bottom:4px;display:flex;justify-content:space-between;}
-.pb{height:3px;background:var(--gray-l);border-radius:100px;overflow:hidden;}
-.pf{height:100%;background:var(--coral);border-radius:100px;transition:width .4s ease;}
-.mode-tag{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--rose);background:var(--rose-light,#FDF0F4);padding:4px 11px;border-radius:100px;white-space:nowrap;}
-.btn-bk{display:flex;align-items:center;gap:3px;background:none;border:1.5px solid var(--gray-l);color:var(--mocha-l);font-size:11px;font-weight:500;padding:6px 12px;border-radius:100px;cursor:pointer;font-family:inherit;transition:all .2s;}
-.btn-bk:hover{border-color:var(--rose);color:var(--rose);}
-.btn-bk i,.mode-tag i{width:12px;height:12px;}
-.iv-body{flex:1;display:flex;align-items:center;justify-content:center;padding:clamp(28px,6vh,64px) clamp(14px,4vw,28px);}
-.q-card{max-width:580px;width:100%;text-align:center;}
-.q-chip{display:inline-block;background:var(--rose-pale,#F2D5DF);color:var(--rose);font-size:10px;font-weight:700;letter-spacing:.1em;padding:4px 13px;border-radius:100px;margin-bottom:clamp(14px,3vh,26px);}
-.q-title{font-size:clamp(19px,4vw,30px);font-weight:700;color:var(--mocha);line-height:1.25;letter-spacing:-.02em;margin-bottom:7px;}
-.q-hint{font-size:clamp(11px,2vw,13px);color:var(--ink-light,#7A6878);margin-bottom:clamp(20px,5vh,40px);line-height:1.6;}
-.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(8px,2vw,12px);margin-bottom:clamp(20px,4vh,32px);}
-.opt{background:var(--white);border:2px solid var(--gray-l);border-radius:14px;padding:clamp(12px,3vw,20px) clamp(10px,2.5vw,16px);cursor:pointer;text-align:left;transition:all .18s;position:relative;font-family:inherit;}
-.opt:hover{border-color:var(--rose);background:var(--rose-light,#FDF0F4);transform:translateY(-2px);box-shadow:0 5px 18px rgba(192,48,96,.1);}
-.opt.sel{border-color:var(--rose);background:var(--rose-pale,#F2D5DF);}
-.opt.sel::after{content:'';position:absolute;top:9px;right:10px;width:16px;height:16px;background:var(--rose) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/11px no-repeat;border-radius:50%;}
-.opt-ico{width:32px;height:32px;background:var(--rose-light,#FDF0F4);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--rose);margin-bottom:8px;}
-.opt-ico i{width:14px;height:14px;}
-.opt-lbl{font-size:clamp(12px,2.5vw,14px);font-weight:700;color:var(--mocha);display:block;margin-bottom:2px;}
-.opt-desc{font-size:clamp(10px,2vw,11px);color:var(--ink-light,#7A6878);display:block;line-height:1.45;}
-.kw-card{background:var(--rose-light,#FDF0F4);border:2px solid var(--rose-pale,#F2D5DF);border-radius:12px;padding:clamp(13px,3vw,18px) clamp(14px,3vw,20px);margin-bottom:clamp(16px,4vh,28px);text-align:left;display:flex;align-items:center;gap:10px;}
-.kw-card i{color:var(--coral);flex-shrink:0;width:18px;height:18px;}
-.kw-card span{font-size:clamp(13px,2.5vw,16px);font-weight:700;color:var(--mocha);}
-.kw-card em{color:var(--coral);font-style:normal;}
-.btn-nx{background:var(--coral);color:#fff;border:none;padding:clamp(12px,2.5vw,15px) clamp(28px,6vw,48px);border-radius:100px;font-family:inherit;font-size:clamp(13px,2.5vw,15px);font-weight:700;cursor:pointer;transition:all .2s;opacity:.32;pointer-events:none;display:inline-flex;align-items:center;gap:7px;}
-.btn-nx.on{opacity:1;pointer-events:all;}
-.btn-nx.on:hover{background:var(--coral-h);transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,103,74,.3);}
-.btn-nx i{width:15px;height:15px;}
-
-/* ANALYZING */
-#analyzing{background:linear-gradient(160deg,#1C1620 0%,#2E1830 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:clamp(28px,6vh,56px) 20px;}
-.an-logo{font-family:'Playfair Display',serif;font-size:clamp(26px,5vw,38px);font-weight:700;color:var(--rose);margin-bottom:clamp(28px,6vh,52px);}
-.an-ring{width:clamp(68px,12vw,90px);height:clamp(68px,12vw,90px);border:3px solid rgba(255,255,255,.07);border-top-color:var(--rose);border-radius:50%;animation:spin .9s linear infinite;margin:0 auto clamp(28px,6vh,48px);}
-@keyframes spin{to{transform:rotate(360deg);}}
-.an-steps{max-width:320px;text-align:left;width:100%;}
-.an-step{display:flex;align-items:center;gap:14px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.05);opacity:.18;transition:opacity .4s;}
-.an-step.on{opacity:1;}
-.an-dot{width:30px;height:30px;flex-shrink:0;border-radius:50%;background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.25);}
-.an-dot i{width:13px;height:13px;}
-.an-step.on .an-dot{background:var(--rose);color:#fff;}
-.an-step p{font-size:clamp(11px,2.5vw,13px);color:rgba(255,255,255,.7);}
-
-/* RESULT */
-#result{background:var(--warm);}
-.res-hd{display:flex;align-items:center;justify-content:space-between;padding:0 clamp(14px,4vw,44px);height:60px;background:var(--white);border-bottom:1px solid var(--line);}
-.res-body{max-width:840px;margin:0 auto;padding:clamp(36px,8vh,72px) clamp(14px,4vw,28px);}
-.res-intro{text-align:center;margin-bottom:clamp(32px,7vh,60px);}
-.res-intro h2{font-size:clamp(22px,5vw,40px);font-weight:700;color:var(--mocha);line-height:1.15;letter-spacing:-.025em;margin-bottom:10px;}
-.res-intro p{font-size:clamp(12px,2.5vw,14px);color:var(--ink-mid,#4A3848);line-height:1.7;}
-.p-cards{display:flex;flex-direction:column;gap:clamp(12px,3vh,20px);margin-bottom:clamp(24px,5vh,44px);}
-.p-card{background:var(--white);border:2px solid var(--gray-l);border-radius:22px;padding:clamp(20px,4vw,36px);position:relative;transition:all .25s;}
-.p-card:hover{box-shadow:0 10px 40px rgba(232,103,74,.08);}
-.p-card.r1{border-color:var(--rose);background:linear-gradient(135deg,#FDFAF8 0%,#FDF0F4 100%);}
-.rank-pill{position:absolute;top:-12px;left:clamp(16px,4vw,28px);font-size:10px;font-weight:700;letter-spacing:.08em;padding:4px 13px;border-radius:100px;white-space:nowrap;}
-.r1 .rank-pill{background:linear-gradient(135deg,var(--rose) 0%,#861840 100%);color:#fff;}
-.r2 .rank-pill{background:var(--ink,#1C1620);color:#fff;}
-.r3 .rank-pill{background:var(--mauve-gold,#B09070);color:#fff;}
-.p-top{display:flex;justify-content:space-between;align-items:flex-start;margin:clamp(7px,2vh,12px) 0 clamp(12px,3vh,20px);gap:10px;flex-wrap:wrap;}
-.p-name{font-size:clamp(15px,3vw,19px);font-weight:700;color:var(--ink,#1C1620);margin-bottom:5px;}
-.p-meta{display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
-.store{font-size:10px;background:var(--slate,#F4EEF2);color:var(--ink-mid,#4A3848);padding:3px 10px;border-radius:100px;}
-.price{font-size:clamp(15px,3vw,19px);font-weight:700;color:var(--rose);}
-.stars{color:var(--gold);font-size:11px;letter-spacing:2px;}
-.rsn-box{background:var(--rose-light,#FDF0F4);border-left:3px solid var(--rose);border-radius:0 10px 10px 0;padding:clamp(10px,2vw,14px) clamp(12px,2.5vw,18px);margin-bottom:clamp(12px,3vh,18px);}
-.rsn-lbl{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--rose);margin-bottom:4px;}
-.rsn-txt{font-size:clamp(11px,2.5vw,13px);color:var(--ink,#1C1620);line-height:1.75;font-weight:400;}
-.tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:clamp(12px,3vh,18px);}
-.tag{font-size:10px;font-weight:600;padding:4px 11px;border-radius:100px;}
-.tg{background:#E8F5E9;color:#1B5E20;font-weight:600;}
-.tw{background:#FFF3E0;color:#BF360C;font-weight:600;}
-.p-acts{display:flex;gap:8px;flex-wrap:wrap;}
-.btn-buy{flex:1;min-width:110px;background:linear-gradient(135deg,var(--rose) 0%,#861840 100%);color:#fff;border:none;padding:clamp(9px,2vw,12px) clamp(14px,3vw,22px);border-radius:100px;font-family:inherit;font-size:clamp(11px,2vw,13px);font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:5px;}
-.btn-buy:hover{background:linear-gradient(135deg,var(--rose-h,#A82050) 0%,#6A1030 100%);transform:translateY(-1px);}
-.btn-buy i{width:13px;height:13px;}
-.btn-more{background:var(--white);color:var(--mocha-l);border:1.5px solid var(--gray-l);padding:clamp(9px,2vw,12px) clamp(12px,2.5vw,18px);border-radius:100px;font-family:inherit;font-size:clamp(11px,2vw,13px);cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:5px;}
-.btn-more:hover{border-color:var(--coral);color:var(--coral);}
-.btn-more i{width:13px;height:13px;}
-.deep-box{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:clamp(20px,4vw,32px);margin-bottom:clamp(20px,5vh,36px);}
-.deep-box h3{font-family:'Playfair Display',serif;font-size:clamp(16px,3.5vw,22px);color:var(--mocha);margin-bottom:5px;}
-.deep-box p{font-size:clamp(11px,2vw,13px);color:var(--ink-mid,#4A3848);margin-bottom:clamp(14px,3vh,22px);}
-.d-btns{display:flex;gap:7px;flex-wrap:wrap;}
-.dbtn{background:var(--gray-l);color:var(--mocha-l);border:1px solid transparent;padding:8px 14px;border-radius:100px;font-family:inherit;font-size:clamp(10px,2vw,12px);font-weight:500;cursor:pointer;transition:all .18s;display:flex;align-items:center;gap:4px;}
-.dbtn:hover{background:var(--rose-pale,#F2D5DF);color:var(--rose);border-color:var(--rose);}
-.dbtn i{width:12px;height:12px;}
-.ai-box{background:var(--rose-light,#FDF0F4);border:1px solid var(--rose-pale,#F2D5DF);border-radius:14px;padding:clamp(14px,3vw,20px) clamp(14px,3vw,22px);margin-bottom:clamp(14px,3vh,22px);font-size:clamp(12px,2.5vw,14px);color:var(--mocha);line-height:1.8;display:none;}
-.ai-box.on{display:block;}
-.ai-box strong{color:var(--rose);}
-.api-box{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:clamp(18px,3.5vw,26px);margin-bottom:clamp(18px,4vh,28px);}
-.api-box h4{font-size:clamp(12px,2.5vw,14px);font-weight:700;color:var(--mocha);margin-bottom:5px;}
-.api-box p{font-size:clamp(10px,2vw,12px);color:var(--ink-mid,#4A3848);margin-bottom:12px;}
-.api-row{display:flex;gap:7px;}
-.api-in{flex:1;min-width:0;border:1.5px solid var(--gray-l);border-radius:100px;padding:8px 16px;font-family:inherit;font-size:clamp(10px,2vw,12px);color:var(--mocha);outline:none;transition:border-color .2s;}
-.api-in:focus{border-color:var(--rose);}
-.btn-sv{background:var(--ink,#1C1620);color:#fff;border:none;padding:8px 16px;border-radius:100px;font-family:inherit;font-size:clamp(10px,2vw,12px);font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;}
-.rst-row{text-align:center;padding:clamp(12px,3vh,20px) 0;}
-.btn-rst{background:transparent;color:var(--ink-light,#7A6878);border:1.5px solid var(--line);padding:10px 24px;border-radius:100px;font-family:inherit;font-size:clamp(11px,2vw,13px);cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:5px;}
-.btn-rst:hover{border-color:var(--rose);color:var(--rose);}
-.btn-rst i{width:13px;height:13px;}
-
-/* FEEDBACK */
-#feedback{background:var(--warm);}
-.fb-body{max-width:500px;margin:0 auto;padding:clamp(36px,8vh,72px) clamp(14px,4vw,28px);text-align:center;}
-.fb-step{display:none;}
-.fb-step.on{display:block;}
-.fb-ico{width:68px;height:68px;border-radius:50%;background:var(--rose-pale,#F2D5DF);color:var(--rose);display:flex;align-items:center;justify-content:center;margin:0 auto clamp(18px,4vh,28px);}
-.fb-ico i{width:28px;height:28px;}
-.fb-title{font-family:'Playfair Display',serif;font-size:clamp(20px,5vw,32px);font-weight:700;color:var(--mocha);line-height:1.2;margin-bottom:9px;}
-.fb-sub{font-size:clamp(12px,2.5vw,14px);color:var(--ink-mid,#4A3848);line-height:1.7;margin-bottom:clamp(24px,5vh,40px);}
-.fb-opts{display:flex;flex-direction:column;gap:9px;margin-bottom:24px;}
-.fb-opt{background:var(--white);border:2px solid var(--line);border-radius:14px;padding:clamp(12px,3vw,16px) clamp(14px,3vw,20px);cursor:pointer;font-family:inherit;font-size:clamp(12px,2.5vw,14px);font-weight:500;color:var(--mocha);text-align:left;transition:all .18s;display:flex;align-items:center;gap:10px;}
-.fb-opt:hover{border-color:var(--rose);background:var(--rose-light,#FDF0F4);}
-.fb-opt.sel{border-color:var(--rose);background:var(--rose-pale,#F2D5DF);}
-.fb-opt i{width:16px;height:16px;color:var(--rose);flex-shrink:0;}
-.fb-ta{width:100%;border:1.5px solid var(--gray-l);border-radius:12px;padding:12px 14px;font-family:inherit;font-size:clamp(12px,2.5vw,13px);color:var(--mocha);resize:none;outline:none;line-height:1.6;transition:border-color .2s;margin-bottom:14px;}
-.fb-ta:focus{border-color:var(--coral);}
-.fb-thx{background:linear-gradient(135deg,var(--rose) 0%,#861840 100%);border-radius:24px;padding:clamp(28px,6vw,48px);color:#fff;text-align:center;}
-.fb-thx h3{font-family:'Playfair Display',serif;font-size:clamp(20px,4vw,28px);margin-bottom:9px;}
-.fb-thx p{font-size:clamp(12px,2.5vw,14px);opacity:.85;line-height:1.7;margin-bottom:22px;}
-
-/* ── 세련됨 강화 ── */
-.feat-card{transition:all .25s;}
-.feat-card:hover{border-color:var(--rose);box-shadow:0 8px 28px rgba(192,48,96,.07);transform:translateY(-2px);}
-.pf{box-shadow:0 0 8px rgba(192,48,96,.3);}
-.btn-p,.btn-buy{letter-spacing:.02em;}
-.api-in:focus,.fb-ta:focus{box-shadow:0 0 0 3px rgba(192,48,96,.1);}
-.opt:active{transform:scale(.98);}
-.btn-p:active,.btn-buy:active{transform:scale(.97);}
-@keyframes badge-pulse{0%,100%{opacity:1;}50%{opacity:.7;}}
-.cat-badge{animation:badge-pulse 2.4s ease infinite;}
-/* Animations */
-.fu{animation:fadeUp .42s ease both;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
-
-/* Landscape */
-@media(max-height:480px) and (orientation:landscape){
-  #hero{min-height:auto;padding:32px 20px;}
-  .h-blob{display:none;}
-  .iv-body{padding:16px;}
-  .opts{grid-template-columns:repeat(2,1fr);}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+html,body{margin:0; padding:0; background:var(--bg);}
+body{
+  font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  color:var(--ink); font-size:16px; line-height:1.62;
+  -webkit-font-smoothing:antialiased; word-break:keep-all;
 }
-/* Small mobile */
-@media(max-width:360px){
-  .opts{grid-template-columns:1fr;}
-  .p-acts{flex-direction:column;}
-  .pills{display:none;}
-}
-@media(max-width:500px){
-  .nav-r .btn-g{display:none;}
-  .api-row{flex-direction:column;}
-  .api-in,.btn-sv{border-radius:10px;}
-}
+button{font-family:inherit; font-size:inherit; color:inherit; background:none; border:0; cursor:pointer;}
+input{font-family:inherit; font-size:inherit; color:inherit;}
+.wrap{max-width:520px; margin:0 auto; padding:0 20px calc(40px + env(safe-area-inset-bottom));}
 
-/* ── 플로팅 CTA ── */
-.float-cta{
-  position:fixed; bottom:24px; right:24px; z-index:300;
-  background:var(--rose); color:#fff;
-  border:none; border-radius:100px;
-  padding:13px 22px; font-family:inherit;
-  font-size:14px; font-weight:700;
-  cursor:pointer; box-shadow:0 6px 24px rgba(192,48,96,.35);
-  display:flex; align-items:center; gap:7px;
-  transform:translateY(80px); opacity:0;
-  transition:all .35s cubic-bezier(.34,1.56,.64,1);
-  pointer-events:none;
-}
-.float-cta.show{transform:translateY(0);opacity:1;pointer-events:all;}
-.float-cta:hover{background:var(--rose-h,#A82050);transform:translateY(-2px) scale(1.02);}
-.float-cta i{width:15px;height:15px;}
-@media(max-width:480px){
-  .float-cta{bottom:16px;right:16px;padding:11px 18px;font-size:13px;}
-}
-
-
-/* ── AI 사용 제한 배너 ── */
-.ai-limit-bar{
+/* 표준 내비게이션 바 */
+.nav{
+  position:sticky; top:0; z-index:40; height:var(--nav);
   display:flex; align-items:center; justify-content:space-between;
-  background:var(--rose-light,#FDF0F4);
-  border:1px solid var(--rose-pale,#F2D5DF);
-  border-radius:12px; padding:11px 16px;
-  margin-bottom:14px; gap:12px; flex-wrap:wrap;
+  background:rgba(255,253,251,.92); backdrop-filter:saturate(1.6) blur(10px);
+  border-bottom:1px solid var(--line); padding:0 6px;
 }
-.ai-limit-bar .limit-info{display:flex;align-items:center;gap:8px;}
-.ai-limit-bar i{width:15px;height:15px;color:var(--rose);flex-shrink:0;}
-.ai-limit-bar span{font-size:13px;color:var(--ink-mid,#4A3848);}
-.ai-limit-bar strong{color:var(--rose);}
-.limit-dots{display:flex;gap:5px;}
-.ldot{width:10px;height:10px;border-radius:50%;background:var(--rose-pale,#F2D5DF);}
-.ldot.used{background:var(--rose);}
-/* ── 텍스트 정렬 수정 ── */
-.sec .lbl,.sec .h2,.sec-full .inner .lbl,.sec-full .inner .h2{text-align:left;}
-.res-intro,.res-intro h2,.res-intro p{text-align:center;}
-.how-step h4,.how-step p,.feat-card h4,.feat-card p{text-align:left;}
-.pb-card p{text-align:left;}
-/* ── 카테고리 섹션 타이틀 중앙 ── */
-.cat-bg .lbl,.cat-bg .h2{text-align:center;}
-/* ── Final CTA 중앙 ── */
-.fin-bg .lbl,.fin-bg .h2,.fin-bg p{text-align:center;}
+.nav-btn{width:44px; height:44px; display:flex; align-items:center; justify-content:center; border-radius:12px;}
+.nav-btn:active{background:var(--accent-soft);}
+.nav-title{font-size:15px; font-weight:600; letter-spacing:-.01em;}
+.nav-ghost{width:44px; height:44px;}
+.ico{width:20px; height:20px; display:block; stroke:var(--ink); stroke-width:1.9; fill:none; stroke-linecap:round; stroke-linejoin:round;}
 
+/* 진행 표시 */
+.prog{height:2px; background:var(--line); position:relative; overflow:hidden;}
+.prog span{position:absolute; left:0; top:0; bottom:0; background:var(--accent); transition:width .28s ease;}
+
+/* 타이포 */
+.eyebrow{font-size:12px; letter-spacing:.14em; color:var(--accent); font-weight:700; text-transform:uppercase;}
+h1.t{font-size:27px; line-height:1.38; font-weight:700; letter-spacing:-.025em; margin:14px 0 0;}
+h2.t{font-size:21px; line-height:1.45; font-weight:700; letter-spacing:-.02em; margin:0 0 8px;}
+h3.t{font-size:16px; font-weight:700; letter-spacing:-.01em; margin:0 0 6px;}
+p.s{color:var(--ink2); font-size:15px; margin:10px 0 0;}
+p.xs{color:var(--ink3); font-size:13px; line-height:1.6; margin:8px 0 0;}
+.sec{margin-top:34px;}
+.divider{height:1px; background:var(--line); margin:28px 0;}
+
+/* 카드 */
+.card{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:20px; box-shadow:var(--shadow);}
+.card + .card{margin-top:12px;}
+.card.hi{border-color:var(--accent-line); background:linear-gradient(180deg,#FFF9F6 0%,#FFFFFF 60%);}
+
+/* 버튼 */
+.btn{
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  width:100%; min-height:54px; border-radius:15px; font-weight:700; font-size:16px;
+  background:var(--accent); color:#fff; letter-spacing:-.01em; transition:transform .12s ease, opacity .12s ease;
+}
+.btn:active{transform:scale(.985); opacity:.92;}
+.btn[disabled]{background:var(--line2); color:#fff; opacity:.7;}
+.btn.ghost{background:#fff; color:var(--ink); border:1px solid var(--line2);}
+.btn.soft{background:var(--accent-soft); color:var(--accent); border:1px solid var(--accent-line);}
+.btn.sm{min-height:46px; font-size:15px; border-radius:13px;}
+.btnrow{display:flex; gap:10px; margin-top:12px;}
+.sticky{position:sticky; bottom:0; padding:14px 0 calc(14px + env(safe-area-inset-bottom));
+  background:linear-gradient(180deg,rgba(255,253,251,0) 0%,var(--bg) 34%);}
+
+/* 선택지 */
+.opt{
+  display:block; width:100%; text-align:left; min-height:60px; padding:15px 17px; margin-top:10px;
+  background:#fff; border:1px solid var(--line2); border-radius:15px; transition:border-color .14s ease, background .14s ease;
+}
+.opt:active{background:var(--accent-soft);}
+.opt.on{border-color:var(--accent); background:var(--accent-soft);}
+.opt .ot{font-weight:600; letter-spacing:-.01em;}
+.opt .oh{display:block; font-size:13px; color:var(--ink3); margin-top:3px;}
+
+/* 칩 */
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;}
+.chip{padding:9px 15px; min-height:44px; display:inline-flex; align-items:center;
+  border:1px solid var(--line2); border-radius:999px; font-size:14px; font-weight:600; background:#fff;}
+.chip.on{border-color:var(--accent); color:var(--accent); background:var(--accent-soft);}
+.tag{display:inline-block; padding:4px 10px; border-radius:999px; background:var(--accent-soft);
+  color:var(--accent); font-size:12px; font-weight:700; margin:0 6px 6px 0;}
+.tag.n{background:#F4F1EE; color:var(--ink2);}
+
+/* 입력 */
+.field{width:100%; min-height:54px; padding:15px 17px; background:#fff;
+  border:1px solid var(--line2); border-radius:15px; outline:none;}
+.field:focus{border-color:var(--accent);}
+
+/* 축 막대 */
+.axis{margin-top:14px;}
+.axis-top{display:flex; justify-content:space-between; align-items:baseline; font-size:14px;}
+.axis-top b{font-weight:700;}
+.axis-top span{color:var(--ink3); font-size:13px;}
+.bar{height:7px; border-radius:999px; background:#F1EAE4; margin-top:7px; overflow:hidden;}
+.bar i{display:block; height:100%; border-radius:999px; background:var(--accent);}
+
+/* 순위 */
+.rank{display:flex; align-items:baseline; gap:9px;}
+.rank .no{font-size:12px; font-weight:800; color:var(--accent); letter-spacing:.06em;}
+.fit{font-size:13px; color:var(--ink2); font-weight:700;}
+
+/* 잠금 영역 */
+.lock{border:1px dashed var(--accent-line); background:var(--accent-soft);
+  border-radius:18px; padding:22px 20px; text-align:center;}
+.blur{position:relative; max-height:112px; overflow:hidden; color:var(--ink3);}
+.blur:after{content:""; position:absolute; left:0; right:0; bottom:0; height:70px;
+  background:linear-gradient(180deg,rgba(255,255,255,0),#fff);}
+
+/* 광고 자리 */
+.adbox{border:1px solid var(--line2); border-radius:16px; background:#F7F3EF; padding:26px 18px; text-align:center;}
+.adslot{border:1px dashed var(--line2); border-radius:12px; padding:34px 12px; color:var(--ink3); font-size:13px; background:#fff;}
+.count{font-size:34px; font-weight:800; letter-spacing:-.03em; margin-top:14px;}
+
+/* 모달 */
+.mask{position:fixed; inset:0; background:rgba(43,35,32,.42); z-index:60; display:flex; align-items:flex-end;}
+.sheet{width:100%; max-width:520px; margin:0 auto; background:#fff;
+  border-radius:22px 22px 0 0; padding:26px 22px calc(22px + env(safe-area-inset-bottom));}
+.sheet h3{margin:0 0 6px; font-size:19px; font-weight:700; letter-spacing:-.02em;}
+
+/* 목록 */
+.li{display:flex; gap:10px; margin-top:11px; font-size:15px; color:var(--ink2); line-height:1.6;}
+.li b{color:var(--ink); font-weight:700;}
+.dot{flex:0 0 6px; width:6px; height:6px; border-radius:50%; background:var(--accent-line); margin-top:9px;}
+.note{background:#FAF6F2; border-radius:14px; padding:15px 17px; font-size:14px; color:var(--ink2); line-height:1.65;}
+
+.fade{animation:fi .3s ease both;}
+@keyframes fi{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;}}
+.spin{width:34px; height:34px; border-radius:50%; border:3px solid var(--accent-soft);
+  border-top-color:var(--accent); animation:sp .8s linear infinite; margin:0 auto;}
+@keyframes sp{to{transform:rotate(360deg);}}
+.center{text-align:center;}
+.hide{display:none !important;}
 </style>
 </head>
 <body>
-<button class="float-cta" id="floatCta" onclick="scrollToSearch()"><i data-lucide="search"></i>상품 찾기</button>
-<!-- ══════ LANDING ══════ -->
-<div id="landing" class="screen active">
-<nav>
-  <div class="logo dp" onclick="goHome()">PickMe<em>.</em></div>
-  <div class="nav-r">
-    <button class="btn-g">소개</button>
-    <button class="btn-p" onclick="focusSearch()"><i data-lucide="search"></i>찾기 시작</button>
-  </div>
-</nav>
-<section id="hero">
-  <div class="h-blob"></div>
-  <div class="h-inner fu">
-    <div class="h-chip"><i data-lucide="sparkles"></i>AI 쇼핑 큐레이터</div>
-    <h1 class="h-title dp">PickMe<em>.</em></h1>
-    <p class="h-sub">나보다 나를 더 잘 아는 쇼핑</p>
-    <div class="s-box">
-      <input id="heroIn" type="text" placeholder="찾고 싶은 상품을 입력해보세요" onkeydown="if(event.key==='Enter')go('heroIn')">
-      <button class="btn-p" onclick="go('heroIn')"><i data-lucide="arrow-right"></i>찾아줘</button>
-    </div>
-    <div class="pills">
-      <span class="pill" onclick="catGo('mascara')"><i data-lucide="eye"></i>마스카라</span>
-      <span class="pill" onclick="setQ('선크림 찾아줘')"><i data-lucide="sun"></i>선크림</span>
-      <span class="pill" onclick="setQ('민감성 파운데이션')"><i data-lucide="droplets"></i>파운데이션</span>
-      <span class="pill" onclick="setQ('향수 선물 10만원')"><i data-lucide="gift"></i>향수 선물</span>
-      <span class="pill" onclick="setQ('다이소 립스틱')"><i data-lucide="smile"></i>립스틱</span>
-    </div>
-    <div class="h-slogan dp">Pick me the best.</div>
-  </div>
-</section>
-
-<!-- PROBLEM -->
-<div class="sec-full pb-bg">
-<div class="inner sec">
-  <div class="lbl">왜 PickMe.인가요</div>
-  <h2 class="h2 dp">이런 경험,<br>있지 않으셨나요?</h2>
-  <div class="pb-grid">
-    <div class="pb-card"><div class="pb-icon"><i data-lucide="search-x"></i></div><p>리뷰는 수백 개인데 막상 내 피부에 맞는 건지 모르겠고</p></div>
-    <div class="pb-card"><div class="pb-icon"><i data-lucide="shopping-cart"></i></div><p>장바구니에 담았다 뺐다 결국 아무것도 못 사고 지쳐버리는</p></div>
-    <div class="pb-card"><div class="pb-icon"><i data-lucide="package-x"></i></div><p>샀는데 내 스타일이 아니어서 서랍 속에서 잠드는 제품들</p></div>
-    <div class="pb-card"><div class="pb-icon"><i data-lucide="trending-down"></i></div><p>검색할수록 오히려 더 헷갈려 결국 인기 순위만 따라가는</p></div>
-  </div>
-  <div class="resolve">
-    <h3>그 시간, 이제 PickMe.에게 맡기세요.</h3>
-    <p>수백 개의 상품 중 딱 나에게 맞는 하나,<br>AI가 2분 만에 찾아드립니다.</p>
-  </div>
-</div>
-</div>
-
-<!-- CATEGORIES -->
-<div class="sec-full cat-bg">
-<div class="inner sec">
-  <div class="lbl">지금 찾을 수 있어요</div>
-  <h2 class="h2 dp">PickMe.가 도와드리는<br>뷰티 카테고리</h2>
-  <div class="cat-grid">
-    <div class="cat-card" onclick="catGo('mascara')"><div class="cat-ico"><i data-lucide="eye"></i></div><h4>마스카라</h4><p>롱래시·볼륨·뭉침없음<br>속눈썹 타입 맞춤</p><span class="cat-badge">인기</span></div>
-    <div class="cat-card" onclick="catGo('sunscreen')"><div class="cat-ico"><i data-lucide="sun"></i></div><h4>선크림</h4><p>백탁없이 피부타입별<br>맞춤 추천</p><span class="cat-badge">여름 필수</span></div>
-    <div class="cat-card" onclick="catGo('foundation')"><div class="cat-ico"><i data-lucide="droplets"></i></div><h4>파운데이션</h4><p>커버력·지속력·밀착력<br>피부톤 맞춤</p></div>
-    <div class="cat-card" onclick="catGo('eyeliner')"><div class="cat-ico"><i data-lucide="pen-line"></i></div><h4>아이라이너</h4><p>번짐없는 라인<br>눈매 타입별</p></div>
-    <div class="cat-card" onclick="catGo('lipstick')"><div class="cat-ico"><i data-lucide="smile"></i></div><h4>립스틱·립틴트</h4><p>발색·지속력·보습<br>피부톤 맞춤</p></div>
-    <div class="cat-card" onclick="catGo('serum')"><div class="cat-ico"><i data-lucide="sparkles"></i></div><h4>스킨케어 세럼</h4><p>피부 고민별<br>성분 맞춤</p></div>
-  </div>
-</div>
-</div>
-
-<!-- HOW -->
-<div class="sec-full">
-<div class="inner sec">
-  <div class="lbl">어떻게 작동하나요</div>
-  <h2 class="h2 dp">단 2분이면<br>충분해요.</h2>
-  <div class="how-steps">
-    <div class="how-step"><div class="snum dp">1</div><h4>원하는 상품을 말해주세요</h4><p>"마스카라 추천해줘" 자유롭게 입력하면 AI가 카테고리를 파악해요.</p></div>
-    <div class="how-step"><div class="snum dp">2</div><h4>5가지 질문에 답해주세요</h4><p>예산·상황·불편했던 점·타입·우선순위를 버튼 하나로 선택해요.</p></div>
-    <div class="how-step"><div class="snum dp">3</div><h4>AI가 맞춤 분석해드려요</h4><p>답변을 조합해 수백 개 상품 중 나에게 맞는 TOP 3를 선별해요.</p></div>
-    <div class="how-step"><div class="snum dp">4</div><h4>대화로 더 좁혀가요</h4><p>추천 이유와 함께 조건을 더해 딱 하나를 확정할 수 있어요.</p></div>
-  </div>
-</div>
-</div>
-
-<!-- FEATURES -->
-<div class="sec-full" style="background:var(--white)">
-<div class="inner sec">
-  <div class="lbl">PickMe.가 특별한 이유</div>
-  <h2 class="h2 dp">인기 순위가 아닌<br>나의 기준으로.</h2>
-  <div class="feat-grid">
-    <div class="feat-card"><div class="feat-ico"><i data-lucide="target"></i></div><h4>나만을 위한 큐레이션</h4><p>수천 명의 1위가 아닌 나의 1위. 내 답변 기반 맞춤 추천이에요.</p></div>
-    <div class="feat-card"><div class="feat-ico"><i data-lucide="zap"></i></div><h4>빠른 추천 vs 정밀 분석</h4><p>급할 땐 30초, 신중할 땐 2분 정밀 분석을 선택하세요.</p></div>
-    <div class="feat-card"><div class="feat-ico"><i data-lucide="message-circle"></i></div><h4>대화로 좁혀가는 추천</h4><p>결과가 마음에 안 들면 조건을 더해 다시 찾아드려요.</p></div>
-    <div class="feat-card"><div class="feat-ico"><i data-lucide="bar-chart-2"></i></div><h4>명확한 추천 이유</h4><p>왜 이 제품인지 내 답변과 연결해서 설명해드려요.</p></div>
-    <div class="feat-card"><div class="feat-ico"><i data-lucide="eye"></i></div><h4>나도 몰랐던 내 기준</h4><p>질문에 답하다 보면 내가 진짜 원하는 게 자연스럽게 드러나요.</p></div>
-    <div class="feat-card"><div class="feat-ico"><i data-lucide="refresh-cw"></i></div><h4>피드백으로 더 똑똑하게</h4><p>구매 후 만족도를 알려주시면 다음 추천은 더 정확해져요.</p></div>
-  </div>
-</div>
-</div>
-
-<!-- REVIEWS -->
-<div class="sec-full rv-bg">
-<div class="inner sec">
-  <div class="lbl">실제 사용자 후기</div>
-  <h2 class="h2 dp">사람들이<br>PickMe.를 쓰는 이유</h2>
-  <div class="rv-grid">
-    <div class="rv-card"><div class="rv-q dp">"</div><div class="rv-stars">★★★★★</div><p class="rv-txt">마스카라 하나 사려고 리뷰 2시간 읽던 제가 PickMe.로 3분 만에 결정했어요. 근데 진짜 딱 맞았어요.</p><div class="rv-auth">30대 직장인 김OO님</div></div>
-    <div class="rv-card"><div class="rv-q dp">"</div><div class="rv-stars">★★★★★</div><p class="rv-txt">내가 뭘 원하는지도 몰랐는데 질문 5개 답하고 나니까 딱 내 스타일이 나왔어요. 신기했어요.</p><div class="rv-auth">20대 대학생 이OO님</div></div>
-    <div class="rv-card"><div class="rv-q dp">"</div><div class="rv-stars">★★★★☆</div><p class="rv-txt">선물 살 때 항상 막막했는데 이제 PickMe.가 생겨서 다행이에요. 추천 이유까지 보여줘서 믿음이 가요.</p><div class="rv-auth">40대 주부 박OO님</div></div>
-  </div>
-</div>
-</div>
-
-<!-- FINAL CTA -->
-<div class="sec-full fin-bg">
-<div class="inner sec" style="text-align:center">
-  <div class="lbl">지금 바로 시작해요</div>
-  <h2 class="h2 dp">오늘 고민하던<br>그 상품,<br>지금 찾아보세요.</h2>
-  <p>나보다 나를 더 잘 아는 쇼핑, PickMe.가 시작합니다.</p>
-  <div class="fin-s" style="margin:0 auto clamp(12px,3vh,18px)">
-    <input id="finIn" type="text" placeholder="찾고 싶은 상품을 입력해보세요" onkeydown="if(event.key==='Enter')go('finIn')">
-    <button class="btn-p" onclick="go('finIn')"><i data-lucide="arrow-right"></i>찾아줘</button>
-  </div>
-  <div class="fin-slogan dp">Pick me the best.</div>
-</div>
-</div>
-<footer><strong>PickMe.</strong> &nbsp;·&nbsp; Pick me the best.<br>나보다 나를 더 잘 아는 뷰티 쇼핑 큐레이터<br>© 2026 PickMe. All rights reserved.</footer>
-</div>
-
-<!-- ══════ INTERVIEW ══════ -->
-<div id="interview" class="screen">
-  <div class="iv-hd">
-    <div class="logo dp" style="cursor:pointer" onclick="goHome()">PickMe<em style="color:var(--coral)">.</em></div>
-    <div class="iv-prog">
-      <div class="iv-pl"><span id="progTxt">시작</span><span id="progMd">—</span></div>
-      <div class="pb"><div class="pf" id="pFill" style="width:0%"></div></div>
-    </div>
-    <div style="display:flex;gap:7px;align-items:center">
-      <button class="btn-bk" id="bkBtn" onclick="goBack()" style="display:none"><i data-lucide="arrow-left"></i>이전</button>
-      <div class="mode-tag" id="mTag">—</div>
-    </div>
-  </div>
-  <div class="iv-body"><div class="q-card fu" id="qCard"></div></div>
-</div>
-
-<!-- ══════ ANALYZING ══════ -->
-<div id="analyzing" class="screen">
-  <div class="an-logo dp">PickMe.</div>
-  <div class="an-ring"></div>
-  <div class="an-steps">
-    <div class="an-step" id="as1"><div class="an-dot"><i data-lucide="clipboard-list"></i></div><p>답변을 분석하는 중...</p></div>
-    <div class="an-step" id="as2"><div class="an-dot"><i data-lucide="database"></i></div><p>상품 데이터베이스 검색 중...</p></div>
-    <div class="an-step" id="as3"><div class="an-dot"><i data-lucide="target"></i></div><p>TOP 3 선별 중...</p></div>
-    <div class="an-step" id="as4"><div class="an-dot"><i data-lucide="pen-line"></i></div><p>추천 이유 작성 중...</p></div>
-  </div>
-</div>
-
-<!-- ══════ RESULT ══════ -->
-<div id="result" class="screen">
-  <div class="res-hd">
-    <div class="logo dp" style="cursor:pointer" onclick="goHome()">PickMe<em style="color:var(--coral)">.</em></div>
-    <div style="display:flex;gap:7px">
-      <button class="btn-rst" onclick="goFeedback()"><i data-lucide="star"></i>피드백</button>
-      <button class="btn-rst" onclick="restart()"><i data-lucide="refresh-cw"></i>다시 찾기</button>
-    </div>
-  </div>
-  <div class="res-body">
-    <div class="res-intro fu">
-      <div class="lbl">AI 분석 완료</div>
-      <h2 class="dp" id="resT">당신에게 딱 맞는<br>제품을 찾았어요!</h2>
-      <p id="resS">답변을 분석해 수백 개 상품 중 TOP 3를 선별했어요.</p>
-    </div>
-    <div class="ai-limit-bar" id="aiLimitBar">
-      <div class="limit-info">
-        <i data-lucide="sparkles"></i>
-        <span>오늘 AI 분석 <strong id="aiUsedTxt">0 / 3</strong>회 사용</span>
-      </div>
-      <div class="limit-dots">
-        <div class="ldot" id="ld1"></div>
-        <div class="ldot" id="ld2"></div>
-        <div class="ldot" id="ld3"></div>
-      </div>
-    </div>
-    <div class="api-box" id="apiBox">
-      <h4 style="display:flex;align-items:center;gap:6px"><i data-lucide="key" style="width:14px;height:14px;color:var(--rose)"></i> Claude AI 연동</h4>
-      <p>API 키를 입력하면 내 답변 기반 실제 AI 맞춤 분석을 받을 수 있어요.<br>키는 이 기기 로컬에만 저장되며 외부로 전송되지 않아요.</p>
-      <div class="api-row">
-        <input type="password" class="api-in" id="apiIn" placeholder="sk-ant-api03-...">
-        <button class="btn-sv" onclick="saveKey()">저장</button>
-      </div>
-      <p style="font-size:11px;color:var(--ink-light,#7A6878);margin-top:8px;">
-        💡 API 키 없이도 DB 기반 추천은 언제나 이용 가능해요.
-      </p>
-    </div>
-    <div class="ai-box" id="aiBox"></div>
-    <div class="p-cards" id="pCards"></div>
-    <div class="deep-box">
-      <h3 class="dp">더 좁혀볼까요?</h3>
-      <p>추가 조건으로 더 정확한 제품을 찾아드려요.</p>
-      <div class="d-btns" id="dBtns"></div>
-    </div>
-    <div class="ai-policy-box" id="aiPolicyNote" style="background:var(--slate,#F4EEF2);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:20px;font-size:12px;color:var(--ink-mid,#4A3848);line-height:1.7;">
-      <strong style="color:var(--rose);display:block;margin-bottom:4px">💡 AI 분석 이용 안내</strong>
-      DB 기반 추천은 <strong>무제한 무료</strong>로 이용할 수 있어요.<br>
-      AI 맞춤 분석(심화)은 하루 <strong>3회</strong> 제공돼요. 매일 자정에 초기화됩니다.
-    </div>
-    <div class="rst-row"><button class="btn-rst" onclick="restart()"><i data-lucide="search"></i>다른 상품 찾기</button></div>
-  </div>
-</div>
-
-<!-- ══════ FEEDBACK ══════ -->
-<div id="feedback" class="screen">
-  <div class="res-hd">
-    <div class="logo dp" style="cursor:pointer" onclick="goHome()">PickMe<em style="color:var(--coral)">.</em></div>
-    <button class="btn-rst" onclick="showSc('result')"><i data-lucide="arrow-left"></i>결과로</button>
-  </div>
-  <div class="res-body">
-  <div class="fb-body">
-    <div class="fb-step on" id="fb1">
-      <div class="fb-ico"><i data-lucide="shopping-bag"></i></div>
-      <h2 class="fb-title dp">추천 제품,<br>구매하셨나요?</h2>
-      <p class="fb-sub">피드백을 남겨주시면 다음 추천이 더 정확해져요.</p>
-      <div class="fb-opts">
-        <button class="fb-opt" onclick="fbP('yes')"><i data-lucide="check-circle"></i>네, 구매했어요</button>
-        <button class="fb-opt" onclick="fbP('no')"><i data-lucide="x-circle"></i>아니요, 안 샀어요</button>
-        <button class="fb-opt" onclick="fbP('later')"><i data-lucide="clock"></i>아직 고민 중이에요</button>
-      </div>
-    </div>
-    <div class="fb-step" id="fb2a">
-      <div class="fb-ico"><i data-lucide="star"></i></div>
-      <h2 class="fb-title dp">사용해보니<br>어떠셨나요?</h2>
-      <p class="fb-sub">솔직한 후기가 다음 사용자에게 큰 도움이 돼요.</p>
-      <div class="fb-opts">
-        <button class="fb-opt" onclick="fbS('great')"><i data-lucide="heart"></i>너무 만족해요! 딱 맞았어요</button>
-        <button class="fb-opt" onclick="fbS('ok')"><i data-lucide="thumbs-up"></i>괜찮아요, 무난해요</button>
-        <button class="fb-opt" onclick="fbS('bad')"><i data-lucide="thumbs-down"></i>별로였어요</button>
-      </div>
-    </div>
-    <div class="fb-step" id="fb2b">
-      <div class="fb-ico"><i data-lucide="help-circle"></i></div>
-      <h2 class="fb-title dp">구매하지 않은<br>이유가 있나요?</h2>
-      <p class="fb-sub">이유를 알면 더 잘 맞는 제품을 찾아드릴 수 있어요.</p>
-      <div class="fb-opts">
-        <button class="fb-opt" onclick="fbN('price')"><i data-lucide="wallet"></i>가격이 부담됐어요</button>
-        <button class="fb-opt" onclick="fbN('other')"><i data-lucide="package"></i>다른 제품을 샀어요</button>
-        <button class="fb-opt" onclick="fbN('later')"><i data-lucide="calendar"></i>나중에 살 예정이에요</button>
-        <button class="fb-opt" onclick="fbN('unfit')"><i data-lucide="x"></i>추천이 취향과 안 맞았어요</button>
-      </div>
-    </div>
-    <div class="fb-step" id="fb3">
-      <div class="fb-ico"><i data-lucide="message-square"></i></div>
-      <h2 class="fb-title dp">가장 아쉬운 점이<br>무엇인가요?</h2>
-      <p class="fb-sub">구체적으로 알려주실수록 더 정확하게 개선할 수 있어요.</p>
-      <div class="fb-opts">
-        <button class="fb-opt" onclick="selFb(this)"><i data-lucide="alert-circle"></i>뭉침·번짐이 있었어요</button>
-        <button class="fb-opt" onclick="selFb(this)"><i data-lucide="arrow-down"></i>지속력이 약했어요</button>
-        <button class="fb-opt" onclick="selFb(this)"><i data-lucide="palette"></i>색감·발색이 달랐어요</button>
-        <button class="fb-opt" onclick="selFb(this)"><i data-lucide="sliders"></i>내 타입과 안 맞았어요</button>
-      </div>
-      <textarea class="fb-ta" id="fbCmt" rows="3" placeholder="추가 의견이 있으시면 자유롭게 적어주세요..."></textarea>
-      <button class="btn-p" style="width:100%;justify-content:center;padding:13px;" onclick="fbDone()"><i data-lucide="send"></i>피드백 제출</button>
-    </div>
-    <div class="fb-step" id="fb4">
-      <div class="fb-thx">
-        <h3 class="dp">소중한 피드백<br>감사해요! 🎉</h3>
-        <p>답변이 PickMe.의 추천 엔진에 반영돼요.<br>다음엔 더 딱 맞는 제품을 찾아드릴게요.</p>
-        <button class="btn-p" style="margin:0 auto" onclick="restart()"><i data-lucide="search"></i>다른 상품 찾기</button>
-      </div>
-    </div>
-  </div>
-  </div>
-</div>
-
+<div id="root"></div>
 <script>
-// ══ CATEGORY DB (v3 — 완전 맞춤형) ══
-const DB={
+(function(){
+"use strict";
 
-  // ── 마스카라 ──────────────────────────────────────────────────
-  mascara:{
-    name:'마스카라', icon:'eye',
-    kw:['마스카라','마스카','mascara'],
-    q3options:[
-      {ic:'alert-circle',lbl:'뭉침·번짐',desc:'떡지거나 눈가에 번지는',v:'clump'},
-      {ic:'arrow-down',lbl:'금방 처짐',desc:'오전에 발랐는데 오후엔 내려와',v:'droop'},
-      {ic:'cloud-rain',lbl:'워터프루프 약함',desc:'비·눈물에 금방 번지는',v:'water'},
-      {ic:'thumbs-down',lbl:'가루 날림',desc:'눈 밑에 가루가 떨어지는',v:'powder'}
+/* ============================================================
+   CONFIG — 바뀔 수 있는 모든 값은 여기 안에만 있습니다.
+   카테고리를 추가하려면 data.categories 에 한 덩어리만 넣으면
+   질문 · 추천 · 구매처 안내가 자동으로 따라옵니다.
+   ============================================================ */
+var CONFIG = {
+  appName: 'PickMe.',
+  tagline: '나보다 나를 더 잘 아는 쇼핑',
+  version: '2.0.0',
+  updatedAt: '2026-08-21',
+  expiresAt: null,
+
+  intro: {
+    eyebrow: 'PICKME.',
+    title: '무엇을 살지 고르기 전에\n나의 기준부터 찾습니다',
+    body: '같은 상품도 사람마다 정답이 다릅니다. 다섯 가지 질문으로 당신이 실제로 무엇을 중요하게 여기는지 찾아내고, 그 기준에 맞는 상품 유형과 사기 좋은 구매처를 알려드립니다.',
+    points: [
+      ['상품이 아니라 기준부터', '지속력 · 자극 · 표현 강도 같은 축으로 당신의 취향을 수치화합니다.'],
+      ['카테고리마다 다른 질문', '마스카라와 선크림은 따져야 할 것이 다릅니다. 질문도 다르게 나갑니다.'],
+      ['어디서 사야 하는지까지', '구매처마다 가격 · 정품 · 체험 조건이 다릅니다. 당신 기준에 맞는 곳을 짚어드립니다.']
     ],
-    q4:{title:'내 속눈썹 타입은?',hint:'속눈썹 타입에 따라 최적의 브러시와 포뮬러가 달라요.',options:[
-      {ic:'arrow-right',lbl:'짧고 직모',desc:'볼륨·컬링 기능이 특히 중요해요',v:'ss'},
-      {ic:'trending-up',lbl:'길고 C컬',desc:'컬 유지력이 핵심이에요',v:'lc'},
-      {ic:'minus',lbl:'숱이 적음',desc:'한올 한올 분리해주는 제품 필요',v:'th'},
-      {ic:'align-justify',lbl:'숱이 많음',desc:'뭉치지 않게 정돈해주는 게 중요',v:'tk'}
-    ]},
-    q5options:[
-      {ic:'eye',lbl:'롱래시 효과',desc:'속눈썹이 길어 보이게',v:'long'},
-      {ic:'zap',lbl:'풍성한 볼륨',desc:'눈이 커 보이는 볼륨감',v:'volume'},
-      {ic:'clock',lbl:'묻어남 없는 지속력',desc:'하루 종일 완벽한 상태로',v:'lasting'},
-      {ic:'feather',lbl:'자연스러운 마무리',desc:'한 듯 안 한 듯 자연스럽게',v:'natural'}
-    ],
-    deep:[
-      {ic:'dollar-sign',lbl:'더 저렴한 건?'},
-      {ic:'droplets',lbl:'묻어남 없는 건?'},
-      {ic:'eye',lbl:'아래 속눈썹에도 좋은 건?'},
-      {ic:'gift',lbl:'선물하기 좋은 건?'},
-      {ic:'flask-conical',lbl:'성분 안전한 건?'}
-    ],
-    prod:{
-      luxury:[
-        {n:'디올 디올쇼 블랙아웃 마스카라',st:'디올 부티크·백화점',pr:'65,000원',sr:5,
-          rsn:'카본 블랙 포뮬러로 극도로 진하고 드라마틱한 볼륨을 연출해요. 뭉침 없이 강렬한 눈매를 만들어줘요.',
-          g:['강렬한 볼륨','카본 블랙 발색','뭉침없음'],w:['높은 가격','전용 리무버 필요']},
-        {n:'랑콤 그랑디오즈 마스카라',st:'백화점·랑콤 공식',pr:'58,000원',sr:5,
-          rsn:'360° 회전 브러시가 속눈썹 뿌리부터 끝까지 완벽하게 감싸줘요. 드라마틱한 볼륨과 선명한 분리감이 동시에 가능해요.',
-          g:['360°회전 브러시','풍성한 볼륨','선명한 분리'],w:['가격 부담','전용 리무버 권장']}
-      ],
-      high:[
-        {n:'키스미 히로인메이크 롱앤컬 EX',st:'올리브영',pr:'18,000원',sr:5,
-          rsn:'속눈썹 연장 시술한 것처럼 드라마틱한 길이감이 특징이에요. 올리브영 마스카라 장기 베스트셀러로 워터프루프도 강력해요.',
-          g:['최강 롱래시','강력 워터프루프','가루날림 없음'],w:['전용 클렌저 권장','컬링 효과 약함']},
-        {n:'NARS 클라이맥스 마스카라',st:'세포라·백화점',pr:'42,000원',sr:4,
-          rsn:'플렉스 브러시가 속눈썹 숱을 2배로 풍성하게 만들어줘요. 워터프루프 포뮬러로 데이팅이나 중요한 날에 딱이에요.',
-          g:['숱이 많아 보임','워터프루프','색상 선택폭 넓음'],w:['뭉침 주의','전용 리무버 필요']}
-      ],
-      mid:[
-        {n:'에뛰드 오마이래쉬 쌩얼카라',st:'올리브영',pr:'9,000원',sr:5,
-          rsn:'젤 틴트 포뮬러로 한 듯 안 한 듯 자연스러운 속눈썹을 연출해요. 뭉침·가루날림이 없고 촉촉하게 마무리돼요.',
-          g:['자연스러운 마무리','뭉침없음','촉촉한 포뮬러'],w:['볼륨감 약함','강한 표현 어려움']},
-        {n:'클리오 킬래쉬 수퍼프루프 마스카라',st:'올리브영',pr:'16,000원',sr:5,
-          rsn:'즉각 픽싱 기술로 뭉침이 없고 하루 종일 번지지 않아요. 묻어남 최강으로 마스크 착용해도 걱정 없어요.',
-          g:['묻어남없음','강력 지속','마스크에도 OK'],w:['자연스러움 약함','다소 진한 느낌']},
-        {n:'이니스프리 스키니 꼼꼼 마스카라',st:'이니스프리·올리브영',pr:'13,000원',sr:4,
-          rsn:'극세 브러시로 짧은 속눈썹 끝까지 꼼꼼하게 발라줘요. 아래 속눈썹 마스카라로도 탁월해요.',
-          g:['극세 브러시','꼼꼼한 도포','아래 속눈썹 OK'],w:['볼륨감 없음','워터프루프 보통']}
-      ],
-      low:[
-        {n:'밀크터치 디어씽 롱앤컬링 마스카라',st:'다이소',pr:'3,000원',sr:4,
-          rsn:'얇고 정교한 브러시로 뭉침 없이 발리고 컬링 유지력도 기대 이상이에요. 다이소 마스카라 중 최고 평가를 받아요.',
-          g:['초가성비','뭉침없음','컬링 유지'],w:['워터프루프 약함','볼륨감 제한']},
-        {n:'더샘 루크 마스카라',st:'다이소·더샘',pr:'4,000원',sr:3,
-          rsn:'합리적인 가격에 롱래시와 컬링 기능을 갖춰 데일리 메이크업에 부담 없이 사용하기 좋아요.',
-          g:['저렴한 가격','롱래시','데일리용'],w:['지속력 보통','전문 제품 대비 한계']}
-      ]
-    }
+    cta: '시작하기'
   },
 
-  // ── 선크림 ──────────────────────────────────────────────────
-  sunscreen:{
-    name:'선크림', icon:'sun',
-    kw:['선크림','선스크린','자외선차단','spf','썬크림','자외선'],
-    q3options:[
-      {ic:'circle-off',lbl:'백탁',desc:'흰 겉돌음이 심해서 답답한',v:'whitecast'},
-      {ic:'droplets',lbl:'번들거림',desc:'발랐는데 번질번질한 느낌',v:'greasy'},
-      {ic:'sun',lbl:'차단력 부족',desc:'금방 타거나 차단이 약한',v:'protection'},
-      {ic:'clock',lbl:'지속력 약함',desc:'2~3시간이면 효과가 없어지는',v:'lasting'}
-    ],
-    q4:{title:'내 피부 타입은?',hint:'피부 타입에 따라 제형과 흡수력이 완전히 달라요.',options:[
-      {ic:'droplets',lbl:'건성',desc:'보습력 좋은 크림·로션 타입 필요',v:'dry'},
-      {ic:'wind',lbl:'지성·복합성',desc:'산뜻하고 가벼운 워터젤 타입',v:'oily'},
-      {ic:'shield',lbl:'민감성',desc:'무기자차·순한 성분이 중요해요',v:'sensitive'},
-      {ic:'baby',lbl:'아이와 함께',desc:'온가족이 함께 쓸 수 있는 제품',v:'kids'}
-    ]},
-    q5options:[
-      {ic:'eye-off',lbl:'백탁 없음',desc:'발라도 티가 안 나야 해요',v:'nowhite'},
-      {ic:'shield',lbl:'높은 차단력',desc:'SPF50+ PA++++ 강한 차단',v:'protection'},
-      {ic:'droplets',lbl:'보습·촉촉함',desc:'선크림이지만 보습도 돼요',v:'moisture'},
-      {ic:'sun',lbl:'톤업 효과',desc:'발랐을 때 피부가 환해 보이는',v:'toneup'}
-    ],
-    deep:[
-      {ic:'eye-off',lbl:'백탁 없는 건?'},
-      {ic:'baby',lbl:'아이도 쓸 수 있는 건?'},
-      {ic:'shield',lbl:'SPF50+ 강한 차단은?'},
-      {ic:'droplets',lbl:'보습도 되는 선크림은?'},
-      {ic:'dollar-sign',lbl:'가성비 최고는?'}
-    ],
-    prod:{
-      luxury:[
-        {n:'라로슈포제 앙뗄리오스 UV 뮨 400 밀크',st:'약국·올리브영',pr:'42,000원',sr:5,
-          rsn:'피부과 전문의 권장 1위. UVA·UVB·장파장 UVA 모두 차단하는 광범위 자외선 차단제에요. 민감성·아토피 피부도 안심하고 사용할 수 있어요.',
-          g:['피부과 권장','광범위 차단','민감성 OK'],w:['가격 부담','향 있음']},
-        {n:'비오레UV 아쿠아 리치 워터리 에센스',st:'올리브영·드럭스토어',pr:'22,000원',sr:5,
-          rsn:'투명 젤 타입으로 발랐을 때 촉촉하고 산뜻해요. 백탁 없이 촉촉한 마무리로 20-40대 여성이 가장 많이 재구매하는 선크림이에요.',
-          g:['백탁없음','촉촉한 마무리','산뜻함'],w:['가격 있음','향 있음']}
-      ],
-      high:[
-        {n:'아누아 토너 선크림 SPF50+ PA++++',st:'올리브영',pr:'22,000원',sr:5,
-          rsn:'토너 텍스처로 가볍게 발리는 신개념 선크림이에요. 백탁·번들거림 없이 피부에 흡수되고 촉촉한 마무리감이 좋아요.',
-          g:['백탁없음','가볍고 촉촉','자연스러운 마무리'],w:['지속력 보통','땀에 재도포 필요']},
-        {n:'롸잇 선 트라이얼 선크림',st:'올리브영',pr:'18,000원',sr:4,
-          rsn:'민감성 피부를 위한 무기자차 계열. 자극 없는 성분과 가벼운 텍스처로 피부 순하게 지켜줘요.',
-          g:['민감성 OK','순한 성분','무기자차'],w:['약간의 백탁','텍스처 다소 무거움']}
-      ],
-      mid:[
-        {n:'이니스프리 톤업 노세범 선크림',st:'이니스프리·올리브영',pr:'16,000원',sr:4,
-          rsn:'피지 컨트롤과 자외선 차단을 동시에. 발랐을 때 피부가 환해 보이는 톤업 효과가 있어요. 지성·복합성 피부에 특히 잘 맞아요.',
-          g:['피지 억제','톤업 효과','가성비'],w:['건성 피부 건조할 수 있음','리퀴드 파운데이션 위에 단독 사용 어려움']},
-        {n:'닥터자르트 에브리선 라이트 온 선세럼',st:'올리브영',pr:'32,000원',sr:4,
-          rsn:'세럼 텍스처로 피부에 빠르게 흡수돼요. 피부결을 정돈해주는 기능성 성분도 함유되어 있어요.',
-          g:['세럼 텍스처','빠른 흡수','피부결 케어'],w:['가격 있음','커버력 없음']}
-      ],
-      low:[
-        {n:'다이소 비욘드 썬블록 크림',st:'다이소',pr:'3,000원',sr:3,
-          rsn:'부담 없는 가격에 일상 자외선을 차단해요. 단기간 외출 시 데일리 차단용으로 쓰기 좋아요.',
-          g:['초저가','구하기 쉬움','데일리용'],w:['차단력 제한적','보습력 약함','전문 제품 대비 한계']}
-      ]
-    }
+  revenue: {
+    adEnabled: true,
+    freeDeepPerDay: 1,
+    adSeconds: 5,
+    adNote: '토스 인앱 광고 SDK 연결 지점입니다. 현재는 자리만 잡아둔 상태입니다.',
+    payEnabled: false,
+    payNote: '사업자등록 완료 후 토스페이 인앱 결제로 교체합니다.'
   },
 
-  // ── 파운데이션 ──────────────────────────────────────────────
-  foundation:{
-    name:'파운데이션·쿠션', icon:'droplets',
-    kw:['파운데이션','파운','베이스','쿠션','비비','비비크림','파운더'],
-    q3options:[
-      {ic:'layers',lbl:'떡지고 무거움',desc:'두꺼운 느낌에 피부가 답답한',v:'heavy'},
-      {ic:'arrow-down',lbl:'오후에 무너짐',desc:'점심 지나면 다 흘러내리는',v:'collapse'},
-      {ic:'palette',lbl:'색상이 안 맞음',desc:'산 뒤에 내 피부 톤이랑 달랐던',v:'color'},
-      {ic:'droplets',lbl:'건조하고 당김',desc:'발랐는데 오히려 더 건조해진',v:'dry'}
-    ],
-    q4:{title:'원하는 커버력과 마무리감은?',hint:'어떤 마무리감을 원하느냐에 따라 제품 선택이 달라져요.',options:[
-      {ic:'sun',lbl:'자연스러운 피부 표현',desc:'피부처럼 보이는 세미매트',v:'natural'},
-      {ic:'layers',lbl:'적당한 커버',desc:'잡티 커버 + 자연스러운 마무리',v:'medium'},
-      {ic:'shield',lbl:'강한 풀 커버',desc:'모공·잡티·다크서클까지 커버',v:'full'},
-      {ic:'droplets',lbl:'광채·글로우 피부',desc:'촉촉하고 윤기 있는 광채 마무리',v:'glow'}
-    ]},
-    q5options:[
-      {ic:'clock',lbl:'오래 지속되는 제품',desc:'저녁까지 무너지지 않는 커버',v:'lasting'},
-      {ic:'feather',lbl:'가볍고 편안한 착용감',desc:'발랐는지 모를 만큼 가볍게',v:'light'},
-      {ic:'droplets',lbl:'보습·촉촉함 유지',desc:'하루 종일 촉촉하게 유지',v:'moisture'},
-      {ic:'shield',lbl:'최강 커버력',desc:'어떤 결점도 완벽하게 커버',v:'cover'}
-    ],
-    deep:[
-      {ic:'clock',lbl:'지속력 좋은 건?'},
-      {ic:'shield',lbl:'커버력 더 강한 건?'},
-      {ic:'sun',lbl:'광채 나는 건?'},
-      {ic:'palette',lbl:'내 피부톤에 맞는 건?'},
-      {ic:'feather',lbl:'가벼운 BB크림은?'}
-    ],
-    prod:{
-      luxury:[
-        {n:'아르마니 루미노스 실크 파운데이션',st:'백화점·아르마니 부티크',pr:'82,000원',sr:5,
-          rsn:'실크처럼 매끄럽게 발리며 자연스러운 광채 피부를 연출해요. 세계 명품 파운데이션 랭킹 상위권의 스테디셀러에요.',
-          g:['자연스러운 광채','실크 텍스처','20가지 색상'],w:['가격 부담','커버력 보통']},
-        {n:'샬롯 틸버리 매직 파운데이션',st:'백화점·세포라',pr:'68,000원',sr:5,
-          rsn:'24시간 지속력과 자연스러운 커버력을 동시에. 메이크업 아티스트가 즐겨 쓰는 프로페셔널 파운데이션이에요.',
-          g:['24시간 지속','자연스러운 커버','프로 퀄리티'],w:['가격 부담','색상 선택 필요']}
-      ],
-      high:[
-        {n:'클리오 킬커버 더 뉴 파운웨어 쿠션',st:'올리브영',pr:'24,000원',sr:5,
-          rsn:'강한 커버력과 24시간 지속력으로 한국 쿠션 베스트셀러 위치를 지키고 있어요. 한번 발라도 완벽한 마무리가 가능해요.',
-          g:['강한 커버','24시간 지속','산뜻한 마무리'],w:['다소 두꺼운 느낌','건성 피부 건조할 수 있음']},
-        {n:'에스쁘아 프로 테일러 비 글로우 쿠션',st:'올리브영',pr:'28,000원',sr:4,
-          rsn:'촉촉한 광채 피부를 연출해주는 글로우 쿠션. 건성·복합성 피부에 특히 잘 맞고 24시간 보습도 돼요.',
-          g:['글로우 광채','촉촉한 마무리','보습 효과'],w:['지성 피부 번들거림','커버력 보통']}
-      ],
-      mid:[
-        {n:'메이블린 핏미 쿠션',st:'올리브영',pr:'16,000원',sr:4,
-          rsn:'가성비 쿠션의 대명사. 가볍고 자연스러운 커버로 데일리 메이크업에 딱이에요. 다양한 색상대로 내 톤에 맞추기 좋아요.',
-          g:['가성비 우수','다양한 색상','가벼운 커버'],w:['지속력 보통','리필팩 별도']},
-        {n:'미샤 M 쿠션 파운데이션',st:'미샤·올리브영',pr:'9,000원',sr:4,
-          rsn:'10년 이상 꾸준히 사랑받는 쿠션 파운데이션. 적당한 커버와 보습으로 데일리에 부담 없이 사용해요.',
-          g:['가성비','보습','자연스러운 커버'],w:['지속력 보통','색상 제한']}
-      ],
-      low:[
-        {n:'에뛰드 더블 래스팅 쿠션 글로우',st:'올리브영·에뛰드',pr:'12,000원',sr:4,
-          rsn:'12시간 지속력과 촉촉한 광채 마무리를 합리적인 가격에 경험할 수 있어요.',
-          g:['12시간 지속','광채 마무리','합리적 가격'],w:['커버력 보통','색상 제한']}
-      ]
-    }
+  ai: {
+    mode: 'local',
+    endpoint: null,
+    note: '기본 추천과 심층 해설은 모두 기기 안에서 계산합니다. 외부 통신이 없습니다.'
   },
 
-  // ── 아이라이너 ──────────────────────────────────────────────
-  eyeliner:{
-    name:'아이라이너', icon:'pen-line',
-    kw:['아이라이너','라이너','아이라인','눈라인','아이펜슬'],
-    q3options:[
-      {ic:'droplets',lbl:'번짐·묻어남',desc:'아랫눈꺼풀에 번져서 팬더 눈이 되는',v:'smear'},
-      {ic:'activity',lbl:'선 긋기 어려움',desc:'떨려서 직선이 안 그려지는',v:'hard'},
-      {ic:'clock',lbl:'금방 지워짐',desc:'점심만 지나면 흐릿해지는',v:'fade'},
-      {ic:'feather',lbl:'날개 표현 어려움',desc:'날개를 그리면 뭉개지는',v:'wing'}
-    ],
-    q4:{title:'선호하는 라이너 타입은?',hint:'타입마다 발색·사용감·표현력이 크게 달라요.',options:[
-      {ic:'pen-line',lbl:'펜슬 타입',desc:'부드럽고 자연스러운 라인',v:'pencil'},
-      {ic:'edit-3',lbl:'리퀴드 펜 타입',desc:'선명하고 정교한 뾰족한 팁',v:'pen'},
-      {ic:'feather',lbl:'붓펜 타입',desc:'날개 라인·자유로운 표현',v:'brush'},
-      {ic:'minus',lbl:'젤 타입',desc:'진한 발색·오래 지속되는',v:'gel'}
-    ]},
-    q5options:[
-      {ic:'droplets',lbl:'번짐 없는 워터프루프',desc:'비·땀에도 번지지 않는',v:'waterproof'},
-      {ic:'edit-3',lbl:'선명한 발색',desc:'진하고 또렷한 라인',v:'dark'},
-      {ic:'feather',lbl:'자연스러운 스모키',desc:'자연스럽게 번지는 연출',v:'smoky'},
-      {ic:'clock',lbl:'오래 지속',desc:'하루 종일 또렷하게 유지',v:'lasting'}
-    ],
-    deep:[
-      {ic:'droplets',lbl:'번짐 없는 건?'},
-      {ic:'feather',lbl:'날개 라인 잘 되는 건?'},
-      {ic:'edit-3',lbl:'스모키 연출에 좋은 건?'},
-      {ic:'clock',lbl:'지속력 최강은?'}
-    ],
-    prod:{
-      luxury:[
-        {n:'입생로랑 쿠르 에뜨랑제 아이라이너',st:'백화점',pr:'55,000원',sr:5,
-          rsn:'수분 없이도 매끄럽게 발리는 젤 라이너. 진한 블랙 발색과 오랜 지속력으로 럭셔리 아이라이너의 기준이에요.',
-          g:['진한 블랙','오랜 지속','매끄러운 발림'],w:['가격 부담','전용 리무버 필요']}
-      ],
-      high:[
-        {n:'클리오 샤프 쏘 심플 펜슬 라이너',st:'올리브영',pr:'12,000원',sr:5,
-          rsn:'올리브영 아이라이너 부동의 1위. 0.1mm 극세 팁으로 정교한 라인을 그릴 수 있고, 워터·오일프루프로 하루 종일 번지지 않아요.',
-          g:['번짐없음','0.1mm 극세팁','워터·오일프루프'],w:['전용 리무버 권장','초보자 연습 필요']},
-        {n:'맥 플루이드라인 젤 아이라이너',st:'백화점·맥 공식',pr:'35,000원',sr:4,
-          rsn:'젤 타입으로 진한 발색과 강한 지속력이 특징이에요. 24시간 워터프루프로 어떤 상황에도 무너지지 않아요.',
-          g:['진한 젤 발색','24시간 지속','워터프루프'],w:['별도 브러시 필요','굳음 주의']}
-      ],
-      mid:[
-        {n:'에뛰드 플레이 101 스틱 젤 라이너',st:'에뛰드·올리브영',pr:'10,000원',sr:4,
-          rsn:'스틱 타입 젤 라이너로 자연스러운 스모키 눈매 연출에 딱이에요. 브러시 없이 간편하게 쓸 수 있어요.',
-          g:['스모키 연출','간편한 사용','자연스러운 발색'],w:['선명도 보통','워터프루프 약함']},
-        {n:'미샤 뭉쳐 마이 래쉬 아이라이너',st:'미샤·올리브영',pr:'7,000원',sr:4,
-          rsn:'가격 대비 워터프루프 성능이 우수해요. 발색도 선명하고 뭉침 없이 끝까지 깔끔하게 그려져요.',
-          g:['가성비','워터프루프','선명한 발색'],w:['팁 내구성 보통','장기 사용 주의']}
-      ],
-      low:[
-        {n:'다이소 블랙 아이라이너 펜슬',st:'다이소',pr:'2,000원',sr:3,
-          rsn:'가볍게 데일리 아이라인을 그을 때 쓰기 좋아요. 부담 없는 가격에 연습용으로도 적합해요.',
-          g:['초저가','데일리용','연습용'],w:['지속력 약함','번짐 있음','워터프루프 없음']}
-      ]
-    }
-  },
-
-  // ── 립스틱·립틴트 ──────────────────────────────────────────
-  lipstick:{
-    name:'립스틱·립틴트', icon:'smile',
-    kw:['립','립스틱','립틴트','틴트','입술','립글로스','립밤'],
-    q3options:[
-      {ic:'clock',lbl:'금방 지워짐',desc:'밥 먹으면 다 없어지는',v:'fade'},
-      {ic:'droplets',lbl:'입술 건조·각질',desc:'발랐는데 오히려 건조해지는',v:'dry'},
-      {ic:'palette',lbl:'발색이 실망스러움',desc:'사진이랑 달라서 실망했던',v:'color'},
-      {ic:'layers',lbl:'묻어남',desc:'컵에 묻거나 마스크에 묻는',v:'transfer'}
-    ],
-    q4:{title:'원하는 립 제형은?',hint:'제형에 따라 보습감·지속력·발색이 완전히 달라져요.',options:[
-      {ic:'droplets',lbl:'촉촉한 글로스',desc:'광택·보습·촉촉함이 중심',v:'gloss'},
-      {ic:'minus',lbl:'매트 립스틱',desc:'진한 발색·파우더리한 마무리',v:'matte'},
-      {ic:'layers',lbl:'물광 틴트',desc:'자연스럽게 물드는 느낌',v:'tint'},
-      {ic:'wind',lbl:'에어리 벨벳',desc:'가볍고 부드러운 벨벳 마무리',v:'velvet'}
-    ]},
-    q5options:[
-      {ic:'clock',lbl:'오래 지속',desc:'식사 후에도 남아있는',v:'lasting'},
-      {ic:'droplets',lbl:'보습·촉촉함',desc:'하루 종일 건조하지 않은',v:'moisture'},
-      {ic:'palette',lbl:'선명한 발색',desc:'한 번에 진하게 발리는',v:'color'},
-      {ic:'feather',lbl:'자연스러운 투명감',desc:'안 바른 듯 자연스러운',v:'natural'}
-    ],
-    deep:[
-      {ic:'clock',lbl:'지속력 강한 건?'},
-      {ic:'droplets',lbl:'보습력 좋은 건?'},
-      {ic:'palette',lbl:'내 피부톤에 맞는 컬러는?'},
-      {ic:'gift',lbl:'선물하기 좋은 건?'},
-      {ic:'layers',lbl:'묻어남 없는 건?'}
-    ],
-    prod:{
-      luxury:[
-        {n:'샤넬 루쥬 알뤼르 벨벳',st:'백화점·샤넬 공식',pr:'60,000원',sr:5,
-          rsn:'벨벳 매트 발색과 착 달라붙는 밀착력이 인상적이에요. 선물용으로도 최고의 선택이고 오래도록 사랑받는 명품 립스틱이에요.',
-          g:['고급스러운 발색','밀착력','선물용 최고'],w:['가격 부담','보습력 약함']},
-        {n:'디올 루쥬 디올 립스틱',st:'백화점·디올 공식',pr:'65,000원',sr:5,
-          rsn:'다양한 컬러와 피니시로 어떤 스타일에도 어울려요. 보습 성분 함유로 촉촉하게 유지되면서 진한 발색을 자랑해요.',
-          g:['다양한 컬러','촉촉한 마무리','선물용'],w:['가격 부담','지속력 보통']}
-      ],
-      high:[
-        {n:'롬앤 쥬시 래스팅 틴트',st:'올리브영',pr:'11,000원',sr:5,
-          rsn:'얇게 물드는 자연스러운 색감과 6시간 이상의 지속력이에요. 올리브영 립틴트 장기 베스트셀러로 여름에도 번지지 않아요.',
-          g:['자연스러운 발색','6시간 지속','촉촉한 느낌'],w:['커버력 약함','초반 묻어남 있음']},
-        {n:'3CE 벨벳 립 틴트',st:'올리브영',pr:'16,000원',sr:4,
-          rsn:'벨벳 매트 질감으로 진한 발색과 오랜 지속력을 자랑해요. 매트한 마무리를 원한다면 최고의 선택이에요.',
-          g:['진한 발색','매트 피니시','오랜 지속'],w:['건성 입술 건조함','입술 선 먼저 정리 필요']}
-      ],
-      mid:[
-        {n:'페리페라 잉크 더 에어리 벨벳',st:'올리브영',pr:'9,500원',sr:5,
-          rsn:'가벼운 에어리 텍스처로 입술에 부담 없이 발려요. 진한 발색이지만 건조하지 않아 데일리로 완벽한 립틴트예요.',
-          g:['에어리 텍스처','진한 발색','촉촉함 유지'],w:['지속력 보통','묻어남 있음']},
-        {n:'에뛰드 픽싱 틴트',st:'에뛰드·올리브영',pr:'9,000원',sr:4,
-          rsn:'픽싱 기술로 발색 후 막을 형성해 오래 지속돼요. 식사 후에도 발색이 남아있어요.',
-          g:['픽싱 기술','오래 지속','식사 후 OK'],w:['건조함 주의','입술 각질 먼저 제거 필요']}
-      ],
-      low:[
-        {n:'미샤 더 스타일 플럼프닝 틴트',st:'다이소·미샤',pr:'5,000원',sr:4,
-          rsn:'보습과 발색을 모두 잡은 가성비 틴트예요. 플럼핑 성분으로 입술이 도톰해 보이는 효과도 있어요.',
-          g:['가성비 최고','보습','자연스러운 발색'],w:['지속력 보통','전문 제품 대비 발색 약함']}
-      ]
-    }
-  },
-
-  // ── 스킨케어 세럼 ────────────────────────────────────────────
-  serum:{
-    name:'스킨케어 세럼', icon:'sparkles',
-    kw:['세럼','에센스','앰플','스킨케어','보습','미백','주름','트러블','스킨','토너','토닝'],
-    q3options:[
-      {ic:'droplets',lbl:'보습 부족',desc:'아무리 발라도 당기고 건조한',v:'dry'},
-      {ic:'alert-circle',lbl:'트러블·뾰루지',desc:'피부가 자주 올라와서 고민인',v:'trouble'},
-      {ic:'sun',lbl:'칙칙하고 어두움',desc:'피부 톤이 안 밝아 고민인',v:'dull'},
-      {ic:'trending-down',lbl:'탄력 저하',desc:'피부가 처지고 주름이 생기는',v:'aging'}
-    ],
-    q4:{title:'주요 피부 고민은?',hint:'고민에 맞는 핵심 성분이 달라요. 가장 급한 하나만 골라주세요.',options:[
-      {ic:'droplets',lbl:'수분·보습',desc:'촉촉함이 최우선이에요',v:'moisture'},
-      {ic:'sun',lbl:'미백·톤업',desc:'피부를 환하게 밝히고 싶어요',v:'brightening'},
-      {ic:'trending-up',lbl:'탄력·주름',desc:'탄력 있고 어려 보이고 싶어요',v:'antiaging'},
-      {ic:'shield',lbl:'트러블·진정',desc:'자극 없이 피부를 진정시키고 싶어요',v:'trouble'}
-    ]},
-    q5options:[
-      {ic:'feather',lbl:'가볍고 산뜻한 제형',desc:'끈적임 없이 가볍게 흡수되는',v:'light'},
-      {ic:'droplets',lbl:'고보습·촉촉한 제형',desc:'풍부하고 촉촉하게 잠기는',v:'rich'},
-      {ic:'flask-conical',lbl:'성분이 중요해요',desc:'효과 좋은 핵심 성분 위주로',v:'ingredient'},
-      {ic:'dollar-sign',lbl:'가성비 위주로',desc:'합리적인 가격에 효과 좋은',v:'value'}
-    ],
-    deep:[
-      {ic:'flask-conical',lbl:'성분 자세히 알고 싶어'},
-      {ic:'sun',lbl:'비타민C 세럼 추천해줘'},
-      {ic:'shield',lbl:'민감성용 추천해줘'},
-      {ic:'trending-up',lbl:'레티놀 세럼은?'},
-      {ic:'droplets',lbl:'히알루론산 고보습은?'}
-    ],
-    prod:{
-      luxury:[
-        {n:'SK-II 페이셜 트리트먼트 에센스',st:'백화점·SK-II 공식',pr:'198,000원',sr:5,
-          rsn:'피테라 발효 성분으로 피부 결을 정돈하고 투명감을 높여줘요. 아시아 여성이 가장 많이 재구매하는 명품 에센스에요.',
-          g:['피부 결 개선','투명감','오랜 검증'],w:['높은 가격','향 있음']},
-        {n:'에스티로더 어드밴스드 나이트 리페어 세럼',st:'백화점·공식몰',pr:'138,000원',sr:5,
-          rsn:'밤 사이 피부를 집중 재건해주는 안티에이징 세럼의 기준. 탄력·수분·광채를 동시에 케어해요.',
-          g:['탄력 개선','야간 집중 케어','광채 효과'],w:['높은 가격','밤에만 사용 권장']}
-      ],
-      high:[
-        {n:'마녀공장 갈락토미세스 퓨어 에센스',st:'올리브영',pr:'17,000원',sr:5,
-          rsn:'갈락토미세스 95.8% 함유로 모공 케어와 피부 결 개선에 효과적이에요. 국내 에센스 부문 장기 베스트셀러예요.',
-          g:['모공 케어','피부 결 개선','가성비 우수'],w:['향 있음','민감성 피부 주의']},
-        {n:'코스알엑스 어드밴스드 스네일 96 무신 파워 에센스',st:'올리브영',pr:'18,000원',sr:4,
-          rsn:'달팽이 점액 96% 함유로 피부 보습과 손상 케어를 동시에 해줘요. 트러블 진정 효과도 있어요.',
-          g:['고보습','트러블 진정','손상 케어'],w:['달팽이 점액 성분 거부감','묵직한 텍스처']}
-      ],
-      mid:[
-        {n:'이니스프리 그린티 씨드 세럼',st:'이니스프리·올리브영',pr:'25,000원',sr:4,
-          rsn:'제주 녹차에서 추출한 성분으로 수분을 꽉 채워줘요. 건성·복합성 피부에 잘 맞고 오래 써도 부담 없어요.',
-          g:['고보습','자연 성분','자극 적음'],w:['미백 효과 약함','지성 피부엔 무거울 수 있음']},
-        {n:'넘버즈인 5번 비타씨 세럼',st:'올리브영',pr:'35,000원',sr:4,
-          rsn:'순수 비타민C 5% 함유로 피부를 환하고 밝게 만들어줘요. 미백·항산화 효과로 칙칙한 피부에 특히 효과적이에요.',
-          g:['미백 효과','항산화','밝은 피부'],w:['피부 자극 주의','냉장 보관 권장']}
-      ],
-      low:[
-        {n:'넘버즈인 1번 히알루론산 세럼',st:'다이소',pr:'5,000원',sr:4,
-          rsn:'다이소에서 만나는 히알루론산 세럼. 수분 보충 기본기에 충실하며 부담 없는 가격에 꾸준히 쓸 수 있어요.',
-          g:['가성비 최고','기본 보습','자극 적음'],w:['기능 단순','지속력 보통','전문 제품 대비 효능 한계']}
-      ]
-    }
+  copy: {
+    homeTitle: '오늘 무엇을 고민 중이세요?',
+    homeHint: '상품 이름이나 종류를 적어주세요. 예: 여름에 안 번지는 마스카라',
+    homePlaceholder: '무엇을 사려고 하세요?',
+    pickCat: '이 중에서 골라주세요',
+    interviewNote: '정답이 없는 질문입니다. 지금 마음에 가까운 쪽을 고르세요.',
+    analyzing: '당신의 기준을 정리하는 중입니다',
+    resultTitle: '당신의 구매 기준',
+    deepTitle: '심층 해설',
+    feedbackQ: '지난번 추천은 어떻게 되셨어요?'
   }
+};
 
-}
-
-function detectCat(kw){
-  const k=kw.toLowerCase();
-  for(const[key,cat] of Object.entries(DB)){if(cat.kw.some(w=>k.includes(w)))return key;}
-  return 'mascara';
-}
-
-function buildQs(catKey){
-  const cat=DB[catKey];
-  // Q2: 카테고리별 상황 질문 맞춤화
-  const q2map={
-    mascara:{title:'언제 주로 사용하나요?',hint:'상황에 따라 필요한 지속력과 기능이 달라요.',options:[
-      {ic:'briefcase',lbl:'출근 · 데일리',desc:'자연스럽고 깔끔한 눈매',v:'daily'},
-      {ic:'star',lbl:'데이트 · 특별한 날',desc:'드라마틱하고 오래 지속되는',v:'special'},
-      {ic:'activity',lbl:'운동 · 야외 활동',desc:'땀·수영에도 번지지 않는',v:'active'},
-      {ic:'layers',lbl:'상황 가리지 않고',desc:'다용도로 쓸 수 있는',v:'all'}
+/* ---------- 축(axis) : 모든 카테고리가 공유하는 판단 기준 ---------- */
+CONFIG.axes = [
+  { id:'budget', label:'예산', mode:'budget',
+    q:'{c}에 한 번에 얼마까지 쓸 수 있으세요?',
+    lowWord:'가격을 먼저 봅니다', highWord:'값보다 만족을 봅니다',
+    opts:[
+      {t:'1만원 아래로', h:'부담 없이 자주 바꾸는 쪽', v:0.15},
+      {t:'1만원에서 3만원 사이', h:'가장 흔한 구간입니다', v:0.4},
+      {t:'3만원에서 6만원 사이', h:'오래 쓸 것을 고르는 쪽', v:0.7},
+      {t:'마음에 들면 가격은 나중', h:'실패하지 않는 쪽이 중요', v:1}
     ]},
-    sunscreen:{title:'주로 어떤 상황에서 쓰나요?',hint:'상황에 따라 필요한 제형과 차단 수준이 달라요.',options:[
-      {ic:'briefcase',lbl:'실내 · 출퇴근',desc:'가볍게 차단만 해주면 돼요',v:'daily'},
-      {ic:'sun',lbl:'야외 · 장시간 외출',desc:'강력한 차단력이 필요해요',v:'outdoor'},
-      {ic:'activity',lbl:'운동 · 레저 · 해수욕',desc:'방수·내수성이 필수예요',v:'active'},
-      {ic:'baby',lbl:'아이와 함께',desc:'온가족이 쓸 수 있는 제품',v:'kids'}
+  { id:'lasting', label:'지속력', mode:'atLeast',
+    q:'{c}는 몇 시간쯤 버텨줘야 하나요?',
+    lowWord:'수시로 고쳐도 괜찮습니다', highWord:'한 번 바르면 끝이어야 합니다',
+    opts:[
+      {t:'서너 시간이면 충분해요', h:'중간에 고칠 수 있는 하루', v:0.2},
+      {t:'반나절은 버텨야 해요', h:'점심 지나 한 번 정도 손봄', v:0.5},
+      {t:'출근부터 퇴근까지', h:'고칠 틈이 거의 없는 하루', v:0.8},
+      {t:'땀이나 물에도 그대로', h:'야외 활동이나 여름 기준', v:1}
     ]},
-    foundation:{title:'주로 어떤 상황에서 쓰나요?',hint:'상황에 따라 필요한 커버력과 지속력이 달라요.',options:[
-      {ic:'briefcase',lbl:'출근 · 데일리',desc:'자연스럽고 편안한 베이스',v:'daily'},
-      {ic:'star',lbl:'파티 · 중요한 날',desc:'강한 커버와 오랜 지속력',v:'special'},
-      {ic:'camera',lbl:'사진 · 영상 촬영',desc:'카메라에 예쁘게 나오는 베이스',v:'photo'},
-      {ic:'layers',lbl:'가리지 않음',desc:'다양한 상황에 두루',v:'all'}
+  { id:'finish', label:'표현 강도', mode:'match',
+    q:'{c}는 어떤 느낌이었으면 하세요?',
+    lowWord:'티 안 나는 쪽이 좋습니다', highWord:'확실히 보이는 쪽이 좋습니다',
+    opts:[
+      {t:'한 듯 안 한 듯', h:'원래 그런 것처럼 보이기', v:0.15},
+      {t:'은은하게', h:'가까이서 보면 아는 정도', v:0.4},
+      {t:'또렷하게', h:'사진에서도 살아나는 정도', v:0.7},
+      {t:'확실히 눈에 띄게', h:'분위기가 바뀌는 정도', v:1}
     ]},
-    eyeliner:{title:'언제 주로 사용하나요?',hint:'상황에 따라 필요한 지속력과 표현이 달라요.',options:[
-      {ic:'briefcase',lbl:'출근 · 데일리',desc:'자연스러운 눈매 연출',v:'daily'},
-      {ic:'star',lbl:'데이트 · 특별한 날',desc:'또렷하고 강한 눈매',v:'special'},
-      {ic:'activity',lbl:'운동 · 야외',desc:'땀에도 번지지 않는',v:'active'},
-      {ic:'moon',lbl:'저녁 · 파티',desc:'스모키·드라마틱한 연출',v:'party'}
+  { id:'gentle', label:'저자극', mode:'atLeast',
+    q:'{c} 때문에 피부가 뒤집힌 적 있으세요?',
+    lowWord:'웬만하면 괜찮습니다', highWord:'성분을 늘 확인해야 합니다',
+    opts:[
+      {t:'거의 없어요', h:'아무거나 잘 맞는 편', v:0.15},
+      {t:'가끔 있어요', h:'컨디션 따라 다름', v:0.45},
+      {t:'자주 있어요', h:'맞는 것만 골라 씀', v:0.75},
+      {t:'늘 신경 써야 해요', h:'성분표를 먼저 봄', v:1}
     ]},
-    lipstick:{title:'언제 주로 바르나요?',hint:'상황에 따라 발색·지속력·제형 선택이 달라요.',options:[
-      {ic:'briefcase',lbl:'출근 · 데일리',desc:'자연스럽고 오피스에 어울리는',v:'daily'},
-      {ic:'star',lbl:'데이트 · 특별한 날',desc:'화사하고 오래 가는',v:'special'},
-      {ic:'activity',lbl:'운동 · 야외',desc:'지워지지 않는 강한 지속력',v:'active'},
-      {ic:'gift',lbl:'선물용으로',desc:'예쁜 패키지에 실용적인',v:'gift'}
+  { id:'ease', label:'손쉬움', mode:'atLeast',
+    q:'{c}에 시간을 얼마나 들일 수 있으세요?',
+    lowWord:'공들이는 게 즐겁습니다', highWord:'빨리 끝나야 합니다',
+    opts:[
+      {t:'30초 안에 끝내고 싶어요', h:'아침이 늘 바쁨', v:1},
+      {t:'1분에서 2분 정도', h:'적당히 신경 쓰는 편', v:0.7},
+      {t:'공들여도 괜찮아요', h:'결과가 좋으면 감수', v:0.35},
+      {t:'과정 자체가 즐거워요', h:'바르는 시간이 취미', v:0.15}
     ]},
-    serum:{title:'언제 스킨케어를 집중하고 싶으세요?',hint:'라이프스타일에 맞는 루틴을 추천해드려요.',options:[
-      {ic:'sun',lbl:'아침 루틴에',desc:'가볍고 자외선 대응 가능한',v:'morning'},
-      {ic:'moon',lbl:'저녁 집중 케어',desc:'밤 사이 집중 재건·영양',v:'night'},
-      {ic:'clock',lbl:'아침 저녁 둘 다',desc:'아침저녁 모두 사용 가능한',v:'all'},
-      {ic:'zap',lbl:'바쁠 때 빠르게',desc:'흡수 빠르고 간단하게',v:'quick'}
+  { id:'store', label:'구매 방식', mode:'store',
+    q:'{c}는 보통 어디서 사세요?',
+    lowWord:'온라인에서 찾아 삽니다', highWord:'직접 보고 삽니다',
+    opts:[
+      {t:'발라보고 사고 싶어요', h:'매장에서 확인해야 안심', v:0.9},
+      {t:'온라인 최저가로', h:'검색해서 싸게 사는 편', v:0.15},
+      {t:'쓰던 브랜드 공식몰', h:'같은 곳에서 계속 삼', v:0.55},
+      {t:'그때그때 달라요', h:'정해진 곳이 없음', v:0.5}
     ]}
-  };
-  const q2=q2map[catKey]||{title:'주로 어떤 상황에서 쓰나요?',hint:'상황에 따라 필요한 기능이 달라져요.',options:[
-    {ic:'briefcase',lbl:'출근 · 데일리',desc:'매일 자연스럽게',v:'daily'},
-    {ic:'star',lbl:'특별한 날',desc:'강하고 오래 지속',v:'special'},
-    {ic:'activity',lbl:'운동 · 야외',desc:'땀·유분에 강한',v:'active'},
-    {ic:'layers',lbl:'가리지 않음',desc:'다양한 상황에 두루',v:'all'}
-  ]};
-  return [
-    {id:'budget',step:'Q1',title:'예산이 어느 정도인가요?',hint:'예산에 따라 가장 효율적인 제품을 골라드려요.',options:[
-      {ic:'shopping-bag',lbl:'5천원 이하',desc:'다이소, 초저가 라인',v:'low'},
-      {ic:'shopping-cart',lbl:'1~2만원',desc:'올리브영, 로드샵 브랜드',v:'mid'},
-      {ic:'star',lbl:'3~5만원',desc:'프리미엄 로드샵',v:'high'},
-      {ic:'crown',lbl:'5만원 이상',desc:'백화점, 럭셔리 브랜드',v:'luxury'}
-    ]},
-    {...q2,id:'situation',step:'Q2'},
-    {id:'pain',step:'Q3',title:'전에 쓰다 가장 불편했던 점은?',hint:'이 경험만은 절대 반복하지 않도록 걸러드려요.',options:cat.q3options},
-    {...cat.q4,id:'type',step:'Q4'},
-    {id:'priority',step:'Q5',title:'가장 중요한 한 가지는?',hint:'딱 하나! 이 답변이 최종 추천 기준이 돼요.',options:cat.q5options}
-  ];
+];
+
+/* ---------- 구매처 ---------- */
+CONFIG.stores = [
+  { id:'oy', name:'올리브영', off:0.95, price:0.55, trust:0.9, sample:0.9, fast:0.7,
+    trait:'세일 주기가 짧고 매장에서 직접 발라볼 수 있습니다.',
+    tip:'정기 세일 주간을 기다리면 같은 상품을 눈에 띄게 싸게 삽니다.' },
+  { id:'open', name:'쿠팡 · 오픈마켓', off:0.1, price:0.25, trust:0.55, sample:0.1, fast:0.95,
+    trait:'가격은 가장 낮지만 판매자와 유통기한을 직접 확인해야 합니다.',
+    tip:'판매자가 브랜드 공식 스토어인지, 제조일자 표기가 있는지 먼저 봅니다.' },
+  { id:'brand', name:'브랜드 공식몰', off:0.35, price:0.7, trust:0.95, sample:0.85, fast:0.6,
+    trait:'샘플과 적립이 붙고 교환 · 환불이 가장 편합니다.',
+    tip:'첫 구매 쿠폰과 샘플 구성을 합치면 실구매가가 크게 내려갑니다.' },
+  { id:'dept', name:'백화점 · 면세', off:0.9, price:0.9, trust:0.95, sample:0.95, fast:0.4,
+    trait:'상담을 받을 수 있고 프로모션 시기에는 단가가 낮아집니다.',
+    tip:'테스트 후 구매처를 따로 정해도 됩니다. 발색 확인만 하러 가도 좋습니다.' }
+];
+
+/* ---------- 유형 라벨 : 위에서부터 먼저 맞는 것 하나 ---------- */
+CONFIG.personas = [
+  { cond:[['lasting',0.75,1],['gentle',0.7,1]], name:'버텨야 하는데 피부는 예민한 타입',
+    desc:'가장 고르기 어려운 조합입니다. 오래 버티는 제형일수록 지우기 어렵고, 지우는 과정에서 피부가 상합니다. 지속력을 조금 내주고 클렌징 부담이 적은 쪽을 고르는 편이 결과적으로 낫습니다.' },
+  { cond:[['lasting',0.75,1],['ease',0.7,1]], name:'한 번에 끝내야 하는 타입',
+    desc:'아침에 쓰는 시간이 짧고 낮에 고칠 틈도 없습니다. 바르는 난이도가 낮으면서 지속력이 확보되는 제형이 맞습니다. 손이 많이 가는 제품은 좋아도 결국 안 쓰게 됩니다.' },
+  { cond:[['gentle',0.7,1],['budget',0,0.45]], name:'성분은 따지되 값은 지키는 타입',
+    desc:'비싼 것이 곧 순한 것은 아닙니다. 성분 수가 적고 단순한 제형에서 가격 대비 만족이 가장 잘 나옵니다.' },
+  { cond:[['finish',0.7,1],['lasting',0.7,1]], name:'또렷하게, 끝까지 가는 타입',
+    desc:'표현도 지속도 모두 높게 요구합니다. 이 조합은 제품 선택보다 사용법이 결과를 더 크게 가릅니다. 고정 단계를 하나 더하면 만족도가 올라갑니다.' },
+  { cond:[['finish',0,0.35],['ease',0.65,1]], name:'티 안 나게, 빠르게 타입',
+    desc:'화장을 한 티가 나는 것보다 정돈되어 보이는 쪽을 원합니다. 단계 수가 적고 실패 여지가 작은 제형이 맞습니다.' },
+  { cond:[['budget',0.65,1],['store',0.6,1]], name:'확인하고 오래 쓰는 타입',
+    desc:'한 번 살 때 제대로 사서 오래 쓰는 편입니다. 발라보고 사는 습관이 실패를 줄여주고 있으니 그 습관을 유지하는 편이 좋습니다.' }
+];
+CONFIG.personaFallback = { name:'균형을 보는 타입',
+  desc:'한쪽으로 치우치지 않았습니다. 이런 경우 극단적인 기능성 제품보다 기본기가 고른 제품에서 만족이 잘 나옵니다.' };
+
+/* ---------- 축 조합 경고 : 실패 지점을 미리 짚습니다 ---------- */
+CONFIG.warnings = [
+  { cond:[['lasting',0.75,1],['gentle',0.7,1]],
+    t:'번짐 방지와 저자극은 대체로 반대 방향입니다',
+    b:'워터프루프 제형은 전용 리무버가 필요하고, 그 과정에서 눈가와 피부가 상하기 쉽습니다. 지속력을 한 단계 낮추고 클렌징이 쉬운 쪽을 고르면 하루 전체의 부담이 줄어듭니다.' },
+  { cond:[['finish',0.7,1],['ease',0.75,1]],
+    t:'표현은 세게, 시간은 짧게는 제품만으로 안 됩니다',
+    b:'발색이 강한 제형일수록 경계를 정리하는 손이 필요합니다. 한 번에 진하게 나오는 제품보다 여러 번 덧발라 조절되는 제품이 시간을 아껴줍니다.' },
+  { cond:[['budget',0,0.3],['lasting',0.75,1]],
+    t:'낮은 가격대에서 지속력을 요구하면 자극이 올라갑니다',
+    b:'가격을 낮추면서 지속력을 유지하는 방법은 대체로 고정 성분을 늘리는 것입니다. 피부가 예민하다면 가격대를 한 칸 올리거나 지속력 기대를 낮추는 편이 낫습니다.' },
+  { cond:[['store',0,0.25],['gentle',0.7,1]],
+    t:'온라인 최저가와 예민한 피부는 함께 가기 어렵습니다',
+    b:'최저가 상품은 제조일자가 오래된 경우가 있습니다. 피부가 예민하다면 제조일자 표기가 있는 판매처를 고르는 것만으로 트러블 확률이 내려갑니다.' }
+];
+
+/* ---------- 카테고리 : 여기에 한 덩어리를 넣으면 질문 · 추천이 자동으로 생깁니다 ---------- */
+CONFIG.data = {};
+CONFIG.data.categories = [
+  {
+    id:'mascara', label:'마스카라', unit:'마스카라',
+    aliases:['마스카라','속눈썹','래쉬','마스까라','뷰러'],
+    weights:{ lasting:0.95, ease:0.8, finish:0.7, gentle:0.6, budget:0.45, store:0.3 },
+    picks:[
+      { name:'워터프루프 롱래쉬형', tags:['워터프루프','롱래쉬','가는 브러시'],
+        vals:{ budget:0.5, lasting:0.95, finish:0.7, gentle:0.35, ease:0.75, store:0.8 },
+        good:'하루 종일 번지지 않고 길이가 눈에 띄게 늘어납니다.',
+        watch:'전용 리무버가 필요하고 눈가가 예민하면 부담이 됩니다.' },
+      { name:'볼륨 컬링형', tags:['볼륨','컬링','두꺼운 브러시'],
+        vals:{ budget:0.6, lasting:0.6, finish:0.95, gentle:0.5, ease:0.45, store:0.8 },
+        good:'눈매가 확실히 커 보이고 사진에서 특히 잘 살아납니다.',
+        watch:'바르는 데 손이 가고, 컬이 풀리면 표가 납니다.' },
+      { name:'온수 클렌징 저자극형', tags:['온수 클렌징','필름형','저자극'],
+        vals:{ budget:0.45, lasting:0.5, finish:0.45, gentle:0.95, ease:0.8, store:0.7 },
+        good:'따뜻한 물만으로 지워져 눈가에 무리가 가지 않습니다.',
+        watch:'땀이나 눈물에는 약해서 한여름 야외에서는 밀릴 수 있습니다.' },
+      { name:'데일리 내추럴형', tags:['자연스러움','가벼움','짧은 브러시'],
+        vals:{ budget:0.3, lasting:0.45, finish:0.25, gentle:0.8, ease:0.9, store:0.9 },
+        good:'뭉치지 않고 빠르게 끝나며 실패할 여지가 거의 없습니다.',
+        watch:'또렷한 눈매를 원하면 아쉽게 느껴집니다.' }
+    ]
+  },
+  {
+    id:'base', label:'쿠션 · 파운데이션', unit:'베이스',
+    aliases:['쿠션','파운데이션','파데','베이스','비비','파우더','컨실러'],
+    weights:{ finish:0.9, lasting:0.85, gentle:0.7, budget:0.65, store:0.55, ease:0.4 },
+    picks:[
+      { name:'고커버 롱웨어형', tags:['고커버','롱웨어','세미매트'],
+        vals:{ budget:0.7, lasting:0.95, finish:0.9, gentle:0.4, ease:0.5, store:0.85 },
+        good:'잡티가 확실히 가려지고 저녁까지 무너지지 않습니다.',
+        watch:'건조하면 각질이 도드라지고 두껍게 보일 수 있습니다.' },
+      { name:'세미매트 데일리형', tags:['중간 커버','매일 사용','무난함'],
+        vals:{ budget:0.5, lasting:0.7, finish:0.55, gentle:0.65, ease:0.85, store:0.9 },
+        good:'가장 실패가 적은 구간이고 어떤 피부에도 무난합니다.',
+        watch:'특별한 장점이 없어 만족감이 크지는 않습니다.' },
+      { name:'수분 글로우형', tags:['촉촉','윤광','얇은 발림'],
+        vals:{ budget:0.6, lasting:0.5, finish:0.45, gentle:0.75, ease:0.8, store:0.8 },
+        good:'피부가 좋아 보이고 건조한 계절에 특히 편합니다.',
+        watch:'유분이 많으면 오후에 무너지는 속도가 빠릅니다.' },
+      { name:'저자극 톤업형', tags:['저자극','톤업','민감성'],
+        vals:{ budget:0.55, lasting:0.5, finish:0.35, gentle:0.95, ease:0.9, store:0.65 },
+        good:'자극이 적고 바르는 단계가 짧아 부담이 없습니다.',
+        watch:'커버력이 낮아 잡티가 있으면 따로 가려야 합니다.' }
+    ]
+  },
+  {
+    id:'lip', label:'립', unit:'립 제품',
+    aliases:['립','립스틱','틴트','립밤','립글로스','입술'],
+    weights:{ finish:0.9, lasting:0.8, budget:0.6, store:0.55, gentle:0.55, ease:0.3 },
+    picks:[
+      { name:'지속형 매트 틴트', tags:['매트','고지속','선명한 발색'],
+        vals:{ budget:0.45, lasting:0.95, finish:0.9, gentle:0.35, ease:0.6, store:0.9 },
+        good:'먹고 마셔도 색이 남고 발색이 가장 선명합니다.',
+        watch:'입술이 건조해지고 각질이 도드라지기 쉽습니다.' },
+      { name:'촉촉 글로시 립', tags:['윤기','보습','자연스러움'],
+        vals:{ budget:0.5, lasting:0.35, finish:0.5, gentle:0.85, ease:0.9, store:0.9 },
+        good:'입술이 편하고 덧발라도 뭉치지 않습니다.',
+        watch:'금방 지워져 자주 덧발라야 합니다.' },
+      { name:'벨벳 세미매트', tags:['벨벳','중간 지속','부드러운 발색'],
+        vals:{ budget:0.6, lasting:0.65, finish:0.7, gentle:0.6, ease:0.75, store:0.85 },
+        good:'발색과 편안함 사이에서 균형이 가장 좋습니다.',
+        watch:'아주 오래 가지도, 아주 촉촉하지도 않습니다.' },
+      { name:'컬러 립밤', tags:['가벼움','보습','은은함'],
+        vals:{ budget:0.3, lasting:0.25, finish:0.2, gentle:0.95, ease:0.95, store:0.95 },
+        good:'거울 없이 바를 수 있고 입술 상태를 해치지 않습니다.',
+        watch:'색이 거의 남지 않아 화장을 한 느낌은 나지 않습니다.' }
+    ]
+  },
+  {
+    id:'sun', label:'선크림', unit:'선크림',
+    aliases:['선크림','썬크림','자외선','선블록','선스틱','자차','선세럼'],
+    weights:{ gentle:0.95, ease:0.85, lasting:0.7, budget:0.55, store:0.4, finish:0.2 },
+    picks:[
+      { name:'무기자차 저자극형', tags:['무기자차','민감성','백탁 있음'],
+        vals:{ budget:0.55, lasting:0.7, finish:0.35, gentle:0.95, ease:0.6, store:0.75 },
+        good:'자극이 가장 적고 바르자마자 차단이 시작됩니다.',
+        watch:'백탁이 남고 발림이 뻑뻑한 편입니다.' },
+      { name:'유기자차 산뜻형', tags:['유기자차','산뜻함','백탁 없음'],
+        vals:{ budget:0.5, lasting:0.75, finish:0.2, gentle:0.5, ease:0.9, store:0.9 },
+        good:'얇게 발리고 화장 밑에 깔아도 밀리지 않습니다.',
+        watch:'눈이 시리거나 예민한 피부에 자극이 될 수 있습니다.' },
+      { name:'톤업 겸용형', tags:['톤업','베이스 대용','간편함'],
+        vals:{ budget:0.6, lasting:0.6, finish:0.6, gentle:0.6, ease:0.95, store:0.85 },
+        good:'선크림 한 단계로 베이스까지 끝납니다.',
+        watch:'톤이 맞지 않으면 목과 경계가 생깁니다.' },
+      { name:'덧바름용 스틱 · 스프레이', tags:['덧바름','휴대','야외'],
+        vals:{ budget:0.45, lasting:0.9, finish:0.15, gentle:0.7, ease:0.95, store:0.8 },
+        good:'화장을 지우지 않고 낮에 다시 덧바를 수 있습니다.',
+        watch:'단독으로 쓰기에는 도포량이 부족합니다.' }
+    ]
+  },
+  {
+    id:'cream', label:'수분크림 · 스킨케어', unit:'스킨케어',
+    aliases:['수분크림','크림','스킨케어','보습','로션','세럼','앰플','토너','에센스'],
+    weights:{ gentle:0.95, budget:0.7, store:0.55, ease:0.5, lasting:0.45, finish:0.1 },
+    picks:[
+      { name:'고보습 진정형', tags:['진정','고보습','두꺼운 제형'],
+        vals:{ budget:0.6, lasting:0.8, finish:0.2, gentle:0.95, ease:0.6, store:0.8 },
+        good:'건조와 붉은기를 동시에 잡아주고 밤에 특히 좋습니다.',
+        watch:'무겁고 유분이 많으면 아침에는 부담됩니다.' },
+      { name:'가벼운 젤형', tags:['젤','산뜻함','여름'],
+        vals:{ budget:0.45, lasting:0.5, finish:0.15, gentle:0.75, ease:0.95, store:0.9 },
+        good:'빠르게 흡수되고 화장 전에 발라도 밀리지 않습니다.',
+        watch:'많이 건조한 날에는 보습이 부족합니다.' },
+      { name:'장벽 강화 성분형', tags:['세라마이드','장벽','성분 중심'],
+        vals:{ budget:0.75, lasting:0.75, finish:0.15, gentle:0.9, ease:0.7, store:0.7 },
+        good:'쓸수록 피부가 덜 뒤집히는 쪽으로 바뀝니다.',
+        watch:'가격대가 높고 효과가 눈에 보이기까지 시간이 걸립니다.' },
+      { name:'대용량 실속형', tags:['대용량','가성비','전신 사용'],
+        vals:{ budget:0.2, lasting:0.55, finish:0.1, gentle:0.7, ease:0.9, store:0.85 },
+        good:'아끼지 않고 듬뿍 쓸 수 있어 실제 보습 결과가 좋습니다.',
+        watch:'향이나 성분 구성이 단순해 취향을 탈 수 있습니다.' }
+    ]
+  }
+];
+
+/* ---------- 축별 실전 조언 : 심층 해설의 본문이 됩니다 ---------- */
+CONFIG.axisTips = {
+  budget: {
+    hi:'가격을 덜 따지는 대신 실패했을 때 손해가 큽니다. 사기 전에 교환과 환불 조건을 먼저 확인해두면 그 위험이 줄어듭니다.',
+    mid:'가장 경쟁이 치열한 가격대라 선택지가 많습니다. 세일 주기만 알아도 한 단계 위의 제품을 같은 값에 살 수 있습니다.',
+    lo:'싼 값에 자주 바꾸는 방식이 나쁜 것은 아닙니다. 다만 용량당 가격으로 비교해야 진짜 싼 것이 보입니다.'
+  },
+  lasting: {
+    hi:'지속력을 올리면 지우는 부담이 거의 항상 함께 올라갑니다. 클렌징 단계를 하나 더 둘 수 있는지를 먼저 생각해보세요.',
+    mid:'반나절 기준이면 웬만한 제품이 다 들어옵니다. 지속력 말고 다른 축으로 고르는 편이 만족도가 높습니다.',
+    lo:'중간에 고칠 수 있다면 굳이 강한 제형을 쓸 이유가 없습니다. 편안한 쪽이 결과적으로 더 오래 쓰게 됩니다.'
+  },
+  finish: {
+    hi:'진한 표현은 제품보다 덧바르는 방식이 결과를 더 크게 바꿉니다. 한 번에 진해지는 것보다 조절되는 쪽이 안전합니다.',
+    mid:'가까이서 보면 아는 정도를 원하신다면 색보다 질감에서 답이 나옵니다.',
+    lo:'티가 안 나야 한다면 색이 아니라 광을 보세요. 같은 색도 광이 있으면 훨씬 티가 납니다.'
+  },
+  gentle: {
+    hi:'성분표는 앞쪽 다섯 줄이 사실상 전부입니다. 향료와 알코올이 어디에 있는지만 봐도 상당수가 걸러집니다.',
+    mid:'컨디션에 따라 다르다면 새 제품은 턱선 안쪽에 하루 발라보고 판단하는 편이 안전합니다.',
+    lo:'지금까지 문제가 없었다면 선택지가 넓습니다. 다만 계절이 바뀌면 피부도 바뀐다는 점만 기억해두세요.'
+  },
+  ease: {
+    hi:'단계 수를 줄이는 것이 제품 성능보다 만족도에 더 크게 작용합니다. 겸용으로 쓸 수 있는 제품을 먼저 보세요.',
+    mid:'적당히 신경 쓰는 편이라면 손이 조금 가더라도 결과가 좋은 쪽을 골라도 됩니다.',
+    lo:'공들일 수 있다면 고를 수 있는 제품의 상한이 높습니다. 제품보다 도구를 하나 바꾸는 편이 더 크게 달라지기도 합니다.'
+  },
+  store: {
+    hi:'발라보고 사는 습관이 실패를 가장 크게 줄여줍니다. 확인은 매장에서 하고 구매는 더 싼 곳에서 해도 괜찮습니다.',
+    mid:'정해진 곳이 없다면 세일 주기가 짧은 한 곳을 기준점으로 삼아두면 비교가 훨씬 쉬워집니다.',
+    lo:'온라인이 싸지만 제조일자와 판매자 확인이 필요합니다. 브랜드 공식 스토어인지만 봐도 위험이 크게 줄어듭니다.'
+  }
+};
+
+/* ============================================================
+   저장소 — 회원가입 없음. 전부 이 기기 안에만 남습니다.
+   ============================================================ */
+var KEY = 'pickme_v2';
+var DB = { profile:{}, seen:0, history:[], deepDate:'', deepUsed:0, introDone:false };
+
+function todayStr(){
+  var d = new Date();
+  return d.getFullYear() + '-' + (d.getMonth()+1) + '-' + d.getDate();
+}
+function loadDB(){
+  try{
+    var raw = window.localStorage.getItem(KEY);
+    if(raw){
+      var o = JSON.parse(raw);
+      if(o && typeof o === 'object'){
+        DB.profile = o.profile || {};
+        DB.seen = o.seen || 0;
+        DB.history = o.history || [];
+        DB.deepDate = o.deepDate || '';
+        DB.deepUsed = o.deepUsed || 0;
+        DB.introDone = !!o.introDone;
+      }
+    }
+  }catch(e){ /* 저장소를 못 쓰는 환경에서도 앱은 동작합니다 */ }
+  if(DB.deepDate !== todayStr()){ DB.deepDate = todayStr(); DB.deepUsed = 0; }
+}
+function saveDB(){
+  try{ window.localStorage.setItem(KEY, JSON.stringify(DB)); }catch(e){}
 }
 
-// ══ STATE ══
-let S={kw:'',cat:'mascara',mode:'',qs:[],ans:{},qi:-1,hist:[],apiKey:localStorage.getItem('pm_k')||''};
+/* ============================================================
+   DOM 헬퍼 — 백틱 없이, createElement 로만 만듭니다.
+   ============================================================ */
+function el(tag, cls, text){
+  var n = document.createElement(tag);
+  if(cls){ n.className = cls; }
+  if(text !== undefined && text !== null){ n.textContent = String(text); }
+  return n;
+}
+function add(parent){
+  for(var i=1;i<arguments.length;i++){
+    var c = arguments[i];
+    if(c){ parent.appendChild(c); }
+  }
+  return parent;
+}
+function clear(n){ while(n.firstChild){ n.removeChild(n.firstChild); } }
+function on(n, fn){ n.addEventListener('click', fn); return n; }
+function svgIcon(d){
+  var ns = 'http://www.w3.org/2000/svg';
+  var s = document.createElementNS(ns, 'svg');
+  s.setAttribute('viewBox','0 0 24 24'); s.setAttribute('class','ico');
+  var p = document.createElementNS(ns, 'path');
+  p.setAttribute('d', d);
+  s.appendChild(p);
+  return s;
+}
+var ICON_BACK = 'M15 19l-7-7 7-7';
+var ICON_INFO = 'M12 3a9 9 0 100 18 9 9 0 000-18zM12 11v5M12 8h.01';
+var ICON_HOME = 'M4 11l8-7 8 7v8a1 1 0 01-1 1h-5v-6h-4v6H5a1 1 0 01-1-1z';
 
-// ══ NAV ══
-function showSc(n){
-  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
-  document.getElementById(n).classList.add('active');
-  window.scrollTo(0,0);
-  lucide.createIcons();
-  // 플로팅 버튼: 랜딩 화면일 때만 활성
-  const fc=document.getElementById('floatCta');
-  if(fc){
-    if(n==='landing'){
-      // 스크롤 이벤트가 처리하므로 그냥 유지
-    } else {
-      fc.classList.remove('show');
+function multiline(parent, text, cls){
+  var rows = String(text).split('\n');
+  for(var i=0;i<rows.length;i++){
+    if(i>0){ parent.appendChild(document.createElement('br')); }
+    parent.appendChild(document.createTextNode(rows[i]));
+  }
+  if(cls){ parent.className = cls; }
+  return parent;
+}
+function bullet(strong, rest){
+  var row = el('div','li');
+  add(row, el('span','dot'));
+  var t = el('div','');
+  if(strong){ var b = el('b','', strong); t.appendChild(b); t.appendChild(document.createTextNode(' ')); }
+  t.appendChild(document.createTextNode(rest || ''));
+  add(row, t);
+  return row;
+}
+
+/* ============================================================
+   엔진 1 — 카테고리 인식
+   ============================================================ */
+function findCategory(text){
+  var t = String(text || '').replace(/\s/g,'');
+  if(!t){ return null; }
+  var cats = CONFIG.data.categories, i, j;
+  for(i=0;i<cats.length;i++){
+    var al = cats[i].aliases;
+    for(j=0;j<al.length;j++){
+      if(t.indexOf(al[j]) >= 0){ return cats[i]; }
     }
   }
+  return null;
 }
-function goHome(){document.getElementById('heroIn').value='';showSc('landing');}
-function focusSearch(){document.getElementById('heroIn').focus();}
-function setQ(t){document.getElementById('heroIn').value=t;go('heroIn');}
-// 카테고리 카드 직접 진입 (키워드 없이 카테고리 키로 바로)
-function catGo(catKey){
-  S.cat=catKey; S.kw=DB[catKey].name;
-  S.qs=buildQs(catKey);S.ans={};S.mode='';S.qi=-1;S.hist=[];
-  renderMode();showSc('interview');
+function catById(id){
+  var c = CONFIG.data.categories, i;
+  for(i=0;i<c.length;i++){ if(c[i].id === id){ return c[i]; } }
+  return null;
 }
-function go(id){const v=document.getElementById(id).value.trim();if(!v)return;S.kw=v;launch();}
-function launch(){S.cat=detectCat(S.kw);S.qs=buildQs(S.cat);S.ans={};S.mode='';S.qi=-1;S.hist=[];renderMode();showSc('interview');}
-function restart(){showSc('landing');}
-
-// ══ INTERVIEW ══
-function renderMode(){
-  S.qi=-1;upProg(0,5);
-  document.getElementById('mTag').textContent='모드 선택';
-  document.getElementById('bkBtn').style.display='none';
-  const cat=DB[S.cat];
-  document.getElementById('qCard').innerHTML=`
-    <div class="q-chip">찾는 상품 확인</div>
-    <h2 class="q-title dp">"${S.kw}"<br>찾아드릴게요!</h2>
-    <div class="kw-card"><i data-lucide="tag"></i><span>카테고리: <em>${cat.name}</em></span></div>
-    <p class="q-hint">어떤 방식으로 추천받으시겠어요?</p>
-    <div class="opts">
-      <button class="opt" id="mO0" onclick="pickMode('quick',this)">
-        <div class="opt-ico"><i data-lucide="zap"></i></div>
-        <span class="opt-lbl">⚡ 빠른 추천</span>
-        <span class="opt-desc">질문 2개 · 약 30초<br>지금 당장 결과가 필요할 때</span>
-      </button>
-      <button class="opt" id="mO1" onclick="pickMode('detail',this)">
-        <div class="opt-ico"><i data-lucide="sliders"></i></div>
-        <span class="opt-lbl">🔬 정밀 분석</span>
-        <span class="opt-desc">질문 5개 · 약 2분<br>신중하게 고르고 싶을 때</span>
-      </button>
-    </div>
-    <button class="btn-nx" id="mNx" onclick="startQ()"><span>시작하기</span><i data-lucide="arrow-right"></i></button>`;
-  lucide.createIcons();
+function axisById(id){
+  var a = CONFIG.axes, i;
+  for(i=0;i<a.length;i++){ if(a[i].id === id){ return a[i]; } }
+  return null;
 }
 
-function pickMode(m,el){
-  S.mode=m;
-  document.querySelectorAll('.opts .opt').forEach(b=>b.classList.remove('sel'));
-  el.classList.add('sel');
-  document.getElementById('mNx').classList.add('on');
-  document.getElementById('mTag').textContent=m==='quick'?'⚡ 빠른 추천':'🔬 정밀 분석';
+/* ============================================================
+   엔진 2 — 질문 구성
+   카테고리 가중치 상위 축만 묻습니다. 이미 답한 축은 기억해서
+   두 번째 카테고리부터 질문 수가 줄어듭니다.
+   ============================================================ */
+function rankedAxes(cat){
+  var out = [], i;
+  for(i=0;i<CONFIG.axes.length;i++){
+    var a = CONFIG.axes[i];
+    var w = cat.weights[a.id];
+    if(w === undefined){ w = 0.3; }
+    out.push({ axis:a, w:w });
+  }
+  out.sort(function(x,y){ return y.w - x.w; });
+  return out;
+}
+function questionsFor(cat){
+  var ranked = rankedAxes(cat);
+  var top = ranked.slice(0, 5);
+  var known = DB.profile;
+  var mustAsk = [], reuse = [], i;
+  for(i=0;i<top.length;i++){
+    var id = top[i].axis.id;
+    var isCore = (i < 2);
+    if(known[id] === undefined || isCore){ mustAsk.push(top[i].axis); }
+    else { reuse.push(top[i].axis); }
+  }
+  if(mustAsk.length < 2){
+    for(i=0;i<reuse.length && mustAsk.length < 2;i++){ mustAsk.push(reuse[i]); }
+  }
+  return { ask:mustAsk, reuse:reuse, top:top };
 }
 
-function startQ(){if(!S.mode)return;S.hist.push(-1);renderQ(0);}
-
-function renderQ(i){
-  S.qi=i;
-  const mx=S.mode==='quick'?2:5;
-  const q=S.qs[i];
-  upProg(i+1,mx);
-  document.getElementById('bkBtn').style.display='flex';
-  document.getElementById('qCard').innerHTML=`
-    <div class="q-chip">${q.step} / ${mx}</div>
-    <h2 class="q-title dp">${q.title}</h2>
-    <p class="q-hint">${q.hint}</p>
-    <div class="opts" id="oGrid">
-      ${q.options.map(o=>`
-        <button class="opt ${S.ans[q.id]===o.v?'sel':''}" onclick="pickOpt('${q.id}','${o.v}',this)">
-          <div class="opt-ico"><i data-lucide="${o.ic}"></i></div>
-          <span class="opt-lbl">${o.lbl}</span>
-          <span class="opt-desc">${o.desc}</span>
-        </button>`).join('')}
-    </div>
-    <button class="btn-nx ${S.ans[q.id]?'on':''}" id="qNx" onclick="nextQ(${i})">
-      <span>${i<mx-1?'다음':'AI 분석 시작'}</span><i data-lucide="arrow-right"></i>
-    </button>`;
-  const c=document.getElementById('qCard');c.classList.remove('fu');void c.offsetWidth;c.classList.add('fu');
-  lucide.createIcons();
+/* ============================================================
+   엔진 3 — 점수 계산
+   ============================================================ */
+function clamp01(v){ return v < 0 ? 0 : (v > 1 ? 1 : v); }
+function axisScore(mode, u, p){
+  var d;
+  if(mode === 'budget'){
+    if(p <= u){ d = (u - p) * 0.22; return clamp01(1 - d); }
+    return clamp01(1 - (p - u) * 2.2);
+  }
+  if(mode === 'atLeast'){
+    if(p >= u){ return clamp01(1 - (p - u) * 0.14); }
+    return clamp01(1 - (u - p) * 1.8);
+  }
+  if(mode === 'store'){ return clamp01(1 - Math.abs(u - p) * 0.85); }
+  return clamp01(1 - Math.abs(u - p) * 1.3);
+}
+function scorePick(cat, pick, profile){
+  var ranked = rankedAxes(cat), i, sum = 0, wsum = 0, parts = [];
+  for(i=0;i<ranked.length;i++){
+    var a = ranked[i].axis, w = ranked[i].w;
+    var u = profile[a.id];
+    if(u === undefined){ continue; }
+    var p = pick.vals[a.id];
+    if(p === undefined){ continue; }
+    var s = axisScore(a.mode, u, p);
+    sum += s * w; wsum += w;
+    parts.push({ axis:a, w:w, s:s, u:u, p:p });
+  }
+  parts.sort(function(x,y){ return (y.w*y.s) - (x.w*x.s); });
+  return { pick:pick, score: wsum ? (sum / wsum) : 0, parts:parts };
+}
+function recommend(cat, profile){
+  var out = [], i;
+  for(i=0;i<cat.picks.length;i++){ out.push(scorePick(cat, cat.picks[i], profile)); }
+  out.sort(function(x,y){ return y.score - x.score; });
+  return out;
 }
 
-function pickOpt(qid,v,el){
-  S.ans[qid]=v;
-  document.querySelectorAll('#oGrid .opt').forEach(b=>b.classList.remove('sel'));
-  el.classList.add('sel');
-  document.getElementById('qNx').classList.add('on');
+/* ============================================================
+   엔진 4 — 유형 라벨 · 경고 · 구매처
+   ============================================================ */
+function condMatch(cond, profile){
+  var i;
+  for(i=0;i<cond.length;i++){
+    var c = cond[i], v = profile[c[0]];
+    if(v === undefined){ return false; }
+    if(v < c[1] || v > c[2]){ return false; }
+  }
+  return true;
+}
+function personaFor(profile){
+  var i;
+  for(i=0;i<CONFIG.personas.length;i++){
+    if(condMatch(CONFIG.personas[i].cond, profile)){ return CONFIG.personas[i]; }
+  }
+  return CONFIG.personaFallback;
+}
+function warningsFor(profile){
+  var out = [], i;
+  for(i=0;i<CONFIG.warnings.length;i++){
+    if(condMatch(CONFIG.warnings[i].cond, profile)){ out.push(CONFIG.warnings[i]); }
+  }
+  return out;
+}
+function storeRank(profile){
+  var out = [], i;
+  var uOff = profile.store === undefined ? 0.5 : profile.store;
+  var uBud = profile.budget === undefined ? 0.5 : profile.budget;
+  var uGen = profile.gentle === undefined ? 0.4 : profile.gentle;
+  for(i=0;i<CONFIG.stores.length;i++){
+    var s = CONFIG.stores[i];
+    var fitOff = 1 - Math.abs(uOff - s.off) * 0.9;
+    var fitPrice = (s.price <= uBud) ? 1 - (uBud - s.price) * 0.3 : 1 - (s.price - uBud) * 1.6;
+    var fitTrust = uGen * s.trust + (1 - uGen) * 0.72;
+    var sc = clamp01(fitOff) * 0.42 + clamp01(fitPrice) * 0.33 + clamp01(fitTrust) * 0.25;
+    out.push({ store:s, score:sc });
+  }
+  out.sort(function(x,y){ return y.score - x.score; });
+  return out;
 }
 
-function nextQ(i){
-  const mx=S.mode==='quick'?2:5;
-  S.hist.push(i);
-  if(i+1>=mx)startAn();else renderQ(i+1);
+/* ============================================================
+   엔진 5 — 문장 생성 (기기 안에서 계산합니다)
+   ============================================================ */
+function axisWord(part){
+  var a = part.axis;
+  return part.u >= 0.66 ? a.highWord : (part.u <= 0.34 ? a.lowWord : (a.label + '은 중간을 원합니다'));
+}
+function tipFor(axisId, v){
+  var t = CONFIG.axisTips[axisId];
+  if(!t){ return ''; }
+  return v >= 0.66 ? t.hi : (v <= 0.34 ? t.lo : t.mid);
+}
+function weightSentence(cat){
+  var ranked = rankedAxes(cat);
+  return cat.label + ' 은 ' + ranked[0].axis.label + ' 과 ' + ranked[1].axis.label +
+    ' 이 결과를 가장 크게 좌우하는 카테고리입니다. 그래서 이 두 축의 답을 다른 축보다 무겁게 반영했습니다.';
+}
+function reasonLines(res){
+  var good = [], watch = [], i;
+  for(i=0;i<res.parts.length;i++){
+    var p = res.parts[i];
+    if(p.s >= 0.82 && good.length < 3){ good.push(p); }
+  }
+  for(i=res.parts.length-1;i>=0;i--){
+    var q = res.parts[i];
+    if(q.s < 0.6 && watch.length < 2){ watch.push(q); }
+  }
+  return { good:good, watch:watch };
+}
+function keywordsFor(cat, res, profile){
+  var k = [], i;
+  for(i=0;i<res.pick.tags.length;i++){ k.push(res.pick.tags[i]); }
+  if(profile.gentle !== undefined && profile.gentle >= 0.7){ k.push('저자극'); }
+  if(profile.budget !== undefined && profile.budget <= 0.3){ k.push('가성비'); }
+  if(profile.ease !== undefined && profile.ease >= 0.85){ k.push('초보용'); }
+  k.push(cat.label.split(' ')[0]);
+  return k;
+}
+function checkList(cat, res, profile){
+  var out = [];
+  if(profile.gentle !== undefined && profile.gentle >= 0.7){
+    out.push(['성분표 앞쪽 다섯 줄', '향료와 알코올이 앞쪽에 있으면 예민한 피부에는 부담이 됩니다.']);
+  }
+  if(profile.lasting !== undefined && profile.lasting >= 0.75){
+    out.push(['지우는 방법', '지속력이 높은 제형일수록 어떻게 지우는지를 사기 전에 확인해야 합니다.']);
+  }
+  if(profile.store !== undefined && profile.store >= 0.6){
+    out.push(['손등이 아니라 실제 부위', '손등 발색과 실제 부위 발색은 다릅니다. 가능하면 쓰는 자리에 발라봅니다.']);
+  }
+  if(profile.budget !== undefined && profile.budget <= 0.4){
+    out.push(['용량당 가격', '싸 보여도 용량이 작으면 결국 비쌉니다. 밀리리터당 가격으로 비교합니다.']);
+  }
+  out.push(['제조일자', cat.label + '은 개봉 후 사용 기한이 짧은 편입니다. 제조일자 표기를 확인합니다.']);
+  return out.slice(0, 4);
 }
 
-function goBack(){
-  if(!S.hist.length)return;
-  const p=S.hist.pop();
-  if(p===-1)renderMode();else renderQ(p);
+/* ============================================================
+   상태
+   ============================================================ */
+var STATE = { screen:'home', cat:null, ask:[], reuse:[], qi:0, answers:{}, res:null, input:'', adLeft:0, adTimer:null };
+var ROOT = document.getElementById('root');
+var SHEET = null;
+
+function profileNow(){
+  var p = {}, k;
+  for(k in DB.profile){ if(DB.profile.hasOwnProperty(k)){ p[k] = DB.profile[k]; } }
+  for(k in STATE.answers){ if(STATE.answers.hasOwnProperty(k)){ p[k] = STATE.answers[k]; } }
+  return p;
 }
 
-function upProg(c,t){
-  document.getElementById('pFill').style.width=(c/t*100)+'%';
-  document.getElementById('progTxt').textContent=c+' / '+t;
+/* ============================================================
+   공통 레이아웃
+   ============================================================ */
+function frame(title, opts){
+  opts = opts || {};
+  clear(ROOT);
+  var nav = el('div','nav');
+  if(opts.back){
+    var b = on(el('button','nav-btn'), opts.back);
+    b.setAttribute('aria-label','뒤로');
+    add(b, svgIcon(ICON_BACK));
+    add(nav, b);
+  } else {
+    add(nav, el('div','nav-ghost'));
+  }
+  add(nav, el('div','nav-title', title));
+  if(opts.right){
+    var r = on(el('button','nav-btn'), opts.right.fn);
+    r.setAttribute('aria-label', opts.right.label);
+    add(r, svgIcon(opts.right.icon));
+    add(nav, r);
+  } else {
+    add(nav, el('div','nav-ghost'));
+  }
+  add(ROOT, nav);
+
+  if(opts.progress !== undefined){
+    var pr = el('div','prog');
+    var sp = el('span','');
+    sp.style.width = Math.round(opts.progress * 100) + '%';
+    add(pr, sp); add(ROOT, pr);
+  }
+  var w = el('div','wrap fade');
+  add(ROOT, w);
+  return w;
 }
 
-// ══ ANALYZING ══
-function startAn(){
-  showSc('analyzing');
-  ['as1','as2','as3','as4'].forEach((id,i)=>setTimeout(()=>document.getElementById(id).classList.add('on'),i*650+300));
-  setTimeout(buildRes,3100);
+function goHome(){ STATE.screen = 'home'; STATE.cat = null; STATE.answers = {}; STATE.res = null; render(); }
+function back(){
+  if(STATE.screen === 'interview'){
+    if(STATE.qi > 0){ STATE.qi--; render(); } else { goHome(); }
+    return;
+  }
+  if(STATE.screen === 'deep' || STATE.screen === 'ad'){ STATE.screen = 'result'; render(); return; }
+  goHome();
 }
 
-// ══ RESULT ══
-function buildRes(){
-  showSc('result');
-  const cat=DB[S.cat];
-  document.getElementById('resT').innerHTML=`당신에게 딱 맞는<br>${cat.name}를 찾았어요!`;
-  document.getElementById('resS').textContent=`${S.mode==='quick'?'2가지':'5가지'} 답변을 분석해 TOP 3를 선별했어요.`;
-  // AI 제한 UI 갱신
-  updateAILimitUI();
-  lucide.createIcons();
-  if(S.apiKey){
-    if(canUseAI()){
-      document.getElementById('apiBox').style.display='none';
-      callAI();
-    } else {
-      document.getElementById('apiBox').style.display='none';
-      const b=document.getElementById('aiBox');
-      b.classList.add('on');
-      b.innerHTML='<strong style="color:var(--rose)">⚠️ 오늘 AI 분석 3회를 모두 사용했어요.</strong><br>내일 다시 이용하거나 아래 추천 카드를 확인해주세요.';
+/* ============================================================
+   화면 1 — 인트로 (첫 진입 시 앱의 정체를 먼저 보여줍니다)
+   ============================================================ */
+function renderIntro(){
+  var w = frame(CONFIG.appName, {});
+  var s = el('div','sec');
+  add(s, el('div','eyebrow', CONFIG.intro.eyebrow));
+  var h = el('h1','t'); multiline(h, CONFIG.intro.title, 't'); h.className = 't';
+  add(s, h);
+  add(s, el('p','s', CONFIG.intro.body));
+  add(w, s);
+
+  var box = el('div','sec');
+  var i;
+  for(i=0;i<CONFIG.intro.points.length;i++){
+    var c = el('div','card');
+    add(c, el('h3','t', CONFIG.intro.points[i][0]));
+    add(c, el('p','xs', CONFIG.intro.points[i][1]));
+    add(box, c);
+  }
+  add(w, box);
+
+  var note = el('div','sec');
+  add(note, el('p','xs', '회원가입이 없습니다. 답변은 이 기기에만 저장되고 어디로도 전송되지 않습니다.'));
+  add(w, note);
+
+  var st = el('div','sticky');
+  add(st, on(el('button','btn', CONFIG.intro.cta), function(){
+    DB.introDone = true; saveDB(); STATE.screen = 'home'; render();
+  }));
+  add(w, st);
+}
+
+/* ============================================================
+   화면 2 — 홈
+   ============================================================ */
+function renderHome(){
+  var w = frame(CONFIG.appName, { right:{ icon:ICON_INFO, label:'앱 소개', fn:function(){ STATE.screen='intro'; render(); } } });
+
+  var s = el('div','sec');
+  add(s, el('div','eyebrow', CONFIG.tagline));
+  add(s, el('h1','t', CONFIG.copy.homeTitle));
+  add(s, el('p','s', CONFIG.copy.homeHint));
+  add(w, s);
+
+  var inp = el('input','field');
+  inp.type = 'text';
+  inp.placeholder = CONFIG.copy.homePlaceholder;
+  inp.value = STATE.input;
+  inp.addEventListener('input', function(){ STATE.input = inp.value; });
+  inp.addEventListener('keydown', function(ev){ if(ev.keyCode === 13){ tryStart(inp.value); } });
+  var box = el('div','sec'); add(box, inp); add(w, box);
+
+  var cw = el('div','sec');
+  add(cw, el('h3','t', CONFIG.copy.pickCat));
+  var chips = el('div','chips');
+  var cats = CONFIG.data.categories, i;
+  for(i=0;i<cats.length;i++){
+    (function(c){
+      add(chips, on(el('button','chip', c.label), function(){ startWith(c); }));
+    })(cats[i]);
+  }
+  add(cw, chips);
+  add(w, cw);
+
+  var known = 0, k;
+  for(k in DB.profile){ if(DB.profile.hasOwnProperty(k)){ known++; } }
+  if(known > 0){
+    add(w, el('div','divider'));
+    var pc = el('div','card');
+    add(pc, el('h3','t', '기억하고 있는 당신의 기준'));
+    add(pc, el('p','xs', '축 ' + known + '개를 알고 있어서 이번에는 질문이 줄어듭니다.'));
+    var i2, ax;
+    for(k in DB.profile){
+      if(!DB.profile.hasOwnProperty(k)){ continue; }
+      ax = axisById(k);
+      if(!ax){ continue; }
+      add(pc, axisBar(ax, DB.profile[k]));
     }
+    var rr = el('div','btnrow');
+    add(rr, on(el('button','btn ghost sm','기준 지우고 다시 시작'), function(){
+      DB.profile = {}; saveDB(); render();
+    }));
+    add(pc, rr);
+    add(w, pc);
   }
-  renderCards();renderDeep();
+
+  var pend = pendingFeedback();
+  if(pend){
+    var fc = el('div','card hi');
+    add(fc, el('h3','t', CONFIG.copy.feedbackQ));
+    add(fc, el('p','xs', pend.cat + ' · ' + pend.pick + ' 을 추천드렸습니다.'));
+    var fr = el('div','btnrow');
+    add(fr, on(el('button','btn soft sm','샀어요'), function(){ answerFeedback(pend, 'bought'); }));
+    add(fr, on(el('button','btn ghost sm','안 샀어요'), function(){ answerFeedback(pend, 'no'); }));
+    add(fc, fr);
+    add(w, fc);
+  }
+
+  if(DB.history.length > 0){
+    var hw = el('div','sec');
+    add(hw, el('h3','t', '지난 기록'));
+    var n = Math.min(DB.history.length, 4), j;
+    for(j=DB.history.length-1; j>=DB.history.length-n; j--){
+      var hh = DB.history[j];
+      var mark = hh.bought === 'bought' ? '샀음' : (hh.bought === 'no' ? '안 삼' : '확인 전');
+      add(hw, bullet(hh.cat, hh.pick + ' · ' + mark));
+    }
+    add(w, hw);
+  }
+
+  var ft = el('div','sec');
+  add(ft, el('p','xs', CONFIG.appName + ' ' + CONFIG.version + ' · 최종 갱신 ' + CONFIG.updatedAt + ' · ' + CONFIG.ai.note));
+  add(w, ft);
 }
 
-function scoreProduct(p, answers){
-  // 답변 기반 제품 적합도 점수 (0~10)
-  let score = p.sr; // 기본 별점
-  const pain=answers.pain||'';
-  const priority=answers.priority||'';
-  const type=answers.type||'';
-  const situation=answers.situation||'';
-  // 불편 경험 회피 점수 (불편 키워드가 장점에 있으면 +2)
-  const painKeyMap={clump:'뭉침없음',droop:'지속',water:'워터프루프',powder:'가루날림 없음',smear:'번짐없음',hard:'사용 편함',fade:'지속',wing:'날개',whitecast:'백탁없음',greasy:'산뜻',protection:'차단력',lasting:'지속',heavy:'가벼운',collapse:'지속',color:'발색',dry:'보습',transfer:'묻어남없음',aging:'탄력',dull:'밝은',trouble:'진정'};
-  if(painKeyMap[pain] && p.g.some(g=>g.includes(painKeyMap[pain])))score+=2;
-  // 우선순위 매칭
-  const prioKeyMap={long:'롱래시',volume:'볼륨',lasting:'지속',natural:'자연',nowhite:'백탁',moisture:'보습',toneup:'톤업',cover:'커버',light:'가벼운',waterproof:'워터프루프',dark:'발색',smoky:'스모키',color:'발색',ingredient:'성분',value:'가성비',rich:'보습'};
-  if(prioKeyMap[priority] && p.g.some(g=>g.includes(prioKeyMap[priority])))score+=2;
-  // 상황 매칭 (active → 워터프루프 우선)
-  if(situation==='active' && p.g.some(g=>g.includes('워터프루프')||g.includes('지속')))score+=1;
-  if(situation==='special' && p.sr>=5)score+=0.5;
-  return score;
+function tryStart(text){
+  var c = findCategory(text);
+  if(c){ startWith(c); return; }
+  alertSheet('어떤 종류인지 알기 어려워요', '아래 목록에서 골라주시면 바로 시작할 수 있습니다. 지금은 화장품 다섯 종류를 다루고 있습니다.');
+}
+function startWith(cat){
+  STATE.cat = cat;
+  var q = questionsFor(cat);
+  STATE.ask = q.ask; STATE.reuse = q.reuse;
+  STATE.answers = {}; STATE.qi = 0; STATE.res = null;
+  STATE.screen = 'interview';
+  render();
 }
 
-function renderCards(){
-  const cat=DB[S.cat];const b=S.ans.budget||'mid';
-  // 예산 우선 + 인접 예산 보충
-  const order=['low','mid','high','luxury'];
-  const bIdx=order.indexOf(b);
-  let pool=[];
-  // 선택 예산 먼저
-  pool=[...(cat.prod[b]||[])];
-  // 부족하면 상위/하위 예산에서 보충
-  for(let d=1;d<=3&&pool.length<4;d++){
-    const lo=order[bIdx-d],hi=order[bIdx+d];
-    if(hi&&cat.prod[hi])pool=[...pool,...cat.prod[hi].filter(p=>!pool.find(s=>s.n===p.n))];
-    if(lo&&cat.prod[lo])pool=[...pool,...cat.prod[lo].filter(p=>!pool.find(s=>s.n===p.n))];
+/* ============================================================
+   화면 3 — 인터뷰
+   ============================================================ */
+function axisBar(axis, v){
+  var box = el('div','axis');
+  var top = el('div','axis-top');
+  add(top, el('b','', axis.label));
+  add(top, el('span','', v >= 0.66 ? axis.highWord : (v <= 0.34 ? axis.lowWord : '중간')));
+  add(box, top);
+  var bar = el('div','bar');
+  var fill = el('i','');
+  fill.style.width = Math.round(clamp01(v) * 100) + '%';
+  add(bar, fill); add(box, bar);
+  return box;
+}
+
+function renderInterview(){
+  var total = STATE.ask.length;
+  var axis = STATE.ask[STATE.qi];
+  var w = frame(STATE.cat.label, {
+    back: back,
+    progress: (STATE.qi) / total
+  });
+
+  var s = el('div','sec');
+  add(s, el('div','eyebrow', (STATE.qi + 1) + ' / ' + total));
+  add(s, el('h2','t', axis.q.replace('{c}', STATE.cat.unit)));
+  add(s, el('p','xs', CONFIG.copy.interviewNote));
+  add(w, s);
+
+  var prev = STATE.answers[axis.id];
+  if(prev === undefined && DB.profile[axis.id] !== undefined){ prev = DB.profile[axis.id]; }
+
+  var ow = el('div','sec');
+  var i;
+  for(i=0;i<axis.opts.length;i++){
+    (function(o){
+      var b = el('button','opt' + (prev === o.v ? ' on' : ''));
+      var t = el('span','ot', o.t);
+      add(b, t);
+      add(b, el('span','oh', o.h));
+      on(b, function(){
+        STATE.answers[axis.id] = o.v;
+        if(STATE.qi + 1 < total){ STATE.qi++; render(); }
+        else { finishInterview(); }
+      });
+      add(ow, b);
+    })(axis.opts[i]);
   }
-  // 스코어링 정렬
-  pool=pool.map(p=>({...p,_score:scoreProduct(p,S.ans)})).sort((a,b)=>b._score-a._score);
-  const ps=pool.slice(0,3);
-  if(!ps.length){document.getElementById('pCards').innerHTML='<p style="text-align:center;color:var(--ink-light);padding:32px">추천 결과를 불러오는 중이에요...</p>';return;}
-  const rk=['r1','r2','r3'];const rl=['🥇 1위 추천','🥈 2위 추천','🥉 3위 추천'];
-  // 답변 기반 맞춤 이유 생성
-  const budgetTxt={low:'5천원 이하 예산',mid:'1~2만원대',high:'3~5만원대',luxury:'프리미엄'};
-  const bLabel=budgetTxt[b]||b;
-  document.getElementById('pCards').innerHTML=ps.map((p,i)=>`
-    <div class="p-card ${rk[i]} fu" style="animation-delay:${i*.12}s">
-      <div class="rank-pill">${rl[i]}</div>
-      <div class="p-top">
-        <div>
-          <div class="p-name">${p.n}</div>
-          <div class="p-meta"><span class="store">${p.st}</span><span class="stars">${'★'.repeat(p.sr)}${'☆'.repeat(5-p.sr)}</span></div>
-        </div>
-        <div class="price">${p.pr}</div>
-      </div>
-      <div class="rsn-box">
-        <div class="rsn-lbl">💡 ${bLabel} 맞춤 추천 이유</div>
-        <div class="rsn-txt">${p.rsn}</div>
-      </div>
-      <div class="tags">
-        ${p.g.map(g=>`<span class="tag tg">✅ ${g}</span>`).join('')}
-        ${p.w.map(w=>`<span class="tag tw">⚠️ ${w}</span>`).join('')}
-      </div>
-      <div class="p-acts">
-        <button class="btn-buy" onclick="alert('구매 링크는 GitHub Pages 배포 후 연동됩니다!')"><i data-lucide="external-link"></i>구매하러 가기</button>
-        <button class="btn-more" onclick="askDeep('${p.n} 상세 정보 알려줘')"><i data-lucide="message-circle"></i>AI에게 더 물어보기</button>
-      </div>
-    </div>`).join('');
-  lucide.createIcons();
+  add(w, ow);
+
+  if(STATE.reuse.length > 0 && STATE.qi === 0){
+    var note = el('div','sec');
+    var names = [], j;
+    for(j=0;j<STATE.reuse.length;j++){ names.push(STATE.reuse[j].label); }
+    add(note, el('div','note', '지난번에 답해주신 ' + names.join(' · ') + ' 기준을 그대로 씁니다. 바뀌었다면 결과 화면에서 고칠 수 있습니다.'));
+    add(w, note);
+  }
+}
+
+function finishInterview(){
+  var k;
+  for(k in STATE.answers){
+    if(STATE.answers.hasOwnProperty(k)){ DB.profile[k] = STATE.answers[k]; }
+  }
+  DB.seen = DB.seen + 1;
+  saveDB();
+  var prof = profileNow();
+  STATE.res = recommend(STATE.cat, prof);
+  STATE.screen = 'analyzing';
+  render();
+  window.setTimeout(function(){
+    if(STATE.screen === 'analyzing'){ STATE.screen = 'result'; render(); }
+  }, 900);
+}
+
+function renderAnalyzing(){
+  var w = frame(STATE.cat.label, {});
+  var s = el('div','sec center');
+  s.style.paddingTop = '80px';
+  add(s, el('div','spin'));
+  add(s, el('h3','t', CONFIG.copy.analyzing));
+  var h3 = s.lastChild; h3.style.marginTop = '18px';
+  add(s, el('p','xs', '기기 안에서 계산합니다. 어디로도 전송되지 않습니다.'));
+  add(w, s);
+}
+
+/* ============================================================
+   화면 4 — 결과
+   ============================================================ */
+function pickCard(res, rank, prof){
+  var c = el('div','card' + (rank === 1 ? ' hi' : ''));
+  var head = el('div','rank');
+  add(head, el('span','no', rank === 1 ? '가장 잘 맞음' : (rank + '순위')));
+  add(head, el('span','fit', Math.round(res.score * 100) + '% 일치'));
+  add(c, head);
+  add(c, el('h2','t', res.pick.name));
+
+  var tw = el('div','');
+  var i;
+  for(i=0;i<res.pick.tags.length;i++){ add(tw, el('span','tag', res.pick.tags[i])); }
+  add(c, tw);
+
+  if(rank === 1){
+    var rl = reasonLines(res);
+    add(c, bullet('좋은 점', res.pick.good));
+    add(c, bullet('걸리는 점', res.pick.watch));
+    if(rl.good.length > 0){
+      var names = [], j;
+      for(j=0;j<rl.good.length;j++){ names.push(rl.good[j].axis.label); }
+      add(c, bullet('맞아떨어진 축', names.join(' · ')));
+    }
+    if(rl.watch.length > 0){
+      var wn = [], m;
+      for(m=0;m<rl.watch.length;m++){ wn.push(rl.watch[m].axis.label); }
+      add(c, bullet('양보한 축', wn.join(' · ') + ' 은 완전히 만족하지 않습니다.'));
+    }
+  } else {
+    add(c, el('p','xs', res.pick.good));
+  }
+  return c;
+}
+
+function renderResult(){
+  var prof = profileNow();
+  var res = STATE.res;
+  var w = frame(STATE.cat.label, { back: goHome, right:{ icon:ICON_HOME, label:'처음으로', fn:goHome } });
+
+  var per = personaFor(prof);
+  var s = el('div','sec');
+  add(s, el('div','eyebrow', CONFIG.copy.resultTitle));
+  add(s, el('h1','t', per.name));
+  add(s, el('p','s', per.desc));
+  add(w, s);
+
+  var pc = el('div','sec');
+  var ranked = rankedAxes(STATE.cat), i;
+  for(i=0;i<ranked.length;i++){
+    var a = ranked[i].axis;
+    if(prof[a.id] === undefined){ continue; }
+    add(pc, axisBar(a, prof[a.id]));
+  }
+  add(w, pc);
+
+  add(w, el('div','divider'));
+  var rw = el('div','');
+  add(rw, el('h3','t', '이 기준에 맞는 유형'));
+  add(rw, el('p','xs', '상품명이 아니라 유형으로 알려드립니다. 같은 유형 안에서는 가격과 취향으로 고르시면 됩니다.'));
+  add(w, rw);
+
+  var lw = el('div','sec');
+  for(i=0;i<Math.min(3, res.length);i++){ add(lw, pickCard(res[i], i+1, prof)); }
+  add(w, lw);
+
+  var st = storeRank(prof);
+  var sw = el('div','sec');
+  add(sw, el('h3','t', '어디서 사는 게 맞을까요'));
+  var sc = el('div','card');
+  add(sc, el('h3','t', st[0].store.name));
+  add(sc, el('p','xs', st[0].store.trait));
+  add(sc, bullet('이렇게 사세요', st[0].store.tip));
+  add(sw, sc);
+  var sc2 = el('div','card');
+  add(sc2, el('h3','t', '대안 · ' + st[1].store.name));
+  add(sc2, el('p','xs', st[1].store.trait));
+  add(sw, sc2);
+  add(w, sw);
+
+  add(w, el('div','divider'));
+  add(w, deepGate());
+
+  var fw = el('div','sec');
+  add(fw, el('h3','t', '이 추천, 어떠셨어요?'));
+  add(fw, el('p','xs', '알려주시면 다음 추천이 조금 더 맞아집니다.'));
+  var fr = el('div','btnrow');
+  add(fr, on(el('button','btn soft sm','괜찮아요'), function(){ logHistory('good'); toastSheet('기록했습니다', '실제로 사셨는지는 다음에 앱을 열 때 여쭤볼게요.'); }));
+  add(fr, on(el('button','btn ghost sm','잘 안 맞아요'), function(){ logHistory('bad'); toastSheet('기록했습니다', '다음에 같은 카테고리를 고르시면 기준을 다시 묻겠습니다.'); }));
+  add(fw, fr);
+  add(w, fw);
+
+  var st2 = el('div','sticky');
+  add(st2, on(el('button','btn ghost','다른 것도 골라보기'), goHome));
+  add(w, st2);
+}
+
+/* ============================================================
+   심층 해설 — 광고를 보면 열립니다 (수익 지점)
+   ============================================================ */
+function deepAvailableFree(){
+  if(DB.deepDate !== todayStr()){ DB.deepDate = todayStr(); DB.deepUsed = 0; }
+  return DB.deepUsed < CONFIG.revenue.freeDeepPerDay;
+}
+function deepGate(){
+  var box = el('div','');
+  add(box, el('h3','t', CONFIG.copy.deepTitle));
+  add(box, el('p','xs', '왜 이 결과가 나왔는지, 어디서 실패하기 쉬운지, 매장에서 무엇을 확인해야 하는지를 항목별로 풀어드립니다.'));
+
+  var pv = el('div','card');
+  var blur = el('div','blur');
+  add(blur, el('p','xs', '당신은 ' + '지속력을 높게, 자극은 낮게 요구하고 있습니다. 이 두 가지는 대체로 반대 방향이라 제품 하나로 모두 만족시키기 어렵습니다. 그래서 실제로는 다음 순서로 접근하는 편이 낫습니다. 첫째로 ...'));
+  add(pv, blur);
+  add(box, pv);
+
+  var free = deepAvailableFree();
+  var b = el('button','btn', free ? '심층 해설 열기 (오늘 무료 1회)' : '광고 보고 열기');
+  on(b, function(){
+    if(free){ DB.deepUsed++; saveDB(); STATE.screen = 'deep'; render(); }
+    else { openAd(); }
+  });
+  var bw = el('div','sec'); add(bw, b);
+  if(!free){ add(bw, el('p','xs', '오늘 무료 1회를 이미 쓰셨습니다. 짧은 광고를 보시면 이어서 열립니다.')); }
+  add(box, bw);
+  return box;
+}
+
+function openAd(){
+  STATE.screen = 'ad';
+  STATE.adLeft = CONFIG.revenue.adSeconds;
+  render();
+  if(STATE.adTimer){ window.clearInterval(STATE.adTimer); }
+  STATE.adTimer = window.setInterval(function(){
+    STATE.adLeft--;
+    if(STATE.adLeft <= 0){
+      window.clearInterval(STATE.adTimer); STATE.adTimer = null;
+      if(STATE.screen === 'ad'){ STATE.screen = 'deep'; render(); }
+      return;
+    }
+    if(STATE.screen === 'ad'){ render(); } else { window.clearInterval(STATE.adTimer); STATE.adTimer = null; }
+  }, 1000);
+}
+function renderAd(){
+  var w = frame('광고', { back: function(){ if(STATE.adTimer){ window.clearInterval(STATE.adTimer); STATE.adTimer=null; } STATE.screen='result'; render(); } });
+  var s = el('div','sec');
+  var box = el('div','adbox');
+  add(box, el('div','adslot', '광고 영역'));
+  add(box, el('div','count', STATE.adLeft + '초'));
+  add(box, el('p','xs', CONFIG.revenue.adNote));
+  add(s, box);
+  add(w, s);
 }
 
 function renderDeep(){
-  const cat=DB[S.cat];
-  document.getElementById('dBtns').innerHTML=cat.deep.map(o=>`<button class="dbtn" onclick="askDeep('${o.lbl}')"><i data-lucide="${o.ic}"></i>${o.lbl}</button>`).join('');
-  lucide.createIcons();
-}
+  var prof = profileNow();
+  var res = STATE.res;
+  var w = frame(CONFIG.copy.deepTitle, { back:function(){ STATE.screen='result'; render(); } });
 
-function askDeep(q){
-  const b=document.getElementById('aiBox');b.classList.add('on');
-  b.scrollIntoView({behavior:'smooth',block:'center'});
-  if(S.apiKey){
-    b.innerHTML=`<span style="color:var(--gray)">"${q}" 분석 중...</span>`;
-    callAIQ(q);
-  } else {
-    b.innerHTML=`<strong>💡 "${q}"</strong><br><br>
-    <span style="font-size:13px;color:var(--ink-mid,#4A3848)">
-    API 키를 설정하면 실제 AI가 이 질문에 맞춤 답변을 드려요.<br>
-    아래 'Claude AI 연동' 박스에 키를 입력해주세요.
-    </span>`;
-    // API 박스 표시
-    const apiBox=document.getElementById('apiBox');
-    if(apiBox)apiBox.style.display='block';
+  var s = el('div','sec');
+  add(s, el('div','eyebrow', STATE.cat.label));
+  add(s, el('h1','t', res[0].pick.name));
+  add(s, el('p','s', '아래는 전부 당신이 고른 답을 근거로 계산한 것입니다.'));
+  add(w, s);
+
+  /* 1. 기준 요약 */
+  var s1 = el('div','sec');
+  add(s1, el('h3','t', '1. 당신이 말한 기준'));
+  add(s1, el('p','xs', weightSentence(STATE.cat)));
+  var parts = res[0].parts, i;
+  for(i=0;i<parts.length;i++){
+    var cA = el('div','card');
+    add(cA, el('h3','t', parts[i].axis.label + ' · ' + axisWord(parts[i])));
+    add(cA, el('p','xs', tipFor(parts[i].axis.id, parts[i].u)));
+    add(s1, cA);
   }
-}
+  add(w, s1);
 
-// ══ API ══
-function saveKey(){
-  const k=document.getElementById('apiIn').value.trim();if(!k)return;
-  S.apiKey=k;localStorage.setItem('pm_k',k);
-  document.getElementById('apiBox').style.display='none';
-  updateAILimitUI();
-  if(canUseAI()){callAI();}
-  else{
-    const b=document.getElementById('aiBox');b.classList.add('on');
-    b.innerHTML='<strong style="color:var(--rose)">⚠️ 오늘 AI 분석 3회를 모두 사용했어요.</strong><br>내일 다시 이용하거나 아래 추천 카드를 확인해주세요.';
+  /* 2. 왜 이 유형인가 */
+  var s2 = el('div','sec');
+  add(s2, el('h3','t', '2. 왜 이 유형이 나왔나'));
+  var rl = reasonLines(res[0]);
+  for(i=0;i<rl.good.length;i++){
+    add(s2, bullet(rl.good[i].axis.label + '에서 일치', '이 카테고리에서 비중이 큰 축인데 요구와 유형이 맞아떨어졌습니다.'));
   }
-}
+  add(s2, bullet('좋은 점', res[0].pick.good));
+  add(s2, bullet('걸리는 점', res[0].pick.watch));
+  add(w, s2);
 
-async function callAI(){
-  const b=document.getElementById('aiBox');
-  // 횟수 체크
-  if(!canUseAI()){
-    b.classList.add('on');
-    b.innerHTML=`<strong style="color:var(--rose)">⚠️ 오늘 AI 분석 3회를 모두 사용했어요.</strong><br><br>내일 다시 이용하거나, DB 기반 추천 결과를 활용해 주세요! 아래 상품 카드는 계속 확인하실 수 있어요.`;
-    return;
-  }
-  b.classList.add('on');
-  b.innerHTML='<span style="color:var(--gray)">🤖 AI가 맞춤 분석 중이에요...</span>';
-  const a=S.ans;const cat=DB[S.cat];
-  // 답변 상세화
-  const budgetTxt={low:'5천원 이하',mid:'1~2만원',high:'3~5만원',luxury:'5만원 이상'};
-  const painMap={clump:'뭉침·번짐',droop:'금방 처짐',water:'워터프루프 약함',powder:'가루날림',smear:'번짐·묻어남',hard:'시술 어려움',fade:'금방 지워짐',wing:'날개 표현 어려움',whitecast:'백탁',greasy:'번들거림',protection:'차단력 부족',lasting:'지속력 약함',heavy:'떡지고 무거움',collapse:'오후에 무너짐',color:'색상 안 맞음',dry:'건조하고 당김',transfer:'묻어남',aging:'탄력저하',dull:'칙칙함',trouble:'트러블'};
-  const priorityMap={long:'롱래시',volume:'볼륨',lasting:'지속력',natural:'자연스러움',nowhite:'백탁없음',moisture:'보습',toneup:'톤업',cover:'커버력',light:'가벼운 텍스처',waterproof:'워터프루프',dark:'선명한 발색',smoky:'스모키',lasting2:'지속력',color:'발색',ingredient:'성분',value:'가성비',rich:'고보습',nopain:'자극없음'};
-  const prompt=`당신은 뷰티 전문 쇼핑 큐레이터 PickMe.입니다. 친근하고 세련된 전문가 큐레이터 톤으로 답해주세요.
-
-찾는 상품: ${cat.name} ("${S.kw}")
-예산대: ${budgetTxt[a.budget]||a.budget}
-사용 상황: ${a.situation||'미입력'}
-이전에 불편했던 점: ${painMap[a.pain]||a.pain||'미입력'}
-카테고리 맞춤 타입: ${a.type||'미입력'}
-가장 중요한 기준: ${priorityMap[a.priority]||a.priority||'미입력'}
-
-위 정보를 바탕으로 이 사용자에게 딱 맞는 ${cat.name} 선택 핵심 팁을 3~4문장으로 친근하게 조언해주세요. 
-구체적인 성분, 브랜드 특성, 피해야 할 점을 포함해서 실질적으로 도움이 되게 해주세요.`;
-  try{
-    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:600,messages:[{role:'user',content:prompt}]})});
-    const d=await r.json();
-    const cnt=incAICount();
-    b.innerHTML=`<strong>🤖 AI 맞춤 분석</strong> <span style="font-size:11px;color:var(--ink-light,#7A6878);">(오늘 ${cnt}/3회)</span><br><br>${(d.content?.[0]?.text||'').replace(/\n/g,'<br>')}`;
-  }catch(e){
-    b.innerHTML='<span style="color:var(--gray)">AI 분석 중 오류가 발생했어요. API 키를 확인해주세요.</span>';
-  }
-}
-
-async function callAIQ(q){
-  const b=document.getElementById('aiBox');
-  if(!canUseAI()){
-    b.classList.add('on');
-    b.innerHTML=`<strong style="color:var(--rose)">⚠️ 오늘 AI 분석 3회를 모두 사용했어요.</strong><br>내일 다시 이용해주세요!`;
-    return;
-  }
-  b.classList.add('on');
-  b.innerHTML=`<span style="color:var(--gray)">"${q}" 분석 중...</span>`;
-  const cat=DB[S.cat];
-  const prompt=`뷰티 큐레이터 PickMe.입니다. 친근하고 간결하게 답해주세요.
-사용자 정보: ${cat.name} 탐색 중 / 예산 ${S.ans.budget} / 우선순위 ${S.ans.priority} / 카테고리 타입 ${S.ans.type}
-추가 질문: "${q}"
-위 맥락을 고려해 3~4문장으로 핵심만 실질적으로 답해주세요.`;
-  try{
-    const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:400,messages:[{role:'user',content:prompt}]})});
-    const d=await r.json();
-    const cnt=incAICount();
-    b.innerHTML=`<strong>💡 "${q}"</strong> <span style="font-size:11px;color:var(--ink-light,#7A6878)">(오늘 ${cnt}/3회)</span><br><br>${(d.content?.[0]?.text||'').replace(/\n/g,'<br>')}`;
-  }catch(e){
-    b.innerHTML='<span style="color:var(--gray)">오류가 발생했어요.</span>';
-  }
-}
-
-// ══ FEEDBACK ══
-function goFeedback(){['fb1','fb2a','fb2b','fb3','fb4'].forEach(id=>document.getElementById(id).classList.remove('on'));document.getElementById('fb1').classList.add('on');showSc('feedback');}
-function sw(from,to){document.getElementById(from).classList.remove('on');setTimeout(()=>document.getElementById(to).classList.add('on'),320);}
-function fbP(a){document.querySelectorAll('#fb1 .fb-opt').forEach(b=>b.classList.remove('sel'));event.currentTarget.classList.add('sel');if(a==='yes')sw('fb1','fb2a');else if(a==='no')sw('fb1','fb2b');else fbDone();}
-function fbS(l){document.querySelectorAll('#fb2a .fb-opt').forEach(b=>b.classList.remove('sel'));event.currentTarget.classList.add('sel');if(l==='bad')sw('fb2a','fb3');else fbDone();}
-function fbN(r){document.querySelectorAll('#fb2b .fb-opt').forEach(b=>b.classList.remove('sel'));event.currentTarget.classList.add('sel');if(r==='unfit')sw('fb2b','fb3');else fbDone();}
-function selFb(el){document.querySelectorAll('#fb3 .fb-opt').forEach(b=>b.classList.remove('sel'));el.classList.add('sel');}
-function fbDone(){['fb1','fb2a','fb2b','fb3'].forEach(id=>document.getElementById(id).classList.remove('on'));document.getElementById('fb4').classList.add('on');lucide.createIcons();}
-
-// ══ INIT ══
-document.addEventListener('DOMContentLoaded',()=>{
-  lucide.createIcons();
-  const k=localStorage.getItem('pm_k');
-  if(k){S.apiKey=k;const el=document.getElementById('apiIn');if(el)el.value=k;}
-  // 플로팅 CTA
-  window.addEventListener('scroll',()=>{
-    const fc=document.getElementById('floatCta');
-    if(!fc)return;
-    const landing=document.getElementById('landing');
-    if(landing && landing.classList.contains('active')){
-      fc.classList.toggle('show', window.scrollY>280);
-    } else {
-      fc.classList.remove('show');
+  /* 3. 2순위와의 차이 */
+  if(res.length > 1){
+    var s3 = el('div','sec');
+    add(s3, el('h3','t', '3. 2순위와 무엇이 다른가'));
+    add(s3, el('div','note', res[1].pick.name + ' 은 ' + Math.round(res[1].score*100) + '% 일치입니다. ' + res[1].pick.good + ' 다만 ' + res[1].pick.watch));
+    var diff = [], j, q, pb;
+    for(j=0;j<res[0].parts.length;j++){
+      pb = null;
+      for(q=0;q<res[1].parts.length;q++){
+        if(res[1].parts[q].axis.id === res[0].parts[j].axis.id){ pb = res[1].parts[q]; }
+      }
+      if(pb){ diff.push({ axis:res[0].parts[j].axis, gap: res[0].parts[j].s - pb.s }); }
     }
-  });
+    diff.sort(function(x,y){ return Math.abs(y.gap) - Math.abs(x.gap); });
+    if(diff.length > 0){
+      add(s3, bullet('갈린 지점', diff[0].axis.label + ' 에서 두 유형이 가장 크게 갈렸습니다. ' +
+        (diff[0].gap >= 0
+          ? '1순위 쪽이 이 축에서 당신의 요구를 더 잘 맞춥니다.'
+          : '이 축만 놓고 보면 2순위가 낫습니다. 다른 축의 비중이 더 커서 순위가 뒤집혔습니다.')));
+    }
+    add(s3, bullet('이렇게 보세요', '두 유형의 일치율 차이가 10%p 안쪽이면 사실상 취향 문제입니다. 그럴 때는 값이 싼 쪽을 먼저 써보고 판단하는 편이 손해가 적습니다.'));
+    add(w, s3);
+  }
+
+  /* 4. 실패 지점 */
+  var wr = warningsFor(prof);
+  var s4 = el('div','sec');
+  add(s4, el('h3','t', '4. 여기서 실패하기 쉽습니다'));
+  if(wr.length === 0){
+    add(s4, el('p','xs', '기준끼리 크게 충돌하는 조합은 없습니다. 유형만 맞추면 실패 확률이 낮습니다.'));
+  }
+  for(i=0;i<wr.length;i++){
+    var c4 = el('div','card');
+    add(c4, el('h3','t', wr[i].t));
+    add(c4, el('p','xs', wr[i].b));
+    add(s4, c4);
+  }
+  add(w, s4);
+
+  /* 5. 구매처 전략 */
+  var st = storeRank(prof);
+  var s5 = el('div','sec');
+  add(s5, el('h3','t', '5. 구매처 전략'));
+  for(i=0;i<st.length;i++){
+    add(s5, bullet(st[i].store.name + ' (' + Math.round(st[i].score*100) + '%)', st[i].store.trait + ' ' + (i===0 ? st[i].store.tip : '')));
+  }
+  add(w, s5);
+
+  /* 6. 체크리스트 */
+  var cl = checkList(STATE.cat, res[0], prof);
+  var s6 = el('div','sec');
+  add(s6, el('h3','t', '6. 사기 전에 확인할 것'));
+  for(i=0;i<cl.length;i++){ add(s6, bullet(cl[i][0], cl[i][1])); }
+  add(w, s6);
+
+  /* 7. 검색 키워드 */
+  var kw = keywordsFor(STATE.cat, res[0], prof);
+  var s7 = el('div','sec');
+  add(s7, el('h3','t', '7. 이 키워드로 찾으세요'));
+  var chips = el('div','chips');
+  for(i=0;i<kw.length;i++){ add(chips, el('span','chip', kw[i])); }
+  add(s7, chips);
+  add(s7, on(el('button','btn soft sm','키워드 복사'), function(){ copyText(kw.join(' ')); }));
+  s7.lastChild.style.marginTop = '14px';
+  add(w, s7);
+
+  /* 8. 다음 구매 */
+  var s8 = el('div','sec');
+  add(s8, el('h3','t', '8. 다음에 고를 때'));
+  add(s8, bullet('기준은 저장되어 있습니다', '지금 답해주신 축은 이 기기에 남습니다. 다음에 다른 카테고리를 고르시면 겹치는 축은 다시 묻지 않고 두세 개만 여쭤봅니다.'));
+  add(s8, bullet('바뀌면 다시 물어야 합니다', '계절이 바뀌거나 피부 상태가 달라지면 지속력과 저자극 답이 달라집니다. 홈 화면에서 기준을 지우고 처음부터 다시 시작할 수 있습니다.'));
+  add(s8, bullet('실제로 샀는지 알려주세요', '추천이 구매까지 이어졌는지가 가장 정확한 신호입니다. 다음에 앱을 열면 여쭤보겠습니다.'));
+  add(w, s8);
+
+  var stk = el('div','sticky');
+  add(stk, on(el('button','btn ghost','결과로 돌아가기'), function(){ STATE.screen='result'; render(); }));
+  add(w, stk);
+
+  logHistory(null);
+}
+
+function copyText(t){
+  try{
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t);
+      toastSheet('복사했습니다', t);
+      return;
+    }
+  }catch(e){}
+  toastSheet('키워드', t);
+}
+
+/* ============================================================
+   기록 · 피드백
+   ============================================================ */
+var LOGGED = false;
+function logHistory(mark){
+  if(LOGGED && mark === null){ return; }
+  var last = DB.history.length ? DB.history[DB.history.length-1] : null;
+  if(last && last.cat === STATE.cat.label && last.pick === STATE.res[0].pick.name && !last.bought){
+    if(mark){ last.mark = mark; }
+    saveDB(); return;
+  }
+  DB.history.push({ ts: Date.now(), cat: STATE.cat.label, pick: STATE.res[0].pick.name, mark: mark || '', bought: '' });
+  if(DB.history.length > 20){ DB.history.shift(); }
+  LOGGED = true;
+  saveDB();
+}
+function pendingFeedback(){
+  var i;
+  for(i=DB.history.length-1;i>=0;i--){
+    if(!DB.history[i].bought){ return DB.history[i]; }
+  }
+  return null;
+}
+function answerFeedback(item, v){
+  item.bought = v;
+  saveDB();
+  render();
+  toastSheet('고맙습니다', v === 'bought' ? '실제 구매까지 이어졌는지가 가장 정확한 신호입니다.' : '무엇이 걸렸는지는 다음 인터뷰에서 다시 여쭤보겠습니다.');
+}
+
+/* ============================================================
+   시트 · 종료 확인 모달
+   ============================================================ */
+function closeSheet(){
+  if(SHEET && SHEET.parentNode){ SHEET.parentNode.removeChild(SHEET); }
+  SHEET = null;
+}
+function baseSheet(){
+  closeSheet();
+  var mask = el('div','mask');
+  var sh = el('div','sheet');
+  add(mask, sh);
+  mask.addEventListener('click', function(ev){ if(ev.target === mask){ closeSheet(); } });
+  document.body.appendChild(mask);
+  SHEET = mask;
+  return sh;
+}
+function toastSheet(title, body){
+  var sh = baseSheet();
+  add(sh, el('h3','', title));
+  add(sh, el('p','xs', body));
+  var r = el('div','btnrow');
+  add(r, on(el('button','btn','확인'), closeSheet));
+  add(sh, r);
+}
+function alertSheet(title, body){ toastSheet(title, body); }
+function openExit(){
+  var sh = baseSheet();
+  add(sh, el('h3','', CONFIG.appName + ' 을 종료할까요?'));
+  add(sh, el('p','xs', '지금까지 답해주신 기준은 이 기기에 저장되어 있어 다음에 다시 열면 그대로 이어집니다.'));
+  var r = el('div','btnrow');
+  add(r, on(el('button','btn ghost','계속 쓰기'), closeSheet));
+  add(r, on(el('button','btn','종료'), function(){
+    closeSheet();
+    try{
+      if(window.TossAppBridge && window.TossAppBridge.close){ window.TossAppBridge.close(); return; }
+      if(window.AppsInToss && window.AppsInToss.close){ window.AppsInToss.close(); return; }
+    }catch(e){}
+    try{ window.close(); }catch(e2){}
+    toastSheet('종료할 수 없습니다', '이 환경에서는 앱을 직접 닫을 수 없습니다. 토스 앱 안에서는 정상적으로 종료됩니다.');
+  }));
+  add(sh, r);
+}
+
+/* ============================================================
+   렌더 · 내비게이션
+   ============================================================ */
+function render(){
+  if(STATE.screen === 'intro'){ renderIntro(); }
+  else if(STATE.screen === 'interview'){ renderInterview(); }
+  else if(STATE.screen === 'analyzing'){ renderAnalyzing(); }
+  else if(STATE.screen === 'result'){ renderResult(); }
+  else if(STATE.screen === 'deep'){ renderDeep(); }
+  else if(STATE.screen === 'ad'){ renderAd(); }
+  else { renderHome(); }
+  window.scrollTo(0, 0);
+}
+function pushGuard(){
+  try{ window.history.pushState({ pickme:1 }, ''); }catch(e){}
+}
+window.addEventListener('popstate', function(){
+  pushGuard();
+  if(SHEET){ closeSheet(); return; }
+  if(STATE.screen === 'home' || STATE.screen === 'intro'){ openExit(); return; }
+  back();
 });
 
-// 플로팅 → 검색창 포커스
-function scrollToSearch(){
-  const el=document.getElementById('heroIn');
-  if(el){window.scrollTo({top:0,behavior:'smooth'});setTimeout(()=>el.focus(),400);}
-}
-
-// ══ AI 하루 3회 제한 ══
-function getTodayKey(){return 'pm_ai_'+new Date().toISOString().slice(0,10);}
-function getAICount(){return parseInt(localStorage.getItem(getTodayKey())||'0',10);}
-function incAICount(){
-  const k=getTodayKey(),c=getAICount()+1;
-  localStorage.setItem(k,c);
-  updateAILimitUI(c);
-  return c;
-}
-function canUseAI(){return getAICount()<3;}
-
-function updateAILimitUI(count){
-  const c=count||getAICount();
-  const bar=document.getElementById('aiLimitBar');
-  const txt=document.getElementById('aiUsedTxt');
-  if(txt)txt.textContent=`${c} / 3`;
-  ['ld1','ld2','ld3'].forEach((id,i)=>{
-    const el=document.getElementById(id);
-    if(el)el.classList.toggle('used',i<c);
-  });
-  if(bar){
-    if(c>=3){
-      bar.style.background='#FFF0F0';
-      bar.style.borderColor='#FFCDD2';
+/* ============================================================
+   부팅
+   ============================================================ */
+function boot(){
+  loadDB();
+  if(CONFIG.expiresAt){
+    var now = new Date();
+    var ex = new Date(CONFIG.expiresAt);
+    if(now > ex){
+      clear(ROOT);
+      var w = el('div','wrap');
+      var c = el('div','card');
+      add(c, el('h2','t','안내가 끝난 서비스입니다'));
+      add(c, el('p','xs', CONFIG.expiresAt + ' 이후로는 내용이 갱신되지 않습니다.'));
+      add(w, c); add(ROOT, w);
+      return;
     }
   }
+  STATE.screen = DB.introDone ? 'home' : 'intro';
+  pushGuard();
+  render();
 }
+boot();
+
+})();
 </script>
 </body>
 </html>
