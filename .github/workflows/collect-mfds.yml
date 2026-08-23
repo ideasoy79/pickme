@@ -12,6 +12,10 @@ on:
         description: '이 연도 이후에 보고된 것만 남김'
         required: true
         default: '2021'
+      start_page:
+        description: '이어받기 시작 페이지 (처음부터면 1. 하루 한도로 멈췄을 때만 숫자를 넣으세요)'
+        required: false
+        default: '1'
   # 매주 월요일 새벽 4시(한국시간)에 저절로
   schedule:
     - cron: '0 19 * * 0'
@@ -42,6 +46,7 @@ jobs:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
           PAGES: ${{ github.event.inputs.pages || '0' }}
           SINCE: ${{ github.event.inputs.since || '2021' }}
+          START_PAGE: ${{ github.event.inputs.start_page || '1' }}
           ROWS: '100'
           SLEEP: '0.4'
         run: python tools/collect_mfds.py
