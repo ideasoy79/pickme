@@ -63,7 +63,7 @@ jobs:
       - name: 제미나이로 이름 다듬기
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: gemini-2.5-flash
+          GEMINI_MODEL: gemini-3.6-flash
           MAX_CALLS: ${{ github.event.inputs.max_calls || '120' }}
           PER_CAT: ${{ github.event.inputs.per_cat || '60' }}
           DRY_RUN: ${{ github.event.inputs.dry_run || '' }}
