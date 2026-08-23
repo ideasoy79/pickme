@@ -26,6 +26,7 @@ PAGES = int(os.environ.get('PAGES', '5') or '5')     # 0 이면 전체
 ROWS = int(os.environ.get('ROWS', '100') or '100')
 SLEEP = float(os.environ.get('SLEEP', '0.4') or '0.4')
 SINCE = int(os.environ.get('SINCE', '2021') or '2021')
+START = int(os.environ.get('START_PAGE', '1') or '1')   # 이어받기 시작 페이지
 
 OUT_DIR = 'data'
 OUT_JSON = os.path.join(OUT_DIR, 'mfds.json')
@@ -140,12 +141,62 @@ EFFECT_LABELS = [
 ]
 
 
+class QuotaHit(Exception):
+    """공공데이터포털 하루 요청 한도에 닿았을 때.
+
+    이건 고장이 아니라 '오늘 몫을 다 썼다'는 뜻이다.
+    그래서 화를 내며 죽지 않고, 여기까지 모은 것을 저장하고 곱게 멈춘다.
+    다음 날 이어서 받으면 된다.
+    """
+    pass
+
+
 def die(msg):
     print('')
     print('=' * 60)
     print(msg)
     print('=' * 60)
     sys.exit(1)
+
+
+def save_items(kept, total, scanned, last_page, next_page, done):
+    """지금까지 모은 것을 파일에 적는다.
+
+    맨 끝에서 한 번만 저장하면, 중간에 멈췄을 때 30분치를 통째로 잃는다.
+    그래서 도중에도 부를 수 있게 따로 뺐다.
+    next_page 를 같이 적어 두면 다음 실행이 거기서부터 이어받을 수 있다.
+    """
+    by_cat = {}
+    for r in kept:
+        by_cat[r['cat']] = by_cat.get(r['cat'], 0) + 1
+    out = {
+        'source': '식품의약품안전처 기능성화장품 보고품목정보 (공공데이터포털 15095680)',
+        'endpoint': API,
+        'collectedAt': TODAY,
+        'sinceYear': SINCE,
+        'totalInApi': total,
+        'scanned': scanned,
+        'count': len(kept),
+        'lastPage': last_page,
+        'nextPage': next_page,
+        'done': bool(done),
+        'byCategory': by_cat,
+        'items': kept,
+    }
+    tmp = OUT_JSON + '.tmp'
+    with open(tmp, 'w', encoding='utf-8') as f:
+        json.dump(out, f, ensure_ascii=False, indent=1)
+    os.replace(tmp, OUT_JSON)
+    return out
+
+
+def load_prev():
+    """앞선 실행이 남긴 것을 읽어 온다. 없으면 빈 손으로 시작한다."""
+    try:
+        with open(OUT_JSON, encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return None
 
 
 def fetch(page):
@@ -165,6 +216,10 @@ def fetch(page):
     if not txt.startswith('{'):
         # data.go.kr 은 인증키 문제일 때 JSON 을 요청해도 XML 로 답한다.
         head = txt[:400].replace('\n', ' ')
+        if ('LIMITED_NUMBER_OF_SERVICE_REQUESTS_EXCEEDS' in txt
+                or 'LIMITED NUMBER OF SERVICE REQUESTS EXCEEDS' in txt
+                or '<returnReasonCode>22<' in txt):
+            raise QuotaHit('하루 요청 한도')
         if 'SERVICE_KEY_IS_NOT_REGISTERED' in txt or 'SERVICE ACCESS DENIED' in txt:
             die('인증키가 아직 등록되지 않았다고 나옵니다.\n'
                 '공공데이터포털은 활용신청 직후 최대 1시간 뒤에 키가 살아납니다.\n'
@@ -177,8 +232,10 @@ def fetch(page):
     header = data.get('header') or {}
     code = header.get('resultCode') or body.get('resultCode') or ''
     if code and code not in ('00', '0'):
-        die('API 가 오류를 돌려줬습니다.\n코드 ' + str(code) + ' / ' +
-            str(header.get('resultMsg') or body.get('resultMsg')))
+        msg = str(header.get('resultMsg') or body.get('resultMsg') or '')
+        if str(code) in ('22', '05') or 'LIMITED' in msg.upper():
+            raise QuotaHit('하루 요청 한도 (코드 ' + str(code) + ')')
+        die('API 가 오류를 돌려줬습니다.\n코드 ' + str(code) + ' / ' + msg)
 
     items = body.get('items') or []
     if isinstance(items, dict):
@@ -238,23 +295,52 @@ def main():
     seen = {}
     kept = []
     scanned = 0
+    start = START
+
+    # 앞선 실행이 도중에 멈췄으면 거기서부터 이어받는다.
+    # 같은 페이지를 두 번 받는 것은 하루 한도를 그냥 버리는 일이다.
+    prev = load_prev()
+    if START > 1 and prev and prev.get('items'):
+        kept = prev['items']
+        scanned = int(prev.get('scanned') or 0)
+        for r in kept:
+            seen[r.get('id')] = True
+        print('  앞선 실행에서 ' + str(len(kept)) + '건을 물려받았습니다.')
+        print('  ' + str(START) + '페이지부터 이어서 받습니다.')
+    elif START > 1:
+        print('  ! START_PAGE 를 ' + str(START) + '로 주셨지만'
+              ' 이어받을 파일이 없습니다. 1페이지부터 받습니다.')
+        start = 1
+
     dropped_cancel = 0
     dropped_old = 0
     dropped_nocat = 0
     dropped_dup = 0
     fails = 0
 
-    page = 1
-    batch = items0
+    quota_stop = 0
+    page = start
+    batch = items0 if start == 1 else []
     while page <= limit:
-        if page > 1:
+        if page > 1 or start > 1:
             try:
                 batch, _ = fetch(page)
+            except QuotaHit as e:
+                # 오늘 몫을 다 썼다는 뜻이다. 고장이 아니다.
+                # 여기까지 모은 것을 저장하고 멈춘다. 내일 이어받으면 된다.
+                quota_stop = page
+                print('')
+                print('  ' + str(page) + '페이지에서 하루 요청 한도에 닿았습니다.')
+                break
             except Exception as e:
                 fails += 1
                 print('  ! ' + str(page) + '페이지 실패: ' + str(e))
                 if fails > 20:
-                    die('연속 실패가 너무 많아 중단합니다. 잠시 뒤 다시 실행해 주세요.')
+                    save_items(kept, total, scanned, last_page, page, done=False)
+                    die('연속 실패가 너무 많아 중단합니다.\n'
+                        '여기까지 모은 ' + str(len(kept)) + '건은 저장해 두었습니다.\n'
+                        '다시 돌리실 때 start_page 에 ' + str(page) + ' 을 넣으면\n'
+                        '앞부분을 다시 받지 않고 이어서 받습니다.')
                 time.sleep(3)
                 page += 1
                 continue
@@ -327,6 +413,10 @@ def main():
         if page % 25 == 0 or page == limit:
             print('  ' + str(page) + '/' + str(limit) + '페이지 · 살린 것 ' +
                   str(len(kept)) + '개')
+        # 도중에도 이따금 저장한다. 30분치를 한 번에 잃지 않기 위해서다.
+        if page % 200 == 0:
+            save_items(kept, total, scanned, last_page, page + 1, done=False)
+            print('    (여기까지 저장해 두었습니다)')
         page += 1
         if page <= limit:
             time.sleep(SLEEP)
@@ -347,19 +437,9 @@ def main():
             by_entp[r['entp']] = by_entp.get(r['entp'], 0) + 1
     top_entp = sorted(by_entp.items(), key=lambda kv: -kv[1])[:15]
 
-    out = {
-        'source': '식품의약품안전처 기능성화장품 보고품목정보 (공공데이터포털 15095680)',
-        'endpoint': API,
-        'collectedAt': TODAY,
-        'sinceYear': SINCE,
-        'totalInApi': total,
-        'scanned': scanned,
-        'count': len(kept),
-        'byCategory': by_cat,
-        'items': kept,
-    }
-    with open(OUT_JSON, 'w', encoding='utf-8') as f:
-        json.dump(out, f, ensure_ascii=False, indent=1)
+    finished = (not quota_stop) and page > limit
+    save_items(kept, total, scanned, last_page,
+               quota_stop or page, done=finished)
 
     lines = []
     lines.append('# 식약처 수집 결과')
@@ -440,6 +520,23 @@ def main():
         f.write('\n'.join(lines))
 
     print('')
+    if not finished:
+        left = last_page - (quota_stop or page) + 1
+        print('')
+        print('=' * 60)
+        print('아직 다 못 받았습니다. 고장은 아닙니다.')
+        print('')
+        print('  받은 곳까지: ' + str((quota_stop or page) - 1) + '/'
+              + str(last_page) + '페이지')
+        print('  모아 둔 것 : ' + str(len(kept)) + '건 (저장했습니다)')
+        print('  남은 것    : ' + str(left) + '페이지')
+        print('')
+        print('공공데이터포털 하루 요청 한도에 닿았습니다.')
+        print('한도는 자정에 되돌아옵니다. 내일 같은 버튼을 다시 누르시되,')
+        print('start_page 칸에 ' + str(quota_stop or page) + ' 을 넣어 주세요.')
+        print('앞부분을 다시 받지 않고 이어서 받습니다.')
+        print('=' * 60)
+        print('')
     print('끝났습니다. ' + OUT_JSON + ' 에 ' + str(len(kept)) + '개, ' +
           OUT_REPORT + ' 에 요약을 적었습니다.')
 
