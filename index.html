@@ -255,6 +255,24 @@ input,textarea,select{ font-family:inherit; font-size:16px; color:inherit; }
 .badge1{ display:block; background:var(--ink-deep); color:#FFF; font-size:11px; font-weight:750;
   letter-spacing:0.05em; padding:8px 16px; }
 .rank1{ border-color:var(--ink-deep); }
+/* 칸마다 꼭 보는 값을 줄지어 보여 주는 자리 */
+.spec{ display:flex; flex-wrap:wrap; gap:8px; margin:0 16px 2px; }
+.spec-c{ flex:1 1 92px; min-width:92px; background:var(--bg-soft,#F6F4F1);
+  border:1px solid var(--line-s); border-radius:10px; padding:8px 10px; }
+.spec-k{ font-size:10.5px; font-weight:750; letter-spacing:0.04em;
+  color:var(--ink-soft,#7A736C); margin-bottom:3px; }
+.spec-v{ font-size:14px; font-weight:800; color:var(--ink); letter-spacing:-0.01em; }
+/* 국가 자료만 있는 제품 카드. 확인분과 눈으로 구분되게 둡니다. */
+.prod-lst{ border-style:dashed; }
+.badge-lst{ display:block; background:var(--bg-soft,#F6F4F1); color:var(--ink-soft,#7A736C);
+  font-size:11px; font-weight:750; letter-spacing:0.05em; padding:8px 16px;
+  border-bottom:1px solid var(--line-s); }
+.prod-lst .btn{ margin-left:16px; margin-right:16px; width:calc(100% - 32px); }
+.prod .btn{ margin-left:16px; margin-right:16px; width:calc(100% - 32px);
+  display:block; text-align:center; text-decoration:none; box-sizing:border-box; }
+.prod .card-w{ margin-left:16px; margin-right:16px; }
+/* 아직 열 칸이 없는 대분류 */
+.tile-off{ opacity:0.5; }
 .item-m{ display:block; }
 .item-x{ opacity:0.62; }
 .cmp{ display:block; border:1px solid var(--line); border-radius:var(--r); overflow:hidden;
@@ -325,13 +343,23 @@ var CONFIG = {
 };
 
 /* ============ 카테고리 ============ */
+/* 대분류입니다. 그 아래 세부 칸은 products.json 의 cells 에서 옵니다.
+   세럼과 앰플은 사는 이유가 달라서 같은 칸에 두지 않습니다.
+   나누는 일 자체는 공짜지만 채우는 데는 값이 들기 때문에, 채워진 칸만 엽니다. */
 CONFIG.cats = [
+  { id:'sun',     label:'선케어',      hint:'지수와 제형을 같이 봅니다',   g:'linear-gradient(140deg,#FFF3D6,#E5B84B)' },
+  { id:'cleanse', label:'클렌징',      hint:'덜어내는 단계, 과하면 손해', g:'linear-gradient(140deg,#E4F1EA,#63A98A)' },
   { id:'toner',   label:'토너 · 스킨',  hint:'다음 단계를 받쳐주는 자리', g:'linear-gradient(140deg,#E7F0FA,#9DBEDD)' },
   { id:'serum',   label:'세럼 · 앰플',  hint:'고민을 직접 겨냥하는 자리', g:'linear-gradient(140deg,#FBE3EA,#C2415F)' },
-  { id:'cream',   label:'수분크림 · 로션', hint:'마무리로 가두는 자리',   g:'linear-gradient(140deg,#F6EFE2,#C9A467)' },
-  { id:'sun',     label:'선크림',      hint:'매일 쓰는 만큼 제형이 중요', g:'linear-gradient(140deg,#FFF3D6,#E5B84B)' },
-  { id:'cleanse', label:'클렌징',      hint:'덜어내는 단계, 과하면 손해', g:'linear-gradient(140deg,#E4F1EA,#63A98A)' }
+  { id:'cream',   label:'크림 · 로션',  hint:'마무리로 가두는 자리',      g:'linear-gradient(140deg,#F6EFE2,#C9A467)' },
+  { id:'eye',     label:'눈가',        hint:'가장 얇은 자리라 따로 봅니다', g:'linear-gradient(140deg,#EFE8F7,#8E7AB5)' },
+  { id:'peel',    label:'각질 · 필링',  hint:'세기와 주기가 관건',        g:'linear-gradient(140deg,#FCEBE0,#D08A5C)' },
+  { id:'mask',    label:'마스크 · 팩',  hint:'몰아서 채우는 자리',        g:'linear-gradient(140deg,#E6F3F3,#5D9E9E)' }
 ];
+
+/* 세부 칸. 데이터가 오기 전에는 비어 있습니다.
+   비어 있으면 대분류를 눌러도 열 칸이 없다고 정직하게 말합니다. */
+CONFIG.cells = [];
 
 /* ============ 조건 : 피부 타입 ============ */
 CONFIG.skins = [
@@ -368,6 +396,32 @@ CONFIG.budgets = [
   { id:'b3', label:'2만 5천 ~ 5만', max:50000,  h:'오래 쓸 것을 고르는 쪽' },
   { id:'b4', label:'가격은 상관없음', max:9999999, h:'실패하지 않는 쪽이 우선' }
 ];
+
+/* ============ 가격대 가르는 선 ============
+   같은 조건이면 싼 것이 위로 올라가게 짜여 있었습니다. 그래서 예산을 안 걸어도
+   결과가 늘 저가로 쏠렸습니다. 30대와 50대가 같은 값을 쓰지 않는데도요.
+   그래서 아래 금액을 기준으로 두 줄로 나눠서 각각 뽑습니다.
+   임의로 정한 선이므로 화면에도 얼마를 기준으로 나눴는지 적습니다. */
+CONFIG.bandAt = {
+  cleanse: 20000,
+  toner:   25000,
+  sun:     25000,
+  serum:   40000,
+  cream:   45000,
+  _def:    30000
+};
+function bandOf(catId){
+  var v = CONFIG.bandAt[catId];
+  return v ? v : CONFIG.bandAt._def;
+}
+function wonText(n){
+  if(n >= 10000){
+    var man = Math.floor(n / 10000);
+    var rest = n % 10000;
+    return rest ? (man + '만 ' + rest.toLocaleString()) : (man + '만원');
+  }
+  return n.toLocaleString() + '원';
+}
 
 /* ============ 성분 사전 ============
    표현 주의 : 화장품법상 치료 · 재생 · 질병 개선 표현을 쓰지 않습니다.
@@ -790,6 +844,33 @@ CONFIG.applyData = function(list, version){
   CONFIG.segCount = sm;
   if(version){ CONFIG.dataVersion = version; }
 };
+
+/* 세부 칸 목록을 데이터에서 받습니다.
+   어느 칸을 열지는 앱이 마음대로 정하지 않고 데이터가 정합니다. */
+CONFIG.applyCells = function(cells){
+  CONFIG.cells = cells || [];
+};
+/* 이 대분류에 속한 칸만 골라 줍니다. */
+CONFIG.cellsOf = function(catId){
+  var out = [];
+  for(var i=0;i<CONFIG.cells.length;i++){
+    if(CONFIG.cells[i].grp === catId){ out.push(CONFIG.cells[i]); }
+  }
+  return out;
+};
+CONFIG.cellById = function(key){
+  for(var i=0;i<CONFIG.cells.length;i++){
+    if(CONFIG.cells[i].key === key){ return CONFIG.cells[i]; }
+  }
+  return null;
+};
+/* 판매처 검색 링크를 그때그때 만듭니다.
+   특정 판매 페이지 주소를 넣어 두면 품절될 때 죽고,
+   죽은 링크는 앱을 못 믿게 만듭니다. */
+CONFIG.shopLink = function(p){
+  var q = ((p.brand || '') + ' ' + (p.name || '')).replace(/^\s+|\s+$/g, '');
+  return 'https://search.shopping.naver.com/search/all?query=' + encodeURIComponent(q);
+};
 CONFIG.applyData(CONFIG.verified, null);
 
 /* 이 구획에서 순위를 매겨도 되는가. 후보가 적으면 순위 대신 전량 비교표로 간다. */
@@ -878,7 +959,7 @@ function saveDB(){
 /* ============ 화면 상태 ============ */
 var S = {
   view:'intro',
-  cat:null, seg:null, skin:null, care:[], avoid:[], budget:null,
+  cat:null, cell:null, seg:null, skin:null, care:[], avoid:[], budget:null,
   step:0,
   result:null,
   focus:null,
@@ -888,8 +969,8 @@ var S = {
 };
 
 function resetPick(){
-  S.cat = null; S.seg = null; S.skin = null; S.care = []; S.avoid = []; S.budget = null;
-  S.step = 0; S.result = null; S.focus = null;
+  S.cat = null; S.cell = null; S.seg = null; S.skin = null; S.care = []; S.avoid = []; S.budget = null;
+  S.step = 0; S.result = null; S.focus = null; S.listedMore = false;
 }
 
 /* ============ 매칭 엔진 ============ */
@@ -1001,10 +1082,18 @@ function runMatch(st){
 
   for(i=0;i<CONFIG.products.length;i++){
     p = CONFIG.products[i];
-    if(st.cat && p.cat !== st.cat){ continue; }
-    /* 제형이 갈리는 카테고리에서는 고른 제형만 남긴다.
-       클렌징 오일과 클렌징 폼은 대체재가 아니므로 같은 순위표에 올리지 않는다. */
-    if(st.seg && p.seg && p.seg !== st.seg){ continue; }
+    /* 점수와 순위는 전성분·가격까지 사람이 확인한 것에만 매긴다.
+       국가 자료만 있는 것(목록분)은 점수를 낼 재료가 없으므로 여기 끼지 않는다.
+       모르는 것을 아는 척하지 않기 위해서다. */
+    if(p.tier === 'listed'){ continue; }
+    /* 세부 칸으로 좁힌다. 클렌징 오일과 클렌징 폼은 대체재가 아니므로
+       같은 순위표에 올리지 않는다. */
+    if(st.cell){
+      if(p.cell !== st.cell){ continue; }
+    } else {
+      if(st.cat && p.cat !== st.cat){ continue; }
+      if(st.seg && p.seg && p.seg !== st.seg){ continue; }
+    }
 
     var cut = null;
     for(var a=0;a<st.avoid.length;a++){
@@ -1031,16 +1120,68 @@ function runMatch(st){
   var segTotal = 0;
   for(var t=0;t<CONFIG.products.length;t++){
     var q = CONFIG.products[t];
-    if(st.cat && q.cat !== st.cat){ continue; }
-    if(st.seg && q.seg && q.seg !== st.seg){ continue; }
+    if(q.tier === 'listed'){ continue; }
+    if(st.cell){
+      if(q.cell !== st.cell){ continue; }
+    } else {
+      if(st.cat && q.cat !== st.cat){ continue; }
+      if(st.seg && q.seg && q.seg !== st.seg){ continue; }
+    }
     segTotal++;
   }
   var ranked = (typeof CONFIG.canRank === 'function')
              ? CONFIG.canRank(segTotal) : true;
 
-  return { list:pool, top:pool.slice(0, ranked ? 3 : pool.length),
+  /* 가격대를 갈라 각각에서 뽑는다.
+     한 줄로만 뽑으면 점수가 같을 때 늘 싼 쪽이 이기기 때문이다. */
+  var at = bandOf(st.cat);
+  var low = [], high = [];
+  for(var n=0;n<pool.length;n++){
+    if(pool[n].p.price[0] < at){ low.push(pool[n]); } else { high.push(pool[n]); }
+  }
+  var topLow = low.slice(0, 2);
+  var topHigh = high.slice(0, 2);
+  /* 한쪽이 비면 남은 쪽에서 더 채운다. 빈 줄을 보여 주는 것보다 낫다. */
+  if(!topHigh.length){ topLow = low.slice(0, 3); }
+  if(!topLow.length){ topHigh = high.slice(0, 3); }
+
+  /* 나란히 비교 화면은 앞에서 세 개만 가져간다.
+     그대로 이어 붙이면 싼 것 둘에 비싼 것 하나가 되므로 번갈아 놓는다. */
+  var top = [];
+  if(ranked){
+    for(var z=0; z<Math.max(topLow.length, topHigh.length); z++){
+      if(topLow[z]){ top.push(topLow[z]); }
+      if(topHigh[z]){ top.push(topHigh[z]); }
+    }
+  } else {
+    top = pool.slice(0);
+  }
+
+  return { list:pool, top:top, topLow:topLow, topHigh:topHigh,
+           bandAt:at, lowCount:low.length, highCount:high.length,
            dropped:dropped, ranked:ranked, segTotal:segTotal,
+           listed:listedFor(st),
            minPool:CONFIG.minPool || 12 };
+}
+
+/* 국가 자료만 있는 제품을 골라 온다.
+   점수를 매기지 않는다. 가격도 전성분도 모르니 매길 재료가 없다.
+   대신 식약처에 보고된 값(SPF·PA·pH 등)이 많이 적힌 것부터 보여 준다. */
+function listedFor(st){
+  var out = [];
+  for(var i=0;i<CONFIG.products.length;i++){
+    var p = CONFIG.products[i];
+    if(p.tier !== 'listed'){ continue; }
+    if(st.cell){ if(p.cell !== st.cell){ continue; } }
+    else if(st.cat && p.cat !== st.cat){ continue; }
+    out.push(p);
+  }
+  out.sort(function(x,y){
+    var a = (x.specs || []).length, b = (y.specs || []).length;
+    if(a !== b){ return b - a; }
+    return (y.reportDate || '') > (x.reportDate || '') ? 1 : -1;
+  });
+  return out;
 }
 
 /* ============ 근거 문장 ============ */
@@ -1318,6 +1459,19 @@ function renderIntro(){
   add(hero, inner);
   add(w, hero);
 
+  /* 생성형 AI를 쓴다는 사실을 처음 화면에서 밝힙니다.
+     앱인토스가 요구하는 고지이기도 하고, 그전에 그러는 게 맞습니다. */
+  var ai = el('div','sec');
+  var aiBox = el('div','card card-w');
+  add(aiBox, el('p','tx-b', '생성형 AI를 어디에 쓰는지'));
+  add(aiBox, el('p','tx-s mt10',
+    '제품 이름을 사람이 알아볼 수 있게 다듬는 데 생성형 AI를 씁니다. ' +
+    '순위와 점수, 그리고 자외선차단지수 · pH 같은 숫자는 AI를 거치지 않습니다. ' +
+    '그 값들은 식품의약품안전처 보고 자료와 판매처 상품정보 고시에서 그대로 옮긴 것입니다. ' +
+    '어느 화면이든 그 제품을 어디서 확인했는지 아래에 적어 둡니다.'));
+  add(ai, aiBox);
+  add(w, ai);
+
   var s = el('div','sec');
   add(s, el('p','tx-d mb10', '이렇게 씁니다'));
   var steps = [
@@ -1344,6 +1498,65 @@ function renderIntro(){
   return w;
 }
 
+/* ============ 세부 칸 고르기 ============
+   "클렌징"만으로는 고를 수가 없습니다. 오일과 폼은 서로 대체재가 아니니까요.
+   그래서 한 칸에 한 가지만 담고, 채워진 칸만 눌리게 합니다.
+   덜 찬 칸은 숨기지 않고 몇 개가 모였는지 그대로 적습니다. */
+function renderCells(){
+  var w = el('div','wrap');
+  var cat = byId(CONFIG.cats, S.cat);
+  add(w, navBar(cat ? cat.label : '고르기', function(){ go('home'); }, null));
+
+  var top = el('div','sec');
+  add(top, el('h1','pg-t', '어느 것을 찾으세요?'));
+  add(top, el('p','pg-s', '한 칸에 한 가지만 담았습니다. 찾으시는 것이 없으면 아래에 알려 주세요.'));
+  add(w, top);
+
+  var cs = CONFIG.cellsOf(S.cat);
+  var box = el('div','sec');
+  var openN = 0;
+  for(var i=0;i<cs.length;i++){
+    (function(c){
+      var total = (c.verified || 0) + (c.listed || 0);
+      if(c.state === 'closed'){ return; }
+      openN++;
+      var it = el('button','item');
+      add(it, el('div','item-t', c.label));
+      var msg = (c.state === 'ranked')
+        ? ('전성분까지 확인한 ' + c.verified + '개로 순위를 냅니다')
+        : ('국가 자료로 확인된 ' + total + '개를 조건에 맞춰 보여 드립니다');
+      add(it, el('div','item-m', msg));
+      on(it,'click',function(){
+        S.cell = c.key;
+        go('pick');
+      });
+      add(box, it);
+    })(cs[i]);
+  }
+  if(!openN){
+    add(box, el('p','tx-s', '이 갈래는 아직 열지 않았습니다. 제품이 ' +
+      (CONFIG.minPool || 12) + '개는 모여야 고르는 의미가 있어서, 그전에는 화면부터 만들지 않습니다.'));
+  }
+  add(w, box);
+
+  /* 아직 못 여는 칸도 감춰 두지 않습니다. 없는 것을 없다고 말하는 편이 낫습니다. */
+  var waits = [];
+  for(var j=0;j<cs.length;j++){
+    if(cs[j].state === 'closed'){
+      waits.push(cs[j].label + ' ' + ((cs[j].verified || 0) + (cs[j].listed || 0)) + '개');
+    }
+  }
+  if(waits.length){
+    var wb = el('div','sec');
+    add(wb, el('p','tx-d mb10', '아직 못 여는 칸'));
+    add(wb, el('p','tx-s', waits.join('  ·  ')));
+    add(wb, el('p','hint mt10', '숫자는 지금까지 모은 개수입니다. ' +
+      (CONFIG.minPool || 12) + '개를 넘기면 자동으로 열립니다.'));
+    add(w, wb);
+  }
+  return w;
+}
+
 /* ============ 홈 : 카테고리 고르기 ============ */
 function renderHome(){
   var w = el('div','wrap');
@@ -1357,15 +1570,25 @@ function renderHome(){
   var tiles = el('div','tiles');
   for(var i=0;i<CONFIG.cats.length;i++){
     (function(c){
-      var n = CONFIG.catCount[c.id] || 0;
-      var t = el('button','tile');
+      var cs = CONFIG.cellsOf(c.id);
+      var open = 0, n = 0;
+      for(var q=0;q<cs.length;q++){
+        n += (cs[q].verified || 0) + (cs[q].listed || 0);
+        if(cs[q].state !== 'closed'){ open++; }
+      }
+      if(!cs.length){ n = CONFIG.catCount[c.id] || 0; }
+      var t = el('button','tile' + (cs.length && !open ? ' tile-off' : ''));
       var d = el('div','tile-d');
       d.style.background = c.g;
-      add(t, d, el('div','tile-t', c.label), el('div','tile-s', c.hint), el('div','tile-n', n + '개 비교'));
+      var foot = cs.length
+        ? (open ? (open + '개 칸 · 제품 ' + n + '개') : '아직 준비 중')
+        : (n + '개 비교');
+      add(t, d, el('div','tile-t', c.label), el('div','tile-s', c.hint), el('div','tile-n', foot));
       on(t,'click',function(){
         resetPick();
         S.cat = c.id;
-        go('pick');
+        /* 세부 칸이 없던 시절 데이터로도 돌아가야 하므로 갈라 놓습니다. */
+        go(CONFIG.cellsOf(c.id).length ? 'cell' : 'pick');
       });
       add(tiles, t);
     })(CONFIG.cats[i]);
@@ -1561,12 +1784,81 @@ function meter(score, best){
   return m;
 }
 
+/* 칸마다 "이건 꼭 보고 산다"는 값을 줄지어 보여 줍니다.
+   선크림이면 SPF와 PA, 클렌징이면 pH 같은 것들입니다.
+   전부 식약처 보고 자료에서 그대로 온 값이라 AI가 손대지 않았습니다.
+   값이 없으면 아무것도 적지 않습니다. 모르는 것을 채워 넣지 않습니다. */
+function specRow(p){
+  var sp = p.specs || [];
+  if(!sp.length){ return null; }
+  var box = el('div','spec');
+  for(var i=0;i<sp.length;i++){
+    var cell = el('div','spec-c');
+    add(cell, el('div','spec-k', sp[i].k), el('div','spec-v', sp[i].v));
+    add(box, cell);
+  }
+  return box;
+}
+
+/* 판매처로 가는 단추입니다. 특정 상품 페이지가 아니라 검색 결과로 보냅니다.
+   상품 페이지 주소는 품절되면 죽지만, 이름으로 찾는 길은 늘 살아 있습니다.
+   값과 사진은 파는 곳에서 직접 보시는 편이 정확합니다. */
+function shopBtn(p){
+  var a = el('a','btn btn-o mt14', '판매처에서 값과 사진 보기');
+  a.href = CONFIG.shopLink(p);
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  return a;
+}
+
+/* 국가 자료만 있는 제품 카드입니다.
+   점수도 순위도 없습니다. 없는 것을 있는 척하지 않기 위해서입니다. */
+function listedCard(p){
+  var card = el('div','prod prod-lst');
+  add(card, el('div','badge-lst', '국가 자료로 확인'));
+
+  var h = el('div','prod-h');
+  var sw = el('div','prod-sw');
+  sw.style.background = catGrad(p.cat);
+  var info = el('div','prod-i');
+  add(info, el('div','prod-br', p.brand || p.entp),
+            el('div','prod-nm', p.name),
+            el('div','prod-pr', '값은 판매처마다 다릅니다'));
+  add(h, sw, info);
+  add(card, h);
+
+  var sr = specRow(p);
+  if(sr){ add(card, sr); }
+  if(p.good){ add(card, el('p','tx-s mt14', p.good)); }
+
+  if(p.watch){
+    var wb = el('div','watch');
+    add(wb, el('div','watch-t', '사기 전에 확인할 것'), el('p','tx-s', p.watch));
+    add(card, wb);
+  }
+
+  var nb = el('div','card card-w mt14');
+  add(nb, el('p','tx-s',
+    '이 제품은 전성분과 값을 아직 사람이 확인하지 못했습니다. ' +
+    '그래서 대표님 조건과 하나씩 대조하지 못했고, 점수도 매기지 않았습니다. ' +
+    '위에 적힌 값은 식약처에 보고된 내용 그대로입니다.'));
+  add(card, nb);
+
+  add(card, shopBtn(p));
+  add(card, el('p','hint mt14', '제품 이름은 생성형 AI가 다듬었습니다. 위 숫자는 원본 그대로입니다.'));
+  add(card, el('p','hint mt14', '확인한 곳 : 식품의약품안전처 기능성화장품 보고품목정보' +
+    (p.reportDate ? ' · ' + p.reportDate + ' 보고' : '') +
+    (p.checked ? ' · ' + p.checked + ' 확인' : '')));
+  return card;
+}
+
 function productCard(m, rank, best, showRank){
   var p = m.p;
   var card = el('div','prod' + (rank === 1 ? ' rank1' : ''));
 
   if(showRank && rank === 1){
-    add(card, el('div','badge1', m.tie ? '동점 · 그중 가장 저렴함' : '조건에 가장 가까움'));
+    add(card, el('div','badge1', m.badge ? m.badge
+      : (m.tie ? '동점 · 그중 가장 저렴함' : '조건에 가장 가까움')));
   }
 
   var h = el('div','prod-h');
@@ -1584,6 +1876,8 @@ function productCard(m, rank, best, showRank){
   if(p.fnc){
     add(card, el('div','fnc', '식약처 ' + p.fnc + ' 기능성'));
   }
+  var sr0 = specRow(p);
+  if(sr0){ add(card, sr0); }
 
   var why = el('div','prod-why');
   add(why, el('div','prod-why-t', '왜 이 제품인가'));
@@ -1630,8 +1924,17 @@ function productCard(m, rank, best, showRank){
   }
   add(card, wbox);
 
-  add(card, el('p','hint mt14', '확인한 곳 : ' + p.src + ' · ' + CONFIG.dataAsOf + ' 기준'));
+  add(card, shopBtn(p));
+  add(card, el('p','hint mt14', '확인한 곳 : ' + srcName(p.src) + ' · ' + CONFIG.dataAsOf + ' 기준'));
   return card;
+}
+
+/* 출처는 제품마다 긴 문장을 적지 않고 짧은 이름만 담아 둡니다.
+   같은 문장을 천 번 적으면 그것만으로 파일이 무거워지기 때문입니다. */
+function srcName(key){
+  if(key === 'mfds'){ return '식품의약품안전처 기능성화장품 보고품목정보'; }
+  if(key === 'oliveyoung'){ return '올리브영 상품정보 고시(화장품법 제10조)'; }
+  return key || '확인 중';
 }
 
 function renderResult(){
@@ -1649,7 +1952,8 @@ function renderResult(){
   var title;
   if(!res.top.length){ title = CONFIG.copy.noMatch; }
   else if(!res.ranked){ title = '조건을 통과한 ' + res.top.length + '개를 전부 보여 드립니다'; }
-  else { title = '이 세 개로 좁혔습니다'; }
+  else if(res.topLow.length && res.topHigh.length){ title = '값이 다른 두 갈래로 좁혔습니다'; }
+  else { title = '이 ' + res.top.length + '개로 좁혔습니다'; }
   add(head, el('h1','pg-t', title));
   if(res.ranked){
     add(head, el('p','pg-s', labelOf(CONFIG.cats, S.cat) + (segLabel ? ' · ' + segLabel : '') +
@@ -1679,15 +1983,51 @@ function renderResult(){
     add(w, em);
   }
 
-  var best = res.top.length ? res.top[0].score : 1;
+  var best = 1;
   for(var q=0;q<res.top.length;q++){
-    res.top[q].tie = (res.top.length > 1 && res.top[1].score === res.top[0].score);
+    if(res.top[q].score > best){ best = res.top[q].score; }
+    res.top[q].tie = false;
   }
-  var list = el('div','sec');
-  for(var i=0;i<res.top.length;i++){
-    add(list, productCard(res.top[i], i+1, best, res.ranked));
+
+  if(res.ranked && res.topLow.length && res.topHigh.length){
+    /* 값이 다른 두 줄. 어느 쪽이 위라는 뜻이 아니라 쓰는 사람이 다르다는 뜻이다. */
+    var bandNote = el('div','sec');
+    add(bandNote, el('p','hint',
+      wonText(res.bandAt) + '을 기준으로 두 갈래로 나눠서 각각 뽑았습니다. ' +
+      '싼 쪽 ' + res.lowCount + '개, 값이 나가는 쪽 ' + res.highCount + '개가 조건을 통과했습니다. ' +
+      '어느 쪽이 더 좋다는 뜻이 아니라, 쓰는 사람이 다르다는 뜻입니다.'));
+    add(w, bandNote);
+
+    var secLow = el('div','sec');
+    add(secLow, el('p','tx-b mb10', wonText(res.bandAt) + ' 아래에서 고른 것'));
+    add(secLow, el('p','hint mb10', '올리브영 · 온라인에서 흔히 보이는 값입니다.'));
+    for(var i=0;i<res.topLow.length;i++){
+      res.topLow[i].badge = (i === 0) ? '이 값대에서 조건에 가장 가까움' : '';
+      add(secLow, productCard(res.topLow[i], i+1, best, true));
+    }
+    add(w, secLow);
+
+    var secHigh = el('div','sec');
+    add(secHigh, el('p','tx-b mb10', wonText(res.bandAt) + ' 위에서 고른 것'));
+    add(secHigh, el('p','hint mb10', '백화점 · 더모 라인이 주로 이 구간입니다. 값이 비싸다고 더 맞는 것은 아닙니다.'));
+    for(var i2=0;i2<res.topHigh.length;i2++){
+      res.topHigh[i2].badge = (i2 === 0) ? '이 값대에서 조건에 가장 가까움' : '';
+      add(secHigh, productCard(res.topHigh[i2], i2+1, best, true));
+    }
+    add(w, secHigh);
+  } else {
+    var only = el('div','sec');
+    if(res.ranked && res.list.length){
+      var side = res.topHigh.length ? '값이 나가는 쪽' : '싼 쪽';
+      add(only, el('p','hint mb10',
+        wonText(res.bandAt) + '을 기준으로 나누려 했지만 ' + side + '에만 후보가 있습니다. ' +
+        '한 줄로만 보여 드립니다.'));
+    }
+    for(var i3=0;i3<res.top.length;i3++){
+      add(only, productCard(res.top[i3], i3+1, best, res.ranked));
+    }
+    add(w, only);
   }
-  add(w, list);
 
   if(res.top.length){
     var act = el('div','sec');
@@ -1702,18 +2042,49 @@ function renderResult(){
     add(w, act);
   }
 
-  if(res.ranked && res.list.length > 3){
-    var more = el('div','sec');
-    add(more, el('p','tx-d mb10', '조건은 통과했지만 순위에서 밀린 ' + (res.list.length - 3) + '개'));
-    for(var j=3;j<res.list.length;j++){
-      (function(m){
-        var it = el('div','item');
-        add(it, el('div','item-t', m.p.brand + ' ' + m.p.name));
-        add(it, el('div','item-m', priceText(m.p) + ' · 적합 점수 ' + m.score + '점'));
-        add(more, it);
-      })(res.list[j]);
+  if(res.ranked && res.list.length > res.top.length){
+    var shown = {};
+    for(var s=0;s<res.top.length;s++){ shown[res.top[s].p.id] = true; }
+    var rest = [];
+    for(var j=0;j<res.list.length;j++){
+      if(!shown[res.list[j].p.id]){ rest.push(res.list[j]); }
     }
-    add(w, more);
+    if(rest.length){
+      var more = el('div','sec');
+      add(more, el('p','tx-d mb10', '조건은 통과했지만 밀린 ' + rest.length + '개'));
+      for(var r2=0;r2<rest.length;r2++){
+        (function(m){
+          var it = el('div','item');
+          add(it, el('div','item-t', m.p.brand + ' ' + m.p.name));
+          add(it, el('div','item-m', priceText(m.p) + ' · 적합 점수 ' + m.score + '점'));
+          add(more, it);
+        })(rest[r2]);
+      }
+      add(w, more);
+    }
+  }
+
+  /* 국가 자료만 있는 제품을 아래에 따로 붙입니다.
+     위쪽 순위와 섞지 않습니다. 섞으면 확인한 것과 안 한 것의 구분이 사라집니다. */
+  if(res.listed && res.listed.length){
+    var lw = el('div','sec');
+    add(lw, el('p','tx-d mb10',
+      res.top.length ? ('같은 칸에서 더 볼 만한 ' + res.listed.length + '개')
+                     : ('이 칸에서 확인된 ' + res.listed.length + '개')));
+    add(lw, el('p','hint mb10',
+      '식약처에 보고된 값(자외선차단지수, pH 같은 것)은 확실하지만 ' +
+      '전성분과 값은 아직 사람이 확인하지 못한 제품들입니다. ' +
+      '그래서 대표님 조건과 대조하지 않았고 점수도 없습니다.'));
+    var cap = Math.min(res.listed.length, S.listedMore ? res.listed.length : 6);
+    for(var lz=0; lz<cap; lz++){
+      add(lw, listedCard(res.listed[lz]));
+    }
+    if(cap < res.listed.length){
+      var mb2 = el('button','btn btn-o', '나머지 ' + (res.listed.length - cap) + '개 더 보기');
+      on(mb2,'click',function(){ S.listedMore = true; render(); });
+      add(lw, mb2);
+    }
+    add(w, lw);
   }
 
   if(res.dropped.length){
@@ -2207,6 +2578,7 @@ function render(){
   var v = S.view;
   var node;
   if(v === 'intro'){ node = renderIntro(); }
+  else if(v === 'cell'){ node = renderCells(); }
   else if(v === 'pick'){ node = renderPick(); }
   else if(v === 'result'){ node = renderResult(); }
   else if(v === 'cmp'){ node = renderCompare(); }
@@ -2220,7 +2592,7 @@ function render(){
 }
 
 /* ============ 뒤로가기 ============ */
-var BACKMAP = { pick:'home', result:'pick', cmp:'result', prompt:'result',
+var BACKMAP = { cell:'home', pick:'cell', result:'pick', cmp:'result', prompt:'result',
                 check:'home', ing:'home', hist:'home', data:'home', intro:'home' };
 function handleBack(){
   if(exitOpen){ closeExit(); return; }
@@ -2250,6 +2622,8 @@ function loadData(done){
       clearTimeout(timer);
       if(j && j.products && j.products.length){
         if(j.minPool){ CONFIG.minPool = j.minPool; }
+        if(j.cells){ CONFIG.applyCells(j.cells); }
+        if(j.aiNote){ CONFIG.aiNote = j.aiNote; }
         CONFIG.applyData(j.products, j.version);
         fin('live');
       } else {
