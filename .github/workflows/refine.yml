@@ -1,0 +1,110 @@
+name: 2. 정제와 상품파일 만들기
+
+# 수집이 끝난 뒤에 돌립니다.
+# 하는 일: 식약처 품목명을 사람이 아는 이름으로 다듬고(제미나이),
+#          그 결과를 앱이 읽는 products.json 으로 합칩니다(규칙만).
+#
+# 무료 한도 안에서 돌리기 위해 한 번에 다 하지 않습니다.
+# 하루 상한에 닿으면 곱게 멈추고, 다음 날 이어서 합니다.
+# 끝낸 것은 data/refined.json 에 남아 있으므로 두 번 부르지 않습니다.
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_calls:
+        description: '이번에 제미나이를 최대 몇 번 부를까요 (무료 한도가 걱정되면 작게)'
+        required: false
+        default: '120'
+      per_cat:
+        description: '세부 칸 하나에서 후보를 몇 개까지 볼까요'
+        required: false
+        default: '60'
+      dry_run:
+        description: '연습만 하려면 1 (실제로 부르지 않고 개수만 봅니다)'
+        required: false
+        default: ''
+  schedule:
+    # 매주 월요일 새벽. 수집이 일요일에 도는 것을 전제로 합니다.
+    - cron: '0 20 * * 0'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pickme-refine
+  cancel-in-progress: false
+
+jobs:
+  refine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - name: 저장소 가져오기
+        uses: actions/checkout@v4
+
+      - name: 파이썬 준비
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 수집분이 있는지 확인
+        run: |
+          if [ ! -f data/mfds.json ]; then
+            echo "data/mfds.json 이 없습니다. '1. 식약처 수집'을 먼저 돌려 주세요."
+            exit 1
+          fi
+          echo "수집분 크기: $(du -h data/mfds.json | cut -f1)"
+
+      # 제미나이를 부르기 전에 스크립트가 멀쩡한지 먼저 봅니다.
+      # 여기서 걸리면 한도를 한 번도 안 쓰고 멈춥니다.
+      - name: 스크립트 스스로 점검
+        run: python tools/self_check.py
+
+      - name: 제미나이로 이름 다듬기
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-2.5-flash
+          MAX_CALLS: ${{ github.event.inputs.max_calls || '120' }}
+          PER_CAT: ${{ github.event.inputs.per_cat || '60' }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || '' }}
+          BATCH: '25'
+          SLEEP: '4'
+        run: python tools/refine_gemini.py
+
+      - name: 상품 파일 만들기
+        if: ${{ github.event.inputs.dry_run != '1' }}
+        run: python tools/build_products.py
+
+      # 만들어진 products.json 을 실제 앱 코드에 물려서 돌려 봅니다.
+      # 여기서 걸리면 아래 '결과 저장'이 돌지 않으므로
+      # 깨진 파일이 사이트에 올라가는 일이 없습니다.
+      - name: 앱에 물려서 확인
+        if: ${{ github.event.inputs.dry_run != '1' }}
+        run: node tools/self_check.js
+
+      - name: 결과 저장
+        if: ${{ github.event.inputs.dry_run != '1' }}
+        run: |
+          git config user.name "pickme-bot"
+          git config user.email "actions@github.com"
+          git add data/refined.json data/refine_report.md \
+                  data/build_report.md products.json || true
+          if git diff --cached --quiet; then
+            echo "바뀐 것이 없습니다."
+          else
+            git commit -m "정제 및 상품파일 갱신 $(date +%Y-%m-%d)"
+            git push
+          fi
+
+      - name: 요약 보기
+        if: always()
+        run: |
+          echo "## 정제 결과" >> $GITHUB_STEP_SUMMARY
+          if [ -f data/refine_report.md ]; then
+            head -20 data/refine_report.md >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## 상품 파일" >> $GITHUB_STEP_SUMMARY
+          if [ -f data/build_report.md ]; then
+            head -50 data/build_report.md >> $GITHUB_STEP_SUMMARY
+          fi
