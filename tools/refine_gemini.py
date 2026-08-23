@@ -282,6 +282,42 @@ def main():
         die(IN_JSON + ' 안에 항목이 없습니다.')
     print('수집분 ' + str(len(rows)) + '건을 읽었습니다.')
 
+    # 수집분이 지금 분류와 같은 말을 쓰는지 먼저 본다.
+    #
+    # 수집기를 33칸으로 고친 뒤에도 data/mfds.json 은 옛날 그대로 남아 있다.
+    # 파일만 새것이고 데이터는 옛것인 상태다. 이때 칸 이름이 서로 안 맞아
+    # 후보가 한 건도 안 잡히는데, 겉으로는 그냥 "0건" 이라고만 나온다.
+    # 설명 없는 0건은 무엇이 잘못됐는지 알 길이 없으므로 여기서 잡는다.
+    known = set()
+    for _g, _gl, key, _l, _w in CATS:
+        known.add(key)
+    fit = 0
+    seen = {}
+    for r in rows:
+        c = r.get('cat') or ''
+        seen[c] = seen.get(c, 0) + 1
+        if c in known:
+            fit += 1
+    if fit == 0:
+        top = sorted(seen.items(), key=lambda kv: -kv[1])[:8]
+        die('수집분의 칸 이름이 지금 분류와 맞지 않습니다.\n'
+            '\n'
+            '수집분에 들어 있는 칸 이름: '
+            + ', '.join([k + '(' + str(v) + '건)' for k, v in top]) + '\n'
+            '지금 쓰는 칸 이름 예시: '
+            + ', '.join(sorted(known)[:8]) + '\n'
+            '\n'
+            'data/mfds.json 이 옛날 수집기로 만들어진 것입니다.\n'
+            'tools/collect_mfds.py 는 새것이지만 데이터는 아직 옛것입니다.\n'
+            '\n'
+            "Actions 탭에서 '1. 픽미닷 데이터 수집 (식약처)' 을 pages 0 으로\n"
+            '한 번 다시 돌려 주세요. 20~30분이면 끝나고 돈은 들지 않습니다.\n'
+            '그 다음 이 작업을 다시 누르시면 됩니다.')
+    if fit < len(rows) * 0.5:
+        print('! 수집분 ' + str(len(rows)) + '건 가운데 '
+              + str(fit) + '건만 지금 분류에 맞습니다.')
+        print('  수집을 다시 돌리면 나머지도 제자리를 찾습니다.')
+
     prev = load_json(OUT_JSON, {})
     done = prev.get('items') or {}
     print('이미 정제한 것 ' + str(len(done)) + '건은 건너뜁니다.')
