@@ -1,0 +1,11 @@
+{
+ "source": "식품의약품안전처 기능성화장품 보고품목정보 (공공데이터포털 15095680)",
+ "endpoint": "https://apis.data.go.kr/1471000/FtnltCosmRptPrdlstInfoService/getRptPrdlstInq",
+ "collectedAt": "2026-08-23",
+ "sinceYear": 2021,
+ "totalInApi": 194447,
+ "scanned": 500,
+ "count": 0,
+ "byCategory": {},
+ "items": []
+}
