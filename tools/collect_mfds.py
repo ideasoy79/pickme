@@ -33,21 +33,105 @@ OUT_REPORT = os.path.join(OUT_DIR, 'mfds_report.md')
 
 TODAY = datetime.date.today().isoformat()
 
-# 픽미닷 카테고리 매핑.
-# 식약처 품목명은 판매명과 다를 수 있으므로 키워드는 넉넉하게 잡고,
-# 몇 개가 어떻게 걸렸는지는 리포트로 확인한 뒤에 조인다.
+# 픽미닷 카테고리 나무.
+#
+# (대분류키, 대분류이름, 세부키, 세부이름, 걸리는 말들)
+#
+# 한 칸에는 한 가지 제품만 담는다. 앰플과 에센스는 사는 목적이 달라서
+# 같은 칸에 두면 고르는 사람이 손해를 본다.
+#
+# 순서가 곧 우선순위다. 위에서부터 먼저 걸리는 칸이 임자다.
+# 그래서 "클렌징 오일"이 "페이스 오일"보다 위에, "아이크림"이 "크림"보다 위에 있다.
+#
+# 잘게 나누는 것 자체는 공짜다. 값이 드는 쪽은 전성분과 가격을 채우는 일이므로,
+# 여기서는 최대한 잘게 담아두고 앱에서는 채워진 칸만 연다.
 CATS = [
-    ('sun', '선크림 · 자외선차단', [
+    # ── 선케어 ──────────────────────────────────────────
+    # 기능성화장품 보고 자료가 SPF · PA · 내수성까지 그대로 주는 분야다.
+    ('sun', '선케어', 'sun_stick', '선스틱', ['선스틱', '썬스틱']),
+    ('sun', '선케어', 'sun_cushion', '선쿠션', ['선쿠션', '썬쿠션', '선팩트', '썬팩트']),
+    ('sun', '선케어', 'sun_spray', '선스프레이', ['선스프레이', '썬스프레이', '선미스트', '썬미스트']),
+    ('sun', '선케어', 'sun_cream', '선크림 · 선로션', [
         '선크림', '썬크림', '선블록', '썬블록', '선스크린', '썬스크린',
-        '자외선차단', '선쿠션', '썬쿠션', '선스틱', '썬스틱', '선젤', '선밤',
+        '자외선차단', '선로션', '썬로션', '선젤', '썬젤', '선밤', '썬밤',
+        '선에센스', '선세럼', '선베이스', '톤업선', '선플루이드',
     ]),
-    ('eye', '아이크림', ['아이크림', '아이 크림', '눈가', '아이세럼', '아이 세럼']),
-    ('cleanse', '클렌징', ['클렌징', '클렌저', '폼클렌', '클렌즈', '워시', '세안']),
-    ('mask', '마스크팩', ['마스크', '시트팩', '패드']),
-    ('serum', '세럼 · 에센스 · 앰플', ['세럼', '에센스', '앰플', '앰퓰']),
-    ('cream', '크림 · 로션', ['크림', '로션', '모이스처', '모이스춰']),
-    ('toner', '토너 · 스킨', ['토너', '스킨', '부스터', '미스트', '플루이드']),
+
+    # ── 눈가 ────────────────────────────────────────────
+    ('eye', '눈가', 'eye_patch', '아이패치', ['아이패치', '아이 패치', '눈가패치']),
+    ('eye', '눈가', 'eye_serum', '아이세럼 · 아이앰플', ['아이세럼', '아이 세럼', '아이앰플', '아이에센스']),
+    ('eye', '눈가', 'eye_cream', '아이크림', ['아이크림', '아이 크림', '눈가크림', '아이밤']),
+
+    # ── 클렌징 ──────────────────────────────────────────
+    # 클렌징 오일과 클렌징 폼은 대체재가 아니다. 반드시 따로 센다.
+    ('cleanse', '클렌징', 'cl_oil', '클렌징 오일', ['클렌징오일', '클렌징 오일', '클렌징워터오일']),
+    ('cleanse', '클렌징', 'cl_balm', '클렌징 밤', ['클렌징밤', '클렌징 밤', '클렌징셔벗']),
+    ('cleanse', '클렌징', 'cl_water', '클렌징 워터 · 미셀라', ['클렌징워터', '미셀라', '리무버워터']),
+    ('cleanse', '클렌징', 'cl_milk', '클렌징 크림 · 밀크', [
+        '클렌징크림', '크림클렌저', '크림클렌징', '클렌징밀크', '밀크클렌저', '클렌징로션',
+    ]),
+    ('cleanse', '클렌징', 'cl_powder', '클렌징 파우더', ['클렌징파우더', '파우더워시', '효소세안']),
+    ('cleanse', '클렌징', 'cl_bar', '세안바 (고체)', ['세안바', '클렌징바', '페이셜바', '솝바']),
+    ('cleanse', '클렌징', 'cl_gel', '클렌징 젤', ['클렌징젤', '젤클렌저', '젤투폼']),
+    ('cleanse', '클렌징', 'cl_foam', '클렌징 폼', [
+        '클렌징폼', '폼클렌', '클렌징무스', '버블클렌', '폼',
+    ]),
+    # 식약처 품목명이 그냥 "클렌저"인 경우가 많다. 그 이름만으로는
+    # 폼인지 젤인지 크림인지 알 수 없다. 모르는 것을 안다고 적지 않기 위해
+    # 따로 담아두고, 제형은 사람이 판매 페이지에서 확인한 뒤에 옮긴다.
+    ('cleanse', '클렌징', 'cl_unknown', '클렌징 (제형 확인 필요)', [
+        '클렌저', '클렌징', '세안제', '페이스워시', '페이셜워시',
+    ]),
+
+    # ── 각질 · 필링 ─────────────────────────────────────
+    ('peel', '각질 · 필링', 'peel_pad', '필링 패드 · 토너패드', ['토너패드', '필링패드', '데일리패드', '클리어패드']),
+    ('peel', '각질 · 필링', 'peel_scrub', '스크럽 · 고마쥬', ['스크럽', '고마쥬', '고마지']),
+    ('peel', '각질 · 필링', 'peel_liquid', '필링 에센스 · 필링젤', ['필링에센스', '필링젤', '각질', '필링']),
+
+    # ── 마스크 · 팩 ─────────────────────────────────────
+    ('mask', '마스크 · 팩', 'mask_sleep', '슬리핑팩', ['슬리핑팩', '수면팩', '나이트팩']),
+    ('mask', '마스크 · 팩', 'mask_wash', '워시오프 팩', ['워시오프', '클레이팩', '머드팩', '모델링팩']),
+    ('mask', '마스크 · 팩', 'mask_patch', '코팩 · 트러블패치', ['코팩', '트러블패치', '스팟패치', '여드름패치']),
+    ('mask', '마스크 · 팩', 'mask_sheet', '시트마스크', ['시트마스크', '마스크팩', '마스크시트', '마스크']),
+
+    # ── 토너 ────────────────────────────────────────────
+    ('toner', '토너 · 스킨', 'toner_mist', '미스트', ['미스트']),
+    ('toner', '토너 · 스킨', 'toner_booster', '부스터 · 프리에센스', ['부스터', '프리에센스', '퍼스트에센스', '스킨소프너']),
+    # '스킨' 한 글자만으로 잡으면 스킨1004, 스킨푸드 같은 상호까지 딸려 들어온다.
+    # 그래서 붙어 다니는 말로만 잡는다.
+    ('toner', '토너 · 스킨', 'toner_basic', '토너 · 스킨', [
+        '토너', '스킨로션', '화장수', '스킨토너', '소프너',
+    ]),
+
+    # ── 세럼류 ──────────────────────────────────────────
+    # 검토자가 짚은 자리다. 앰플은 고농도 단기집중, 에센스는 수분 레이어,
+    # 세럼은 그 사이. 사는 이유가 다르므로 칸을 나눈다.
+    ('serum', '세럼 · 앰플', 'ser_ampoule', '앰플', ['앰플', '앰퓰', '앰풀']),
+    ('serum', '세럼 · 앰플', 'ser_oil', '페이스 오일', ['페이스오일', '페이셜오일', '페이스 오일', '오일세럼']),
+    ('serum', '세럼 · 앰플', 'ser_serum', '세럼', ['세럼']),
+    ('serum', '세럼 · 앰플', 'ser_essence', '에센스', ['에센스']),
+
+    # ── 크림 · 로션 ─────────────────────────────────────
+    ('cream', '크림 · 로션', 'cr_gel', '수딩젤 · 젤크림', ['수딩젤', '젤크림', '워터젤', '아쿠아젤']),
+    ('cream', '크림 · 로션', 'cr_balm', '밤 · 연고형', ['밤타입', '리페어밤', '카밍밤', '스킨밤']),
+    ('cream', '크림 · 로션', 'cr_lotion', '로션 · 에멀전', ['에멀전', '에멀젼', '로션', '플루이드']),
+    ('cream', '크림 · 로션', 'cr_cream', '크림', ['크림', '모이스처', '모이스춰', '모이스쳐']),
 ]
+
+# 한 칸에 이만큼은 있어야 순위를 매긴다. 앱의 규칙과 같은 값을 쓴다.
+MIN_POOL = 12
+
+
+def _groups():
+    """대분류를 나온 순서대로 (키, 이름)으로 돌려준다."""
+    out = []
+    seen = {}
+    for gkey, glabel, _k, _l, _w in CATS:
+        if gkey not in seen:
+            seen[gkey] = True
+            out.append((gkey, glabel))
+    return out
+
 
 EFFECT_LABELS = [
     ('EFFECT_YN1', '미백'),
@@ -106,12 +190,14 @@ def fetch(page):
 
 
 def pick_cat(name):
+    """품목명을 보고 (대분류키, 대분류이름, 세부키, 세부이름)을 돌려준다.
+    어느 칸에도 안 걸리면 네 개 다 None 이다."""
     n = (name or '').replace(' ', '')
-    for key, label, words in CATS:
+    for gkey, glabel, key, label, words in CATS:
         for w in words:
             if w.replace(' ', '') in n:
-                return key, label
-    return None, None
+                return gkey, glabel, key, label
+    return None, None, None, None
 
 
 def report_year(v):
@@ -183,7 +269,7 @@ def main():
                 continue
 
             name = (it.get('ITEM_NAME') or '').strip()
-            cat, cat_label = pick_cat(name)
+            grp, grp_label, cat, cat_label = pick_cat(name)
             if not cat:
                 dropped_nocat += 1
                 continue
@@ -204,6 +290,8 @@ def main():
                 'id': str(it.get('COSMETIC_REPORT_SEQ') or '').strip(),
                 'name': name,
                 'entp': entp,
+                'grp': grp,
+                'grpLabel': grp_label,
                 'cat': cat,
                 'catLabel': cat_label,
                 'effects': effects,
@@ -243,7 +331,11 @@ def main():
         if page <= limit:
             time.sleep(SLEEP)
 
-    kept.sort(key=lambda r: (r['cat'], r.get('reportDate', ''), r['name']))
+    cat_order = {}
+    for i in range(len(CATS)):
+        cat_order[CATS[i][2]] = i
+    kept.sort(key=lambda r: (cat_order.get(r['cat'], 999),
+                             r.get('reportDate', ''), r['name']))
 
     by_cat = {}
     for r in kept:
@@ -285,10 +377,26 @@ def main():
     lines.append('')
     lines.append('## 카테고리별')
     lines.append('')
-    lines.append('| 카테고리 | 건수 |')
-    lines.append('|---|---|')
-    for key, label, _w in CATS:
-        lines.append('| ' + label + ' | ' + str(by_cat.get(key, 0)) + ' |')
+    lines.append('열림 칸은 후보가 ' + str(MIN_POOL) + '개 이상이라 순위를 매길 수 있는 곳입니다. '
+                 '식약처 자료는 뼈대일 뿐이고, 실제로 앱을 열려면 이 칸의 제품에 '
+                 '가격과 전성분을 붙여야 합니다.')
+    lines.append('')
+    lines.append('| 대분류 | 세부 칸 | 건수 | 상태 |')
+    lines.append('|---|---|---|---|')
+    prev_grp = None
+    for gkey, glabel, key, label, _w in CATS:
+        n = by_cat.get(key, 0)
+        state = '열림' if n >= MIN_POOL else ('얇음' if n else '비어 있음')
+        lines.append('| ' + (glabel if gkey != prev_grp else '') + ' | ' +
+                     label + ' | ' + str(n) + ' | ' + state + ' |')
+        prev_grp = gkey
+    lines.append('')
+    grp_tot = {}
+    for r in kept:
+        grp_tot[r['grp']] = grp_tot.get(r['grp'], 0) + 1
+    lines.append('대분류 합계 — ' + ', '.join(
+        glabel + ' ' + str(grp_tot.get(gkey, 0)) + '건'
+        for gkey, glabel in _groups()) + '.')
     lines.append('')
     lines.append('## 책임판매업체 상위 15')
     lines.append('')
@@ -297,24 +405,36 @@ def main():
     for nm, c in top_entp:
         lines.append('| ' + nm + ' | ' + str(c) + ' |')
     lines.append('')
-    lines.append('## 품목명 샘플 30개')
+    lines.append('## 칸마다 품목명 샘플 3개')
     lines.append('')
-    lines.append('식약처 품목명은 판매명과 다를 수 있습니다. 아래를 보고 '
-                 '사람이 알아볼 수 있는 이름인지 판단해야 합니다.')
+    lines.append('식약처 품목명은 허가용 이름이라 판매명과 다를 수 있습니다. '
+                 '엉뚱한 칸에 들어간 것이 있는지, 사람이 알아볼 수 있는 이름인지 '
+                 '여기서 눈으로 봅니다.')
     lines.append('')
-    for r in kept[:30]:
-        extra = []
-        if r.get('spf'):
-            extra.append('SPF' + r['spf'])
-        if r.get('pa'):
-            extra.append(r['pa'])
-        if r.get('ph'):
-            extra.append('pH ' + r['ph'])
-        if r['effects']:
-            extra.append('/'.join(r['effects']))
-        tail = ('  (' + ' · '.join(extra) + ')') if extra else ''
-        lines.append('- [' + r['catLabel'] + '] ' + r['name'] + ' — ' + r['entp'] + tail)
-    lines.append('')
+    for gkey, glabel, key, label, _w in CATS:
+        picks = [r for r in kept if r['cat'] == key][:3]
+        if not picks:
+            continue
+        lines.append('**' + glabel + ' › ' + label + '** (' +
+                     str(by_cat.get(key, 0)) + '건)')
+        lines.append('')
+        for r in picks:
+            extra = []
+            if r.get('spf'):
+                extra.append('SPF' + r['spf'])
+            if r.get('pa'):
+                extra.append(r['pa'])
+            if r.get('waterproof'):
+                extra.append(r['waterproof'])
+            if r.get('ph'):
+                extra.append('pH ' + r['ph'])
+            if r.get('ethanolOver'):
+                extra.append('에탄올 4% 초과')
+            if r['effects']:
+                extra.append('/'.join(r['effects']))
+            tail = ('  (' + ' · '.join(extra) + ')') if extra else ''
+            lines.append('- ' + r['name'] + ' — ' + r['entp'] + tail)
+        lines.append('')
 
     with open(OUT_REPORT, 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines))
