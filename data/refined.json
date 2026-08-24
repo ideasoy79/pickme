@@ -901,6 +901,681 @@
    "note": "",
    "by": "gemini-3.6-flash",
    "at": "2026-08-24"
+  },
+  "2026017103": {
+   "retail": true,
+   "brand": "메디힐",
+   "title": "마데카소사이드 선스틱 에어리핏",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026016781": {
+   "retail": true,
+   "brand": "온오프",
+   "title": "에어리 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026016546": {
+   "retail": true,
+   "brand": "비오씨려희진",
+   "title": "유브이 쉴드 퍼펙트 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026015828": {
+   "retail": true,
+   "brand": "듀이트리",
+   "title": "어반 쉐이드 쿨 카밍 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026015143": {
+   "retail": true,
+   "brand": "오릭스",
+   "title": "마일드 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026014789": {
+   "retail": true,
+   "brand": "록키스",
+   "title": "베리굿 쿨링 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026013900": {
+   "retail": true,
+   "brand": "베리굿",
+   "title": "선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026013746": {
+   "retail": true,
+   "brand": "알티지오",
+   "title": "클라우드 핏 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026013504": {
+   "retail": true,
+   "brand": "글로이스트",
+   "title": "데일리 리추얼스 클라우드 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026013111": {
+   "retail": true,
+   "brand": "와이즐리",
+   "title": "퍼펙션 모이스처 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026012223": {
+   "retail": false,
+   "brand": "",
+   "title": "유브이 디펜스 선스틱",
+   "cat": "sun_stick",
+   "note": "SPF50+ PA++++ 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026011989": {
+   "retail": true,
+   "brand": "와치독",
+   "title": "리커버 아이스 썸머 수딩 썬스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026011757": {
+   "retail": true,
+   "brand": "앤던",
+   "title": "에어리 스킨 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026011632": {
+   "retail": true,
+   "brand": "투비건",
+   "title": "컬러푸드 시리즈 핑크 구아바 에어리 선스틱",
+   "cat": "sun_stick",
+   "note": "SPF50+ PA++++ 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026011439": {
+   "retail": true,
+   "brand": "머지",
+   "title": "데일리 라이트업 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026011514": {
+   "retail": true,
+   "brand": "몽디에스",
+   "title": "선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026011505": {
+   "retail": true,
+   "brand": "와치독",
+   "title": "리커버 아이스 썸머 카밍 썬스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026011519": {
+   "retail": true,
+   "brand": "큐어레스트",
+   "title": "에어리핏 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026011516": {
+   "retail": true,
+   "brand": "허브에이드",
+   "title": "멜라메딕 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026011166": {
+   "retail": true,
+   "brand": "비플레인",
+   "title": "엑스 워너원 녹두 에어리핏 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026011181": {
+   "retail": true,
+   "brand": "써니플레이",
+   "title": "쿨 카밍 썬스틱",
+   "cat": "sun_stick",
+   "note": "SPF50+ PA++++ 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026010734": {
+   "retail": true,
+   "brand": "엠큐엔와이",
+   "title": "유브이 데일리 모이스처 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026010755": {
+   "retail": true,
+   "brand": "엠큐엔와이",
+   "title": "유브이 데일리 에어리 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026010630": {
+   "retail": true,
+   "brand": "끌린다",
+   "title": "에어리 시카 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026010698": {
+   "retail": true,
+   "brand": "비엘에스",
+   "title": "유브이 에어리 밤 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026017144": {
+   "retail": true,
+   "brand": "라멜린",
+   "title": "에어핏 피디알엔 선미스트",
+   "cat": "sun_spray",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026016662": {
+   "retail": true,
+   "brand": "넘버즈인",
+   "title": "나드 피디알엔 글로우 선미스트",
+   "cat": "sun_spray",
+   "note": "SPF50+ PA++++ 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026016505": {
+   "retail": true,
+   "brand": "벨도라",
+   "title": "포디 프로텍션 에센스 선미스트",
+   "cat": "sun_spray",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026016212": {
+   "retail": true,
+   "brand": "코리아나",
+   "title": "파워풀 선미스트",
+   "cat": "sun_spray",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026015979": {
+   "retail": true,
+   "brand": "디아티스트",
+   "title": "셀렉션 선미스트 그린티",
+   "cat": "sun_spray",
+   "note": "SPF 50 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026015168": {
+   "retail": true,
+   "brand": "레스티나",
+   "title": "두피 선미스트",
+   "cat": "sun_spray",
+   "note": "두피용 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026015189": {
+   "retail": true,
+   "brand": "편강율",
+   "title": "키즈 쿨링 선스프레이",
+   "cat": "sun_spray",
+   "note": "쿨링 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026013956": {
+   "retail": true,
+   "brand": "수아이레",
+   "title": "모이스처 쿨링 선미스트",
+   "cat": "sun_spray",
+   "note": "쿨링 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026013644": {
+   "retail": true,
+   "brand": "벼리",
+   "title": "루미노레 데일리 선미스트",
+   "cat": "sun_spray",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026013666": {
+   "retail": true,
+   "brand": "벼리",
+   "title": "루미노레 펄 글로우 선미스트",
+   "cat": "sun_spray",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026013100": {
+   "retail": true,
+   "brand": "노크",
+   "title": "스프리츠 선스프레이",
+   "cat": "sun_spray",
+   "note": "SPF50+ PA++++ 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026012145": {
+   "retail": true,
+   "brand": "리노이아",
+   "title": "스칼프 데일리 선미스트",
+   "cat": "sun_spray",
+   "note": "두피용 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026011914": {
+   "retail": true,
+   "brand": "리노이아",
+   "title": "스칼프 쿨링 선스프레이",
+   "cat": "sun_spray",
+   "note": "두피용, 쿨링 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026011875": {
+   "retail": true,
+   "brand": "프리마크",
+   "title": "제로지 하이드라 선미스트",
+   "cat": "sun_spray",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026011209": {
+   "retail": true,
+   "brand": "벼리",
+   "title": "루미노레 아웃도어 수딩 선미스트",
+   "cat": "sun_spray",
+   "note": "수딩 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026010657": {
+   "retail": true,
+   "brand": "미오라",
+   "title": "오로라 선미스트",
+   "cat": "sun_spray",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026009814": {
+   "retail": true,
+   "brand": "앤서나인틴",
+   "title": "올데이 쿨링 선스프레이",
+   "cat": "sun_spray",
+   "note": "쿨링 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026009309": {
+   "retail": true,
+   "brand": "라보에이치",
+   "title": "유브이 프로텍터 365 스칼프 선미스트",
+   "cat": "sun_spray",
+   "note": "두피용 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026009292": {
+   "retail": true,
+   "brand": "오프앤드",
+   "title": "올데이 선미스트",
+   "cat": "sun_spray",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026008074": {
+   "retail": true,
+   "brand": "탐사",
+   "title": "쿨링 선스프레이",
+   "cat": "sun_spray",
+   "note": "쿨링 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026006916": {
+   "retail": true,
+   "brand": "와치독",
+   "title": "리커버 썬스프레이",
+   "cat": "sun_spray",
+   "note": "무기자차 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026005832": {
+   "retail": true,
+   "brand": "달바",
+   "title": "워터풀 에센스 선미스트",
+   "cat": "sun_spray",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026006008": {
+   "retail": true,
+   "brand": "블랑카우",
+   "title": "보타닉 리페어 선스프레이",
+   "cat": "sun_spray",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026005922": {
+   "retail": true,
+   "brand": "와치독",
+   "title": "리커버 오셔닉 썬스프레이",
+   "cat": "sun_spray",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026005875": {
+   "retail": true,
+   "brand": "라운드랩",
+   "title": "자작나무 수분 선스프레이",
+   "cat": "sun_spray",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025952": {
+   "retail": true,
+   "brand": "닥터엘가나",
+   "title": "이지에프선크림",
+   "cat": "sun_cream",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026026009": {
+   "retail": true,
+   "brand": "솔잎페이스",
+   "title": "더와일드선크림",
+   "cat": "sun_cream",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025992": {
+   "retail": true,
+   "brand": "아츄",
+   "title": "로즈피디알엔톤업선크림",
+   "cat": "sun_cream",
+   "note": "톤업 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026026032": {
+   "retail": true,
+   "brand": "오니브",
+   "title": "데일리피디알엔선크림",
+   "cat": "sun_cream",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025741": {
+   "retail": true,
+   "brand": "닥터멜락신",
+   "title": "리쥬피디알엔콜라겐선세럼",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025794": {
+   "retail": true,
+   "brand": "부스터바이글로우",
+   "title": "라이스피디알엔선크림",
+   "cat": "sun_cream",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025698": {
+   "retail": true,
+   "brand": "나바탄",
+   "title": "아쿠아선젤",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025671": {
+   "retail": true,
+   "brand": "나어릴때",
+   "title": "에어핏히알루론산선크림",
+   "cat": "sun_cream",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025659": {
+   "retail": true,
+   "brand": "나어릴때",
+   "title": "워터핏시카선세럼",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025657": {
+   "retail": true,
+   "brand": "데이셀",
+   "title": "디아트셀오로라진주에센셜화이트선크림",
+   "cat": "sun_cream",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025682": {
+   "retail": true,
+   "brand": "비보라제네온",
+   "title": "알지쓰리리바이브선스크린",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025673": {
+   "retail": true,
+   "brand": "비보라조선",
+   "title": "알지쓰리리바이브선스크린선비",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025672": {
+   "retail": true,
+   "brand": "비보라조선",
+   "title": "알지쓰리리바이브선스크린왕비",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025665": {
+   "retail": true,
+   "brand": "제이스더마",
+   "title": "카밍아쿠아선스크린",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025627": {
+   "retail": true,
+   "brand": "포에버마이",
+   "title": "모이스처핏실키선스크린",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025643": {
+   "retail": true,
+   "brand": "휴옵세스",
+   "title": "3-베일글로우핏선스크린",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025569": {
+   "retail": true,
+   "brand": "글래스유",
+   "title": "에어리버블선세럼",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025606": {
+   "retail": true,
+   "brand": "누이",
+   "title": "하이드로락인선세럼",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025602": {
+   "retail": true,
+   "brand": "로지앤엘",
+   "title": "933자톤업앤글로우선크림",
+   "cat": "sun_cream",
+   "note": "톤업 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025597": {
+   "retail": true,
+   "brand": "리라신",
+   "title": "듀이선세럼",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025625": {
+   "retail": true,
+   "brand": "안탈라",
+   "title": "엑토인톤업선크림",
+   "cat": "sun_cream",
+   "note": "톤업 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025548": {
+   "retail": true,
+   "brand": "코에벨",
+   "title": "선크림",
+   "cat": "sun_cream",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025479": {
+   "retail": true,
+   "brand": "셀레베",
+   "title": "글로우캐비어선크림",
+   "cat": "sun_cream",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025503": {
+   "retail": true,
+   "brand": "아츄",
+   "title": "시카피디알엔데일리선크림",
+   "cat": "sun_cream",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025454": {
+   "retail": true,
+   "brand": "인어스",
+   "title": "바나나화이트톤업선크림",
+   "cat": "sun_cream",
+   "note": "톤업 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
   }
  }
 }
