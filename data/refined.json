@@ -1,0 +1,906 @@
+{
+ "version": "2026-08-24",
+ "model": "gemini-3.6-flash",
+ "items": {
+  "2026026372": {
+   "retail": true,
+   "brand": "레몬보틀",
+   "title": "쿨링 베일 선스틱",
+   "cat": "sun_stick",
+   "note": "쿨링 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026026227": {
+   "retail": true,
+   "brand": "시투와이",
+   "title": "바세린 코튼핏 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026026177": {
+   "retail": true,
+   "brand": "오엠지",
+   "title": "엔에이디플러스 엔엠엔 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025684": {
+   "retail": true,
+   "brand": "나어릴때",
+   "title": "더블 베리어 퓨어 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025683": {
+   "retail": true,
+   "brand": "나어릴때",
+   "title": "더블 쉴드 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025609": {
+   "retail": true,
+   "brand": "미라벨",
+   "title": "히알루론 워터 글로우 썬스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025096": {
+   "retail": true,
+   "brand": "누이",
+   "title": "파우더 피니시 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026024671": {
+   "retail": true,
+   "brand": "프랑스와즈",
+   "title": "뽀송 선스틱",
+   "cat": "sun_stick",
+   "note": "뽀송 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026024439": {
+   "retail": true,
+   "brand": "닥터지",
+   "title": "그린 마일드 업 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026024436": {
+   "retail": true,
+   "brand": "닥터지",
+   "title": "비타 클리어 워터프루프 선스틱",
+   "cat": "sun_stick",
+   "note": "워터프루프 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026024452": {
+   "retail": true,
+   "brand": "닥터지",
+   "title": "레드 블레미쉬 수딩 업 선스틱",
+   "cat": "sun_stick",
+   "note": "수딩 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026024186": {
+   "retail": true,
+   "brand": "부쉬맨",
+   "title": "프로 액티브 리페어 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026023615": {
+   "retail": true,
+   "brand": "이지마인드",
+   "title": "에어리 매트 뽀송 선스틱",
+   "cat": "sun_stick",
+   "note": "뽀송 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026023136": {
+   "retail": true,
+   "brand": "유아른",
+   "title": "비건 에어핏 보송 선스틱",
+   "cat": "sun_stick",
+   "note": "비건 표기, 보송 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026022829": {
+   "retail": true,
+   "brand": "아꼬제",
+   "title": "프로텍티브 쿨링 선스틱",
+   "cat": "sun_stick",
+   "note": "쿨링 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026022141": {
+   "retail": true,
+   "brand": "쏠147",
+   "title": "인비저블 프로텍션 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026021688": {
+   "retail": true,
+   "brand": "닥터멜락신",
+   "title": "멜라 씨이 페룰릭 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026021484": {
+   "retail": true,
+   "brand": "스포뉴바",
+   "title": "에어리핏 젤리 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026020864": {
+   "retail": true,
+   "brand": "마망엣파파",
+   "title": "시카 수딩 선스틱",
+   "cat": "sun_stick",
+   "note": "수딩 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026020764": {
+   "retail": false,
+   "brand": "",
+   "title": "에어핏 인비저블 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026018926": {
+   "retail": false,
+   "brand": "",
+   "title": "통통 선스틱 뽀송타입",
+   "cat": "sun_stick",
+   "note": "뽀송 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026018722": {
+   "retail": true,
+   "brand": "어피즈",
+   "title": "트라넥삼산 소프트 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026018105": {
+   "retail": true,
+   "brand": "블록토",
+   "title": "모이스처 쉴드 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026017212": {
+   "retail": true,
+   "brand": "무신사스탠다드뷰티",
+   "title": "퍼펙트 실드 라이트 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026017238": {
+   "retail": true,
+   "brand": "텐제로",
+   "title": "히알루론산 쿨젤리 선스틱",
+   "cat": "sun_stick",
+   "note": "쿨링 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026010555": {
+   "retail": true,
+   "brand": "마미케어",
+   "title": "레몬 노세범 선스틱",
+   "cat": "sun_stick",
+   "note": "노세범 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026010565": {
+   "retail": true,
+   "brand": "마미케어",
+   "title": "복숭아 톤업 선스틱",
+   "cat": "sun_stick",
+   "note": "톤업 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026010554": {
+   "retail": true,
+   "brand": "마미케어",
+   "title": "수박 쿨링 선스틱",
+   "cat": "sun_stick",
+   "note": "쿨링 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026010564": {
+   "retail": true,
+   "brand": "생그린",
+   "title": "클리어업 플로피 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026010447": {
+   "retail": true,
+   "brand": "얼음공주",
+   "title": "젤리 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026010475": {
+   "retail": true,
+   "brand": "에네스티",
+   "title": "유브이컷 퍼펙트 스킨핏 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026009942": {
+   "retail": true,
+   "brand": "푸드어홀릭",
+   "title": "알로 하와이 유브이 쉴드 에어 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026009803": {
+   "retail": true,
+   "brand": "노브랜드",
+   "title": "아이엠 클라우드 핏 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026009390": {
+   "retail": true,
+   "brand": "브이티",
+   "title": "에어 클라우드 밸런스 레이어 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026009266": {
+   "retail": true,
+   "brand": "미쓰쓰리닷",
+   "title": "홀리스틱 글로우 선스틱",
+   "cat": "sun_stick",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025619": {
+   "retail": true,
+   "brand": "르베라쥬",
+   "title": "메가 쿨링 선쿠션",
+   "cat": "sun_cushion",
+   "note": "쿨링 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025364": {
+   "retail": true,
+   "brand": "톤핏선",
+   "title": "비건 듀이 톤업 선쿠션",
+   "cat": "sun_cushion",
+   "note": "비건 표기, 톤업 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025109": {
+   "retail": true,
+   "brand": "리르",
+   "title": "이지에프 디판텐 리페어 선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026023309": {
+   "retail": true,
+   "brand": "엑소프록실",
+   "title": "아줄렌 엑소조메소드 선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026020547": {
+   "retail": true,
+   "brand": "아임미미",
+   "title": "원더 락킹 블러 선팩트",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026017441": {
+   "retail": true,
+   "brand": "뿌띠슈",
+   "title": "세이프 베이비 마일드 선쿠션",
+   "cat": "sun_cushion",
+   "note": "베이비 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026017733": {
+   "retail": true,
+   "brand": "제이숲",
+   "title": "앙또미뇽 판테놀 무기자차 수분 선쿠션",
+   "cat": "sun_cushion",
+   "note": "무기자차 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026017131": {
+   "retail": true,
+   "brand": "베비언스",
+   "title": "베이비 선쿠션",
+   "cat": "sun_cushion",
+   "note": "베이비 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026016838": {
+   "retail": true,
+   "brand": "닥터하이드",
+   "title": "펩타이드 퍼펙트 쿨 선쿠션",
+   "cat": "sun_cushion",
+   "note": "쿨링 기능 표기, SPF50+ PA++++ 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026016482": {
+   "retail": true,
+   "brand": "이이",
+   "title": "메쉬 선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026014031": {
+   "retail": true,
+   "brand": "밀크터치",
+   "title": "올데이 노세범 톤업 선쿠션 라일락포그",
+   "cat": "sun_cushion",
+   "note": "노세범 표기, 톤업 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026014051": {
+   "retail": true,
+   "brand": "밀크터치",
+   "title": "올데이 노세범 톤업 선쿠션 바닐라레몬",
+   "cat": "sun_cushion",
+   "note": "노세범 표기, 톤업 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026013827": {
+   "retail": true,
+   "brand": "노워터",
+   "title": "아쿠아 마일드 선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026013316": {
+   "retail": true,
+   "brand": "오로지",
+   "title": "미타임 핑크 톤업 선쿠션",
+   "cat": "sun_cushion",
+   "note": "톤업 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026011637": {
+   "retail": true,
+   "brand": "비디비치",
+   "title": "얼티밋 워터리 톤업 선쿠션",
+   "cat": "sun_cushion",
+   "note": "톤업 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026010775": {
+   "retail": true,
+   "brand": "4월31일",
+   "title": "광채쿨링선쿠션",
+   "cat": "sun_cushion",
+   "note": "쿨링 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026010700": {
+   "retail": true,
+   "brand": "아떼",
+   "title": "비건릴리프라이팅톤업선쿠션",
+   "cat": "sun_cushion",
+   "note": "비건, 톤업 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026010164": {
+   "retail": true,
+   "brand": "토코보",
+   "title": "블러피니시선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026010166": {
+   "retail": true,
+   "brand": "토코보",
+   "title": "블러피니시선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026009611": {
+   "retail": true,
+   "brand": "이지듀",
+   "title": "멜라비토닝유브이선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026009363": {
+   "retail": true,
+   "brand": "베라모어",
+   "title": "글로우베일글루타티온선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026009264": {
+   "retail": true,
+   "brand": "아트페이스",
+   "title": "텐제로퍼펙트유브이선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026008919": {
+   "retail": true,
+   "brand": "브이티",
+   "title": "에어클라우드워터파우더선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026008757": {
+   "retail": true,
+   "brand": "부쉬맨",
+   "title": "스포츠톤업선쿠션",
+   "cat": "sun_cushion",
+   "note": "톤업 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026008630": {
+   "retail": true,
+   "brand": "아틀리에",
+   "title": "글로우스킨선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026008498": {
+   "retail": true,
+   "brand": "시크릿쥬쥬",
+   "title": "별의보석데일리선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026008303": {
+   "retail": true,
+   "brand": "에이지투웨니스",
+   "title": "멜라디펜스기미톤업메쉬선쿠션",
+   "cat": "sun_cushion",
+   "note": "톤업 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026008035": {
+   "retail": true,
+   "brand": "비프루브",
+   "title": "마린무기자차마일드선쿠션",
+   "cat": "sun_cushion",
+   "note": "무기자차, 마일드 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026008028": {
+   "retail": true,
+   "brand": "샵한현재",
+   "title": "프렙선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026007534": {
+   "retail": true,
+   "brand": "듀어썸",
+   "title": "글루타치온쿨파우더선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026007550": {
+   "retail": true,
+   "brand": "베니테이블",
+   "title": "수딩베이스선쿠션",
+   "cat": "sun_cushion",
+   "note": "수딩 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026007278": {
+   "retail": true,
+   "brand": "썬슈룹",
+   "title": "쿨링팝선쿠션",
+   "cat": "sun_cushion",
+   "note": "쿨링 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026007227": {
+   "retail": true,
+   "brand": "이지듀",
+   "title": "멜라비토닝유브이톤업선쿠션",
+   "cat": "sun_cushion",
+   "note": "톤업 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026007203": {
+   "retail": true,
+   "brand": "베라모어",
+   "title": "글로우베일글루타티온선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026007087": {
+   "retail": true,
+   "brand": "엘솔레",
+   "title": "모이스처라이징마일드선쿠션",
+   "cat": "sun_cushion",
+   "note": "마일드 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026006617": {
+   "retail": true,
+   "brand": "오쎄",
+   "title": "소이베베베이비선쿠션",
+   "cat": "sun_cushion",
+   "note": "베이비 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026006034": {
+   "retail": true,
+   "brand": "미얼리티",
+   "title": "슬림커버리비비선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026006017": {
+   "retail": true,
+   "brand": "미얼리티",
+   "title": "슬림커버리비비선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026005705": {
+   "retail": true,
+   "brand": "닥터바이오",
+   "title": "징크모이스처선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026004961": {
+   "retail": true,
+   "brand": "포레스트서울",
+   "title": "비건멀티디펜스수분선쿠션",
+   "cat": "sun_cushion",
+   "note": "비건 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026004692": {
+   "retail": true,
+   "brand": "리프레쉬",
+   "title": "빙하수 퓨어 톤업 유브이 선쿠션",
+   "cat": "sun_cushion",
+   "note": "톤업 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026003862": {
+   "retail": true,
+   "brand": "에이에이치씨",
+   "title": "마스터즈 틴티드 메쉬 선쿠션",
+   "cat": "sun_cushion",
+   "note": "틴티드 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026003846": {
+   "retail": true,
+   "brand": "에이에이치씨",
+   "title": "마스터즈 틴티드 메쉬 선쿠션",
+   "cat": "sun_cushion",
+   "note": "틴티드 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026003560": {
+   "retail": true,
+   "brand": "싸이닉",
+   "title": "엔조이 아쿠아 세이프티 무기자차 선쿠션",
+   "cat": "sun_cushion",
+   "note": "무기자차 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026003255": {
+   "retail": false,
+   "brand": "톤핏선",
+   "title": "비건 듀이 커버 선쿠션",
+   "cat": "sun_cushion",
+   "note": "비건 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026003254": {
+   "retail": false,
+   "brand": "톤핏선",
+   "title": "비건 톤업 선쿠션",
+   "cat": "sun_cushion",
+   "note": "비건 표기, 톤업 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026002863": {
+   "retail": true,
+   "brand": "옥시젠",
+   "title": "베이비 칼라민 선쿠션",
+   "cat": "sun_cushion",
+   "note": "베이비 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026002361": {
+   "retail": true,
+   "brand": "아트델리",
+   "title": "멜라컷 클리어 선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026002222": {
+   "retail": true,
+   "brand": "바세린",
+   "title": "울트라 모이스처 앤 쿨링 선쿠션",
+   "cat": "sun_cushion",
+   "note": "쿨링 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026001928": {
+   "retail": true,
+   "brand": "편강율",
+   "title": "에어리 프로텍션 선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026001415": {
+   "retail": true,
+   "brand": "라브리에",
+   "title": "쿨링 톤업 선쿠션",
+   "cat": "sun_cushion",
+   "note": "쿨링 기능 표기, 톤업 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026001206": {
+   "retail": true,
+   "brand": "입큰",
+   "title": "스킨 피니쉬 선팩트",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026001204": {
+   "retail": true,
+   "brand": "입큰",
+   "title": "스킨 피니쉬 선팩트",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2025089587": {
+   "retail": true,
+   "brand": "헤브블루",
+   "title": "피톤 스쿠아 히알 블루 톤업 선쿠션",
+   "cat": "sun_cushion",
+   "note": "톤업 기능 표기, SPF30 PA++ 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2025088681": {
+   "retail": true,
+   "brand": "듀이트리",
+   "title": "톤업 쉐이드 그린 톤업 선쿠션",
+   "cat": "sun_cushion",
+   "note": "톤업 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2025088682": {
+   "retail": true,
+   "brand": "듀이트리",
+   "title": "톤업 쉐이드 퍼플 톤업 선쿠션",
+   "cat": "sun_cushion",
+   "note": "톤업 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2025088683": {
+   "retail": true,
+   "brand": "듀이트리",
+   "title": "톤업 쉐이드 핑크 톤업 선쿠션",
+   "cat": "sun_cushion",
+   "note": "톤업 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2025088258": {
+   "retail": true,
+   "brand": "나인틴포티세븐",
+   "title": "페이스 업 쿨 선쿠션",
+   "cat": "sun_cushion",
+   "note": "쿨링 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2025088259": {
+   "retail": true,
+   "brand": "나인틴포티세븐",
+   "title": "페이스 업 쿨 선쿠션",
+   "cat": "sun_cushion",
+   "note": "쿨링 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2025085043": {
+   "retail": true,
+   "brand": "리즈다",
+   "title": "피디알엔 핑크 선쿠션",
+   "cat": "sun_cushion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026026113": {
+   "retail": true,
+   "brand": "보톡",
+   "title": "실크 글로우 스킨 핏 선스프레이",
+   "cat": "sun_spray",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026025046": {
+   "retail": true,
+   "brand": "리더스",
+   "title": "듀얼 선미스트",
+   "cat": "sun_spray",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026023749": {
+   "retail": true,
+   "brand": "엠투이",
+   "title": "선미스트",
+   "cat": "sun_spray",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026020487": {
+   "retail": true,
+   "brand": "리블룸",
+   "title": "히아루로닉 앤 세라마이드 선미스트",
+   "cat": "sun_spray",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  },
+  "2026020510": {
+   "retail": true,
+   "brand": "엔오트",
+   "title": "엔178 히알루론산 에어 크림 선미스트",
+   "cat": "sun_spray",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-24"
+  }
+ }
+}
