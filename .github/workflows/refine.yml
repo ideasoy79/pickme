@@ -37,7 +37,7 @@ concurrency:
 jobs:
   refine:
     runs-on: ubuntu-latest
-    timeout-minutes: 330
+    timeout-minutes: 60
     steps:
       - name: 저장소 가져오기
         uses: actions/checkout@v4
@@ -68,7 +68,7 @@ jobs:
           PER_CAT: ${{ github.event.inputs.per_cat || '60' }}
           DRY_RUN: ${{ github.event.inputs.dry_run || '' }}
           BATCH: '25'
-          SLEEP: '4'
+          SLEEP: '15'
         run: python tools/refine_gemini.py
 
       - name: 상품 파일 만들기
