@@ -71,10 +71,23 @@ jobs:
           SLEEP: '15'
         run: python tools/refine_gemini.py
 
+      - name: 정제 진행 저장 (여기서 멈춰도 결과는 남김)
+        if: always()
+        run: |
+          git config user.name "pickme-bot"
+          git config user.email "actions@github.com"
+          git add data/refined.json data/refine_report.md || true
+          if git diff --cached --quiet; then
+            echo "바뀐 것이 없습니다."
+          else
+            git commit -m "정제 진행분 저장 $(date +%Y-%m-%d)"
+            git push
+          fi
+
       - name: 상품 파일 만들기
         if: ${{ github.event.inputs.dry_run != '1' }}
         run: python tools/build_products.py
-
+        
       # 만들어진 products.json 을 실제 앱 코드에 물려서 돌려 봅니다.
       # 여기서 걸리면 아래 '결과 저장'이 돌지 않으므로
       # 깨진 파일이 사이트에 올라가는 일이 없습니다.
