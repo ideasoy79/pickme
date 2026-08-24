@@ -149,7 +149,14 @@ def cat_menu(grp):
 
 
 def call_gemini(prompt):
-    """제미나이를 한 번 부른다. 429·5xx는 기다렸다 다시 건다."""
+    """제미나이를 한 번 부른다. 429·5xx는 기다렸다 다시 건다.
+
+    옛날에는 429가 오면 20→40→80→160→300초씩 다섯 번을 기다렸다.
+    한 번 걸린 호출이 최악의 경우 10분 넘게 붙잡고 있을 수 있었고,
+    무료 한도가 이미 다 찬 날에는 이게 배치마다 반복되며 60분 예산을
+    통째로 태워 버렸다 — 실제로는 단 한 건도 못 끝낸 채로.
+    그래서 재시도 폭을 줄이고, 이 호출이 '한도 문제로 실패'했는지를
+    호출한 쪽(main)이 알 수 있도록 세 번째 값으로 알려 준다."""
     body = {
         'contents': [{'parts': [{'text': prompt}]}],
         'generationConfig': {
@@ -159,8 +166,8 @@ def call_gemini(prompt):
         },
     }
     data = json.dumps(body).encode('utf-8')
-    wait = 20
-    for attempt in range(5):
+    wait = 15
+    for attempt in range(3):
         req = urllib.request.Request(
             ENDPOINT,
             data=data,
@@ -168,18 +175,18 @@ def call_gemini(prompt):
                      'x-goog-api-key': KEY},
         )
         try:
-            with urllib.request.urlopen(req, timeout=120) as res:
+            with urllib.request.urlopen(req, timeout=60) as res:
                 out = json.loads(res.read().decode('utf-8'))
             cands = out.get('candidates') or []
             if not cands:
-                return None, '응답에 candidates 없음'
+                return None, '응답에 candidates 없음', False
             parts = (cands[0].get('content') or {}).get('parts') or []
             text = ''
             for p in parts:
                 text += p.get('text') or ''
             if not text.strip():
-                return None, '응답이 비어 있음'
-            return text, ''
+                return None, '응답이 비어 있음', False
+            return text, '', False
         except urllib.error.HTTPError as e:
             code = e.code
             detail = ''
@@ -188,19 +195,26 @@ def call_gemini(prompt):
             except Exception:
                 pass
             if code == 429:
-                print('    · 한도에 걸렸습니다. ' + str(wait) + '초 쉽니다.')
-                time.sleep(wait)
-                wait = min(wait * 2, 300)
-                continue
+                if attempt < 2:
+                    print('    · 한도에 걸렸습니다. ' + str(wait) + '초 쉽니다.')
+                    time.sleep(wait)
+                    wait = min(wait * 2, 60)
+                    continue
+                return None, 'HTTP 429 (한도) ' + detail, True
             if code >= 500:
-                print('    · 서버 오류 ' + str(code) + '. 10초 쉽니다.')
+                if attempt < 2:
+                    print('    · 서버 오류 ' + str(code) + '. 10초 쉽니다.')
+                    time.sleep(10)
+                    continue
+                return None, 'HTTP ' + str(code) + ' ' + detail, False
+            return None, 'HTTP ' + str(code) + ' ' + detail, False
+        except Exception as e:
+            if attempt < 2:
+                print('    · 통신 오류: ' + str(e) + '. 10초 쉽니다.')
                 time.sleep(10)
                 continue
-            return None, 'HTTP ' + str(code) + ' ' + detail
-        except Exception as e:
-            print('    · 통신 오류: ' + str(e) + '. 10초 쉽니다.')
-            time.sleep(10)
-    return None, '여러 번 시도했지만 실패'
+            return None, '통신 오류: ' + str(e), False
+    return None, '여러 번 시도했지만 실패', False
 
 
 def parse_reply(text, n):
@@ -334,6 +348,12 @@ def main():
     bad = 0
     i = 0
     stopped = ''
+    # 연속으로 한도(429)에 막히면, 그건 이번 배치 하나의 문제가 아니라
+    # 이 키의 하루 한도가 이미 다 찼다는 뜻이다. 그런데도 계속 재시도만
+    # 하면 60분 예산을 통째로 태우면서 단 한 건도 못 끝내고 강제로
+    # 잘려 나간다 (작업 결과도 저장 못 하고). 그러느니 세 번 연속
+    # 한도에 걸리면 곱게 멈추고, 왜 멈췄는지 분명히 남긴다.
+    consec_quota = 0
     while i < len(todo):
         if calls >= MAX_CALLS:
             stopped = '하루 호출 상한(' + str(MAX_CALLS) + '번)에 닿아 멈췄습니다.'
@@ -359,12 +379,25 @@ def main():
         calls += 1
         print('  ' + str(calls) + '번째 요청 · ' + grp + ' · '
               + str(len(chunk)) + '건')
-        text, err = call_gemini(prompt)
+        text, err, quota_hit = call_gemini(prompt)
         if not text:
             print('    ! 실패: ' + err)
             bad += len(chunk)
+            if quota_hit:
+                consec_quota += 1
+                if consec_quota >= 3:
+                    stopped = ('연속 3번 API 한도(429)에 막혀 멈췄습니다. '
+                               '이 키의 하루/분당 한도가 이미 다 찬 것으로 '
+                               '보입니다 — Google AI Studio에서 이 키의 '
+                               '한도와 모델(' + MODEL + ') 사용 가능 여부를 '
+                               '확인해 주세요.')
+                    print(stopped)
+                    break
+            else:
+                consec_quota = 0
             time.sleep(SLEEP)
             continue
+        consec_quota = 0
 
         arr = parse_reply(text, len(chunk))
         if arr is None:
