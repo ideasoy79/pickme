@@ -341,17 +341,26 @@ var ICONS = {
   layers:'<path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/>'
 };
 function icon(name, size){
-  var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
-  svg.setAttribute('viewBox','0 0 24 24');
-  svg.setAttribute('width', size || 20);
-  svg.setAttribute('height', size || 20);
-  svg.setAttribute('fill','none');
-  svg.setAttribute('stroke','currentColor');
-  svg.setAttribute('stroke-width','2');
-  svg.setAttribute('stroke-linecap','round');
-  svg.setAttribute('stroke-linejoin','round');
-  svg.innerHTML = ICONS[name] || '';
-  return svg;
+  // 진짜 브라우저는 createElementNS 를 갖고 있으니 정식 SVG 를 만든다.
+  // tools/self_check.js 처럼 document 를 아주 작게 흉내만 낸 곳에는
+  // createElementNS 가 없어서, 있으면 쓰고 없으면 자리만 채운다.
+  // (실제 화면에는 전혀 영향이 없다 — 브라우저에서는 항상 위쪽 분기다.)
+  if (typeof document.createElementNS === 'function'){
+    var svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('viewBox','0 0 24 24');
+    svg.setAttribute('width', size || 20);
+    svg.setAttribute('height', size || 20);
+    svg.setAttribute('fill','none');
+    svg.setAttribute('stroke','currentColor');
+    svg.setAttribute('stroke-width','2');
+    svg.setAttribute('stroke-linecap','round');
+    svg.setAttribute('stroke-linejoin','round');
+    svg.innerHTML = ICONS[name] || '';
+    return svg;
+  }
+  var ph = document.createElement('span');
+  ph.setAttribute('data-icon', name || '');
+  return ph;
 }
 
 var CONFIG = {
