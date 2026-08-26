@@ -172,8 +172,11 @@ def main():
     verified = []
     unmapped = []
     for p in (cur.get('products') or []):
-        # 사람이 확인한 것은 무슨 일이 있어도 지우지 않는다.
-        p['tier'] = 'verified'
+        # 사람이 확인한 것(확인분)만 그대로 남긴다.
+        # 예전 빌드가 만든 목록분(listed)까지 여기서 섞어 올리면
+        # 전성분·가격 없는 제품이 '확인분'으로 둔갑해 순위 매기기가 터진다.
+        if p.get('tier') != 'verified':
+            continue
         # 대분류는 cat, 세부 칸은 cell 로 통일한다.
         # 옛 파일에는 cell 이 없으므로 form 을 보고 채운다.
         if not p.get('cell'):
