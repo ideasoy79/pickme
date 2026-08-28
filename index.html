@@ -42,9 +42,8 @@ input,textarea,select{ font-family:inherit; font-size:16px; color:inherit; }
 
 /* ---------- 내비 ---------- */
 .nav{ position:sticky; top:0; z-index:40; height:56px; display:flex; align-items:center;
-  background:rgba(253,251,250,0.94); backdrop-filter:saturate(180%) blur(14px);
-  -webkit-backdrop-filter:saturate(180%) blur(14px);
-  border-bottom:1px solid var(--line-s); padding:0 6px; }
+  background:var(--bg);
+  border-bottom:1px solid var(--line); padding:0 6px; }
 .nav-b{ min-width:52px; height:44px; display:flex; align-items:center; justify-content:center;
   font-size:14px; color:var(--sub); border-radius:10px; }
 .nav-b:active{ background:var(--line-s); }
@@ -53,22 +52,17 @@ input,textarea,select{ font-family:inherit; font-size:16px; color:inherit; }
 .wrap-f{ padding:0 0 108px; }
 
 /* ---------- 인트로 : 이미지 대신 색면 ---------- */
-.hero{ position:relative; padding:46px 22px 34px; overflow:hidden;
-  background:linear-gradient(168deg,#FCEEF1 0%,#FDFBFA 62%); }
+.hero{ position:relative; padding:46px 22px 34px; overflow:hidden; background:var(--bg); }
+.hero-rule{ width:34px; height:3px; background:var(--accent); margin-bottom:18px; }
 .hero-mark{ font-size:11px; font-weight:800; letter-spacing:0.22em; color:var(--accent); margin-bottom:20px; }
 .hero-t{ font-size:39px; line-height:1.16; font-weight:800; letter-spacing:-0.045em; margin:0 0 16px; }
 .hero-t em{ font-style:normal; color:var(--accent); }
 .hero-s{ font-size:16px; color:var(--sub); line-height:1.6; margin:0; max-width:19em; }
-.blob{ position:absolute; border-radius:50%; }
-.b1{ width:190px; height:190px; right:-64px; top:-38px;
-  background:radial-gradient(circle at 32% 30%,#F4B6C6,#C2415F 72%); opacity:0.16; }
-.b2{ width:64px; height:64px; right:36px; top:118px;
-  background:var(--accent); opacity:0.09; }
 
 /* 키워드 3개 */
 .keys{ display:flex; gap:8px; padding:22px 22px 4px; flex-wrap:wrap; }
 .key{ display:flex; align-items:center; gap:7px; background:var(--card);
-  border:1px solid var(--line); border-radius:100px; padding:9px 15px 9px 11px;
+  border:1px solid var(--line); border-radius:var(--r-s); padding:9px 15px 9px 11px;
   font-size:13.5px; font-weight:600; letter-spacing:-0.02em; }
 .key i{ width:9px; height:9px; border-radius:50%; display:block; }
 .k1 i{ background:var(--accent); } .k2 i{ background:var(--gold); } .k3 i{ background:var(--good); }
@@ -93,7 +87,7 @@ input,textarea,select{ font-family:inherit; font-size:16px; color:inherit; }
 .hint{ font-size:12.5px; line-height:1.6; color:var(--dim); margin:10px 2px 0; }
 
 /* ---------- 버튼 ---------- */
-.btn{ width:100%; height:53px; border-radius:100px; background:var(--accent); color:#FFF;
+.btn{ width:100%; height:53px; border-radius:var(--r); background:var(--accent); color:#FFF;
   font-size:16px; font-weight:750; letter-spacing:-0.024em; display:flex;
   align-items:center; justify-content:center; margin-top:12px; transition:transform .08s;
   box-shadow:var(--sh-accent); }
@@ -195,8 +189,7 @@ input,textarea,select{ font-family:inherit; font-size:16px; color:inherit; }
 
 /* ---------- 하단 탭 ---------- */
 .tabbar{ position:fixed; left:0; right:0; bottom:0; z-index:38; display:flex;
-  background:rgba(253,251,250,0.96); backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px); border-top:1px solid var(--line);
+  background:var(--bg); border-top:1px solid var(--line);
   padding-bottom:env(safe-area-inset-bottom); }
 .tabbar-in{ max-width:520px; margin:0 auto; display:flex; width:100%; }
 .tb{ flex:1; height:56px; display:flex; flex-direction:column; align-items:center;
@@ -356,9 +349,9 @@ function icon(name, size){
     svg.setAttribute('height', size || 20);
     svg.setAttribute('fill','none');
     svg.setAttribute('stroke','currentColor');
-    svg.setAttribute('stroke-width','2');
-    svg.setAttribute('stroke-linecap','round');
-    svg.setAttribute('stroke-linejoin','round');
+    svg.setAttribute('stroke-width','1.6');
+    svg.setAttribute('stroke-linecap','square');
+    svg.setAttribute('stroke-linejoin','miter');
     svg.innerHTML = ICONS[name] || '';
     return svg;
   }
@@ -1478,7 +1471,7 @@ function chipRow(list, selected, multi, onPick, kind){
 function renderIntro(){
   var w = el('div','wrap wrap-f');
   var hero = el('div','hero');
-  add(hero, el('div','blob b1'), el('div','blob b2'));
+  add(hero, el('div','hero-rule'));
 
   var inner = el('div','hero-in');
   add(inner, el('div','hero-mark', CONFIG.intro.mark));
