@@ -1,5 +1,5 @@
 {
- "version": "2026-08-26",
+ "version": "2026-08-28",
  "model": "gemini-3.6-flash",
  "items": {
   "2026026372": {
@@ -7201,6 +7201,5406 @@
    "note": "워시오프 표기",
    "by": "gemini-3.6-flash",
    "at": "2026-08-26"
+  },
+  "2024015666": {
+   "retail": true,
+   "brand": "더마푸라민",
+   "title": "프로바이오메타 필링 케어 샴푸",
+   "cat": "",
+   "note": "프로바이오메타 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024014521": {
+   "retail": true,
+   "brand": "니들리",
+   "title": "글로우 필링 세럼",
+   "cat": "peel_liquid",
+   "note": "글로우 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024014369": {
+   "retail": true,
+   "brand": "르메이엘",
+   "title": "글로우 앤 루미너스 콜라겐 필링 마스크",
+   "cat": "",
+   "note": "글로우, 루미너스, 콜라겐 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024014281": {
+   "retail": true,
+   "brand": "와이에스이",
+   "title": "컴포트 필링 토너",
+   "cat": "peel_liquid",
+   "note": "컴포트 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024010992": {
+   "retail": true,
+   "brand": "메디큐브",
+   "title": "레드 아크네 바디 필링 샷",
+   "cat": "peel_liquid",
+   "note": "레드, 아크네, 바디 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026192": {
+   "retail": true,
+   "brand": "벨로유",
+   "title": "글루타티온 슬리핑 팩",
+   "cat": "",
+   "note": "글루타티온 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024962": {
+   "retail": true,
+   "brand": "루나",
+   "title": "슬리핑 팩",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024826": {
+   "retail": true,
+   "brand": "트리마이",
+   "title": "펩티드27 슬리핑 팩",
+   "cat": "",
+   "note": "펩티드 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026017501": {
+   "retail": true,
+   "brand": "마미케어",
+   "title": "파인애플 파하 슬리핑 팩",
+   "cat": "",
+   "note": "파인애플, 파하(PHA) 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026017256": {
+   "retail": true,
+   "brand": "마미케어",
+   "title": "수박 피디알엔 슬리핑 팩",
+   "cat": "",
+   "note": "수박, 피디알엔(PDRN) 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026017257": {
+   "retail": true,
+   "brand": "마미케어",
+   "title": "파인애플 피에이치에이 슬리핑 팩",
+   "cat": "",
+   "note": "파인애플, 피에이치에이(PHA) 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026015723": {
+   "retail": true,
+   "brand": "노일리스킨",
+   "title": "블랙헤드 끈적임 없는 수면팩",
+   "cat": "",
+   "note": "블랙헤드 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026011205": {
+   "retail": true,
+   "brand": "알로피",
+   "title": "멜라 슬리핑 팩",
+   "cat": "",
+   "note": "멜라 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026008665": {
+   "retail": true,
+   "brand": "스킨스20",
+   "title": "골든 펩타이드 닥터 카멜리아 릴렉싱 슬리핑 팩",
+   "cat": "",
+   "note": "골든, 펩타이드, 카멜리아, 릴렉싱 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026007651": {
+   "retail": true,
+   "brand": "수설",
+   "title": "미백 수면팩",
+   "cat": "",
+   "note": "미백 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026007100": {
+   "retail": true,
+   "brand": "일소",
+   "title": "모공 매실 쿨 탄력 수면팩",
+   "cat": "",
+   "note": "모공, 매실, 쿨링, 탄력 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026006068": {
+   "retail": true,
+   "brand": "스킨컨스",
+   "title": "스킨테리어 스텝1 리터닝 슬리핑 팩",
+   "cat": "",
+   "note": "리터닝 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026004434": {
+   "retail": true,
+   "brand": "노일리",
+   "title": "블랙헤드 끈적임 없는 수면팩",
+   "cat": "",
+   "note": "블랙헤드 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026003199": {
+   "retail": true,
+   "brand": "토니모리",
+   "title": "스네일 피디알엔 리커버리 슬리핑 팩",
+   "cat": "",
+   "note": "스네일, 피디알엔, 리커버리 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025089779": {
+   "retail": true,
+   "brand": "3더블유클리닉",
+   "title": "랩 연어 피디알엔 글루타티온 슬리핑 팩",
+   "cat": "",
+   "note": "연어, 피디알엔, 글루타티온 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025089781": {
+   "retail": true,
+   "brand": "3더블유클리닉",
+   "title": "콜라겐 리제너레이션 슬리핑 팩",
+   "cat": "",
+   "note": "콜라겐, 리제너레이션 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025075269": {
+   "retail": true,
+   "brand": "닥터제이페이스",
+   "title": "스킨 링거 브라이트 슬리핑 팩",
+   "cat": "",
+   "note": "브라이트닝 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025075326": {
+   "retail": true,
+   "brand": "닥터제이페이스",
+   "title": "스킨 링거 카밍 슬리핑 팩",
+   "cat": "",
+   "note": "진정 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025075328": {
+   "retail": true,
+   "brand": "닥터제이페이스",
+   "title": "스킨 링거 포어 슬리핑 팩",
+   "cat": "",
+   "note": "모공 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025074576": {
+   "retail": true,
+   "brand": "더마티션",
+   "title": "글루타티온 스팟 토닝 슬리핑 팩",
+   "cat": "",
+   "note": "글루타티온, 스팟, 토닝 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025073644": {
+   "retail": true,
+   "brand": "올시카",
+   "title": "생병풀 리페어 올페이스 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025073027": {
+   "retail": true,
+   "brand": "아이앤립",
+   "title": "세라마이드 펩8 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025070500": {
+   "retail": true,
+   "brand": "아이앤립",
+   "title": "콜라겐 히아7 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025066096": {
+   "retail": true,
+   "brand": "푸드어홀릭",
+   "title": "바운스 콜라겐 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025066098": {
+   "retail": true,
+   "brand": "푸드어홀릭",
+   "title": "카밍 어성초 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025065436": {
+   "retail": true,
+   "brand": "메디힐",
+   "title": "멀티 리프트 콜라겐 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025059495": {
+   "retail": true,
+   "brand": "큐어팩터",
+   "title": "판테놀 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025051116": {
+   "retail": true,
+   "brand": "플라너",
+   "title": "체리 벨벳 립세린 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025041977": {
+   "retail": true,
+   "brand": "키키글로우",
+   "title": "망고 비타씨 피디알엔 엘세븐 리들샷 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025040535": {
+   "retail": true,
+   "brand": "스킨1004",
+   "title": "마다가스카르 센텔라 히알루-시카 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025037475": {
+   "retail": true,
+   "brand": "제이준",
+   "title": "유자 비타민 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025036556": {
+   "retail": true,
+   "brand": "닥터유",
+   "title": "이지에프 장벽강화 수면팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025033916": {
+   "retail": true,
+   "brand": "아이소이",
+   "title": "브라이트닝 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025022850": {
+   "retail": true,
+   "brand": "스킨1004",
+   "title": "마다가스카르 센텔라 히알루-시카 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025016718": {
+   "retail": true,
+   "brand": "노브랜드",
+   "title": "아쿠아 밤 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025012940": {
+   "retail": true,
+   "brand": "베라모어",
+   "title": "콜라겐샷 포어 타이트닝 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025010095": {
+   "retail": true,
+   "brand": "노일리",
+   "title": "블랙헤드 티존 스케일링 수면팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025004595": {
+   "retail": true,
+   "brand": "제이준",
+   "title": "콜라겐 스킨핏 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024055164": {
+   "retail": true,
+   "brand": "플라너",
+   "title": "자몽 잼 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024052765": {
+   "retail": true,
+   "brand": "시드물",
+   "title": "스킨소스 리포좀 바이오톡스 수면팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024039358": {
+   "retail": false,
+   "brand": "",
+   "title": "비타 콜라겐 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024039099": {
+   "retail": true,
+   "brand": "루시로아",
+   "title": "펩타이드 에센스 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024038782": {
+   "retail": false,
+   "brand": "",
+   "title": "비건 저분자 콜라겐 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "비건 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024038144": {
+   "retail": true,
+   "brand": "플라네르",
+   "title": "자몽 잼 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024035720": {
+   "retail": false,
+   "brand": "",
+   "title": "콜라겐샷 포어 타이트닝 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024028723": {
+   "retail": true,
+   "brand": "미샤",
+   "title": "비타씨플러스 슬리핑팩 크림",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024027830": {
+   "retail": true,
+   "brand": "더샘",
+   "title": "로열 내추럴 이지에프 콜라겐 수면팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024025101": {
+   "retail": true,
+   "brand": "밀바랩",
+   "title": "제주여정실 윤기탄력 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024025141": {
+   "retail": true,
+   "brand": "브링그린",
+   "title": "슈퍼레몬 글루타치온 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024021157": {
+   "retail": true,
+   "brand": "레드스킨",
+   "title": "오버나이트팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024020678": {
+   "retail": true,
+   "brand": "한가닉",
+   "title": "레티날 콜라겐 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024019930": {
+   "retail": true,
+   "brand": "스킨스타일리스트",
+   "title": "엑소좀 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024019305": {
+   "retail": true,
+   "brand": "라보니따",
+   "title": "아로니아 마일드 딥 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024019204": {
+   "retail": true,
+   "brand": "디퍼앤디퍼",
+   "title": "타이트닝 퍼밍 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024018445": {
+   "retail": true,
+   "brand": "퓨리토",
+   "title": "루미너스 모이스처 세라마이드 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024016031": {
+   "retail": true,
+   "brand": "로즈우드",
+   "title": "슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024011938": {
+   "retail": true,
+   "brand": "플렌티플랜트",
+   "title": "멜팅 어성초 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024010175": {
+   "retail": true,
+   "brand": "트리마이",
+   "title": "원더 비타민 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024009272": {
+   "retail": true,
+   "brand": "디게인",
+   "title": "리프팅 업 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024009301": {
+   "retail": true,
+   "brand": "라모수",
+   "title": "리프팅 업 슬리핑팩",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025079477": {
+   "retail": true,
+   "brand": "랑스레",
+   "title": "워시오프팩",
+   "cat": "mask_wash",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025073628": {
+   "retail": true,
+   "brand": "브이티",
+   "title": "리들샷 비클리어 에이씨 워시오프 바디미스트",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025072336": {
+   "retail": true,
+   "brand": "브이티",
+   "title": "리들샷 비클리어 에이씨 워시오프 바디",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024043481": {
+   "retail": true,
+   "brand": "케어놀로지",
+   "title": "리본 35퍼센트 애씨드 워시오프 필",
+   "cat": "mask_wash",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2023034901": {
+   "retail": true,
+   "brand": "",
+   "title": "부스팅 애플 수딩 워시오프",
+   "cat": "mask_wash",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2023032551": {
+   "retail": true,
+   "brand": "",
+   "title": "화이트 글루타치온 씨 메이크업 부스팅 워시오프팩",
+   "cat": "mask_wash",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2023015412": {
+   "retail": true,
+   "brand": "로다비",
+   "title": "피토 스파 클레이팩 샴푸",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2022020523": {
+   "retail": true,
+   "brand": "헬프헬프",
+   "title": "해초 톤업 워시오프",
+   "cat": "mask_wash",
+   "note": "톤업 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2022006525": {
+   "retail": true,
+   "brand": "일라이트쏠큐어",
+   "title": "투비원 모델링팩",
+   "cat": "mask_wash",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2022006526": {
+   "retail": true,
+   "brand": "일라이트쏠큐어",
+   "title": "투비원 모델링팩 시트",
+   "cat": "mask_sheet",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2021015607": {
+   "retail": true,
+   "brand": "",
+   "title": "프로리바이탈브이 워시오프 에센스",
+   "cat": "mask_wash",
+   "note": "워시오프 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026009835": {
+   "retail": true,
+   "brand": "바이오힐보",
+   "title": "비타 시너지 흔적 토닝 마이크로 스팟 패치",
+   "cat": "mask_patch",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026008489": {
+   "retail": true,
+   "brand": "자주",
+   "title": "쌀 고보습 스팟 패치",
+   "cat": "mask_patch",
+   "note": "고보습 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026004487": {
+   "retail": true,
+   "brand": "",
+   "title": "멜라셋 기미 토닝 스팟 패치",
+   "cat": "mask_patch",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025089818": {
+   "retail": true,
+   "brand": "에코팩토리",
+   "title": "피디알엔 5퍼센트 바운스 앰플",
+   "cat": "",
+   "note": "PDRN 5% 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025084745": {
+   "retail": true,
+   "brand": "더마틱스",
+   "title": "리페어 마이크로 콘 스팟 패치",
+   "cat": "mask_patch",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025079071": {
+   "retail": true,
+   "brand": "닥터빼",
+   "title": "피치 스팟 패치",
+   "cat": "mask_patch",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025078276": {
+   "retail": true,
+   "brand": "에코팩토리",
+   "title": "로즈 콜라겐 글로우 젤 크림",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025077057": {
+   "retail": true,
+   "brand": "닥터멜락신",
+   "title": "칵톡스 3스텝 코팩",
+   "cat": "mask_patch",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025066937": {
+   "retail": true,
+   "brand": "닥터멜락신",
+   "title": "필샷 쌀 3스텝 코팩",
+   "cat": "mask_patch",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025066936": {
+   "retail": true,
+   "brand": "닥터멜락신",
+   "title": "필샷 흑미 3스텝 코팩",
+   "cat": "mask_patch",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025021178": {
+   "retail": true,
+   "brand": "에코팩토리",
+   "title": "광채 수분 크림",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025001683": {
+   "retail": true,
+   "brand": "더샘",
+   "title": "골든베리 씨 다크 스팟 패치",
+   "cat": "mask_patch",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024052302": {
+   "retail": true,
+   "brand": "엘딘",
+   "title": "비타 토닝 부스팅 샷 스팟 패치",
+   "cat": "mask_patch",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024007431": {
+   "retail": true,
+   "brand": "해서린",
+   "title": "포어 멜팅 와이드 슈링 코팩",
+   "cat": "mask_patch",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2023032020": {
+   "retail": true,
+   "brand": "라운드랩",
+   "title": "소나무 진정 시카 코팩",
+   "cat": "mask_patch",
+   "note": "진정 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2023025426": {
+   "retail": true,
+   "brand": "에코팩토리",
+   "title": "데일리 프로텍트 미네랄 선블럭",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2023021127": {
+   "retail": true,
+   "brand": "라보니따",
+   "title": "브라이트닝 블레미쉬 스팟 패치",
+   "cat": "mask_patch",
+   "note": "브라이트닝 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2023003881": {
+   "retail": true,
+   "brand": "바이오힐보",
+   "title": "비타민 레티놀 흔적 마이크로 스팟 패치",
+   "cat": "mask_patch",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2021009853": {
+   "retail": true,
+   "brand": "메디타임",
+   "title": "네오 멜라반 딥 스팟 패치",
+   "cat": "mask_patch",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026444": {
+   "retail": true,
+   "brand": "",
+   "title": "글루타티온 바이탈 하이드로겔 글로우 젤리 마스크",
+   "cat": "mask_sheet",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026384": {
+   "retail": true,
+   "brand": "라네즈",
+   "title": "톤 온 슬리핑 마스크",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026393": {
+   "retail": true,
+   "brand": "메노킨",
+   "title": "30초 퀵 버블 마스크 리스토어",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026438": {
+   "retail": true,
+   "brand": "브릴스",
+   "title": "콜라겐 슬리핑 마스크",
+   "cat": "mask_sleep",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026434": {
+   "retail": true,
+   "brand": "스킨에고",
+   "title": "슈퍼 글로우 딥 콜라겐 하이드로겔 마스크",
+   "cat": "mask_sheet",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026431": {
+   "retail": true,
+   "brand": "어메이즐랩",
+   "title": "나이아신씨샷마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026443": {
+   "retail": false,
+   "brand": "",
+   "title": "피디알엔퍼밍하이드로겔글로우젤리마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026320": {
+   "retail": true,
+   "brand": "글로우맨션",
+   "title": "클라우드세럼마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026335": {
+   "retail": true,
+   "brand": "노브랜드",
+   "title": "스킨시그니처수분마스크팩",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026316": {
+   "retail": true,
+   "brand": "노브랜드",
+   "title": "스킨시그니처진정마스크팩",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026339": {
+   "retail": true,
+   "brand": "닥터바이온",
+   "title": "엔에이디플러스피디알엔럭스글로우리프팅크림마스크팩",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026305": {
+   "retail": true,
+   "brand": "메노킨",
+   "title": "30초퀵크림버블마스크인텐스리프트",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026299": {
+   "retail": true,
+   "brand": "메노킨",
+   "title": "30초퀵크림버블마스크인텐스모이스처",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026374": {
+   "retail": true,
+   "brand": "벨모나",
+   "title": "리프팅마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026301": {
+   "retail": true,
+   "brand": "잇츠스킨",
+   "title": "감초수딩마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026293": {
+   "retail": true,
+   "brand": "프리티스킨",
+   "title": "엔엠엔플러스피디알엔바이오톡스하이드로겔마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026356": {
+   "retail": true,
+   "brand": "하우스오브비",
+   "title": "리프팅앰플마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026168": {
+   "retail": true,
+   "brand": "기어가쉬",
+   "title": "에어버블씨디에스마스크리프트부스트",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026183": {
+   "retail": true,
+   "brand": "누셀리크",
+   "title": "나디언스플러스리페어코드이젠마스크팩",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025775": {
+   "retail": true,
+   "brand": "누이하이",
+   "title": "피디알엔벨벳겔마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026223": {
+   "retail": true,
+   "brand": "더힐랩",
+   "title": "콜라겐부스팅마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026175": {
+   "retail": true,
+   "brand": "루솜",
+   "title": "레드피디알엔플럼핑하이드로겔마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026245": {
+   "retail": true,
+   "brand": "리얼베리어",
+   "title": "컨트롤-티티트리세럼마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026188": {
+   "retail": true,
+   "brand": "릴렉스킨",
+   "title": "리커버리72마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026250": {
+   "retail": true,
+   "brand": "부트터",
+   "title": "엔알디피뉴트리션크림마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026253": {
+   "retail": true,
+   "brand": "샤르드",
+   "title": "엔에이디1600도트하이드로겔마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026185": {
+   "retail": true,
+   "brand": "쏘큐",
+   "title": "라이스플러스콜라겐버블마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026173": {
+   "retail": true,
+   "brand": "쏘큐",
+   "title": "피치플러스콜라겐버블마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026238": {
+   "retail": true,
+   "brand": "아모레퍼시픽",
+   "title": "클리니컬레스폰스트리플샷리페어마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026233": {
+   "retail": true,
+   "brand": "에이젠잇",
+   "title": "감태피디알엔나이트리차지탄력젤리마스크팩",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026244": {
+   "retail": true,
+   "brand": "유다스킨",
+   "title": "피디알엔 시트 마스크",
+   "cat": "mask_sheet",
+   "note": "PDRN 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026206": {
+   "retail": true,
+   "brand": "이즈앤트리",
+   "title": "어니언 뉴메디 퍼밍 마스크",
+   "cat": "mask_sheet",
+   "note": "어니언, 퍼밍 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026196": {
+   "retail": true,
+   "brand": "초세컨즈",
+   "title": "자일리톨 시카 비타민 마스크팩",
+   "cat": "mask_sheet",
+   "note": "자일리톨, 시카, 비타민 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026213": {
+   "retail": true,
+   "brand": "초세컨즈",
+   "title": "자일리톨 시카 콜라겐 마스크팩",
+   "cat": "mask_sheet",
+   "note": "자일리톨, 시카, 콜라겐 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026198": {
+   "retail": true,
+   "brand": "파파레서피",
+   "title": "율무 마스크팩",
+   "cat": "mask_sheet",
+   "note": "율무 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026254": {
+   "retail": true,
+   "brand": "피몽쉐",
+   "title": "캐비어 인퓨즈드 로즈 리프팅 마스크",
+   "cat": "mask_sheet",
+   "note": "캐비어, 로즈, 리프팅 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026115": {
+   "retail": true,
+   "brand": "바이오에너지",
+   "title": "알부민 마스크",
+   "cat": "mask_sheet",
+   "note": "알부민 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026095": {
+   "retail": true,
+   "brand": "뷰",
+   "title": "밀크 모이스처 마스크팩",
+   "cat": "mask_sheet",
+   "note": "밀크, 모이스처 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026096": {
+   "retail": true,
+   "brand": "뷰",
+   "title": "시카 카밍 마스크팩",
+   "cat": "mask_sheet",
+   "note": "시카, 카밍 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026126": {
+   "retail": true,
+   "brand": "뷰",
+   "title": "유자 멜라토닝 마스크팩",
+   "cat": "mask_sheet",
+   "note": "유자, 멜라토닝 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026110": {
+   "retail": true,
+   "brand": "샤이닝",
+   "title": "비타민 마스크팩",
+   "cat": "mask_sheet",
+   "note": "비타민 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026111": {
+   "retail": true,
+   "brand": "샤이닝",
+   "title": "석류 마스크팩",
+   "cat": "mask_sheet",
+   "note": "석류 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026105": {
+   "retail": true,
+   "brand": "샤이닝",
+   "title": "피디알엔 마스크팩",
+   "cat": "mask_sheet",
+   "note": "PDRN 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026140": {
+   "retail": true,
+   "brand": "수아이레",
+   "title": "신데레 퀵 버블 마스크",
+   "cat": "mask_sheet",
+   "note": "버블, 퀵 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026108": {
+   "retail": true,
+   "brand": "아로셀",
+   "title": "보툴케어 피디알엔 버블 세럼 마스크",
+   "cat": "mask_sheet",
+   "note": "보툴케어, PDRN, 버블, 세럼 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026109": {
+   "retail": false,
+   "brand": "아로셀",
+   "title": "보툴케어 피디알엔 버블 세럼 마스크",
+   "cat": "mask_sheet",
+   "note": "미니 규격, 보툴케어, PDRN 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026161": {
+   "retail": true,
+   "brand": "아로셀",
+   "title": "슈퍼 콜라겐 마스크 2.0 이씨엠 액티브",
+   "cat": "mask_sheet",
+   "note": "콜라겐, ECM 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026153": {
+   "retail": true,
+   "brand": "에이비에이치플러스",
+   "title": "더블유 에센스 크림 마스크",
+   "cat": "mask_sheet",
+   "note": "에센스, 크림 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026064": {
+   "retail": true,
+   "brand": "오하이오후",
+   "title": "오 마이 갓 마스크",
+   "cat": "mask_sheet",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026122": {
+   "retail": true,
+   "brand": "제이엠솔루션",
+   "title": "더 이펙트 엔에이디 플러스 퍼밍 마스크",
+   "cat": "mask_sheet",
+   "note": "NAD+, 퍼밍 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026102": {
+   "retail": true,
+   "brand": "지티엠",
+   "title": "비타케이 엔엠엔 프리미엄 마스크",
+   "cat": "mask_sheet",
+   "note": "비타민 K, NMN 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026181": {
+   "retail": true,
+   "brand": "퀸",
+   "title": "마데카 티트리 카밍 마스크",
+   "cat": "mask_sheet",
+   "note": "마데카, 티트리, 카밍 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026182": {
+   "retail": true,
+   "brand": "퀸",
+   "title": "비타 화이트 토닝 마스크",
+   "cat": "mask_sheet",
+   "note": "비타민, 화이트닝, 토닝 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026164": {
+   "retail": true,
+   "brand": "퀸",
+   "title": "포어 타이트닝 리프팅 마스크",
+   "cat": "mask_sheet",
+   "note": "포어 타이트닝, 리프팅 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026055": {
+   "retail": true,
+   "brand": "후르디아",
+   "title": "레티날 비3 엑소레드 360도 볼륨 샷 텐션 마스크",
+   "cat": "mask_sheet",
+   "note": "레티날, 비타민 B3, 볼륨, 텐션 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026026": {
+   "retail": true,
+   "brand": "리덴스",
+   "title": "리얼 피디알엔 콜라겐 마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025987": {
+   "retail": true,
+   "brand": "리덴스",
+   "title": "히알루론 엑토인 마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026030": {
+   "retail": true,
+   "brand": "마이에이치랩",
+   "title": "브이6 피디알엔 래디언스 마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025955": {
+   "retail": true,
+   "brand": "셀다움",
+   "title": "엑소라인 듀얼 리페어 마스크",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025946": {
+   "retail": true,
+   "brand": "에이젠잇",
+   "title": "감태 피디알엔 탄력 젤리 마스크",
+   "cat": "",
+   "note": "탄력 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026450": {
+   "retail": true,
+   "brand": "나투알엑스",
+   "title": "3피엑스 미스트 에센스",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026426": {
+   "retail": true,
+   "brand": "누셀리온",
+   "title": "시트루 피디알엔 마이크로핏 미스트 앰플",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026435": {
+   "retail": true,
+   "brand": "더마에픽",
+   "title": "엑소펩 펩타이드1 판테놀1 바디 세럼 미스트",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026380": {
+   "retail": true,
+   "brand": "위치코드",
+   "title": "프로바이오 캐비어 루미너스 미스트",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026306": {
+   "retail": true,
+   "brand": "그린스푼플러스",
+   "title": "내추럴 그레인 크림 미스트",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026361": {
+   "retail": true,
+   "brand": "바이리뮤",
+   "title": "백오디 글로우 오로라 미스트",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026375": {
+   "retail": true,
+   "brand": "부트터365",
+   "title": "글라스 크림 미스트",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026376": {
+   "retail": true,
+   "brand": "스스로",
+   "title": "트리플 밸런스 세럼 미스트",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026211": {
+   "retail": true,
+   "brand": "과일나라",
+   "title": "밀크스킨 씨씨에프 피디알엔 세럼 미스트",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026167": {
+   "retail": true,
+   "brand": "닥터리본",
+   "title": "밀크 엑소좀 브라이트닝 앰플 미스트",
+   "cat": "",
+   "note": "브라이트닝 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025950": {
+   "retail": true,
+   "brand": "이50케이",
+   "title": "글로우 리뉴얼 미스트",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026220": {
+   "retail": true,
+   "brand": "푸른밤",
+   "title": "흑하랑 아로마 미스트",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026127": {
+   "retail": true,
+   "brand": "바디오라",
+   "title": "글로우 펄 미스트",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026125": {
+   "retail": true,
+   "brand": "소이소울",
+   "title": "두유 미스트",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026157": {
+   "retail": true,
+   "brand": "스타라이크",
+   "title": "엔엠엔 스킨 부스터 크림 미스트",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026067": {
+   "retail": true,
+   "brand": "제제스",
+   "title": "하이엔드 크림 미스트",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025977": {
+   "retail": true,
+   "brand": "닥터엘시아",
+   "title": "래피드 멀티 애씨드 5프로 바디 미스트",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025998": {
+   "retail": true,
+   "brand": "메가셀",
+   "title": "오로라 스킨 부스터 미스트",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025997": {
+   "retail": true,
+   "brand": "티노파이",
+   "title": "제주 삼중주 꿀잠 마그네슘 미스트",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025996": {
+   "retail": true,
+   "brand": "티노파이",
+   "title": "청담 삼중주 노붓기 아이스 쿨링 미스트",
+   "cat": "",
+   "note": "쿨링 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025888": {
+   "retail": true,
+   "brand": "누보렉스",
+   "title": "아이오닉 그라디언트 미스트",
+   "cat": "toner_mist",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025904": {
+   "retail": true,
+   "brand": "마니아홀릭",
+   "title": "시카 피디알엔 세럼 미스트",
+   "cat": "toner_mist",
+   "note": "시카, PDRN 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025945": {
+   "retail": true,
+   "brand": "엘렌실라",
+   "title": "스네일 탄력 미스트",
+   "cat": "toner_mist",
+   "note": "스네일, 탄력 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025835": {
+   "retail": true,
+   "brand": "더셀프리서치",
+   "title": "리커버리 인퓨전 미스트",
+   "cat": "toner_mist",
+   "note": "리커버리 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025774": {
+   "retail": true,
+   "brand": "메종드위미에르",
+   "title": "롱제비티 엘릭서 드 로얄 캐비에르 앰플 미스트",
+   "cat": "toner_mist",
+   "note": "캐비에르 앰플 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025831": {
+   "retail": true,
+   "brand": "알로컨피덴트",
+   "title": "스캘프 미스트",
+   "cat": "toner_mist",
+   "note": "스캘프(두피용) 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025829": {
+   "retail": true,
+   "brand": "차홍",
+   "title": "알로 컨피덴트 스캘프 미스트",
+   "cat": "toner_mist",
+   "note": "스캘프(두피용) 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025750": {
+   "retail": true,
+   "brand": "큐어레시피",
+   "title": "피디알엔 시카 스킨 미스트",
+   "cat": "toner_mist",
+   "note": "PDRN, 시카 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025826": {
+   "retail": true,
+   "brand": "퍼셀",
+   "title": "픽셀 바이옴 글로우 배리어 미스트",
+   "cat": "toner_mist",
+   "note": "글로우, 배리어(장벽) 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025836": {
+   "retail": true,
+   "brand": "프랭클리",
+   "title": "피디알엔 바운스 글로우 페이셜 미스트",
+   "cat": "toner_mist",
+   "note": "PDRN, 글로우 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025696": {
+   "retail": true,
+   "brand": "넘버즈인",
+   "title": "나드 피디알엔 2000 글로우 캡슐 세럼 미스트",
+   "cat": "toner_mist",
+   "note": "PDRN 2000, 글로우 캡슐 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025702": {
+   "retail": true,
+   "brand": "블랑클리어",
+   "title": "비저블 콜라겐 글로우 겔 미스트",
+   "cat": "toner_mist",
+   "note": "콜라겐, 글로우 겔 제형 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025656": {
+   "retail": true,
+   "brand": "비비메이",
+   "title": "핑크 젤리 미스트",
+   "cat": "toner_mist",
+   "note": "젤리 제형 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025603": {
+   "retail": true,
+   "brand": "리셋플로우",
+   "title": "카밍 베리어 크림 미스트",
+   "cat": "toner_mist",
+   "note": "카밍, 베리어(장벽), 크림 제형 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025568": {
+   "retail": true,
+   "brand": "오키뷰티",
+   "title": "다이아몬드 판테놀 미스트 에센스",
+   "cat": "toner_mist",
+   "note": "판테놀 성분 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025415": {
+   "retail": true,
+   "brand": "네시픽",
+   "title": "애플 피디알엔 클리어 샷 젤리 미스트",
+   "cat": "toner_mist",
+   "note": "애플, PDRN, 젤리 제형 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025471": {
+   "retail": true,
+   "brand": "아리얼",
+   "title": "엑스퍼트 비타 엑소좀 콜라겐 캡슐 세럼 미스트",
+   "cat": "toner_mist",
+   "note": "비타, 엑소좀, 콜라겐 캡슐 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025402": {
+   "retail": true,
+   "brand": "네시픽",
+   "title": "비타민씨 글로우 더블샷 미스트",
+   "cat": "toner_mist",
+   "note": "비타민C, 글로우 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025264": {
+   "retail": true,
+   "brand": "듀릭서",
+   "title": "포뮬러 솔레이스 오일 미스트",
+   "cat": "toner_mist",
+   "note": "오일 제형 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025379": {
+   "retail": true,
+   "brand": "미차이",
+   "title": "선 쉴드 미스트",
+   "cat": "toner_mist",
+   "note": "선 쉴드 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025198": {
+   "retail": true,
+   "brand": "라니쥬",
+   "title": "글로우 미스트",
+   "cat": "toner_mist",
+   "note": "글로우 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025262": {
+   "retail": true,
+   "brand": "산유화",
+   "title": "아쿠아 배리어 세럼 미스트",
+   "cat": "toner_mist",
+   "note": "아쿠아, 배리어(장벽) 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025054": {
+   "retail": true,
+   "brand": "비보리",
+   "title": "트리플 비타민 미스트",
+   "cat": "toner_mist",
+   "note": "트리플 비타민 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025028": {
+   "retail": true,
+   "brand": "테론",
+   "title": "액티브 클리어 바디 미스트",
+   "cat": "toner_mist",
+   "note": "바디용 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024717": {
+   "retail": true,
+   "brand": "에이비엔씨",
+   "title": "리프트라 쓰리디 퍼밍 미스트",
+   "cat": "toner_mist",
+   "note": "퍼밍, 리프팅 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024663": {
+   "retail": true,
+   "brand": "클리이",
+   "title": "더 퍼스트 미스트",
+   "cat": "toner_mist",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024713": {
+   "retail": true,
+   "brand": "피에이랩",
+   "title": "리프레시 피에이치 미스트",
+   "cat": "toner_mist",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024555": {
+   "retail": true,
+   "brand": "진선미학",
+   "title": "장미수 피디알엔 필 미스트",
+   "cat": "toner_mist",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024485": {
+   "retail": true,
+   "brand": "코스메누에보",
+   "title": "레드 로즈 스킨 부스트 미스트",
+   "cat": "toner_mist",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024457": {
+   "retail": true,
+   "brand": "태시케이",
+   "title": "마린 하이드레이팅 미스트",
+   "cat": "toner_mist",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024486": {
+   "retail": true,
+   "brand": "포데르마",
+   "title": "콜라 에끌라 프리미엄 미스트",
+   "cat": "toner_mist",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024367": {
+   "retail": true,
+   "brand": "비단노리",
+   "title": "피디알엔 쿨 수딩 젤리 미스트",
+   "cat": "toner_mist",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024401": {
+   "retail": true,
+   "brand": "아쿠닉",
+   "title": "얼티밋 씨너지 미스트",
+   "cat": "toner_mist",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024350": {
+   "retail": true,
+   "brand": "코스알엑스",
+   "title": "더 블루 펩타이드 바쿠치올 하이드라 플럼프 부스팅 미스트",
+   "cat": "toner_mist",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024262": {
+   "retail": true,
+   "brand": "닥터지",
+   "title": "레드 블레미쉬 쿨 수딩 젤리 미스트",
+   "cat": "toner_mist",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024294": {
+   "retail": true,
+   "brand": "닥터지",
+   "title": "블랙 스네일 콜라겐 투 미스트 세럼",
+   "cat": "toner_mist",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024160": {
+   "retail": true,
+   "brand": "아로셀",
+   "title": "펩타 콜라겐 타블렛 버블 세럼 미스트",
+   "cat": "toner_mist",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024194": {
+   "retail": true,
+   "brand": "오로라샤론",
+   "title": "오로라 레인보우 에스 올인원 미스트",
+   "cat": "toner_mist",
+   "note": "올인원 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024020": {
+   "retail": true,
+   "brand": "비보라제네온",
+   "title": "알지쓰리 리바이브 스킨 미스트",
+   "cat": "toner_mist",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024066": {
+   "retail": true,
+   "brand": "엑소퓨어",
+   "title": "핑크 엑소좀 브라이트닝 미스트",
+   "cat": "toner_mist",
+   "note": "브라이트닝 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026342": {
+   "retail": true,
+   "brand": "에프엠케이",
+   "title": "시그니처 타임리스 부스터 앰플",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026354": {
+   "retail": true,
+   "brand": "올리지오",
+   "title": "브이핏 멀티 부스터",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026272": {
+   "retail": true,
+   "brand": "파넬",
+   "title": "토마토닝 티엑스에이 부스터 크림",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026133": {
+   "retail": true,
+   "brand": "글로우펀치",
+   "title": "락인 부스터",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026144": {
+   "retail": true,
+   "brand": "달바",
+   "title": "시그니처 판테놀 5퍼센트 안티에이징 부스터 겔 크림",
+   "cat": "toner_booster",
+   "note": "안티에이징 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026158": {
+   "retail": true,
+   "brand": "스타라이크",
+   "title": "엔엠엔 스킨 부스터 세럼",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026159": {
+   "retail": true,
+   "brand": "스타라이크",
+   "title": "엔엠엔 스킨 부스터 크림",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026104": {
+   "retail": true,
+   "brand": "아렌시아",
+   "title": "엔에이디 플러스 리바이탈라이징 부스터 크림",
+   "cat": "toner_booster",
+   "note": "리바이탈라이징 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026086": {
+   "retail": true,
+   "brand": "원더바스",
+   "title": "어성초 레스큐 부스터",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026001": {
+   "retail": true,
+   "brand": "셀프랩",
+   "title": "퍼스트 에센스",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025975": {
+   "retail": false,
+   "brand": "",
+   "title": "쉐이프앤뷰티부스터",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025967": {
+   "retail": true,
+   "brand": "쿨로아",
+   "title": "에스부스터리젠앰플",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025907": {
+   "retail": true,
+   "brand": "디오프러스",
+   "title": "스킨핏픽싱부스터글로우프렙",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025908": {
+   "retail": true,
+   "brand": "지수씨엔셉",
+   "title": "피원필부스터",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025768": {
+   "retail": true,
+   "brand": "듀어썸",
+   "title": "피디알엔속수분콜라겐퍼스트에센스",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025717": {
+   "retail": true,
+   "brand": "르누베르",
+   "title": "에센셜펩타이드더블유리얼쓰리지에프볼륨부스터세럼",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025803": {
+   "retail": false,
+   "brand": "베몽테스",
+   "title": "하이신부스터앰플프로1제",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025805": {
+   "retail": false,
+   "brand": "베몽테스",
+   "title": "하이신부스터앰플프로2제",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025798": {
+   "retail": true,
+   "brand": "부스터바이글로우",
+   "title": "라이스피디알엔토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025765": {
+   "retail": true,
+   "brand": "뷰티시스",
+   "title": "펩타이드마블콜라겐부스터",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025812": {
+   "retail": true,
+   "brand": "쏘렉스",
+   "title": "아이소브더마매트릭스엑소피엔스킨부스터",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025843": {
+   "retail": true,
+   "brand": "아이소브",
+   "title": "더마매트릭스엑소피엔스킨부스터",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025658": {
+   "retail": false,
+   "brand": "",
+   "title": "리쥬네이팅부스터앰플",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025661": {
+   "retail": false,
+   "brand": "",
+   "title": "브라이트닝부스터앰플",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025737": {
+   "retail": true,
+   "brand": "톤에버",
+   "title": "리페어레디토너드로즈버블부스터",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025555": {
+   "retail": true,
+   "brand": "씨아클라르제",
+   "title": "바바수밸런싱부스터",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025556": {
+   "retail": true,
+   "brand": "테라로직",
+   "title": "에이치피레티날익스퍼트아이부스터프로엑스투",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025502": {
+   "retail": true,
+   "brand": "앰플엔",
+   "title": "세라부스터샷앰플",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025380": {
+   "retail": false,
+   "brand": "",
+   "title": "우먼부스터",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025159": {
+   "retail": true,
+   "brand": "베몽테스",
+   "title": "하이신부스터크림프로",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025163": {
+   "retail": true,
+   "brand": "톤28",
+   "title": "더퍼스트블루펩타이드시카스킨부스터",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025176": {
+   "retail": true,
+   "brand": "홈쎄라",
+   "title": "피디알엔리페어부스터앰플",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025146": {
+   "retail": true,
+   "brand": "민트리",
+   "title": "어니언스칼프부스터샷",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025125": {
+   "retail": true,
+   "brand": "파리노아",
+   "title": "화이트태닝부스터플러스",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024981": {
+   "retail": true,
+   "brand": "넘버즈인",
+   "title": "글루타치온레티날브라이트닝부스터샷",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024965": {
+   "retail": true,
+   "brand": "아가파마",
+   "title": "메디티브 포뮬라 스킨 부스터",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024771": {
+   "retail": true,
+   "brand": "아떼",
+   "title": "프로그래밍 스킨 부스터 젤",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024733": {
+   "retail": true,
+   "brand": "웨이셀",
+   "title": "시그널 부스터",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024777": {
+   "retail": true,
+   "brand": "토소웅",
+   "title": "비타민씨 부스터 샷",
+   "cat": "toner_booster",
+   "note": "비타민C 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024629": {
+   "retail": true,
+   "brand": "다보",
+   "title": "레티날 리포좀 페이스 앤 바디 부스터 세럼",
+   "cat": "toner_booster",
+   "note": "레티날 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024719": {
+   "retail": true,
+   "brand": "",
+   "title": "디판테 디엔에이 나이아신 부스터 앰플",
+   "cat": "toner_booster",
+   "note": "판테놀 표기, 나이아신 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024730": {
+   "retail": true,
+   "brand": "에슬",
+   "title": "쿨링 마자시 부스터 젤",
+   "cat": "toner_booster",
+   "note": "쿨링 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024640": {
+   "retail": true,
+   "brand": "피에이랩",
+   "title": "부스터 솔루션",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024466": {
+   "retail": true,
+   "brand": "다보",
+   "title": "레티날 리포좀 프로 부스터 샷",
+   "cat": "toner_booster",
+   "note": "레티날 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024542": {
+   "retail": true,
+   "brand": "더마펌",
+   "title": "엔에이디 플러스 판테놀 스킨 부스터 진정 크림",
+   "cat": "toner_booster",
+   "note": "판테놀 표기, 진정 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024532": {
+   "retail": true,
+   "brand": "메디테라피",
+   "title": "레티날 스킨 부스터 멀티밤",
+   "cat": "toner_booster",
+   "note": "레티날 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024501": {
+   "retail": true,
+   "brand": "셀비전",
+   "title": "피디알엔 1퍼센트 리쥬밤 스킨 부스터 엑스피 앰플",
+   "cat": "toner_booster",
+   "note": "PDRN 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024601": {
+   "retail": true,
+   "brand": "셀투덤",
+   "title": "멀티 발란스 부스터 앰플",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024353": {
+   "retail": true,
+   "brand": "닥터비바",
+   "title": "헤어 리커버리 폴리클 부스터 프로",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024295": {
+   "retail": true,
+   "brand": "닥터지",
+   "title": "3디 비타민 씨 나이아신아마이드 5퍼센트 부스터 세럼",
+   "cat": "toner_booster",
+   "note": "비타민C 표기, 나이아신아마이드 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024298": {
+   "retail": true,
+   "brand": "닥터지",
+   "title": "로얄 블랙 스네일 퍼스트 에센스",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024351": {
+   "retail": true,
+   "brand": "라니에베",
+   "title": "율무 스노우 레쥬베네이팅 부스터",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024386": {
+   "retail": true,
+   "brand": "루미너스",
+   "title": "리쥬베네이팅 부스터",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026011177": {
+   "retail": true,
+   "brand": "폴라초이스",
+   "title": "씨15 슈퍼 부스터",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024293": {
+   "retail": true,
+   "brand": "닥터지",
+   "title": "3엑스 판테놀 히알루론산 5퍼센트 부스터 세럼",
+   "cat": "toner_booster",
+   "note": "판테놀 표기, 히알루론산 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024177": {
+   "retail": true,
+   "brand": "디피셀린",
+   "title": "액티브 부스터 앰플",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024068": {
+   "retail": true,
+   "brand": "메디테라피",
+   "title": "레티날 스킨 부스터 멀티밤",
+   "cat": "toner_booster",
+   "note": "레티날 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024013": {
+   "retail": true,
+   "brand": "트루히알100",
+   "title": "리프팅 부스터 세럼",
+   "cat": "toner_booster",
+   "note": "리프팅 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026023961": {
+   "retail": true,
+   "brand": "르디퍼알엑스",
+   "title": "부스터 시너지 크림",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026023950": {
+   "retail": true,
+   "brand": "",
+   "title": "스킨 부스터 바이 르디퍼 알엑스",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026446": {
+   "retail": true,
+   "brand": "그린시카",
+   "title": "스파클링 버블 토너",
+   "cat": "toner_basic",
+   "note": "버블 제형 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026395": {
+   "retail": true,
+   "brand": "벨로유",
+   "title": "펩타매트릭스 에센스 토너",
+   "cat": "toner_basic",
+   "note": "에센스 토너 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026381": {
+   "retail": true,
+   "brand": "위치코드",
+   "title": "프로바이오 아보루센트 토너 세럼",
+   "cat": "toner_basic",
+   "note": "토너 세럼 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026427": {
+   "retail": true,
+   "brand": "",
+   "title": "핑크 PDRN 스파클링 버블 토너",
+   "cat": "toner_basic",
+   "note": "버블 제형 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026278": {
+   "retail": true,
+   "brand": "비보리",
+   "title": "딥 마린 버블 토너",
+   "cat": "toner_basic",
+   "note": "버블 제형 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026281": {
+   "retail": true,
+   "brand": "니다",
+   "title": "유스 부스팅 쌀 밀키 토너",
+   "cat": "toner_basic",
+   "note": "밀키 제형 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026235": {
+   "retail": true,
+   "brand": "스킨아레나",
+   "title": "판테오시카 수딩 토너",
+   "cat": "toner_basic",
+   "note": "수딩 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026258": {
+   "retail": true,
+   "brand": "엘라비에",
+   "title": "듀얼 PDRN 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026214": {
+   "retail": true,
+   "brand": "초세컨즈",
+   "title": "자일리톨 시카 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026189": {
+   "retail": true,
+   "brand": "플레이비유",
+   "title": "흑삼 에센스 토너",
+   "cat": "toner_basic",
+   "note": "에센스 토너 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026079": {
+   "retail": true,
+   "brand": "붓포",
+   "title": "5인1 글로우 리프트 버블 토너 세럼",
+   "cat": "toner_basic",
+   "note": "버블 제형, 토너 세럼 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026135": {
+   "retail": true,
+   "brand": "세라퀸즈",
+   "title": "PDRN 브라이트닝 토너",
+   "cat": "toner_basic",
+   "note": "브라이트닝 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026050": {
+   "retail": true,
+   "brand": "제제스",
+   "title": "프로액티브 알콜프리 토너",
+   "cat": "toner_basic",
+   "note": "알콜프리 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026150": {
+   "retail": true,
+   "brand": "해윰",
+   "title": "프로방스 로즈 PDRN 프리미엄 토너",
+   "cat": "toner_basic",
+   "note": "프리미엄 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026013": {
+   "retail": true,
+   "brand": "에이치퍼센트",
+   "title": "하이드로 리피드 밸런싱 토너",
+   "cat": "toner_basic",
+   "note": "밸런싱 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026012": {
+   "retail": true,
+   "brand": "이즈앤트리",
+   "title": "어니언 뉴페어 버블 토너",
+   "cat": "toner_basic",
+   "note": "버블 제형 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025962": {
+   "retail": true,
+   "brand": "잇츠스킨",
+   "title": "감초 수딩 쉐이킹 토너",
+   "cat": "toner_basic",
+   "note": "수딩, 쉐이킹 제형 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026021": {
+   "retail": true,
+   "brand": "탱글링",
+   "title": "바이탈 모이스쳐 토너",
+   "cat": "toner_basic",
+   "note": "모이스쳐 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025864": {
+   "retail": true,
+   "brand": "블랑드비",
+   "title": "PDRN 모이스처라이징 토너",
+   "cat": "toner_basic",
+   "note": "모이스처라이징 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025895": {
+   "retail": true,
+   "brand": "",
+   "title": "블랙 스네일 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025385": {
+   "retail": true,
+   "brand": "디렉소",
+   "title": "PDRN 솔루션 액티빙 토너",
+   "cat": "toner_basic",
+   "note": "액티빙 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025819": {
+   "retail": true,
+   "brand": "루미린",
+   "title": "토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025821": {
+   "retail": true,
+   "brand": "리덴스",
+   "title": "톤 앤 스팟 글루타치온 글로우 토너",
+   "cat": "toner_basic",
+   "note": "글로우 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025636": {
+   "retail": true,
+   "brand": "더마상스",
+   "title": "리쥬 789 밸런싱 토너",
+   "cat": "toner_basic",
+   "note": "밸런싱 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025654": {
+   "retail": true,
+   "brand": "오데어",
+   "title": "프로틴 리포좀 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025735": {
+   "retail": true,
+   "brand": "플레이비유",
+   "title": "에센스 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025616": {
+   "retail": true,
+   "brand": "마리나비",
+   "title": "아쿠아 딥 웨이브 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025595": {
+   "retail": true,
+   "brand": "마리나비",
+   "title": "아쿠아 퍼스트 웨이브 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025612": {
+   "retail": true,
+   "brand": "셀킨",
+   "title": "리부트 컨디셔닝 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025575": {
+   "retail": true,
+   "brand": "에스모라",
+   "title": "모이스춰 스킨 글로우 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025593": {
+   "retail": true,
+   "brand": "코이",
+   "title": "플로우 릴리프 퓨리파잉 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025433": {
+   "retail": true,
+   "brand": "볼덴",
+   "title": "밀크 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025486": {
+   "retail": true,
+   "brand": "셀레베",
+   "title": "글로우 캐비어 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025496": {
+   "retail": false,
+   "brand": "",
+   "title": "실크 펩타이드 이지에프 인텐시브 스무딩 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025493": {
+   "retail": true,
+   "brand": "퍼즈듀",
+   "title": "스팅샷 100 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025409": {
+   "retail": true,
+   "brand": "비히어미",
+   "title": "에너지 부스팅 토너",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025377": {
+   "retail": true,
+   "brand": "셀플로우",
+   "title": "엔엠엔 플로우 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025291": {
+   "retail": true,
+   "brand": "27해빗츠",
+   "title": "포도 셀 세라 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025308": {
+   "retail": true,
+   "brand": "루나라",
+   "title": "밸런스 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025320": {
+   "retail": true,
+   "brand": "리브즈",
+   "title": "액티브 피디알엔 스킨 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025274": {
+   "retail": true,
+   "brand": "스킨퍼즐랩",
+   "title": "화살라인 텍스처 리셋 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025203": {
+   "retail": true,
+   "brand": "르미베",
+   "title": "케일 카밍 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025188": {
+   "retail": true,
+   "brand": "솔루시안 바이 홀리카홀리카",
+   "title": "이지에프 엑스 콜라겐 부스팅 토너",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025160": {
+   "retail": true,
+   "brand": "프레티",
+   "title": "이지에프 플러스 리페어 버블 에센스 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025113": {
+   "retail": true,
+   "brand": "에스네이처",
+   "title": "아쿠아 스쿠알란 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024884": {
+   "retail": false,
+   "brand": "",
+   "title": "라이스 아들레이 퍼멘트 밀키 에센스 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024859": {
+   "retail": true,
+   "brand": "입큰",
+   "title": "레티날 나드 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024856": {
+   "retail": true,
+   "brand": "팜스테이",
+   "title": "세라마이드 에센셜 부스팅 토너",
+   "cat": "toner_booster",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024857": {
+   "retail": true,
+   "brand": "팜스테이",
+   "title": "콜라겐 워터풀 모이스트 올데이 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024858": {
+   "retail": true,
+   "brand": "팜스테이",
+   "title": "히아루론산 멀티 아쿠아 울트라 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024745": {
+   "retail": true,
+   "brand": "노브랜드",
+   "title": "피디알엔 베리어 수분 버블 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024776": {
+   "retail": true,
+   "brand": "로즈에스",
+   "title": "화이트 버블 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024838": {
+   "retail": true,
+   "brand": "무아무드",
+   "title": "리페어 테라피 바디 앤 페이스 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024823": {
+   "retail": true,
+   "brand": "피토레시피",
+   "title": "미전수 아미노 케어 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024684": {
+   "retail": true,
+   "brand": "두고나",
+   "title": "피디알엔 에센스 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024627": {
+   "retail": true,
+   "brand": "비티큐랩",
+   "title": "크리스탈 라하 클리어 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024705": {
+   "retail": true,
+   "brand": "엘렌실라",
+   "title": "에스카르고 콜라겐 펩타이드 앰플 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024731": {
+   "retail": true,
+   "brand": "주닥",
+   "title": "저온추출 어성초 나이아신아마이드 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024687": {
+   "retail": true,
+   "brand": "클레어리스",
+   "title": "스킨 밸런스 프레쉬 하이드로 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024625": {
+   "retail": true,
+   "brand": "프레티",
+   "title": "피디알엔 플러스 리페어 밀키 에센스 토너",
+   "cat": "toner_basic",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026417": {
+   "retail": true,
+   "brand": "끌레오비아",
+   "title": "리포 피디알엔 포엑스 더마 테라피 앰플 크림",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026428": {
+   "retail": true,
+   "brand": "마이녹셀",
+   "title": "맥주효모 로즈 피디알엔 스칼프 브러쉬 앰플",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026399": {
+   "retail": true,
+   "brand": "메디플라워",
+   "title": "시그니처 피디알엔 펩타이드 앰플",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026451": {
+   "retail": true,
+   "brand": "에스에리아",
+   "title": "수분자석 저분자 고분자 히알루론산 콜라겐 앰플",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026390": {
+   "retail": true,
+   "brand": "엘렌실라",
+   "title": "스네일 탄력 앰플",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026379": {
+   "retail": true,
+   "brand": "트라미셀",
+   "title": "히알루론 앰플",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026276": {
+   "retail": true,
+   "brand": "3더블유클리닉",
+   "title": "랩 나드 플러스 엔엠엔 앰플",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026371": {
+   "retail": true,
+   "brand": "셀레오스",
+   "title": "브이씨 앰플",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026288": {
+   "retail": true,
+   "brand": "앰플엔",
+   "title": "파하샷 앰플",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026352": {
+   "retail": false,
+   "brand": "",
+   "title": "오이 쿨링 모공 앰플",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026353": {
+   "retail": true,
+   "brand": "컴포트",
+   "title": "트라넥삼산 브라이트닝 앰플",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026169": {
+   "retail": true,
+   "brand": "로위비",
+   "title": "루트 바이탈 펩타이드 스칼프 앰플",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026212": {
+   "retail": false,
+   "brand": "",
+   "title": "바쿠치올 비타 포어 핏 앰플",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026155": {
+   "retail": true,
+   "brand": "베니아",
+   "title": "3 바이오 액티브 리후레싱 앰플 세럼",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026172": {
+   "retail": true,
+   "brand": "브루버드",
+   "title": "쌀 막걸리 앰플",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026166": {
+   "retail": true,
+   "brand": "아네시스",
+   "title": "루미너스래디언스앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026237": {
+   "retail": true,
+   "brand": "엘라비에",
+   "title": "듀얼피디알엔앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026205": {
+   "retail": true,
+   "brand": "오엠지",
+   "title": "헬시스칼프브러쉬앰플시카앤나이아신아마이드",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026203": {
+   "retail": true,
+   "brand": "오엠지",
+   "title": "헬시스칼프브러쉬앰플콜라겐앤히알루론산",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026207": {
+   "retail": true,
+   "brand": "오엠지",
+   "title": "헬시스칼프브러쉬앰플펩타이드앤엔에이디플러스",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026178": {
+   "retail": true,
+   "brand": "플렌티플랜트",
+   "title": "브루버드쌀막걸리앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026052": {
+   "retail": true,
+   "brand": "닥터홈톡스",
+   "title": "글루타티온알부틴앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026053": {
+   "retail": true,
+   "brand": "닥터홈톡스",
+   "title": "코큐텐레티놀앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026107": {
+   "retail": true,
+   "brand": "레시피",
+   "title": "퍼밍스피큘샷크림앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026060": {
+   "retail": true,
+   "brand": "리쥬랩",
+   "title": "엔엠엔피디알엔리페어앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026073": {
+   "retail": true,
+   "brand": "멜로미인",
+   "title": "브라이트닝기미앰플",
+   "cat": "ser_ampoule",
+   "note": "브라이트닝 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026041": {
+   "retail": true,
+   "brand": "샬랑드파리",
+   "title": "앰플드쎄륄르",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026145": {
+   "retail": true,
+   "brand": "세렌티카",
+   "title": "프리스티지인텐시브피디알엔앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026054": {
+   "retail": true,
+   "brand": "제나더마",
+   "title": "리본피디알엔앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026029": {
+   "retail": true,
+   "brand": "기뷰",
+   "title": "오르앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025949": {
+   "retail": true,
+   "brand": "더마끌레르",
+   "title": "피디알엔아줄렌앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026007": {
+   "retail": true,
+   "brand": "비엠좀",
+   "title": "200리쥬버네이션앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025976": {
+   "retail": true,
+   "brand": "셀다움",
+   "title": "글루타치온2500앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025981": {
+   "retail": true,
+   "brand": "에몬트",
+   "title": "스칼프인퓨전앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025985": {
+   "retail": true,
+   "brand": "에몬트",
+   "title": "스칼프인퓨전코어스팟앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025856": {
+   "retail": true,
+   "brand": "에이치퍼센트",
+   "title": "코어차지래디언스앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025958": {
+   "retail": true,
+   "brand": "엔에이디",
+   "title": "탱탱앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025947": {
+   "retail": true,
+   "brand": "잇츠스킨",
+   "title": "감초수딩앰플",
+   "cat": "ser_ampoule",
+   "note": "수딩 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025978": {
+   "retail": true,
+   "brand": "히어레스트",
+   "title": "에스오에스티트리클리어앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025920": {
+   "retail": true,
+   "brand": "문씰",
+   "title": "포틴데이즈티엑스피디알엔리셋바이알앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025867": {
+   "retail": true,
+   "brand": "엑스샷",
+   "title": "셀룰러시그널앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025862": {
+   "retail": true,
+   "brand": "클리브맥스",
+   "title": "히아루로닉포뮬러앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025922": {
+   "retail": true,
+   "brand": "히어레스트",
+   "title": "브라이트닝비타샷앰플",
+   "cat": "ser_ampoule",
+   "note": "브라이트닝 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025926": {
+   "retail": true,
+   "brand": "히어레스트",
+   "title": "콜라겐퍼밍코어앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025754": {
+   "retail": true,
+   "brand": "누이하이",
+   "title": "피디알엔츄이앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025753": {
+   "retail": true,
+   "brand": "듀어썸",
+   "title": "비타글루타치온나이아신아마이드4주래디언스샷앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025755": {
+   "retail": true,
+   "brand": "듀어썸",
+   "title": "피디알엔300콜라겐4주글로우샷앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025782": {
+   "retail": true,
+   "brand": "릴리이브",
+   "title": "그로우턴블랙플러스브러쉬앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025748": {
+   "retail": true,
+   "brand": "뷰티시스",
+   "title": "레티놀08리뉴얼앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025747": {
+   "retail": true,
+   "brand": "뷰티시스",
+   "title": "프로틴콜라겐글로우앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025799": {
+   "retail": true,
+   "brand": "언뮤트",
+   "title": "하이드로부스팅익스트림덴스앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025781": {
+   "retail": true,
+   "brand": "위자드조선",
+   "title": "누룩실앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025820": {
+   "retail": true,
+   "brand": "쥬디메르",
+   "title": "더미셔틀피디알엔5퍼센트리프팅키트부스팅앰플",
+   "cat": "ser_ampoule",
+   "note": "리프팅 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025675": {
+   "retail": true,
+   "brand": "광동제이에델",
+   "title": "피디알엔리페어앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025704": {
+   "retail": false,
+   "brand": "더모믹스",
+   "title": "비어비오틴앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025706": {
+   "retail": false,
+   "brand": "더모믹스",
+   "title": "헤어부스트앰플프로그램",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025711": {
+   "retail": true,
+   "brand": "도젠",
+   "title": "스피큘코어루트리밸런스앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025653": {
+   "retail": true,
+   "brand": "라베리",
+   "title": "엑소좀주름앰플",
+   "cat": "ser_ampoule",
+   "note": "주름 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025633": {
+   "retail": true,
+   "brand": "루트캄",
+   "title": "앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025674": {
+   "retail": true,
+   "brand": "비보라",
+   "title": "골드캡슐앰플",
+   "cat": "ser_ampoule",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026023062": {
+   "retail": true,
+   "brand": "바하르",
+   "title": "리바이탈라이징페이스오일",
+   "cat": "ser_oil",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026021638": {
+   "retail": true,
+   "brand": "산다화",
+   "title": "엑스트라버진카멜리아페이스오일",
+   "cat": "ser_oil",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026008495": {
+   "retail": true,
+   "brand": "캐슬린메리퀸란",
+   "title": "바이이피베리어리페어나노페이스오일",
+   "cat": "ser_oil",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026005519": {
+   "retail": true,
+   "brand": "라멜린",
+   "title": "여수밤바다워터풀동백오일세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026005531": {
+   "retail": true,
+   "brand": "프리티스킨",
+   "title": "동백워터리오일세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026002346": {
+   "retail": true,
+   "brand": "인요",
+   "title": "에베타인하이드로지사과오일세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025088796": {
+   "retail": true,
+   "brand": "토코",
+   "title": "글로우페이셜오일세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025088798": {
+   "retail": true,
+   "brand": "토코",
+   "title": "플로우두피바디오일세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025087603": {
+   "retail": true,
+   "brand": "",
+   "title": "산뜻한페이스오일",
+   "cat": "ser_oil",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025086778": {
+   "retail": true,
+   "brand": "세와",
+   "title": "울티메이트리커버리캡슐오일세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025068903": {
+   "retail": true,
+   "brand": "이다야",
+   "title": "더마테라피퓨어에센셜브라이트닝페이스오일",
+   "cat": "ser_oil",
+   "note": "브라이트닝 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025044373": {
+   "retail": true,
+   "brand": "템테이션",
+   "title": "에이지리턴너리싱오일세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025044342": {
+   "retail": true,
+   "brand": "칸도럽",
+   "title": "골든드롭오일세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025040778": {
+   "retail": true,
+   "brand": "수려한",
+   "title": "골든동백호호바페이스오일",
+   "cat": "ser_oil",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025027081": {
+   "retail": true,
+   "brand": "대라",
+   "title": "칼큐텐에너지페이셜오일",
+   "cat": "ser_oil",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025016036": {
+   "retail": true,
+   "brand": "아일롭",
+   "title": "스파글로우페이셜오일",
+   "cat": "ser_oil",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025008843": {
+   "retail": true,
+   "brand": "산다화",
+   "title": "카멜리아루미너스리스토어오일세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024054983": {
+   "retail": true,
+   "brand": "리프인",
+   "title": "블루웨이브오일세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024050330": {
+   "retail": true,
+   "brand": "더후",
+   "title": "진율향안티링클오일세럼",
+   "cat": "ser_serum",
+   "note": "안티링클 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024039543": {
+   "retail": true,
+   "brand": "오데어",
+   "title": "엔더믹임페리얼오일세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024038805": {
+   "retail": true,
+   "brand": "엘릭시아",
+   "title": "케어페이스오일",
+   "cat": "ser_oil",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024037745": {
+   "retail": true,
+   "brand": "",
+   "title": "퓨어글로우페이스오일",
+   "cat": "ser_oil",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024035061": {
+   "retail": true,
+   "brand": "아베이로얄",
+   "title": "유쓰워터리오일세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024034839": {
+   "retail": true,
+   "brand": "인현진",
+   "title": "황칠인오일세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024032782": {
+   "retail": true,
+   "brand": "파우",
+   "title": "샤이니펌킨오일세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024028725": {
+   "retail": true,
+   "brand": "프라임더마",
+   "title": "뱀부앤씨워드리페어오일세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024009695": {
+   "retail": true,
+   "brand": "피네이트",
+   "title": "내추럴블룸립오일세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2023030547": {
+   "retail": true,
+   "brand": "시자르",
+   "title": "더마플러스비타민오일세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2023026886": {
+   "retail": true,
+   "brand": "듀이트리",
+   "title": "더클린랩더마나이아신아마이드오일세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2023026870": {
+   "retail": true,
+   "brand": "듀이트리",
+   "title": "더클린랩더마콜라겐오일세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2023018930": {
+   "retail": true,
+   "brand": "자스민드롭스",
+   "title": "페이스 오일 하이브리드",
+   "cat": "ser_oil",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2023026159": {
+   "retail": true,
+   "brand": "자스민드롭스",
+   "title": "브라이트닝 페이스 오일",
+   "cat": "ser_oil",
+   "note": "브라이트닝 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2023025657": {
+   "retail": true,
+   "brand": "피네이트",
+   "title": "내추럴 블룸 립 오일 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2023025643": {
+   "retail": true,
+   "brand": "피네이트",
+   "title": "내추럴 블룸 립 오일 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2023024728": {
+   "retail": true,
+   "brand": "아리오스",
+   "title": "맥스 오일 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2023024054": {
+   "retail": true,
+   "brand": "뉴아르베라",
+   "title": "리페어랩 캐비디 오일 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2023015619": {
+   "retail": true,
+   "brand": "",
+   "title": "로즈 유스 페이스 오일",
+   "cat": "ser_oil",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2023014726": {
+   "retail": true,
+   "brand": "에스엔씨",
+   "title": "로얄 오일 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2023014741": {
+   "retail": true,
+   "brand": "헤디슨",
+   "title": "래디언트 컨덴스 오일 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2022021150": {
+   "retail": true,
+   "brand": "",
+   "title": "로즈 앤 상탈 페이스 오일",
+   "cat": "ser_oil",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2022020231": {
+   "retail": true,
+   "brand": "루츠레서피",
+   "title": "당근 오일 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2022019823": {
+   "retail": true,
+   "brand": "아이온",
+   "title": "모이스춰 빌드업 페이스 오일",
+   "cat": "ser_oil",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2022019193": {
+   "retail": true,
+   "brand": "리끌레임",
+   "title": "오일 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2022018549": {
+   "retail": true,
+   "brand": "클레오시스",
+   "title": "온니유 리포좀 오일 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2022018043": {
+   "retail": true,
+   "brand": "더샘",
+   "title": "트루 머쉬룸 엘엑스 글로우 페이셜 오일",
+   "cat": "ser_oil",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2022014043": {
+   "retail": true,
+   "brand": "마다",
+   "title": "구기자 링클 오일 세럼",
+   "cat": "ser_serum",
+   "note": "링클 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2022009702": {
+   "retail": true,
+   "brand": "프리티스킨",
+   "title": "멀티 오일 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2022006096": {
+   "retail": true,
+   "brand": "비에뉴",
+   "title": "프레스티지 비타 오일 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2022003880": {
+   "retail": true,
+   "brand": "메디필",
+   "title": "루미너스 실크 오일 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2022001778": {
+   "retail": true,
+   "brand": "이니스프리",
+   "title": "자연발효 에너지 페이스 오일",
+   "cat": "ser_oil",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2021028839": {
+   "retail": true,
+   "brand": "아이유닉",
+   "title": "노니 라이트 오일 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2021024339": {
+   "retail": true,
+   "brand": "메디타임",
+   "title": "네오 오일 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2021024173": {
+   "retail": true,
+   "brand": "뉴아르베라",
+   "title": "리페어랩 오일 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2021023877": {
+   "retail": true,
+   "brand": "새미모",
+   "title": "안티에이징 오일 세럼",
+   "cat": "ser_serum",
+   "note": "안티에이징 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2021016411": {
+   "retail": true,
+   "brand": "이자녹스",
+   "title": "엘엑스뉴 플래티넘 오일 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2021015114": {
+   "retail": true,
+   "brand": "네이처허브",
+   "title": "파미르 페이셜 오일",
+   "cat": "ser_oil",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2021015105": {
+   "retail": true,
+   "brand": "네이처허브",
+   "title": "파미르 프리미엄 페이셜 오일",
+   "cat": "ser_oil",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2021013760": {
+   "retail": true,
+   "brand": "투쿨포스쿨",
+   "title": "아보카도 오일 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2021013420": {
+   "retail": true,
+   "brand": "나우셀",
+   "title": "카밍 솔루션 오일 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2021009544": {
+   "retail": true,
+   "brand": "산다화",
+   "title": "카멜리아 오일 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026430": {
+   "retail": true,
+   "brand": "라세몽",
+   "title": "티모라 리테인 리커버리 리뉴얼 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026360": {
+   "retail": true,
+   "brand": "메디필",
+   "title": "물톡스 펩타이드 글로우 캡슐 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026406": {
+   "retail": true,
+   "brand": "미차이",
+   "title": "선 쉴드 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026448": {
+   "retail": true,
+   "brand": "유니다더마",
+   "title": "모이스트 커버 비비 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026423": {
+   "retail": true,
+   "brand": "조선미녀",
+   "title": "트리트먼트 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026456": {
+   "retail": true,
+   "brand": "프로스템",
+   "title": "피디알엔 플러스 엑스 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026385": {
+   "retail": true,
+   "brand": "하우아",
+   "title": "아줄렌 마데카소사이드 카밍 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026424": {
+   "retail": true,
+   "brand": "힐란드",
+   "title": "캄 스칼프 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026266": {
+   "retail": false,
+   "brand": "",
+   "title": "더 리쥬비네이팅 나이트 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026273": {
+   "retail": true,
+   "brand": "데코르테",
+   "title": "리포솜 어드밴스드 플루어리포텐트 링클 앤 리프트 리페어 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026323": {
+   "retail": true,
+   "brand": "어메이즐랩",
+   "title": "나이아신 씨 샷 흔적 장벽 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026251": {
+   "retail": true,
+   "brand": "달바",
+   "title": "비타 토닝 스프레이 세럼",
+   "cat": "ser_serum",
+   "note": "나이아신아마이드 5% 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026225": {
+   "retail": true,
+   "brand": "유다스킨",
+   "title": "피디알엔 글로윙 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026179": {
+   "retail": true,
+   "brand": "하루나",
+   "title": "에이비씨 스무디 글로우 크림 앤 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026065": {
+   "retail": true,
+   "brand": "더마캡스",
+   "title": "모닝 캡슐 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026106": {
+   "retail": true,
+   "brand": "레시피",
+   "title": "듀얼 레이어 피디알엔 부스트 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026101": {
+   "retail": true,
+   "brand": "메디퍼센트",
+   "title": "퍼밍 스프레이 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026131": {
+   "retail": true,
+   "brand": "뷔르",
+   "title": "래디언스 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026097": {
+   "retail": true,
+   "brand": "소이소울",
+   "title": "쫀쫀 콩 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026098": {
+   "retail": true,
+   "brand": "아이오셀",
+   "title": "코어 바이오덤 부스팅 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026091": {
+   "retail": true,
+   "brand": "오큐라더마",
+   "title": "하이드로 카밍 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026045": {
+   "retail": true,
+   "brand": "온그리디언츠",
+   "title": "더마세라 딥 부스팅 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026114": {
+   "retail": true,
+   "brand": "원앤드헤이미쉬",
+   "title": "엔에이디 엔엠엔 퍼밍 캡슐 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026119": {
+   "retail": true,
+   "brand": "제이엠솔루션",
+   "title": "더 이펙트 엔에이디 플러스 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026160": {
+   "retail": true,
+   "brand": "초윤설",
+   "title": "세럼 쿠션",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026162": {
+   "retail": true,
+   "brand": "초윤설",
+   "title": "세럼 쿠션",
+   "cat": "",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025618": {
+   "retail": true,
+   "brand": "키엘",
+   "title": "에이지 디펜더 파워 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026016": {
+   "retail": true,
+   "brand": "메가셀",
+   "title": "오로라 워터풀 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026005": {
+   "retail": true,
+   "brand": "스킨에고",
+   "title": "슈퍼 글로우 딥 콜라겐 버블 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025885": {
+   "retail": true,
+   "brand": "27해빗츠",
+   "title": "글리머 글로우 티엑스에이 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025919": {
+   "retail": true,
+   "brand": "데일리뷰티",
+   "title": "비타 버블 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025916": {
+   "retail": true,
+   "brand": "데일리뷰티",
+   "title": "피디알엔 버블 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025917": {
+   "retail": true,
+   "brand": "데일리뷰티",
+   "title": "히알루론산 버블 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025873": {
+   "retail": true,
+   "brand": "라네즈",
+   "title": "톤 온 다크 스팟 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025891": {
+   "retail": true,
+   "brand": "복코",
+   "title": "발효 쌀 미백 결 세럼",
+   "cat": "ser_serum",
+   "note": "미백 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025921": {
+   "retail": true,
+   "brand": "비티에프",
+   "title": "울트라소닉 디바이스 프렙 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025880": {
+   "retail": true,
+   "brand": "비티에프",
+   "title": "울트라소닉 볼륨 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025918": {
+   "retail": false,
+   "brand": "",
+   "title": "엔에이디 골드실 리프팅 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025923": {
+   "retail": true,
+   "brand": "코코스타",
+   "title": "앤 올리브 프레쉬 세럼 레티노이드",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025876": {
+   "retail": true,
+   "brand": "코코스타",
+   "title": "앤 올리브 프레쉬 세럼 펩타이드",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025910": {
+   "retail": true,
+   "brand": "코코스타",
+   "title": "앤 올리브 프레쉬 세럼 피디알엔",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025739": {
+   "retail": true,
+   "brand": "글로우엠",
+   "title": "보툴 펩타이드 리프팅 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025797": {
+   "retail": true,
+   "brand": "드코어",
+   "title": "엑소좀 시카 수분 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025769": {
+   "retail": true,
+   "brand": "릴리이브",
+   "title": "그로우턴 로즈마리 엔에이디 플러스 스칼프 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025740": {
+   "retail": true,
+   "brand": "믹순",
+   "title": "레티날 엔엠엔 부스팅 세럼",
+   "cat": "ser_serum",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025785": {
+   "retail": true,
+   "brand": "바이탈메디",
+   "title": "안티피피 스피큘 세럼 3프로",
+   "cat": "ser_serum",
+   "note": "스피큘, 3프로 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025792": {
+   "retail": true,
+   "brand": "바이탈메디",
+   "title": "안티피피 스피큘 세럼 5프로",
+   "cat": "ser_serum",
+   "note": "스피큘, 5프로 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025852": {
+   "retail": true,
+   "brand": "시그닉",
+   "title": "자작나무 피디알엔 수분광 세럼",
+   "cat": "ser_serum",
+   "note": "자작나무, PDRN, 수분광 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025758": {
+   "retail": true,
+   "brand": "아닐로",
+   "title": "레티날 100 시너지 세럼",
+   "cat": "ser_serum",
+   "note": "레티날 100 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025742": {
+   "retail": true,
+   "brand": "야다",
+   "title": "말차 포어 피디알엔 글로우 버블 세럼",
+   "cat": "ser_serum",
+   "note": "말차, 포어, PDRN, 글로우, 버블 제형 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025788": {
+   "retail": true,
+   "brand": "은율",
+   "title": "피디알엔 버블 코어 액티브 세럼",
+   "cat": "ser_serum",
+   "note": "PDRN, 버블 제형 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025787": {
+   "retail": true,
+   "brand": "은율",
+   "title": "피디알엔 콜라겐 코어 액티브 세럼",
+   "cat": "ser_serum",
+   "note": "PDRN, 콜라겐 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025751": {
+   "retail": true,
+   "brand": "큐어레시피",
+   "title": "피디알엔 시카 스피큘 세럼",
+   "cat": "ser_serum",
+   "note": "PDRN, 시카, 스피큘 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025789": {
+   "retail": true,
+   "brand": "",
+   "title": "트러블 바이옴 클리어링 세럼",
+   "cat": "ser_serum",
+   "note": "트러블 바이옴, 클리어링 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025844": {
+   "retail": true,
+   "brand": "허브에이드",
+   "title": "락토 피디알엔 엘라스틱 세럼",
+   "cat": "ser_serum",
+   "note": "락토, PDRN, 엘라스틱 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025663": {
+   "retail": true,
+   "brand": "더마상스",
+   "title": "리쥬789 에센셜 세럼",
+   "cat": "ser_serum",
+   "note": "에센셜 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025677": {
+   "retail": true,
+   "brand": "리쥬란",
+   "title": "파마 니에이지 나드 마이토 세럼",
+   "cat": "ser_serum",
+   "note": "파마, 니에이지, 나드, 마이토 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025694": {
+   "retail": true,
+   "brand": "마이피디알엔",
+   "title": "울트라 라이트 피디알엔 핑크 펩타이드 세럼",
+   "cat": "ser_serum",
+   "note": "울트라 라이트, PDRN, 핑크, 펩타이드 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025628": {
+   "retail": true,
+   "brand": "믹순",
+   "title": "퍼플 라이스 트라넥사믹애씨드 토닝 세럼",
+   "cat": "ser_serum",
+   "note": "퍼플 라이스, 트라넥사믹애씨드, 토닝 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025686": {
+   "retail": true,
+   "brand": "시그닉",
+   "title": "자작나무 피디알엔 수분광 캡슐 세럼",
+   "cat": "ser_serum",
+   "note": "자작나무, PDRN, 수분광, 캡슐 제형 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026412": {
+   "retail": true,
+   "brand": "벨로유",
+   "title": "펩타매트릭스 오일 에센스",
+   "cat": "ser_essence",
+   "note": "펩타매트릭스, 오일 에센스 제형 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026439": {
+   "retail": true,
+   "brand": "브릴스",
+   "title": "순콩 에센스",
+   "cat": "ser_essence",
+   "note": "순콩 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026397": {
+   "retail": true,
+   "brand": "세인트프랑",
+   "title": "링클 케어 더블샷 에센스",
+   "cat": "ser_essence",
+   "note": "주름개선(링클케어), 더블샷 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026449": {
+   "retail": true,
+   "brand": "에스에리아",
+   "title": "시그니처 리페어 피디알엔 에센스",
+   "cat": "ser_essence",
+   "note": "리페어, PDRN 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026274": {
+   "retail": true,
+   "brand": "메딕나르시",
+   "title": "엑스파이브 슈퍼톡스 허벌필 에센스",
+   "cat": "ser_essence",
+   "note": "슈퍼톡스, 허벌필 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026292": {
+   "retail": true,
+   "brand": "유스비스",
+   "title": "피디알엔 하이드레이팅 에센스 로션",
+   "cat": "",
+   "note": "PDRN, 수분(하이드레이팅), 에센스 로션 제형 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026191": {
+   "retail": true,
+   "brand": "클라랩",
+   "title": "골드 올인원 에센스",
+   "cat": "ser_essence",
+   "note": "골드, 올인원 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026190": {
+   "retail": true,
+   "brand": "플레이비유",
+   "title": "흑삼 리페어 에센스",
+   "cat": "ser_essence",
+   "note": "흑삼, 리페어 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026044": {
+   "retail": true,
+   "brand": "비치오니",
+   "title": "비건 피디알엔 리와인드 에센스",
+   "cat": "ser_essence",
+   "note": "비건, PDRN, 리와인드 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026084": {
+   "retail": true,
+   "brand": "칼레이",
+   "title": "화이트닝 안티에이징 에센스",
+   "cat": "ser_essence",
+   "note": "미백(화이트닝), 안티에이징 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024234": {
+   "retail": true,
+   "brand": "닥터지",
+   "title": "레드 블레미쉬 밸런싱 에센스 플루이드",
+   "cat": "ser_essence",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024287": {
+   "retail": true,
+   "brand": "닥터지",
+   "title": "레드 블레미쉬 유브이 레이어링 립 에센스",
+   "cat": "ser_essence",
+   "note": "01 로즈핑크, UV 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024108": {
+   "retail": true,
+   "brand": "엘엑스티알",
+   "title": "포어 타이트닝 에센스 로션",
+   "cat": "ser_essence",
+   "note": "모공(포어) 타이트닝 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026023912": {
+   "retail": true,
+   "brand": "프리미엄코즈랩",
+   "title": "이원비 화이트닝 에센스",
+   "cat": "ser_essence",
+   "note": "화이트닝 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026023909": {
+   "retail": true,
+   "brand": "프리미엄코즈랩",
+   "title": "이원에이 모이스춰 에센스",
+   "cat": "ser_essence",
+   "note": "보습(모이스춰) 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026023767": {
+   "retail": true,
+   "brand": "쓰리페이지",
+   "title": "하이드로락 펩타이드 버블 에센스",
+   "cat": "ser_essence",
+   "note": "버블 제형 표기, 펩타이드 성분 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026023765": {
+   "retail": true,
+   "brand": "프로랑스",
+   "title": "포맨 하나로 썬 에센스",
+   "cat": "ser_essence",
+   "note": "남성용(포맨) 표기, 자외선 차단(썬) 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026023645": {
+   "retail": true,
+   "brand": "셀블룸",
+   "title": "리커버리 부스팅 에센스",
+   "cat": "ser_essence",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026023669": {
+   "retail": true,
+   "brand": "에이썸",
+   "title": "올인원 옴므 크림 에센스",
+   "cat": "ser_essence",
+   "note": "남성용(옴므) 표기, 올인원 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026023552": {
+   "retail": true,
+   "brand": "시세이도",
+   "title": "바이탈 퍼펙션 레티노 캡슐 에센스 로션",
+   "cat": "ser_essence",
+   "note": "레티노 캡슐 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026023554": {
+   "retail": true,
+   "brand": "시세이도",
+   "title": "얼티뮨 마이크로 텐션 에센스 크림",
+   "cat": "ser_essence",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026023285": {
+   "retail": true,
+   "brand": "에센허브",
+   "title": "퀵 앤 딥 버블 에센스 카밍 티트리",
+   "cat": "ser_essence",
+   "note": "버블 제형 표기, 티트리 성분 및 진정(카밍) 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026023101": {
+   "retail": true,
+   "brand": "루미에르",
+   "title": "콜라겐 주름 탄력 보습 에센스",
+   "cat": "ser_essence",
+   "note": "콜라겐 성분 표기, 주름·탄력·보습 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026022872": {
+   "retail": true,
+   "brand": "데이셀",
+   "title": "닥터비타 비타민 멀티 에센스",
+   "cat": "ser_essence",
+   "note": "비타민 성분 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026022745": {
+   "retail": true,
+   "brand": "라라피",
+   "title": "에스아이엔엠엔 플라셀 플러스 에센스",
+   "cat": "ser_essence",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026022744": {
+   "retail": true,
+   "brand": "쁘띠페",
+   "title": "드라이 에센스 발팩",
+   "cat": "ser_essence",
+   "note": "발팩 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026022742": {
+   "retail": true,
+   "brand": "쁘띠페",
+   "title": "드라이 에센스 손팩",
+   "cat": "ser_essence",
+   "note": "손팩 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026021948": {
+   "retail": true,
+   "brand": "엘르파리스",
+   "title": "옴므 올인원 에센스",
+   "cat": "ser_essence",
+   "note": "남성용(옴므) 표기, 올인원 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026021982": {
+   "retail": true,
+   "brand": "이퀄리브",
+   "title": "오브리에 안티포어 워터 에센스",
+   "cat": "ser_essence",
+   "note": "안티포어 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026021525": {
+   "retail": true,
+   "brand": "버블앤코",
+   "title": "도라지꽃 버블 에센스",
+   "cat": "ser_essence",
+   "note": "버블 제형 표기, 도라지꽃 성분 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026021127": {
+   "retail": true,
+   "brand": "이르킨",
+   "title": "94 시크리톰 바이오 에센스 스타터",
+   "cat": "ser_essence",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026020721": {
+   "retail": true,
+   "brand": "다카포",
+   "title": "타임리스 리프팅 부스트 에센스",
+   "cat": "ser_essence",
+   "note": "리프팅 기능 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026018421": {
+   "retail": true,
+   "brand": "림핏",
+   "title": "하이드라 소닉 에센스 겔",
+   "cat": "ser_essence",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026020990": {
+   "retail": true,
+   "brand": "아로셀",
+   "title": "펩타 콜라겐 글로우 에센스",
+   "cat": "ser_essence",
+   "note": "펩타이드·콜라겐 성분 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026020564": {
+   "retail": true,
+   "brand": "리코베리",
+   "title": "퓨어 레디언스 에센스",
+   "cat": "ser_essence",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025965": {
+   "retail": true,
+   "brand": "잇츠스킨",
+   "title": "감초수딩젤리패드",
+   "cat": "",
+   "note": "수딩 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025963": {
+   "retail": true,
+   "brand": "잇츠스킨",
+   "title": "감초수딩젤크림",
+   "cat": "cr_gel",
+   "note": "수딩 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025930": {
+   "retail": true,
+   "brand": "마니아홀릭",
+   "title": "올리브괄사젤크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026024843": {
+   "retail": true,
+   "brand": "무무키",
+   "title": "알로에시카테카진정젤크림",
+   "cat": "cr_gel",
+   "note": "진정 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026023169": {
+   "retail": true,
+   "brand": "온슬로",
+   "title": "판테놀클리어캄젤크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026021699": {
+   "retail": true,
+   "brand": "글로우엠",
+   "title": "콜라겐피디알엔젤크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026020670": {
+   "retail": true,
+   "brand": "아네시스",
+   "title": "푸코마린젤크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026017850": {
+   "retail": true,
+   "brand": "퀸",
+   "title": "피디알엔엑소좀샷콜라겐젤크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026016469": {
+   "retail": true,
+   "brand": "브이티",
+   "title": "피디알엔톤온캡슐젤크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026015744": {
+   "retail": true,
+   "brand": "클라미에르",
+   "title": "레이어로닉콜라겐수딩젤크림",
+   "cat": "cr_gel",
+   "note": "수딩 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026015409": {
+   "retail": true,
+   "brand": "몬퓨리엘",
+   "title": "글로우하이드레이션젤크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026013763": {
+   "retail": true,
+   "brand": "믹순",
+   "title": "히알레배포어워터풀젤크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026013733": {
+   "retail": true,
+   "brand": "시오레",
+   "title": "데일리밸런스카밍수딩젤",
+   "cat": "cr_gel",
+   "note": "수딩 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026011155": {
+   "retail": true,
+   "brand": "큐포레",
+   "title": "하이드레이팅젤크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026010861": {
+   "retail": true,
+   "brand": "셀로니아",
+   "title": "시그니처바이오아쿠아카밍젤크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026009859": {
+   "retail": true,
+   "brand": "풀엔삼",
+   "title": "유스캡슐타겟젤크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026008829": {
+   "retail": true,
+   "brand": "릴렉사",
+   "title": "수딩젤",
+   "cat": "cr_gel",
+   "note": "수딩 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026006933": {
+   "retail": true,
+   "brand": "오케이션",
+   "title": "풀포뮬라올셋젤크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026006593": {
+   "retail": true,
+   "brand": "리쥬비란",
+   "title": "피디알엔5000피피엠어드밴스드티엑스에이이지에프스팟코렉터젤크림",
+   "cat": "cr_gel",
+   "note": "5000피피엠 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026005969": {
+   "retail": true,
+   "brand": "리쥬비란",
+   "title": "피디알엔5000피피엠티엑스에이이지에프스팟코렉터젤크림",
+   "cat": "cr_gel",
+   "note": "5000피피엠 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026005666": {
+   "retail": true,
+   "brand": "미르",
+   "title": "퍼밍앤볼륨젤크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026005086": {
+   "retail": true,
+   "brand": "엘지프라엘",
+   "title": "글래스라이크하이드로세라캡슐젤크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026004138": {
+   "retail": true,
+   "brand": "아누아",
+   "title": "히알루론산카테킨포어스무딩쿨링젤크림",
+   "cat": "cr_gel",
+   "note": "쿨링 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026003464": {
+   "retail": true,
+   "brand": "",
+   "title": "콜라겐프로워터젤",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026003137": {
+   "retail": true,
+   "brand": "슈링크홈",
+   "title": "콜라겐샷볼륨리부트젤크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025056922": {
+   "retail": true,
+   "brand": "제이엠솔루션",
+   "title": "콜라겐피디알엔퍼밍젤크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025055678": {
+   "retail": true,
+   "brand": "시슬리움포맨",
+   "title": "안티에이징매티파잉젤크림",
+   "cat": "cr_gel",
+   "note": "안티에이징 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025054195": {
+   "retail": true,
+   "brand": "제이엠솔루션",
+   "title": "비타듀오화이트닝젤크림",
+   "cat": "cr_gel",
+   "note": "화이트닝 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025052156": {
+   "retail": true,
+   "brand": "메이쿱",
+   "title": "로우메이플젤크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025051615": {
+   "retail": true,
+   "brand": "비담은",
+   "title": "아쿠아젤리크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025051414": {
+   "retail": true,
+   "brand": "시오레",
+   "title": "데일리릴리프카밍수딩젤",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025051357": {
+   "retail": false,
+   "brand": "",
+   "title": "알로에미백수딩젤",
+   "cat": "cr_gel",
+   "note": "미백 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025049956": {
+   "retail": true,
+   "brand": "뷰스타",
+   "title": "그린티시카워터리젤크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025048656": {
+   "retail": true,
+   "brand": "해인",
+   "title": "화이트닝아쿠아젤",
+   "cat": "cr_gel",
+   "note": "화이트닝 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2025046821": {
+   "retail": true,
+   "brand": "바이옴액티베이트",
+   "title": "바이탈시카오버나이트젤크림",
+   "cat": "cr_gel",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025861": {
+   "retail": true,
+   "brand": "엠디스픽",
+   "title": "드바리스타무향더마쉴드리페어밤",
+   "cat": "cr_balm",
+   "note": "무향 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026025420": {
+   "retail": true,
+   "brand": "헤라",
+   "title": "인텐시브퍼밍리페어밤",
+   "cat": "cr_balm",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026020486": {
+   "retail": true,
+   "brand": "비비쇼",
+   "title": "핸드베일리페어밤",
+   "cat": "cr_balm",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024054165": {
+   "retail": true,
+   "brand": "엑소리쥬",
+   "title": "피디알엔리페어밤",
+   "cat": "cr_balm",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2024016035": {
+   "retail": true,
+   "brand": "강남글로우",
+   "title": "멀티리페어밤",
+   "cat": "cr_balm",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2022017451": {
+   "retail": true,
+   "brand": "베베루나",
+   "title": "유스투맘턴스킨밤",
+   "cat": "cr_balm",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2022016271": {
+   "retail": true,
+   "brand": "신디박",
+   "title": "큐어카밍밤",
+   "cat": "cr_balm",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2022015673": {
+   "retail": true,
+   "brand": "센테카솔",
+   "title": "미라클카밍밤크림",
+   "cat": "cr_balm",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2022005168": {
+   "retail": true,
+   "brand": "센테카솔",
+   "title": "더마미라클카밍밤크림",
+   "cat": "cr_balm",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2022000652": {
+   "retail": true,
+   "brand": "셀라보",
+   "title": "더마스킨퍼펙션스킨밤",
+   "cat": "cr_balm",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2021021670": {
+   "retail": true,
+   "brand": "쏘내추럴",
+   "title": "허니카밍밤",
+   "cat": "cr_balm",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026351": {
+   "retail": true,
+   "brand": "르무브",
+   "title": "바디앤핸드로션",
+   "cat": "cr_lotion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026314": {
+   "retail": true,
+   "brand": "릭스팜",
+   "title": "에이지씨3에멀전플루이드",
+   "cat": "cr_lotion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026187": {
+   "retail": true,
+   "brand": "드라비아",
+   "title": "모이스처브라이트닝바디로션",
+   "cat": "cr_lotion",
+   "note": "브라이트닝 표기",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
+  },
+  "2026026217": {
+   "retail": true,
+   "brand": "마미케어",
+   "title": "오쏘타민비타민씨올인원로션",
+   "cat": "cr_lotion",
+   "note": "",
+   "by": "gemini-3.6-flash",
+   "at": "2026-08-28"
   }
  }
 }
