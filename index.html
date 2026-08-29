@@ -1679,15 +1679,26 @@ function renderPick(){
   var w = el('div','wrap');
   add(w, navBar(labelOf(CONFIG.cats, S.cat), 'home', null));
 
+  /* 이 칸에 전성분·가격까지 사람이 확인한 제품이 하나라도 있는가.
+     없으면(목록분뿐이면) 피부타입/신경쓰이는것/피할성분/예산 선택은 걸러낼 재료가
+     하나도 없는 채로 장식만 하게 된다. 그래서 칸의 확인분 유무에 따라 화면 자체를 가른다. */
+  var cellInfo = CONFIG.cellById(S.cell);
+  var hasVerified = cellInfo ? (cellInfo.verified > 0) : true;
+
   var head = el('div','sec');
-  add(head, el('h1','pg-t', '조건만 고르시면 됩니다'));
-  add(head, el('p','pg-s', '피부 타입과 예산은 하나씩, 나머지는 여러 개 고를 수 있습니다. 안 고르셔도 결과는 나옵니다.'));
+  if(hasVerified){
+    add(head, el('h1','pg-t', '조건만 고르시면 됩니다'));
+    add(head, el('p','pg-s', '피부 타입과 예산은 하나씩, 나머지는 여러 개 고를 수 있습니다. 안 고르셔도 결과는 나옵니다.'));
+  } else {
+    add(head, el('h1','pg-t', '이 칸은 조건별로 거르지 못합니다'));
+    add(head, el('p','pg-s', '전성분과 가격까지 사람이 확인한 제품이 아직 없어서, 피부타입·성분·예산으로 걸러 드릴 재료가 없습니다. 대신 식약처에 보고된 제품 전부를 그대로 보여 드립니다.'));
+  }
   add(w, head);
 
   /* 0 · 제형 : 클렌징처럼 서로 대체재가 아닌 제형이 섞인 카테고리에서만 나온다 */
   var segs = segsOf(S.cat);
   var stepN = 0;
-  if(segs.length > 1){
+  if(hasVerified && segs.length > 1){
     if(!S.seg){ S.seg = segs[0].id; }
     var s0 = el('div','sec');
     add(s0, el('p','tx-d mb10', '1 · 어떤 제형을 찾으세요'));
@@ -1705,56 +1716,83 @@ function renderPick(){
     stepN = 1;
   }
 
-  var s1 = el('div','sec');
-  add(s1, el('p','tx-d mb10', (stepN+1) + ' · 피부 타입'));
-  add(s1, chipRow(CONFIG.skins, S.skin, false, function(id){
-    S.skin = (S.skin === id) ? null : id;
-    render();
-  }, null));
-  add(w, s1);
+  if(hasVerified){
+    var s1 = el('div','sec');
+    add(s1, el('p','tx-d mb10', (stepN+1) + ' · 피부 타입'));
+    add(s1, chipRow(CONFIG.skins, S.skin, false, function(id){
+      S.skin = (S.skin === id) ? null : id;
+      render();
+    }, null));
+    add(w, s1);
 
-  var s2 = el('div','sec');
-  add(s2, el('p','tx-d mb10', (stepN+2) + ' · 지금 신경 쓰이는 것'));
-  add(s2, chipRow(CONFIG.concerns, S.care, true, function(id){
-    toggle(S.care, id);
-    render();
-  }, null));
-  add(w, s2);
+    var s2 = el('div','sec');
+    add(s2, el('p','tx-d mb10', (stepN+2) + ' · 지금 신경 쓰이는 것'));
+    add(s2, chipRow(CONFIG.concerns, S.care, true, function(id){
+      toggle(S.care, id);
+      render();
+    }, null));
+    add(w, s2);
 
-  var s3 = el('div','sec');
-  add(s3, el('p','tx-d mb10', (stepN+3) + ' · 빼고 싶은 성분'));
-  add(s3, el('p','hint mb10', '들어 있는 것으로 확인된 제품은 결과에서 빠집니다. 표기가 확인되지 않은 제품은 남기되 결과 화면에 모른다고 적어 드립니다.'));
-  add(s3, chipRow(CONFIG.avoids, S.avoid, true, function(id){
-    toggle(S.avoid, id);
-    render();
-  }, 'a'));
-  add(w, s3);
+    var s3 = el('div','sec');
+    add(s3, el('p','tx-d mb10', (stepN+3) + ' · 빼고 싶은 성분'));
+    add(s3, el('p','hint mb10', '들어 있는 것으로 확인된 제품은 결과에서 빠집니다. 표기가 확인되지 않은 제품은 남기되 결과 화면에 모른다고 적어 드립니다.'));
+    add(s3, chipRow(CONFIG.avoids, S.avoid, true, function(id){
+      toggle(S.avoid, id);
+      render();
+    }, 'a'));
+    add(w, s3);
 
-  var s4 = el('div','sec');
-  add(s4, el('p','tx-d mb10', (stepN+4) + ' · 예산'));
-  add(s4, chipRow(CONFIG.budgets, S.budget, false, function(id){
-    S.budget = (S.budget === id) ? null : id;
-    render();
-  }, null));
-  add(w, s4);
+    var s4 = el('div','sec');
+    add(s4, el('p','tx-d mb10', (stepN+4) + ' · 예산'));
+    add(s4, chipRow(CONFIG.budgets, S.budget, false, function(id){
+      S.budget = (S.budget === id) ? null : id;
+      render();
+    }, null));
+    add(w, s4);
+  } else {
+    /* 선택지를 감추는 대신, 이 칸에서 실제로 확인 가능한 표기(성분표 아님, 식약처 보고값)가
+       있으면 그것만 정직하게 안내한다. 없는 조건을 고르게 해 놓고 뒤에서 무시하지 않는다. */
+    var specCells = ['sun_stick','sun_cushion','sun_spray','sun_cream'];
+    var sInfo = el('div','sec');
+    var sCard = el('div','card card-w');
+    if(cellInfo && specCells.indexOf(cellInfo.key) >= 0){
+      add(sCard, el('p','tx-b', '자외선차단지수 · PA · 내수성은 각 제품 카드에서 확인하세요'));
+      add(sCard, el('p','tx-s mt10', '식약처에 보고된 값이라 정확하지만, 조건으로 미리 걸러 드리진 않습니다. 대표님 시장 확인 결과 대부분 SPF50+ · PA++++로 몰려 있어 미리 걸러도 거의 다 남기 때문입니다. 내수성 표기가 있는 제품만 원하시면 카드에서 직접 확인해 주세요.'));
+    } else {
+      add(sCard, el('p','tx-b', '아래에 이 칸의 제품을 전부 보여 드립니다'));
+      add(sCard, el('p','tx-s mt10', '전성분까지 확인되는 대로 이 칸도 조건별로 거를 수 있게 바꿉니다. 그 전까지는 식약처 보고값(용량·기능성 등)만 각 카드에 표기됩니다.'));
+    }
+    add(sInfo, sCard);
+    add(w, sInfo);
+  }
 
   var preview = runMatch(S);
+  /* preview.list 는 순위를 매긴 확인분만 담는다(runMatch 정의상 목록분은 애초에 안 들어간다).
+     확인분이 아예 없는 칸(선케어 등 7개 갈래)에서 이 숫자만 보고 버튼을 잠그면,
+     아래 목록분 수백 개가 있어도 결과 화면에 영영 못 들어간다.
+     그래서 "보여 줄 게 있는가"는 list 와 listed 를 합쳐서 판단한다. */
+  var previewHasAny = preview.list.length > 0 || preview.listed.length > 0;
   var pv = el('div','sec');
   var pc = el('div','card card-p');
-  add(pc, el('p','tx-b', preview.list.length + '개 제품이 조건을 통과했습니다'));
-  if(preview.dropped.length){
-    add(pc, el('p','hint mt10', preview.dropped.length + '개는 조건에 걸려 빠졌습니다. 결과 화면에서 무엇이 왜 빠졌는지 볼 수 있습니다.'));
-  }
-  if(!preview.ranked){
+  if(preview.ranked){
+    add(pc, el('p','tx-b', preview.list.length + '개 제품이 조건을 통과했습니다'));
+    if(preview.dropped.length){
+      add(pc, el('p','hint mt10', preview.dropped.length + '개는 조건에 걸려 빠졌습니다. 결과 화면에서 무엇이 왜 빠졌는지 볼 수 있습니다.'));
+    }
+  } else if(preview.listed.length){
+    add(pc, el('p','tx-b', '식약처 자료로 확인된 ' + preview.listed.length + '개를 보여 드립니다'));
     add(pc, el('p','hint mt10',
-      '이 구획에 확인된 제품이 ' + preview.segTotal + '개뿐이라 순위를 매기지 않습니다. 전부 나란히 보여 드리고 고르시는 건 대표님 몫으로 남깁니다.'));
+      '이 구획은 전성분·값까지 사람이 확인한 제품이 ' + preview.segTotal + '개뿐이라 순위는 매기지 않습니다. 조건과 대조하지 않은 채 전부 나란히 보여 드리고, 고르시는 건 대표님 몫으로 남깁니다.'));
+  } else {
+    add(pc, el('p','tx-b', '이 칸에는 아직 실을 제품이 없습니다'));
+    add(pc, el('p','hint mt10', '조건 탓이 아니라 데이터를 계속 채우는 중이라 그렇습니다.'));
   }
   add(pv, pc);
   add(w, pv);
 
   var foot = el('div','foot');
-  var go1 = el('button','btn btn-d', preview.list.length ? '결과 보기' : '조건을 조금 풀어보세요');
-  if(!preview.list.length){ go1.disabled = true; go1.className = 'btn btn-d btn-off'; }
+  var go1 = el('button','btn btn-d', previewHasAny ? '결과 보기' : '다른 칸 골라보기');
+  if(!previewHasAny){ go1.disabled = true; go1.className = 'btn btn-d btn-off'; }
   on(go1,'click',function(){
     S.result = runMatch(S);
     saveResult(S, S.result);
