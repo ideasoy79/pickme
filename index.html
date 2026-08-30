@@ -1757,7 +1757,7 @@ function renderPick(){
     var sCard = el('div','card card-w');
     if(cellInfo && specCells.indexOf(cellInfo.key) >= 0){
       add(sCard, el('p','tx-b', '자외선차단지수 · PA · 내수성은 각 제품 카드에서 확인하세요'));
-      add(sCard, el('p','tx-s mt10', '식약처에 보고된 값이라 정확하지만, 조건으로 미리 걸러 드리진 않습니다. 대표님 시장 확인 결과 대부분 SPF50+ · PA++++로 몰려 있어 미리 걸러도 거의 다 남기 때문입니다. 내수성 표기가 있는 제품만 원하시면 카드에서 직접 확인해 주세요.'));
+      add(sCard, el('p','tx-s mt10', '식약처에 보고된 값이라 정확하지만, 조건으로 미리 걸러 드리진 않습니다. 실제로 대부분 SPF50+ · PA++++로 몰려 있어 미리 걸러도 거의 다 남기 때문입니다. 내수성 표기가 있는 제품만 원하시면 카드에서 직접 확인해 주세요.'));
     } else {
       add(sCard, el('p','tx-b', '아래에 이 칸의 제품을 전부 보여 드립니다'));
       add(sCard, el('p','tx-s mt10', '전성분까지 확인되는 대로 이 칸도 조건별로 거를 수 있게 바꿉니다. 그 전까지는 식약처 보고값(용량·기능성 등)만 각 카드에 표기됩니다.'));
@@ -1782,7 +1782,7 @@ function renderPick(){
   } else if(preview.listed.length){
     add(pc, el('p','tx-b', '식약처 자료로 확인된 ' + preview.listed.length + '개를 보여 드립니다'));
     add(pc, el('p','hint mt10',
-      '이 구획은 전성분·값까지 사람이 확인한 제품이 ' + preview.segTotal + '개뿐이라 순위는 매기지 않습니다. 조건과 대조하지 않은 채 전부 나란히 보여 드리고, 고르시는 건 대표님 몫으로 남깁니다.'));
+      '이 구획은 전성분·값까지 사람이 확인한 제품이 ' + preview.segTotal + '개뿐이라 순위는 매기지 않습니다. 조건과 대조하지 않은 채 전부 나란히 보여 드리고, 고르시는 건 직접 판단하실 몫으로 남깁니다.'));
   } else {
     add(pc, el('p','tx-b', '이 칸에는 아직 실을 제품이 없습니다'));
     add(pc, el('p','hint mt10', '조건 탓이 아니라 데이터를 계속 채우는 중이라 그렇습니다.'));
@@ -1922,7 +1922,7 @@ function listedCard(p){
   var nb = el('div','card card-w mt14');
   add(nb, el('p','tx-s',
     '이 제품은 전성분과 값을 아직 사람이 확인하지 못했습니다. ' +
-    '그래서 대표님 조건과 하나씩 대조하지 못했고, 점수도 매기지 않았습니다. ' +
+    '그래서 조건과 하나씩 대조하지 못했고, 점수도 매기지 않았습니다. ' +
     '위에 적힌 값은 식약처에 보고된 내용 그대로입니다.'));
   add(card, nb);
 
@@ -2047,7 +2047,7 @@ function renderResult(){
     var nb = el('div','card card-w mt14');
     add(nb, el('p','tx-b', '왜 순위를 안 매기나'));
     add(nb, el('p','tx-s mt10',
-      '고를 수 있는 것이 몇 개 없는데 1위 2위를 붙이면, 고른 것이 아니라 남은 것을 순위처럼 보여 주는 셈이 됩니다. 그건 대표님을 속이는 일이라 하지 않습니다. 이 구획은 데이터를 더 채우는 중이고, 그때까지는 전부 나란히 보여 드립니다.'));
+      '고를 수 있는 것이 몇 개 없는데 1위 2위를 붙이면, 고른 것이 아니라 남은 것을 순위처럼 보여 주는 셈이 됩니다. 그건 사용자를 속이는 일이라 하지 않습니다. 이 구획은 데이터를 더 채우는 중이고, 그때까지는 전부 나란히 보여 드립니다.'));
     add(head, nb);
   }
   add(head, condSummary());
@@ -2171,7 +2171,7 @@ function renderResult(){
     add(lw, el('p','hint mb10',
       '식약처에 보고된 값(자외선차단지수, pH 같은 것)은 확실하지만 ' +
       '전성분과 값은 아직 사람이 확인하지 못한 제품들입니다. ' +
-      '그래서 대표님 조건과 대조하지 않았고 점수도 없습니다.'));
+      '그래서 조건과 대조하지 않았고 점수도 없습니다.'));
     var cap = Math.min(res.listed.length, S.listedMore ? res.listed.length : 6);
     for(var lz=0; lz<cap; lz++){
       add(lw, listedCard(res.listed[lz]));
